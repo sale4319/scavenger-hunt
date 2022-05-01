@@ -3,8 +3,9 @@ import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
+import { useUnlock } from "../utils";
 import { PrivateRoutes } from "../PrivateRoutes";
-import { MessageOne } from "../Messages";
+import { MessageOne, PromptMessage } from "../Messages";
 
 const styles = StyleSheet.create({
   timeCounter: {
@@ -12,19 +13,19 @@ const styles = StyleSheet.create({
     color: "#61dafb",
   },
 
-  iconStyle: {
+  questionIcon: {
     color: "#61dafb",
   },
 
   oneButton: {
-    backgroundColor: "#535353",
+    background: "linear-gradient(#eee, #333)",
     borderStyle: "solid",
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
     color: "white",
     ":hover": {
-      backgroundColor: "#61dafb",
+      background: "linear-gradient(#61dafb, #333)",
       borderColor: "#61dafb",
     },
   },
@@ -62,6 +63,8 @@ const One = () => {
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_TWO}`);
   };
+
+  useUnlock(`${PromptMessage.PASS}`, true);
 
   const [enableButton, setEnableButton] = useState(true);
 
@@ -111,7 +114,7 @@ const One = () => {
         {MessageOne.HINT}
         <BsFillPatchQuestionFill
           onClick={handleEnable}
-          className={css(styles.iconStyle)}
+          className={css(styles.questionIcon)}
         />
       </p>
       {enableButton ? (
