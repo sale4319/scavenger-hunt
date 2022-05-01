@@ -6,7 +6,7 @@ import logo from "./logo.svg";
 export const Two = () => {
   const navigate = useNavigate();
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_THREE}`);
+    navigate(`${PrivateRoutes.PARAM_ONE}`);
   };
   return (
     <>
