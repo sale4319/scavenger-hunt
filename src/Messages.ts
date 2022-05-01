@@ -11,15 +11,25 @@ export const LevelOneMessages = {
   UNLOCK: "This might help",
 };
 
+export const LevelTwoMessages = {
+  HINT: "You will have to be a real programmer to solve this one...",
+  CONTINUE: "PASS",
+};
+
 export const EndClassicMessages = {
   GIFT: "Download me and find the gift inside.",
-  GITHUB: "https://github.com/alestojanovic/scavenger-hunt",
+  GITHUB: "https://github.com/alestojanovic/scavenger-hunt-v1",
   CONGRATS: "CONGRATULATIONS!",
 };
 
 export const PromptMessages = {
-  PASS: "Maybe it works afterall, who knew...",
   DENY: "Not this time! Did you seriously think it will work? You are locked here until you find a way to continue.",
   THANKS: "Thank you",
   END: "You are not going anywhere until you press like!",
+  PASS: "Good job! You should get used to these prompt messages.",
+};
+
+export const TooltipMessages = {
+  START_HINT: "Button red? It is locked.",
+  LEVEL_TWO_CONGRATS: "Good job solving this one!",
 };

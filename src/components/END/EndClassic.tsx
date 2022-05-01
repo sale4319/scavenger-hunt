@@ -69,7 +69,7 @@ const EndClassic = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_ONE}`);
+    navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
   };
   const [toggleIcon, setToggleIcon] = useState(true);
   useEffect(() => {

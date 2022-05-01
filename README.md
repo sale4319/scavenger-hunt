@@ -24,7 +24,8 @@ When this issue is dealt with your project will start with `yarn start` command.
 - [x] Migrate CSS to JSS and change package manager to yarn
 - [x] Security patch for found vulnerabilities
 - [x] New version of gameplay for all Stages
+- [x] Migrate to TypeScript and write finish tests
 - [ ] Create Logic and Styling for Stage 4
 - [ ] Create Logic and Styling for Stage 5
 - [ ] Implement Storybook and export/import all components
-- [ ] Migrate to TypeScript and write finish tests
+- [ ] Write/Finish tests

@@ -10,15 +10,16 @@
     "@types/node": "^16.11.32",
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
+    "aphrodite": "^2.4.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-router-dom": "^6.3.0",
     "react-countdown": "2.2.0",
-    "react-scripts": "5.0.1",
+    "react-dom": "^18.1.0",
     "react-icons": "^4.3.1",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
     "react-toastify": "7.0.4",
-    "typescript": "^4.6.4",
-    "aphrodite": "^2.4.0"
+    "@tippyjs/react": "^4.2.6",
+    "typescript": "^4.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
