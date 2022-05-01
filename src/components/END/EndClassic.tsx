@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Three = () => {
+const EndClassic = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
   const routeChange = () => {
@@ -128,4 +128,4 @@ const Three = () => {
   );
 };
 
-export default React.memo(Three);
+export default React.memo(EndClassic);
