@@ -7,7 +7,7 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useLock } from "../../utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
-import logo from "../logo.svg";
+import logo from "../../logo.svg";
 
 const styles = StyleSheet.create({
   grayButton: {
