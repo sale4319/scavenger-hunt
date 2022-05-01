@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Fun project to try out!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The idea
 
-## Available Scripts
+This is an interactive web application which is designed to limit users to doing things in certain way while preventing them to skip any steps. You should be aware that confusing and annoying user experience is **intended** and not a design flaw. Frustration is part of the game just as much as it is part of programming.
 
-In the project directory, you can run:
+## Gameplay
 
-### `npm start`
+Since the game is targeting people who are learning computer science it is highly encouraged to use any developer tools and techniques to find the hidden elements of the game. Best advice I can give you is to use inspect element and all browser functionality it has to offer, and to practice persistence at solving the task at hand. Further development of the game will focus more on actual debugging skills and computer science knowledge.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Running the project locally
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+In case you would like to try it out locally, you will need to make PrivateRoutes.js file in your source folder and set up your routes there, or just 'fix' App.js and hardcode the url parameters in `<Router>`.
 
-### `npm test`
+When this issue is dealt with your project will start with `yarn start` command.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Development path
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [x] Setup Router, PrivateRoutes and Navigation
+- [x] Create persistent countdown timer, Logic, and Styling for Level 1
+- [x] Create Logic and Styling for Stage 2
+- [x] Create Logic and Styling for Stage 3
+- [x] Restructure the project to have better code quality and architecture
+- [x] Migrate CSS to JSS and change package manager to yarn
+- [x] Security patch for found vulnerabilities
+- [x] New version of gameplay for all Stages
+- [ ] Create Logic and Styling for Stage 4
+- [ ] Create Logic and Styling for Stage 5
+- [ ] Implement Storybook and export/import all components
+- [ ] Migrate to TypeScript and write finish tests
