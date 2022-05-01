@@ -18,8 +18,12 @@ export const EndClassicMessages = {
 };
 
 export const PromptMessages = {
-  PASS: "Maybe it works afterall, who knew...",
+  PASS: "You just had to click it...",
   DENY: "Not this time! Did you seriously think it will work? You are locked here until you find a way to continue.",
   THANKS: "Thank you",
   END: "You are not going anywhere until you press like!",
+};
+
+export const TooltipMessages = {
+  START_HINT: "Button red? It is locked.",
 };

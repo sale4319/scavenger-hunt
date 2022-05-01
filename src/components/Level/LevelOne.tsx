@@ -34,15 +34,16 @@ const styles = StyleSheet.create({
   },
 
   greenButton: {
-    background: "linear-gradient(#eee, #333)",
+    background: "linear-gradient(#98fe00, #333)",
     borderStyle: "solid",
+    borderColor: "#adff2f",
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
     color: "white",
     ":hover": {
-      background: "linear-gradient(#adff2f, #333)",
-      borderColor: "#adff2f",
+      background: "linear-gradient(#333, #98fe00)",
+      borderColor: "#cbf094",
     },
   },
 });
@@ -67,8 +68,7 @@ export const LevelOne = () => {
         className={css(styles.unlockButton)}
         onClick={handleUnlockNavigation}
       >
-        {" "}
-        {LevelOneMessages.UNLOCK}{" "}
+        {LevelOneMessages.UNLOCK}
       </button>
 
       <h3>{LevelOneMessages.HINT}</h3>
@@ -79,8 +79,7 @@ export const LevelOne = () => {
         )}
         onClick={routeChange}
       >
-        {" "}
-        {LevelOneMessages.CONTINUE}{" "}
+        {LevelOneMessages.CONTINUE}
       </button>
     </div>
   );

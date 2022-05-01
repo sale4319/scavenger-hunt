@@ -1,11 +1,11 @@
 import React, { useState, useEffect, FC } from "react";
 import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
-import { StyleSheet, css } from "aphrodite";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
-import { useUnlock } from "../../utils";
+import Tippy from "@tippyjs/react";
+import { StyleSheet, css } from "aphrodite";
 import { PrivateRoutes } from "../../PrivateRoutes";
-import { StartTimerMessages, PromptMessages } from "../../Messages";
+import { StartTimerMessages, TooltipMessages } from "../../Messages";
 
 const styles = StyleSheet.create({
   timeCounter: {
@@ -15,31 +15,59 @@ const styles = StyleSheet.create({
 
   questionIcon: {
     color: "#61dafb",
+    outline: "none",
+  },
+
+  questionButton: {
+    background: "transparent",
+    padding: "0px",
+    border: "none",
+  },
+
+  questionTooltip: {
+    backgroundColor: "#61dafb",
+    color: "#fff",
+    textAlign: "center",
+    padding: "8px",
+    borderRadius: "6px",
+
+    "::after": {
+      content: '" "',
+      position: "absolute",
+      top: "100%",
+      left: "50%",
+      marginLeft: " -5px",
+      borderWidth: "5px",
+      borderStyle: "solid",
+      borderColor: "#61dafb transparent transparent transparent",
+    },
   },
 
   redButton: {
-    background: "linear-gradient(#eee, #333)",
+    background: "linear-gradient(#ff0000, #333)",
     borderStyle: "solid",
+    borderColor: "#ff0000",
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
     color: "white",
     ":hover": {
-      background: "linear-gradient(#ff0000, #333)",
-      borderColor: "#ff0000",
+      background: "linear-gradient(#333, #ff0000)",
+      borderColor: "#fb5d5d",
     },
   },
 
   greenButton: {
-    background: "linear-gradient(#eee, #333)",
+    background: "linear-gradient(#98fe00, #333)",
     borderStyle: "solid",
+    borderColor: "#adff2f",
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
     color: "white",
     ":hover": {
-      background: "linear-gradient(#adff2f, #333)",
-      borderColor: "#adff2f",
+      background: "linear-gradient(#333, #98fe00)",
+      borderColor: "#cbf094",
     },
   },
 });
@@ -76,8 +104,6 @@ const StartTimer = () => {
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_TWO}`);
   };
-
-  useUnlock(`${PromptMessages.PASS}`, true);
 
   const [enableButton, setEnableButton] = useState(true);
 
@@ -123,12 +149,20 @@ const StartTimer = () => {
           }}
         />
       </span>
+
       <p>
         {StartTimerMessages.HINT}
-        <BsFillPatchQuestionFill
-          onClick={handleEnable}
-          className={css(styles.questionIcon)}
-        />
+        <Tippy
+          className={css(styles.questionTooltip)}
+          content={TooltipMessages.START_HINT}
+        >
+          <button className={css(styles.questionButton)} onClick={handleEnable}>
+            <BsFillPatchQuestionFill
+              size={30}
+              className={css(styles.questionIcon)}
+            />
+          </button>
+        </Tippy>
       </p>
       {enableButton ? (
         <button className={css(styles.redButton)} onClick={handleEnable}>

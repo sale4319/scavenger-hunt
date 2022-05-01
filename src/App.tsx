@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { StyleSheet, css } from "aphrodite";
 import { ToastContainer } from "react-toastify";
+import { StyleSheet, css } from "aphrodite";
 import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
 import EndClassic from "./components/End/EndClassic";
