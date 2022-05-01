@@ -3,7 +3,7 @@ import { StyleSheet, css } from "aphrodite";
 import { ToastContainer } from "react-toastify";
 import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
-import EndClassic from "./components/END/EndClassic";
+import EndClassic from "./components/End/EndClassic";
 import { PrivateRoutes } from "./PrivateRoutes";
 import "react-toastify/dist/ReactToastify.css";
 
