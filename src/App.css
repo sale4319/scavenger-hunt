@@ -10,6 +10,11 @@
   color: white;
 }
 
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
 .one-button {
   background-color: transparent;
   color: transparent;
@@ -22,13 +27,40 @@
   background-color: #272727;
 }
 
-.way-button {
-  background-color: #535353;
+.two-button {
+  background-color: transparent;
+  color: white;
+  border: none;
   border-radius: 9px;
   cursor: pointer;
   padding: 3px;
+}
+.two-button:hover {
+  background-color: #535353;
+}
+
+.three-button {
+  background-color: #535353;
+  border-radius: 9px;
+  cursor: pointer;
+  padding: 5px;
   color: white;
 }
-.way-button:hover {
+.three-button:hover {
   background-color: #272727;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.footer-link {
+  color: transparent;
+}
+
+.footer-link:hover {
+  color: #535353;
 }
