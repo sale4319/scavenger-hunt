@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FC } from "react";
 import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
-import { PrivateRoutes } from "./PrivateRoutes";
+import { PrivateRoutes } from "../PrivateRoutes";
 
 const Completionist = () => <span>You are good to go!</span>;
 
@@ -26,7 +26,7 @@ const renderer: FC<Props> = ({ hours, minutes, seconds, completed }) => {
 
 let getLocalStorageValue = (s: any) => localStorage.getItem(s);
 
-const MyTimer = () => {
+const Three = () => {
   const [data, setData] = useState(
     { date: Date.now(), delay: 86400000 } //Milliseconds
   );
@@ -81,9 +81,7 @@ const MyTimer = () => {
           }}
         />
       </span>
-      <p>
-        {"If you if you manage to use this button it will show you the way"}
-      </p>
+      <p>{"If you manage to use this button it will show you the way"}</p>
       {enable ? (
         <button className="three-button" onClick={handleEnable}>
           The Way
@@ -97,4 +95,4 @@ const MyTimer = () => {
   );
 };
 
-export default MyTimer;
+export default Three;
