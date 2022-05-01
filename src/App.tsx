@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { StyleSheet, css } from "aphrodite";
 import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
+import { LevelTwo } from "./components/Level/LevelTwo";
 import EndClassic from "./components/End/EndClassic";
 import { PrivateRoutes } from "./PrivateRoutes";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,9 +27,16 @@ const App = () => {
     <div className={css(styles.app)}>
       <Router>
         <Routes>
-          <Route path={PrivateRoutes.PARAM_ONE} element={<StartTimer />} />
-          <Route path={PrivateRoutes.PARAM_TWO} element={<LevelOne />} />
-          <Route path={PrivateRoutes.PARAM_THREE} element={<EndClassic />} />
+          <Route
+            path={PrivateRoutes.PARAM_START_TIMER}
+            element={<StartTimer />}
+          />
+          <Route path={PrivateRoutes.PARAM_LEVEL_ONE} element={<LevelOne />} />
+          <Route path={PrivateRoutes.PARAM_LEVEL_TWO} element={<LevelTwo />} />
+          <Route
+            path={PrivateRoutes.PARAM_END_CLASSIC}
+            element={<EndClassic />}
+          />
         </Routes>
       </Router>
 

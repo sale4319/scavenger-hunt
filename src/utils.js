@@ -23,12 +23,9 @@ export function useBlocker(blocker, when = true) {
 }
 
 export function useLock(message, when = true) {
-  const blocker = React.useCallback(
-    (tx) => {
-      if (window.confirm(message)) tx.confirm();
-    },
-    [message]
-  );
+  const blocker = React.useCallback(() => {
+    if (window.confirm(message));
+  }, [message]);
 
   useBlocker(blocker, when);
 }

@@ -5,11 +5,11 @@ import { BsFillPatchQuestionFill } from "react-icons/bs";
 import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
 import { PrivateRoutes } from "../../PrivateRoutes";
-import { useUnlock } from "../../utils";
+//import { useUnlock } from "../../utils";
 import {
   StartTimerMessages,
   TooltipMessages,
-  PromptMessages,
+  // PromptMessages,
 } from "../../Messages";
 
 const styles = StyleSheet.create({
@@ -107,12 +107,14 @@ const StartTimer = () => {
   const wantedDelay = 86400000; //Milliseconds
   const navigate = useNavigate();
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_TWO}`);
+    navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
   };
 
   const [enableButton, setEnableButton] = useState(true);
 
-  useUnlock(`${PromptMessages.START}`, !enableButton);
+  /* I will disable this prompt and reserve it to annoy people
+  useUnlock(`${PromptMessages.PASS}`, !enableButton);
+  */
 
   const handleEnable = () => {
     setEnableButton(false);
