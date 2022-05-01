@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MyTimer from "./MyTimer";
-import Way from "./Way";
+import { One } from "./One";
+import { Two } from "./Two";
+import { PrivateRoutes } from "./PrivateRoutes";
 import "./App.css";
 
 function App() {
@@ -10,8 +12,12 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<MyTimer expiryTimestamp={time} />} />
-          <Route path="/way" element={<Way />} />
+          <Route
+            path={PrivateRoutes.PARAM_THREE}
+            element={<MyTimer expiryTimestamp={time} />}
+          />
+          <Route path={PrivateRoutes.PARAM_ONE} element={<One />} />
+          <Route path={PrivateRoutes.PARAM_TWO} element={<Two />} />
         </Routes>
       </Router>
     </div>
