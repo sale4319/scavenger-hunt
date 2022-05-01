@@ -58,15 +58,15 @@ const One = () => {
     { date: Date.now(), delay: 86400000 } //Milliseconds
   );
   const wantedDelay = 86400000; //Milliseconds
-
   const navigate = useNavigate();
-  const [enable, setEnable] = useState(true);
-
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_TWO}`);
   };
+
+  const [enableButton, setEnableButton] = useState(true);
+
   const handleEnable = () => {
-    setEnable(false);
+    setEnableButton(false);
   };
 
   useEffect(() => {
@@ -114,7 +114,7 @@ const One = () => {
           className={css(styles.iconStyle)}
         />
       </p>
-      {enable ? (
+      {enableButton ? (
         <button className={css(styles.oneButton)} onClick={handleEnable}>
           {MessageOne.BUTTON}
         </button>
