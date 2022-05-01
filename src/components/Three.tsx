@@ -4,12 +4,28 @@ import { SiGithub } from "react-icons/si";
 import { toast } from "react-toastify";
 import { StyleSheet, css } from "aphrodite";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { useLock } from "../utils";
 import { PrivateRoutes } from "../PrivateRoutes";
 import { MessageThree, PromptMessage } from "../Messages";
 import logo from "../logo.svg";
 
 const styles = StyleSheet.create({
-  threeButton: {
+  grayButton: {
+    backgroundColor: "transparent",
+    color: "white",
+    border: "none",
+    borderRadius: "80px",
+    cursor: "pointer",
+    padding: "40px",
+
+    ":hover": {
+      background: "linear-gradient(#808080, #a1a1a1)",
+    },
+
+    "::selection": { background: "transparent" },
+  },
+
+  colorfulButton: {
     backgroundColor: "transparent",
     color: "white",
     border: "none",
@@ -49,8 +65,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Three = () => {
+const Three = () => {
   const navigate = useNavigate();
+  const [unLockNavigation, setUnlockNavigation] = useState(true);
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_ONE}`);
   };
@@ -63,24 +80,36 @@ export const Three = () => {
     }
   });
 
+  useLock(`${PromptMessage.END}`, unLockNavigation);
+
+  const handleUnlockNavigation = () => {
+    setToggleIcon(!toggleIcon);
+    setUnlockNavigation(false);
+  };
+
   return (
     <>
       <h1 className={css(styles.title)}>{MessageThree.CONGRATS}</h1>
       {toggleIcon ? (
         <AiOutlineHeart
-          onClick={() => setToggleIcon(!toggleIcon)}
+          onClick={handleUnlockNavigation}
           size={70}
           className={css(styles.heartIcon)}
         />
       ) : (
         <AiFillHeart
-          onClick={() => setToggleIcon(!toggleIcon)}
+          onClick={handleUnlockNavigation}
           size={70}
           className={css(styles.heartIcon)}
         />
       )}
       <div>
-        <button className={css(styles.threeButton)} onClick={routeChange}>
+        <button
+          className={css(
+            toggleIcon ? styles.grayButton : styles.colorfulButton
+          )}
+          onClick={routeChange}
+        >
           <img src={logo} className={css(styles.appLogo)} alt="logo" /> <br />
           {MessageThree.GIFT}
         </button>
@@ -98,3 +127,5 @@ export const Three = () => {
     </>
   );
 };
+
+export default React.memo(Three);
