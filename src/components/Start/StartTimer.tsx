@@ -5,7 +5,12 @@ import { BsFillPatchQuestionFill } from "react-icons/bs";
 import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
 import { PrivateRoutes } from "../../PrivateRoutes";
-import { StartTimerMessages, TooltipMessages } from "../../Messages";
+import { useUnlock } from "../../utils";
+import {
+  StartTimerMessages,
+  TooltipMessages,
+  PromptMessages,
+} from "../../Messages";
 
 const styles = StyleSheet.create({
   timeCounter: {
@@ -106,6 +111,8 @@ const StartTimer = () => {
   };
 
   const [enableButton, setEnableButton] = useState(true);
+
+  useUnlock(`${PromptMessages.START}`, !enableButton);
 
   const handleEnable = () => {
     setEnableButton(false);
