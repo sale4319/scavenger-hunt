@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
+import { ToastContainer } from "react-toastify";
 import One from "./components/One";
 import { Two } from "./components/Two";
 import Three from "./components/Three";
 import { PrivateRoutes } from "./PrivateRoutes";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const styles = StyleSheet.create({

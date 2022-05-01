@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     color: "#61dafb",
   },
 
-  oneButton: {
+  redButton: {
     background: "linear-gradient(#eee, #333)",
     borderStyle: "solid",
     borderRadius: "9px",
@@ -25,8 +25,21 @@ const styles = StyleSheet.create({
     padding: "8px",
     color: "white",
     ":hover": {
-      background: "linear-gradient(#61dafb, #333)",
-      borderColor: "#61dafb",
+      background: "linear-gradient(#ff0000, #333)",
+      borderColor: "#ff0000",
+    },
+  },
+
+  greenButton: {
+    background: "linear-gradient(#eee, #333)",
+    borderStyle: "solid",
+    borderRadius: "9px",
+    cursor: "pointer",
+    padding: "8px",
+    color: "white",
+    ":hover": {
+      background: "linear-gradient(#adff2f, #333)",
+      borderColor: "#adff2f",
     },
   },
 });
@@ -118,11 +131,11 @@ const One = () => {
         />
       </p>
       {enableButton ? (
-        <button className={css(styles.oneButton)} onClick={handleEnable}>
+        <button className={css(styles.redButton)} onClick={handleEnable}>
           {MessageOne.BUTTON}
         </button>
       ) : (
-        <button className={css(styles.oneButton)} onClick={routeChange}>
+        <button className={css(styles.greenButton)} onClick={routeChange}>
           {MessageOne.BUTTON}
         </button>
       )}
