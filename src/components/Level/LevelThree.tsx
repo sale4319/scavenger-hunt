@@ -1,24 +1,35 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
 import { useLock } from "../../util/utils";
+import ValidatedLoginForm from "../../util/LoginMechanism";
 import { PrivateRoutes } from "../../PrivateRoutes";
-import { LevelOneMessages, PromptMessages } from "../../Messages";
+import {
+  LevelTwoMessages,
+  PromptMessages,
+  TooltipMessages,
+} from "../../Messages";
+import "./styles.css";
 
 const styles = StyleSheet.create({
-  unlockButton: {
-    backgroundColor: "transparent",
-    color: "transparent",
-    border: "none",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "3px",
+  questionTooltip: {
+    backgroundColor: "#61dafb",
+    color: "#fff",
+    textAlign: "center",
+    padding: "8px",
+    borderRadius: "6px",
 
-    ":hover": {
-      background: "linear-gradient(#272727, #333)",
+    "::after": {
+      content: '" "',
+      position: "absolute",
+      top: "100%",
+      left: "50%",
+      marginLeft: " -5px",
+      borderWidth: "5px",
+      borderStyle: "solid",
+      borderColor: "#61dafb transparent transparent transparent",
     },
-
-    "::selection": { background: "transparent" },
   },
   redButton: {
     background: "linear-gradient(#eee, #333)",
@@ -31,6 +42,8 @@ const styles = StyleSheet.create({
       background: "linear-gradient(#ff0000, #333)",
       borderColor: "#ff0000",
     },
+
+    "::selection": { background: "transparent" },
   },
 
   greenButton: {
@@ -45,18 +58,20 @@ const styles = StyleSheet.create({
       background: "linear-gradient(#333, #98fe00)",
       borderColor: "#cbf094",
     },
+
+    "::selection": { background: "transparent" },
   },
 });
 
-export const LevelOne = () => {
+export const LevelThree = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_LEVEL_TWO}`);
+    navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
   };
 
-  useLock(`${PromptMessages.DENY}`, unLockNavigation);
+  useLock(`${PromptMessages.DEFAULT}`, unLockNavigation);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
@@ -65,22 +80,17 @@ export const LevelOne = () => {
   return (
     <div>
       <button
-        className={css(styles.unlockButton)}
-        onClick={handleUnlockNavigation}
-      >
-        {LevelOneMessages.UNLOCK}
-      </button>
-
-      <h3>{LevelOneMessages.HINT}</h3>
-
-      <button
         className={css(
           unLockNavigation ? styles.redButton : styles.greenButton
         )}
         onClick={routeChange}
       >
-        {LevelOneMessages.CONTINUE}
+        {LevelTwoMessages.CONTINUE}
       </button>
+      <h3>{LevelTwoMessages.HINT}</h3>
+      <div>
+        <ValidatedLoginForm />
+      </div>
     </div>
   );
 };

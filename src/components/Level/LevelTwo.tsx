@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
-import { useLock } from "../../utils";
+import { useLock } from "../../util/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import {
   LevelTwoMessages,
@@ -75,10 +75,10 @@ export const LevelTwo = () => {
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
+    navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
   };
 
-  useLock(`${PromptMessages.DENY}`, unLockNavigation);
+  useLock(`${PromptMessages.DEFAULT}`, unLockNavigation);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
