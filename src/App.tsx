@@ -7,6 +7,7 @@ import { LevelTwo } from "./components/Level/LevelTwo";
 import { LevelThree } from "./components/Level/LevelThree";
 import EndClassic from "./components/End/EndClassic";
 import { PrivateRoutes } from "./PrivateRoutes";
+
 import "react-toastify/dist/ReactToastify.css";
 
 const styles = StyleSheet.create({
