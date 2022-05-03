@@ -12,7 +12,7 @@ export const LevelOneMessages = {
 };
 
 export const LevelTwoMessages = {
-  HINT: "You will have to be a real programmer to solve this one...",
+  HINT: "You must answer questions below correctly to pass. First question you will have to guess, second one you will have to find...",
   CONTINUE: "PASS",
 };
 
@@ -34,3 +34,29 @@ export const TooltipMessages = {
   START_HINT: "Button red? It is locked.",
   LEVEL_TWO_CONGRATS: "Good job solving this one!",
 };
+
+export const QuestionFormMessages = {
+  REQUIRED: "No answer provided.",
+  SHORT: "Answer is too short - should be 8 chars minimum.",
+  FIRST_Q_WRONG: "That is not true!",
+  FIRST_Q_PLACEHOLDER: "You can guess",
+  FIRST_Q_LABEL: "Which frontend framwork is the best?",
+  SECOND_Q_WRONG: "That is not correct.",
+  SECOND_Q_PLACEHOLDER: "Write when you find it",
+  SECOND_Q_LABEL:
+    "Somwhere on this webpage there is a secret string hidden. Find it.",
+  SUBMIT_BUTTON: "Submit",
+};
+
+// ON HOLD
+// export const LoginFormMessages = {
+//   REQUIRED: "Required",
+//   PASSWORD_REQUIRED: "No password provided.",
+//   PASSWORD_SHORT: "Password is too short - should be 8 chars minimum.",
+//   PASSWORD_NUMBER: "Password must contain a number.",
+//   EMAIL_PLACEHOLDER: "Enter your email",
+//   PASSWORD_PLACEHOLDER: "Enter your password",
+//   PASSWORD_LABEL: "Password",
+//   EMAIL_LABEL: "Email",
+//   LOGIN_BUTTON: "Login",
+// };
