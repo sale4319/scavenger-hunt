@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
-import { useLock } from "../../utils";
+import { useLockNoPrompt, useLockPrompt } from "../../utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
+import { modes } from "../../flags";
 import { LevelOneMessages, PromptMessages } from "../../Messages";
 
 const styles = StyleSheet.create({
@@ -56,11 +57,15 @@ export const LevelOne = () => {
     navigate(`${PrivateRoutes.PARAM_LEVEL_TWO}`);
   };
 
-  useLock(`${PromptMessages.DENY}`, unLockNavigation);
+  modes.promptMode
+    ? useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation)
+    : useLockNoPrompt(unLockNavigation);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
   };
+
+  const test = process.env.REACT_APP_TEST;
 
   return (
     <div>
@@ -70,9 +75,11 @@ export const LevelOne = () => {
       >
         {LevelOneMessages.UNLOCK}
       </button>
-
-      <h3>{LevelOneMessages.HINT}</h3>
-
+      {test ? (
+        <h3>
+          {LevelOneMessages.HINT} {test}
+        </h3>
+      ) : null}
       <button
         className={css(
           unLockNavigation ? styles.redButton : styles.greenButton
