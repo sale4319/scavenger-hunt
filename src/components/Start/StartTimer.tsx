@@ -5,11 +5,12 @@ import { BsFillPatchQuestionFill } from "react-icons/bs";
 import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
 import { PrivateRoutes } from "../../PrivateRoutes";
-//import { useUnlock } from "../../utils";
+import { useUnlockPrompt } from "../../utils";
+import { modes } from "../../flags";
 import {
   StartTimerMessages,
   TooltipMessages,
-  // PromptMessages,
+  PromptMessages,
 } from "../../Messages";
 
 const styles = StyleSheet.create({
@@ -112,9 +113,7 @@ const StartTimer = () => {
 
   const [enableButton, setEnableButton] = useState(true);
 
-  /* I will disable this prompt and reserve it to annoy people
-  useUnlock(`${PromptMessages.PASS}`, !enableButton);
-  */
+  if (modes.promptMode) useUnlockPrompt(`${PromptMessages.DEFAULT}`, true);
 
   const handleEnable = () => {
     setEnableButton(false);
