@@ -4,8 +4,10 @@ import { StyleSheet, css } from "aphrodite";
 import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
 import { LevelTwo } from "./components/Level/LevelTwo";
+import { LevelThree } from "./components/Level/LevelThree";
 import EndClassic from "./components/End/EndClassic";
 import { PrivateRoutes } from "./PrivateRoutes";
+
 import "react-toastify/dist/ReactToastify.css";
 
 const styles = StyleSheet.create({
@@ -33,6 +35,10 @@ const App = () => {
           />
           <Route path={PrivateRoutes.PARAM_LEVEL_ONE} element={<LevelOne />} />
           <Route path={PrivateRoutes.PARAM_LEVEL_TWO} element={<LevelTwo />} />
+          <Route
+            path={PrivateRoutes.PARAM_LEVEL_THREE}
+            element={<LevelThree />}
+          />
           <Route
             path={PrivateRoutes.PARAM_END_CLASSIC}
             element={<EndClassic />}

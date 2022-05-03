@@ -1,3 +1,3 @@
-export const featFlags = {};
+export const featFlags = { test: true };
 
 export const modes = { promptMode: false };

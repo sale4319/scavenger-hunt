@@ -5,7 +5,7 @@ import { BsFillPatchQuestionFill } from "react-icons/bs";
 import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
 import { PrivateRoutes } from "../../PrivateRoutes";
-import { useUnlockPrompt } from "../../utils";
+import { useUnlockPrompt } from "../../utils/utils";
 import { modes } from "../../flags";
 import {
   StartTimerMessages,

@@ -4,7 +4,7 @@ import { SiGithub } from "react-icons/si";
 import { toast } from "react-toastify";
 import { StyleSheet, css } from "aphrodite";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { useLockNoPrompt } from "../../utils";
+import { useLockNoPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
 import logo from "../../logo.svg";
