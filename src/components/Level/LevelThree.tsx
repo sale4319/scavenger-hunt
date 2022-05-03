@@ -66,7 +66,9 @@ export const LevelThree = () => {
     navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
   };
 
-  useLockNoPrompt(unLockNavigation);
+  modes.promptMode
+    ? useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation)
+    : useLockNoPrompt(unLockNavigation);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);

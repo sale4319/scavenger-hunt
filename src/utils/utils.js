@@ -56,14 +56,11 @@ export function useBlocker(blocker, when = true) {
 }
 
 export function useLockPrompt(message, when = true) {
-  const blocker = React.useCallback(
-    (tx) => {
-      if (window.confirm(message)) tx.retry();
-    },
-    [message]
-  );
+  const blocker = React.useCallback(() => {
+    if (window.confirm(message));
+  }, [message]);
 
-  useUnlocker(blocker, when);
+  useBlocker(blocker, when);
 }
 
 export function useLockNoPrompt(when = true) {
