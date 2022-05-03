@@ -1,7 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
+import Tippy from "@tippyjs/react";
+import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { StyleSheet, css } from "aphrodite";
-import { QuestionFormMessages } from "../Messages";
+import { QuestionFormMessages, TooltipMessages } from "../Messages";
 import { SecretAnswers } from "../PrivateRoutes";
 
 const styles = StyleSheet.create({
@@ -50,11 +52,34 @@ const styles = StyleSheet.create({
     },
   },
 
-  inputFeedback: {
-    color: "rgb(235, 54, 54)",
-    marginTop: "-15px",
-    fontSize: "14px",
-    marginbottom: "20px",
+  questionIcon: {
+    color: "#61dafb",
+    outline: "none",
+  },
+
+  questionButton: {
+    background: "transparent",
+    padding: "0px",
+    border: "none",
+  },
+
+  questionTooltip: {
+    backgroundColor: "#61dafb",
+    color: "#fff",
+    textAlign: "center",
+    padding: "8px",
+    borderRadius: "6px",
+
+    "::after": {
+      content: '" "',
+      position: "absolute",
+      top: "100%",
+      left: "50%",
+      marginLeft: " -5px",
+      borderWidth: "5px",
+      borderStyle: "solid",
+      borderColor: "#61dafb transparent transparent transparent",
+    },
   },
 
   formRow: {
@@ -181,6 +206,17 @@ const Form = ({ setUnlockNavigation }) => {
             htmlFor="answerOne"
           >
             {QuestionFormMessages.FIRST_Q_LABEL}
+            <Tippy
+              className={css(styles.questionTooltip)}
+              content={TooltipMessages.FIRST_Q_HINT}
+            >
+              <button className={css(styles.questionButton)}>
+                <BsFillPatchQuestionFill
+                  size={25}
+                  className={css(styles.questionIcon)}
+                />
+              </button>
+            </Tippy>
           </label>
           <input
             placeholder={QuestionFormMessages.FIRST_Q_PLACEHOLDER}
@@ -207,6 +243,17 @@ const Form = ({ setUnlockNavigation }) => {
             htmlFor="answerTwo"
           >
             {QuestionFormMessages.SECOND_Q_LABEL}
+            <Tippy
+              className={css(styles.questionTooltip)}
+              content={TooltipMessages.SECOND_Q_HINT}
+            >
+              <button className={css(styles.questionButton)}>
+                <BsFillPatchQuestionFill
+                  size={25}
+                  className={css(styles.questionIcon)}
+                />
+              </button>
+            </Tippy>
           </label>
           <input
             placeholder={QuestionFormMessages.SECOND_Q_PLACEHOLDER}

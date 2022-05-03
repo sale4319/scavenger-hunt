@@ -38,20 +38,21 @@ export const PromptMessages = {
 export const TooltipMessages = {
   START_HINT: "Button red? It is locked.",
   LEVEL_TWO_CONGRATS: "Good job solving this one!",
+  FIRST_Q_HINT: "Come on, you know this.",
+  SECOND_Q_HINT: "Best way to find it is to use inspect element. ",
 };
 
 export const QuestionFormMessages = {
   REQUIRED: "No answer provided.",
   SHORT: "Answer is too short - should be 4 chars minimum.",
   WOW: "Wow! I am impressed, good job passing even if you hacked it.",
+  SUBMIT_BUTTON: "Submit",
   FIRST_Q_WRONG: "That is not true!",
   FIRST_Q_PLACEHOLDER: "You can guess",
-  FIRST_Q_LABEL: "Which frontend framwork is the best?",
+  FIRST_Q_LABEL: "Which frontend framwork is the best ",
   SECOND_Q_WRONG: "That is not correct.",
   SECOND_Q_PLACEHOLDER: "Write when you find it",
-  SECOND_Q_LABEL:
-    "Somwhere on this webpage there is a secret string hidden. Find it.",
-  SUBMIT_BUTTON: "Submit",
+  SECOND_Q_LABEL: "There is a hidden string in this website. Can you find it ",
 };
 
 // ON HOLD
