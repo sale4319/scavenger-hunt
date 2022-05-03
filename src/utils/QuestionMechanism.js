@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-//TODO: change form style and validation, organize messages, change input fields
 import React, { useState, useEffect } from "react";
 import { StyleSheet, css } from "aphrodite";
+import { QuestionFormMessages } from "../Messages";
+import { SecretAnswers } from "../PrivateRoutes";
 
 const styles = StyleSheet.create({
-  container: {
+  form: {
     backgroundColor: "#282c34",
     marginTop: "10px",
     textAlign: "center",
@@ -17,8 +18,8 @@ const styles = StyleSheet.create({
   },
 
   successMsg: {
-    color: "#1d3557",
-    background: "#8fffab",
+    color: "white",
+    background: "#61dafb",
     display: "inline-block",
     width: "100%",
     textAlign: "center",
@@ -29,14 +30,8 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
 
-  h1: {
-    fontSize: "2rem",
-    color: "#white",
-    marginBottom: "2rem",
-  },
-
   label__input: {
-    color: "#white",
+    color: "white",
   },
 
   label: {
@@ -45,11 +40,21 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    border: "2px solid rgba($primary-color, 0.8)",
-    borderRadius: "4px",
-    padding: "0.5rem 1rem",
-    paddingLeft: "1rem",
-    fontSize: "1rem",
+    marginBottom: "20px",
+    padding: "10px",
+    borderRadius: "3px",
+    border: "1px solid #777",
+
+    ":focus": {
+      outlineColor: "#61dafb",
+    },
+  },
+
+  inputFeedback: {
+    color: "rgb(235, 54, 54)",
+    marginTop: "-15px",
+    fontSize: "14px",
+    marginbottom: "20px",
   },
 
   formRow: {
@@ -59,23 +64,31 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    color: "white",
-    width: "100%",
-    fontSize: "1.4rem",
-    background: "#1d3557",
-    borderRadius: "4px",
-    border: "none",
+    background: "linear-gradient(#61dafb, #333)",
+    borderStyle: "solid",
+    borderColor: "#61dafb",
+    borderRadius: "9px",
     cursor: "pointer",
-    padding: " 0.4rem 1.2rem",
-    marginTop: "0.5rem",
-
+    padding: "8px",
+    color: "white",
     ":hover": {
-      background: "rgba($primary-color, 0.8)",
+      background: "linear-gradient(#333, #61dafb)",
+      borderColor: "#61dafb",
     },
+
+    "::selection": { background: "transparent" },
   },
 
   input_error: {
-    borderColor: "#e63946",
+    marginBottom: "20px",
+    padding: "10px",
+    borderRadius: "3px",
+    border: "1px solid #777",
+    borderColor: "red",
+
+    ":focus": {
+      outlineColor: "red",
+    },
   },
 
   error: {
@@ -91,10 +104,11 @@ const styles = StyleSheet.create({
 });
 
 const Form = ({ setUnlockNavigation }) => {
-  const intialValues = { email: "", password: "" };
+  const intialValues = { answerOne: "", answerTwo: "" };
 
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
+  const [touched, setTouched] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submit = () => {
@@ -107,30 +121,42 @@ const Form = ({ setUnlockNavigation }) => {
     setFormValues({ ...formValues, [name]: value });
   };
 
+  const handleOnBlur = (e) => {
+    setTouched(validate(formValues));
+    setFormErrors(validate(formValues));
+  };
+
   //form submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
+    setTouched(validate(formValues));
     setIsSubmitting(true);
   };
 
   //form validation handler
   const validate = (values) => {
     let errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const a1 = `${SecretAnswers.ANSWER_ONE}`;
+    const a2 = `${SecretAnswers.ANSWER_TWO}`;
+    const regex1 = RegExp("^$|^" + a1 + "|^([FG]?\\d{5}|\\d{5}[AB])$");
+    const regex2 = RegExp("^$|^" + a2 + "|^([FG]?\\d{5}|\\d{5}[AB])$");
 
-    if (!values.email) {
-      errors.email = "Cannot be blank";
-    } else if (!regex.test(values.email)) {
-      errors.email = "Invalid email format";
+    if (!values.answerOne) {
+      errors.answerOne = `${QuestionFormMessages.REQUIRED}`;
+    } else if (values.answerOne.length < 4) {
+      errors.answerOne = `${QuestionFormMessages.SHORT}`;
+    } else if (!regex1.test(values.answerOne)) {
+      errors.answerOne = `${QuestionFormMessages.FIRST_Q_WRONG}`;
     }
 
-    if (!values.password) {
-      errors.password = "Cannot be blank";
-    } else if (values.password.length < 4) {
-      errors.password = "Password must be more than 4 characters";
+    if (!values.answerTwo) {
+      errors.answerTwo = `${QuestionFormMessages.REQUIRED}`;
+    } else if (values.answerTwo.length < 4) {
+      errors.answerTwo = `${QuestionFormMessages.SHORT}`;
+    } else if (!regex2.test(values.answerTwo)) {
+      errors.answerOne = `${QuestionFormMessages.SECOND_Q_WRONG}`;
     }
-
     return errors;
   };
 
@@ -142,61 +168,69 @@ const Form = ({ setUnlockNavigation }) => {
   }, [formErrors]);
 
   return (
-    <div className={css(styles.container)}>
+    <div className={css(styles.form)}>
       {Object.keys(formErrors).length === 0 && isSubmitting && (
         <span className={css(styles.successMsg)}>
-          Form submitted successfully
+          {QuestionFormMessages.WOW}
         </span>
       )}
       <form onSubmit={handleSubmit} noValidate>
         <div className={css(styles.formRow)}>
           <label
-            className={css(styles.label, styles.label_input)}
-            htmlFor="email"
+            className={css(styles.label, styles.label__input)}
+            htmlFor="answerOne"
           >
-            Email
+            {QuestionFormMessages.FIRST_Q_LABEL}
           </label>
           <input
-            type="email"
-            name="email"
-            id="email"
-            value={formValues.email}
+            placeholder={QuestionFormMessages.FIRST_Q_PLACEHOLDER}
+            type="text"
+            name="answerOne"
+            id="answerOne"
+            value={formValues.answerOne}
+            onBlur={handleOnBlur}
             onChange={handleChange}
             className={css(
-              styles.input,
-              formErrors.email && styles.input_error
+              touched.answerOne ? styles.input_error : styles.input
             )}
           />
-          {formErrors.email && (
-            <span className={css(styles.error)}>{formErrors.email}</span>
+          {formErrors.answerOne && touched.answerOne && (
+            <span className={css(styles.error, styles.inputFeedback)}>
+              {formErrors.answerOne}
+            </span>
           )}
         </div>
 
         <div className={css(styles.formRow)}>
           <label
-            className={css(styles.label, styles.label_input)}
-            htmlFor="password"
+            className={css(styles.label, styles.label__input)}
+            htmlFor="answerTwo"
           >
-            Password
+            {QuestionFormMessages.SECOND_Q_LABEL}
           </label>
           <input
-            type="password"
-            name="password"
-            id="password"
-            value={formValues.password}
+            placeholder={QuestionFormMessages.SECOND_Q_PLACEHOLDER}
+            type="text"
+            name="answerTwo"
+            id="answerTwo"
+            value={formValues.answerTwo}
+            onBlur={handleOnBlur}
             onChange={handleChange}
             className={css(
-              styles.input,
-              formErrors.password && styles.input_error
+              formErrors.answerTwo && touched.answerTwo
+                ? styles.input_error
+                : styles.input
             )}
           />
-          {formErrors.password && (
-            <span className={css(styles.error)}>{formErrors.password}</span>
+          {formErrors.answerTwo && touched.answerTwo && (
+            <span className={css(styles.error, styles.inputFeedback)}>
+              {formErrors.answerTwo}
+            </span>
           )}
         </div>
 
         <button className={css(styles.button)} type="submit">
-          Sign In
+          {QuestionFormMessages.SUBMIT_BUTTON}
         </button>
       </form>
     </div>

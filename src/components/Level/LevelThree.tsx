@@ -5,7 +5,7 @@ import { useLockPrompt, useLockNoPrompt } from "../../utils/utils";
 import Form from "../../utils/QuestionMechanism";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
-import { LevelTwoMessages, PromptMessages } from "../../Messages";
+import { LevelThreeMessages, PromptMessages } from "../../Messages";
 
 const styles = StyleSheet.create({
   questionTooltip: {
@@ -76,14 +76,14 @@ export const LevelThree = () => {
 
   return (
     <div>
-      <h3>{LevelTwoMessages.HINT}</h3>
+      <h3>{LevelThreeMessages.HINT}</h3>
       <button
         className={css(
           unLockNavigation ? styles.redButton : styles.greenButton
         )}
         onClick={routeChange}
       >
-        {LevelTwoMessages.CONTINUE}
+        {LevelThreeMessages.CONTINUE}
       </button>
       <div>
         <Form setUnlockNavigation={handleUnlockNavigation} />

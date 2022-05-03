@@ -80,6 +80,8 @@ const styles = StyleSheet.create({
 
 const Completionist = () => <span>You are good to go!</span>;
 
+const twoDigits = (num) => String(num).padStart(2, "0");
+
 type Props = {
   hours: any;
   minutes: any;
@@ -93,7 +95,7 @@ const renderer: FC<Props> = ({ hours, minutes, seconds, completed }) => {
   } else {
     return (
       <span>
-        {hours}:{minutes}:{seconds}
+        {twoDigits(hours)}:{twoDigits(minutes)}:{twoDigits(seconds)}
       </span>
     );
   }

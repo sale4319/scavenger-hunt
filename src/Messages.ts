@@ -12,6 +12,11 @@ export const LevelOneMessages = {
 };
 
 export const LevelTwoMessages = {
+  HINT: "You must be a real programmer to solve this one...",
+  CONTINUE: "PASS",
+};
+
+export const LevelThreeMessages = {
   HINT: "You must answer questions below correctly to pass. First question you will have to guess, second one you will have to find...",
   CONTINUE: "PASS",
 };
@@ -37,7 +42,8 @@ export const TooltipMessages = {
 
 export const QuestionFormMessages = {
   REQUIRED: "No answer provided.",
-  SHORT: "Answer is too short - should be 8 chars minimum.",
+  SHORT: "Answer is too short - should be 4 chars minimum.",
+  WOW: "Wow! I am impressed, good job passing even if you hacked it.",
   FIRST_Q_WRONG: "That is not true!",
   FIRST_Q_PLACEHOLDER: "You can guess",
   FIRST_Q_LABEL: "Which frontend framwork is the best?",
