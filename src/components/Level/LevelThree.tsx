@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
-import { useLock } from "../../util/utils";
-import Form from "../../util/QuestionMechanism";
+import { useLockPrompt, useLockNoPrompt } from "../../utils/utils";
+import Form from "../../utils/QuestionMechanism";
 import { PrivateRoutes } from "../../PrivateRoutes";
+import { modes } from "../../flags";
 import { LevelTwoMessages, PromptMessages } from "../../Messages";
 
 const styles = StyleSheet.create({
@@ -65,7 +66,7 @@ export const LevelThree = () => {
     navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
   };
 
-  useLock(`${PromptMessages.DEFAULT}`, unLockNavigation);
+  useLockNoPrompt(unLockNavigation);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);

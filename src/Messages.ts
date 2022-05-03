@@ -27,7 +27,7 @@ export const PromptMessages = {
   THANKS: "Thank you",
   END: "You are not going anywhere until you press like!",
   PASS: "Good job! You should get used to these prompt messages.",
-  DEFAULT: "Nobody reads prompt messages...",
+  DEFAULT: "Nobody reads prompt messages.",
 };
 
 export const TooltipMessages = {

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
-import { useLock } from "../../util/utils";
+import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
+import { modes } from "../../flags";
 import {
   LevelTwoMessages,
   PromptMessages,
@@ -78,7 +79,9 @@ export const LevelTwo = () => {
     navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
   };
 
-  useLock(`${PromptMessages.DEFAULT}`, unLockNavigation);
+  modes.promptMode
+    ? useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation)
+    : useLockNoPrompt(unLockNavigation);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
@@ -95,9 +98,7 @@ export const LevelTwo = () => {
           onClick={handleUnlockNavigation}
         ></button>
       </Tippy>
-
       <h3>{LevelTwoMessages.HINT}</h3>
-
       <button
         className={css(
           unLockNavigation ? styles.redButton : styles.greenButton
