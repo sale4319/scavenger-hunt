@@ -102,8 +102,13 @@ const styles = StyleSheet.create({
     padding: "8px",
     color: "white",
     ":hover": {
+      zIndex: 1,
       background: "linear-gradient(#333, #61dafb)",
       borderColor: "#61dafb",
+      borderRadius: "9px",
+      backgroundColor: "white",
+      boxShadow: "5px 10px 18px #61dafb",
+      outline: "none",
     },
 
     "::selection": { background: "transparent" },
@@ -154,7 +159,6 @@ const Form = ({ setUnlockNavigation }) => {
     console.log(formValues);
   };
 
-  //input change handler
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -172,7 +176,6 @@ const Form = ({ setUnlockNavigation }) => {
     setFormErrors(validate(true));
   };
 
-  //form submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -180,7 +183,6 @@ const Form = ({ setUnlockNavigation }) => {
     setIsSubmitting(true);
   };
 
-  //form validation handler
   const validate = (values) => {
     let errors = {};
     const a1 = `${SecretAnswers.ANSWER_ONE}`;
