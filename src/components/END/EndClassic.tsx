@@ -16,10 +16,15 @@ const styles = StyleSheet.create({
     border: "none",
     borderRadius: "80px",
     cursor: "pointer",
-    padding: "40px",
+    padding: "25px",
 
     ":hover": {
-      background: "linear-gradient(#808080, #a1a1a1)",
+      zIndex: 1,
+      backgroundColor: "red",
+      borderColor: "#cbf094",
+      borderRadius: "80px",
+      boxShadow: "5px 10px 15px 20px red",
+      outline: "none",
     },
 
     "::selection": { background: "transparent" },
@@ -31,10 +36,15 @@ const styles = StyleSheet.create({
     border: "none",
     borderRadius: "80px",
     cursor: "pointer",
-    padding: "40px",
+    padding: "25px",
 
     ":hover": {
-      background: "linear-gradient(#73fb54,#ea54fb, #fbf054, #ea54fb, #73fb54)",
+      background: "#61dafb",
+      zIndex: 1,
+      borderColor: "transparent",
+      borderRadius: "80px",
+      boxShadow: "5px 10px 15px 20px #61dafb",
+      outline: "none",
     },
 
     "::selection": { background: "transparent" },

@@ -5,7 +5,7 @@ import { useLockPrompt, useLockNoPrompt } from "../../utils/utils";
 import Form from "../../utils/QuestionMechanism";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
-import { LevelTwoMessages, PromptMessages } from "../../Messages";
+import { LevelThreeMessages, PromptMessages } from "../../Messages";
 
 const styles = StyleSheet.create({
   questionTooltip: {
@@ -34,8 +34,13 @@ const styles = StyleSheet.create({
     padding: "8px",
     color: "white",
     ":hover": {
-      background: "linear-gradient(#ff0000, #333)",
-      borderColor: "#ff0000",
+      zIndex: 1,
+      background: "linear-gradient(#333, #ff0000)",
+      borderColor: "#fb5d5d",
+      borderRadius: "9px",
+      backgroundColor: "white",
+      boxShadow: "5px 10px 18px red",
+      outline: "none",
     },
 
     "::selection": { background: "transparent" },
@@ -50,8 +55,13 @@ const styles = StyleSheet.create({
     padding: "8px",
     color: "white",
     ":hover": {
+      zIndex: 1,
       background: "linear-gradient(#333, #98fe00)",
       borderColor: "#cbf094",
+      borderRadius: "9px",
+      backgroundColor: "white",
+      boxShadow: "5px 10px 18px #cbf094",
+      outline: "none",
     },
 
     "::selection": { background: "transparent" },
@@ -76,14 +86,14 @@ export const LevelThree = () => {
 
   return (
     <div>
-      <h3>{LevelTwoMessages.HINT}</h3>
+      <h3>{LevelThreeMessages.HINT}</h3>
       <button
         className={css(
           unLockNavigation ? styles.redButton : styles.greenButton
         )}
         onClick={routeChange}
       >
-        {LevelTwoMessages.CONTINUE}
+        {LevelThreeMessages.CONTINUE}
       </button>
       <div>
         <Form setUnlockNavigation={handleUnlockNavigation} />
