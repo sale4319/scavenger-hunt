@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
     padding: "3px",
 
     ":hover": {
-      background: "linear-gradient(#272727, #333)",
+      background: "linear-gradient(#333, #272727, #333)",
     },
 
     "::selection": { background: "transparent" },
   },
 
   redButton: {
-    background: "linear-gradient(#870202, #ff0000, #870202)",
+    background: "linear-gradient(#ff0000, #6f0404, #ff0000)",
     borderStyle: "solid",
     borderColor: "#870202",
     borderRadius: "9px",
@@ -33,11 +33,11 @@ const styles = StyleSheet.create({
 
     ":hover": {
       zIndex: 1,
-      background: "linear-gradient(#ff0000, #6f0404, #ff0000)",
+
+      background: "linear-gradient(#870202, #ff0000, #870202)",
       borderColor: "#870202",
       borderRadius: "9px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px red",
+      boxShadow: "5px 10px 15px red",
       outline: "none",
     },
 
@@ -58,8 +58,7 @@ const styles = StyleSheet.create({
       background: "linear-gradient(#98fe00, #65a800, #98fe00)",
       borderColor: "#65a800",
       borderRadius: "9px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px #cbf094",
+      boxShadow: "5px 10px 15px #cbf094",
       outline: "none",
     },
 

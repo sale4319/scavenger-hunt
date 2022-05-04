@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
       background: "linear-gradient(#ff0000, #6f0404, #ff0000)",
       borderColor: "#870202",
       borderRadius: "9px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px red",
+      boxShadow: "5px 10px 20px red",
       outline: "none",
     },
 
