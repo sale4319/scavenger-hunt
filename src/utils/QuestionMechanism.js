@@ -94,20 +94,42 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    background: "linear-gradient(#61dafb, #333)",
+    background: "linear-gradient(#0097c1, #61dafb, #0097c1)",
     borderStyle: "solid",
-    borderColor: "#61dafb",
+    borderColor: "#0097c1",
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
     color: "white",
     ":hover": {
       zIndex: 1,
-      background: "linear-gradient(#333, #61dafb)",
-      borderColor: "#61dafb",
+      background: "linear-gradient(#61dafb, #0097c1, #61dafb)",
+      borderColor: "#0097c1",
       borderRadius: "9px",
       backgroundColor: "white",
       boxShadow: "5px 10px 18px #61dafb",
+      outline: "none",
+    },
+
+    "::selection": { background: "transparent" },
+  },
+
+  greenButton: {
+    background: "linear-gradient(#61dafb, #0097c1, #61dafb)",
+    borderStyle: "solid",
+    borderColor: "#65a800",
+    borderRadius: "9px",
+    cursor: "pointer",
+    padding: "8px",
+    color: "white",
+
+    ":hover": {
+      zIndex: 1,
+      background: "linear-gradient(#98fe00, #65a800, #98fe00)",
+      borderColor: "#65a800",
+      borderRadius: "9px",
+      backgroundColor: "white",
+      boxShadow: "5px 10px 18px #cbf094",
       outline: "none",
     },
 

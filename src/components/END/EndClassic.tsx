@@ -30,6 +30,28 @@ const styles = StyleSheet.create({
     "::selection": { background: "transparent" },
   },
 
+  redButton: {
+    background: "linear-gradient(#870202, #ff0000, #870202)",
+    borderStyle: "solid",
+    borderColor: "#870202",
+    borderRadius: "9px",
+    cursor: "pointer",
+    padding: "8px",
+    color: "white",
+
+    ":hover": {
+      zIndex: 1,
+      background: "linear-gradient(#ff0000, #6f0404, #ff0000)",
+      borderColor: "#870202",
+      borderRadius: "9px",
+      backgroundColor: "white",
+      boxShadow: "5px 10px 18px red",
+      outline: "none",
+    },
+
+    "::selection": { background: "transparent" },
+  },
+
   colorfulButton: {
     backgroundColor: "transparent",
     color: "white",
@@ -90,7 +112,7 @@ const EndClassic = () => {
     }
   });
 
-  useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation);
+  useLockPrompt(`${PromptMessages.END}`, unLockNavigation);
 
   const handleUnlockNavigation = () => {
     setToggleIcon(!toggleIcon);

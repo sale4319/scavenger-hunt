@@ -21,41 +21,49 @@ const styles = StyleSheet.create({
 
     "::selection": { background: "transparent" },
   },
+
   redButton: {
-    background: "linear-gradient(#eee, #333)",
+    background: "linear-gradient(#870202, #ff0000, #870202)",
     borderStyle: "solid",
+    borderColor: "#870202",
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
     color: "white",
+
     ":hover": {
       zIndex: 1,
-      background: "linear-gradient(#333, #ff0000)",
-      borderColor: "#fb5d5d",
+      background: "linear-gradient(#ff0000, #6f0404, #ff0000)",
+      borderColor: "#870202",
       borderRadius: "9px",
       backgroundColor: "white",
       boxShadow: "5px 10px 18px red",
       outline: "none",
     },
+
+    "::selection": { background: "transparent" },
   },
 
   greenButton: {
-    background: "linear-gradient(#98fe00, #333)",
+    background: "linear-gradient(#65a800, #98fe00, #65a800)",
     borderStyle: "solid",
-    borderColor: "#adff2f",
+    borderColor: "#65a800",
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
     color: "white",
+
     ":hover": {
       zIndex: 1,
-      background: "linear-gradient(#333, #98fe00)",
-      borderColor: "#cbf094",
+      background: "linear-gradient(#98fe00, #65a800, #98fe00)",
+      borderColor: "#65a800",
       borderRadius: "9px",
       backgroundColor: "white",
       boxShadow: "5px 10px 18px #cbf094",
       outline: "none",
     },
+
+    "::selection": { background: "transparent" },
   },
 });
 
