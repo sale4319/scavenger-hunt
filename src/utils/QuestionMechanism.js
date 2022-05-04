@@ -48,7 +48,12 @@ const styles = StyleSheet.create({
     border: "1px solid #777",
 
     ":focus": {
-      outlineColor: "#61dafb",
+      zIndex: 1,
+      borderColor: "transparent",
+      borderRadius: "3px",
+      backgroundColor: "white",
+      boxShadow: "5px 10px 18px #61dafb",
+      outline: "none",
     },
   },
 
@@ -59,7 +64,7 @@ const styles = StyleSheet.create({
 
   questionButton: {
     background: "transparent",
-    padding: "0px",
+    paddingTop: "5px",
     border: "none",
   },
 
@@ -105,20 +110,28 @@ const styles = StyleSheet.create({
   },
 
   input_error: {
-    marginBottom: "20px",
+    marginBottom: "8px",
     padding: "10px",
     borderRadius: "3px",
     border: "1px solid #777",
     borderColor: "red",
 
     ":focus": {
-      outlineColor: "red",
+      zIndex: 1,
+      borderColor: "transparent",
+      borderRadius: "3px",
+      backgroundColor: "white",
+      boxShadow: "5px 10px 18px red",
+      outline: "none",
+    },
+    "::placeholder": {
+      color: "#ff0000",
     },
   },
 
   error: {
-    color: "#e63946",
-    fontSize: "1rem",
+    color: "#ff0000",
+    fontSize: "0.9rem",
     marginTop: "0.3rem",
   },
 
@@ -134,6 +147,7 @@ const Form = ({ setUnlockNavigation }) => {
   const [formValues, setFormValues] = useState(intialValues);
   const [formErrors, setFormErrors] = useState({});
   const [touched, setTouched] = useState({});
+  const [isTouched, setIsTouched] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submit = () => {
@@ -144,11 +158,18 @@ const Form = ({ setUnlockNavigation }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+    setTouched(true);
+    setIsTouched(true);
   };
 
-  const handleOnBlur = (e) => {
+  const handleOnBlur = () => {
     setTouched(validate(formValues));
-    setFormErrors(validate(formValues));
+    setFormErrors(validate(true));
+  };
+
+  const handleOnBlurSeperate = () => {
+    setIsTouched(validate(formValues));
+    setFormErrors(validate(true));
   };
 
   //form submission handler
@@ -180,7 +201,7 @@ const Form = ({ setUnlockNavigation }) => {
     } else if (values.answerTwo.length < 4) {
       errors.answerTwo = `${QuestionFormMessages.SHORT}`;
     } else if (!regex2.test(values.answerTwo)) {
-      errors.answerOne = `${QuestionFormMessages.SECOND_Q_WRONG}`;
+      errors.answerTwo = `${QuestionFormMessages.SECOND_Q_WRONG}`;
     }
     return errors;
   };
@@ -210,12 +231,14 @@ const Form = ({ setUnlockNavigation }) => {
               className={css(styles.questionTooltip)}
               content={TooltipMessages.FIRST_Q_HINT}
             >
-              <button className={css(styles.questionButton)}>
-                <BsFillPatchQuestionFill
-                  size={25}
-                  className={css(styles.questionIcon)}
-                />
-              </button>
+              <i className={css(styles.questionButton)}>
+                <button disabled className={css(styles.questionButton)}>
+                  <BsFillPatchQuestionFill
+                    size={25}
+                    className={css(styles.questionIcon)}
+                  />
+                </button>
+              </i>
             </Tippy>
           </label>
           <input
@@ -231,9 +254,7 @@ const Form = ({ setUnlockNavigation }) => {
             )}
           />
           {formErrors.answerOne && touched.answerOne && (
-            <span className={css(styles.error, styles.inputFeedback)}>
-              {formErrors.answerOne}
-            </span>
+            <span className={css(styles.error)}>{formErrors.answerOne}</span>
           )}
         </div>
 
@@ -247,12 +268,14 @@ const Form = ({ setUnlockNavigation }) => {
               className={css(styles.questionTooltip)}
               content={TooltipMessages.SECOND_Q_HINT}
             >
-              <button className={css(styles.questionButton)}>
-                <BsFillPatchQuestionFill
-                  size={25}
-                  className={css(styles.questionIcon)}
-                />
-              </button>
+              <i className={css(styles.questionButton)}>
+                <button disabled className={css(styles.questionButton)}>
+                  <BsFillPatchQuestionFill
+                    size={25}
+                    className={css(styles.questionIcon)}
+                  />
+                </button>
+              </i>
             </Tippy>
           </label>
           <input
@@ -261,18 +284,14 @@ const Form = ({ setUnlockNavigation }) => {
             name="answerTwo"
             id="answerTwo"
             value={formValues.answerTwo}
-            onBlur={handleOnBlur}
+            onBlur={handleOnBlurSeperate}
             onChange={handleChange}
             className={css(
-              formErrors.answerTwo && touched.answerTwo
-                ? styles.input_error
-                : styles.input
+              isTouched.answerTwo ? styles.input_error : styles.input
             )}
           />
-          {formErrors.answerTwo && touched.answerTwo && (
-            <span className={css(styles.error, styles.inputFeedback)}>
-              {formErrors.answerTwo}
-            </span>
+          {formErrors.answerTwo && isTouched.answerTwo && (
+            <span className={css(styles.error)}>{formErrors.answerTwo}</span>
           )}
         </div>
 

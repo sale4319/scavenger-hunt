@@ -49,9 +49,9 @@ export const QuestionFormMessages = {
   SUBMIT_BUTTON: "Submit",
   FIRST_Q_WRONG: "That is not true!",
   FIRST_Q_PLACEHOLDER: "You can guess",
-  FIRST_Q_LABEL: "Which frontend framwork is the best ",
+  FIRST_Q_LABEL: "Which frontend framework is the best ",
   SECOND_Q_WRONG: "That is not correct.",
-  SECOND_Q_PLACEHOLDER: "Write when you find it",
+  SECOND_Q_PLACEHOLDER: "Write it when you find it",
   SECOND_Q_LABEL: "There is a hidden string in this website. Can you find it ",
 };
 
