@@ -190,16 +190,12 @@ const StartTimer = () => {
           </button>
         </Tippy>
       </p>
-      {enableButton ? (
-        <button className={css(styles.redButton)} onClick={handleEnable}>
-          {StartTimerMessages.BUTTON}
-        </button>
-      ) : (
-        <button className={css(styles.greenButton)} onClick={routeChange}>
-          {StartTimerMessages.BUTTON}
-        </button>
-      )}
-      <Button onClick={handleEnable} primary={true} label="button" />
+      <Button
+        onClick={enableButton ? handleEnable : routeChange}
+        primary={enableButton}
+        size={"small"}
+        label={StartTimerMessages.BUTTON}
+      />
     </div>
   );
 };

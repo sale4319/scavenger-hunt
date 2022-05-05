@@ -1,64 +1,47 @@
 .storybook-button {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-}
-
-/* red-button {
-  background: linear-gradient(red, #870202, red);
   border-style: solid;
-  border-color: #870202;
   border-radius: 9px;
   cursor: pointer;
-  padding: 8px;
+  padding: 3rem;
   color: white;
+}
 
-  ":hover": {
-    zIndex: 1,
-    background: "linear-gradient(#870202, red, #870202)",
-    borderColor: colors.darkRed,
-    borderRadius: "9px",
-    boxShadow: "5px 10px 15px red",
-    outline: "none",
-  },
-
-  "::selection": { background: "transparent" },
-},
-
-greenButton: {
-  background: "linear-gradient(#65a800, #98fe00, #65a800)",
-  borderStyle: "solid",
-  borderColor: colors.darkGreen,
-  borderRadius: "9px",
-  cursor: "pointer",
-  padding: "8px",
-  color: colors.white,
-
-  ":hover": {
-    zIndex: 1,
-    background: "linear-gradient(#98fe00, #65a800, #98fe00)",
-    borderColor: colors.darkGreen,
-    borderRadius: "9px",
-    boxShadow: "5px 10px 15px #cbf094",
-    outline: "none",
-  },
-
-  "::selection": { background: "transparent" },
-}, */
+.storybook-button::selection {
+  background: transparent;
+}
 
 .storybook-button--primary {
   color: white;
-  background-color: #1ea7fd;
+  background: linear-gradient(red, #870202, red);
+  border-color: #870202;
 }
+
+.storybook-button--primary:hover {
+  z-index: 1;
+  background: linear-gradient(#870202, red, #870202);
+  border-color: #870202;
+  border-radius: 9px;
+  box-shadow: 5px 10px 15px red;
+  outline: none;
+}
+
 .storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  color: white;
+  background: linear-gradient(#65a800, #98fe00, #65a800);
+  border-color: #65a800;
 }
+
+.storybook-button--secondary:hover {
+  z-index: 1;
+  background: linear-gradient(#98fe00, #65a800, #98fe00);
+  border-color: #65a800;
+  border-radius: 9px;
+  box-shadow: 5px 10px 15px #98fe00;
+  outline: none;
+}
+
 .storybook-button--small {
   font-size: 12px;
   padding: 10px 16px;
