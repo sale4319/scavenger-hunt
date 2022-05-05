@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
+import { PrimaryButton } from "../../stories/buttons/PrimaryButton/PrimaryButton";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes, featFlags } from "../../flags";
@@ -91,14 +92,13 @@ export const LevelOne = () => {
         {LevelOneMessages.UNLOCK}
       </button>
       {featFlags.test && <h3>{LevelOneMessages.HINT} </h3>}
-      <button
-        className={css(
-          unLockNavigation ? styles.redButton : styles.greenButton
-        )}
+
+      <PrimaryButton
         onClick={routeChange}
-      >
-        {LevelOneMessages.CONTINUE}
-      </button>
+        primary={unLockNavigation}
+        size={"small"}
+        label={LevelOneMessages.CONTINUE}
+      />
     </div>
   );
 };

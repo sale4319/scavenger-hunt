@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
+import { PrimaryButton } from "../../stories/buttons/PrimaryButton/PrimaryButton";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
@@ -111,15 +112,15 @@ export const LevelTwo = () => {
           onClick={handleUnlockNavigation}
         ></button>
       </Tippy>
+
       <h3>{LevelTwoMessages.HINT}</h3>
-      <button
-        className={css(
-          unLockNavigation ? styles.redButton : styles.greenButton
-        )}
+
+      <PrimaryButton
         onClick={routeChange}
-      >
-        {LevelTwoMessages.CONTINUE}
-      </button>
+        primary={unLockNavigation}
+        size={"small"}
+        label={LevelTwoMessages.CONTINUE}
+      />
     </div>
   );
 };

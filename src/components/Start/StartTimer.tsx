@@ -7,13 +7,13 @@ import { StyleSheet, css } from "aphrodite";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { useUnlockPrompt } from "../../utils/utils";
 import { modes } from "../../flags";
+import { PrimaryButton } from "../../stories/buttons/PrimaryButton/PrimaryButton";
 import {
   StartTimerMessages,
   TooltipMessages,
   PromptMessages,
 } from "../../Messages";
 import { colors } from "../../ColourPalette";
-import { Button } from "../../stories/buttons/Button";
 
 const styles = StyleSheet.create({
   timeCounter: {
@@ -49,48 +49,6 @@ const styles = StyleSheet.create({
       borderStyle: "solid",
       borderColor: "#61dafb transparent transparent transparent",
     },
-  },
-
-  redButton: {
-    background: "linear-gradient(red, #870202, red)",
-    borderStyle: "solid",
-    borderColor: colors.darkRed,
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: colors.white,
-
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#870202, red, #870202)",
-      borderColor: colors.darkRed,
-      borderRadius: "9px",
-      boxShadow: "5px 10px 15px red",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-
-  greenButton: {
-    background: "linear-gradient(#65a800, #98fe00, #65a800)",
-    borderStyle: "solid",
-    borderColor: colors.darkGreen,
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: colors.white,
-
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#98fe00, #65a800, #98fe00)",
-      borderColor: colors.darkGreen,
-      borderRadius: "9px",
-      boxShadow: "5px 10px 15px #cbf094",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
   },
 });
 
@@ -129,12 +87,12 @@ const StartTimer = () => {
     navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
   };
 
-  const [enableButton, setEnableButton] = useState(true);
+  const [unLockNavigation, setUnLockNavigation] = useState(true);
 
   if (modes.promptMode) useUnlockPrompt(`${PromptMessages.DEFAULT}`, true);
 
-  const handleEnable = () => {
-    setEnableButton(false);
+  const handleunLockNavigation = () => {
+    setUnLockNavigation(false);
   };
 
   useEffect(() => {
@@ -182,7 +140,10 @@ const StartTimer = () => {
           className={css(styles.questionTooltip)}
           content={TooltipMessages.START_HINT}
         >
-          <button className={css(styles.questionButton)} onClick={handleEnable}>
+          <button
+            className={css(styles.questionButton)}
+            onClick={handleunLockNavigation}
+          >
             <BsFillPatchQuestionFill
               size={30}
               className={css(styles.questionIcon)}
@@ -190,9 +151,9 @@ const StartTimer = () => {
           </button>
         </Tippy>
       </p>
-      <Button
-        onClick={enableButton ? handleEnable : routeChange}
-        primary={enableButton}
+      <PrimaryButton
+        onClick={unLockNavigation ? handleunLockNavigation : routeChange}
+        primary={unLockNavigation}
         size={"small"}
         label={StartTimerMessages.BUTTON}
       />

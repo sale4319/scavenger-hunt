@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Tippy from "@tippyjs/react";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { StyleSheet, css } from "aphrodite";
+import { SubmitButton } from "../stories/buttons/SubmitButton/SubmitButton";
 import { QuestionFormMessages, TooltipMessages } from "../Messages";
 import { SecretAnswers } from "../PrivateRoutes";
 
@@ -91,49 +92,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     marginBottom: "1.5rem",
-  },
-
-  button: {
-    background: "linear-gradient(#0097c1, #61dafb, #0097c1)",
-    borderStyle: "solid",
-    borderColor: "#0097c1",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: "white",
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#61dafb, #0097c1, #61dafb)",
-      borderColor: "#0097c1",
-      borderRadius: "9px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px #61dafb",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-
-  greenButton: {
-    background: "linear-gradient(#61dafb, #0097c1, #61dafb)",
-    borderStyle: "solid",
-    borderColor: "#65a800",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: "white",
-
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#98fe00, #65a800, #98fe00)",
-      borderColor: "#65a800",
-      borderRadius: "9px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px #cbf094",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
   },
 
   input_error: {
@@ -319,9 +277,12 @@ const Form = ({ setUnlockNavigation }) => {
           )}
         </div>
 
-        <button className={css(styles.button)} type="submit">
-          {QuestionFormMessages.SUBMIT_BUTTON}
-        </button>
+        <SubmitButton
+          type="submit"
+          submit={true}
+          size={"small"}
+          label={QuestionFormMessages.SUBMIT_BUTTON}
+        />
       </form>
     </div>
   );
