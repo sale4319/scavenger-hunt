@@ -160,6 +160,7 @@ const Form = ({ setUnlockNavigation }) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setTouched(validate(formValues));
+    setIsTouched(validate(formValues));
     setIsSubmitting(true);
   };
 

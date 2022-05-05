@@ -1,12 +1,12 @@
 .storybook-button--submit {
   color: white;
-  background: linear-gradient(#0097c1, #61dafb, #0097c1);
+  background: linear-gradient(#61dafb, #0097c1, #61dafb);
   border-color: #0097c1;
 }
 
 .storybook-button--submit:hover {
   z-index: 1;
-  background: linear-gradient(#61dafb, #0097c1, #61dafb);
+  background: linear-gradient(#0097c1, #61dafb, #0097c1);
   border-color: #0097c1;
   border-radius: 9px;
   box-shadow: 5px 10px 15px #61dafb;

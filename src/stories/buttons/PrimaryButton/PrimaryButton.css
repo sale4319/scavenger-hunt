@@ -6,6 +6,10 @@
   cursor: pointer;
   padding: 3rem;
   color: white;
+  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  transition-property: color, background, width, height, margin, padding, border,
+    box-shadow;
 }
 
 .storybook-button::selection {
@@ -29,13 +33,13 @@
 
 .storybook-button--secondary {
   color: white;
-  background: linear-gradient(#65a800, #98fe00, #65a800);
+  background: linear-gradient(#98fe00, #65a800, #98fe00);
   border-color: #65a800;
 }
 
 .storybook-button--secondary:hover {
   z-index: 1;
-  background: linear-gradient(#98fe00, #65a800, #98fe00);
+  background: linear-gradient(#65a800, #98fe00, #65a800);
   border-color: #65a800;
   border-radius: 9px;
   box-shadow: 5px 10px 15px #98fe00;
