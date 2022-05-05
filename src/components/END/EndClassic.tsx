@@ -3,74 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { SiGithub } from "react-icons/si";
 import { toast } from "react-toastify";
 import { StyleSheet, css } from "aphrodite";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { FaHeartBroken, FaHeart } from "react-icons/fa";
+import { GiftButton } from "../../stories/buttons/GiftButton/GiftButton";
 import { useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
-import logo from "../../logo.svg";
 
 const styles = StyleSheet.create({
-  grayButton: {
-    backgroundColor: "transparent",
-    color: "white",
-    border: "none",
-    borderRadius: "80px",
-    cursor: "pointer",
-    padding: "25px",
-
-    ":hover": {
-      zIndex: 1,
-      backgroundColor: "red",
-      borderColor: "#cbf094",
-      borderRadius: "80px",
-      boxShadow: "5px 10px 15px 20px red",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-
-  redButton: {
-    background: "linear-gradient(#870202, #ff0000, #870202)",
-    borderStyle: "solid",
-    borderColor: "#870202",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: "white",
-
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#ff0000, #6f0404, #ff0000)",
-      borderColor: "#870202",
-      borderRadius: "9px",
-      boxShadow: "5px 10px 20px red",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-
-  colorfulButton: {
-    backgroundColor: "transparent",
-    color: "white",
-    border: "none",
-    borderRadius: "80px",
-    cursor: "pointer",
-    padding: "25px",
-
-    ":hover": {
-      background: "#61dafb",
-      zIndex: 1,
-      borderColor: "transparent",
-      borderRadius: "80px",
-      boxShadow: "5px 10px 15px 20px #61dafb",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-
   title: {
     color: "#61dafb",
   },
@@ -78,12 +17,6 @@ const styles = StyleSheet.create({
   heartIcon: {
     color: "red",
     marginBottom: "25px",
-  },
-
-  appLogo: {
-    height: "40vmin",
-    pointerEvents: "none",
-    "::selection": { background: "transparent" },
   },
 
   footerLink: {
@@ -122,28 +55,25 @@ const EndClassic = () => {
     <>
       <h1 className={css(styles.title)}>{EndClassicMessages.CONGRATS}</h1>
       {toggleIcon ? (
-        <AiOutlineHeart
+        <FaHeartBroken
           onClick={handleUnlockNavigation}
           size={70}
           className={css(styles.heartIcon)}
         />
       ) : (
-        <AiFillHeart
+        <FaHeart
           onClick={handleUnlockNavigation}
           size={70}
           className={css(styles.heartIcon)}
         />
       )}
       <div>
-        <button
-          className={css(
-            toggleIcon ? styles.grayButton : styles.colorfulButton
-          )}
+        <GiftButton
+          label={EndClassicMessages.GIFT}
+          primary={toggleIcon}
+          size="large"
           onClick={routeChange}
-        >
-          <img src={logo} className={css(styles.appLogo)} alt="logo" /> <br />
-          {EndClassicMessages.GIFT}
-        </button>
+        />
       </div>
       <div>
         <a

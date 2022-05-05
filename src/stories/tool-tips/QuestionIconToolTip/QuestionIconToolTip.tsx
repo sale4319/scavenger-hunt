@@ -6,7 +6,6 @@ import "./QuestionIconToolTip.css";
 interface QuestionIconToolTipProps {
   submit?: boolean;
   content?: string;
-
   size?: 25 | 30 | 35;
   onClick?: () => void;
 }
@@ -15,7 +14,6 @@ export const QuestionIconToolTip = ({
   submit = false,
   size = 30,
   content = "Tooltip text",
-
   ...props
 }: QuestionIconToolTipProps) => {
   return (

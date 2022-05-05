@@ -1,0 +1,75 @@
+.gift-button {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 3rem;
+  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  transition-property: color, background, width, height, margin, padding, border,
+    box-shadow;
+}
+
+.storybook-button::selection {
+  background: transparent;
+}
+
+.gift-button::selection {
+  background: transparent;
+}
+
+.gift-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.gift-button--primary {
+  color: white;
+  background: transparent;
+}
+
+.gift-button--primary:hover {
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #f0f, /* inner white */ inset 20px 0 80px red,
+    /* inner left magenta short */ inset -20px 0 80px red,
+    /* inner right cyan short */ inset 20px 0 300px red,
+    /* inner left magenta broad */ inset -20px 0 300px red,
+    /* inner right cyan broad */ 0 0 50px #f0f,
+    /* outer white */ -10px 0 80px red,
+    /* outer left magenta */ 10px 0 80px #f0f;
+}
+
+.gift-button--secondary {
+  color: white;
+  background: transparent;
+}
+
+.gift-button--secondary:hover {
+  z-index: 1;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #fff, /* inner white */ inset 20px 0 80px #f0f,
+    /* inner left magenta short */ inset -20px 0 80px #61dafb,
+    /* inner right cyan short */ inset 20px 0 300px #f0f,
+    /* inner left magenta broad */ inset -20px 0 300px #61dafb,
+    /* inner right cyan broad */ 0 0 50px #fff,
+    /* outer white */ -10px 0 80px #f0f,
+    /* outer left magenta */ 10px 0 80px #61dafb;
+}
+
+.gift-button--small {
+  font-size: 11px;
+  padding: 12px 24px;
+}
+.gift-button--medium {
+  font-size: 12px;
+  padding: 13px 28px;
+}
+.gift-button--large {
+  font-size: 13px;
+  padding: 13px 32px;
+}
