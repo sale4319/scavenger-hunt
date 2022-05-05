@@ -22,49 +22,6 @@ const styles = StyleSheet.create({
 
     "::selection": { background: "transparent" },
   },
-
-  redButton: {
-    background: "linear-gradient(#ff0000, #6f0404, #ff0000)",
-    borderStyle: "solid",
-    borderColor: "#870202",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: "white",
-
-    ":hover": {
-      zIndex: 1,
-
-      background: "linear-gradient(#870202, #ff0000, #870202)",
-      borderColor: "#870202",
-      borderRadius: "9px",
-      boxShadow: "5px 10px 15px red",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-
-  greenButton: {
-    background: "linear-gradient(#65a800, #98fe00, #65a800)",
-    borderStyle: "solid",
-    borderColor: "#65a800",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: "white",
-
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#98fe00, #65a800, #98fe00)",
-      borderColor: "#65a800",
-      borderRadius: "9px",
-      boxShadow: "5px 10px 15px #cbf094",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
 });
 
 export const LevelOne = () => {

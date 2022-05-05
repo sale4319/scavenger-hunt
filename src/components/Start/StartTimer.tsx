@@ -1,13 +1,12 @@
 import React, { useState, useEffect, FC } from "react";
 import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
-import { BsFillPatchQuestionFill } from "react-icons/bs";
-import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { useUnlockPrompt } from "../../utils/utils";
 import { modes } from "../../flags";
-import { PrimaryButton } from "../../stories/buttons/PrimaryButton/PrimaryButton";
+import { QuestionIconToolTip } from "../../stories/tool-tips/QuestionIconToolTip/QuestionIconToolTip";
+import { PrimaryButton } from "../../stories/buttons/";
 import {
   StartTimerMessages,
   TooltipMessages,
@@ -19,36 +18,6 @@ const styles = StyleSheet.create({
   timeCounter: {
     fontSize: "100px",
     color: colors.reactBlue,
-  },
-
-  questionIcon: {
-    color: colors.reactBlue,
-    outline: "none",
-  },
-
-  questionButton: {
-    background: "transparent",
-    padding: "0px",
-    border: "none",
-  },
-
-  questionTooltip: {
-    backgroundColor: colors.reactBlue,
-    color: colors.white,
-    textAlign: "center",
-    padding: "8px",
-    borderRadius: "6px",
-
-    "::after": {
-      content: '" "',
-      position: "absolute",
-      top: "100%",
-      left: "50%",
-      marginLeft: " -5px",
-      borderWidth: "5px",
-      borderStyle: "solid",
-      borderColor: "#61dafb transparent transparent transparent",
-    },
   },
 });
 
@@ -136,20 +105,11 @@ const StartTimer = () => {
 
       <p>
         {StartTimerMessages.HINT}
-        <Tippy
-          className={css(styles.questionTooltip)}
+        <QuestionIconToolTip
+          size={30}
+          onClick={handleunLockNavigation}
           content={TooltipMessages.START_HINT}
-        >
-          <button
-            className={css(styles.questionButton)}
-            onClick={handleunLockNavigation}
-          >
-            <BsFillPatchQuestionFill
-              size={30}
-              className={css(styles.questionIcon)}
-            />
-          </button>
-        </Tippy>
+        />
       </p>
       <PrimaryButton
         onClick={unLockNavigation ? handleunLockNavigation : routeChange}
