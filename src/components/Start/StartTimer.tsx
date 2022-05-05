@@ -12,15 +12,17 @@ import {
   TooltipMessages,
   PromptMessages,
 } from "../../Messages";
+import { colors } from "../../ColourPalette";
+import { Button } from "../../stories/buttons/Button";
 
 const styles = StyleSheet.create({
   timeCounter: {
     fontSize: "100px",
-    color: "#61dafb",
+    color: colors.reactBlue,
   },
 
   questionIcon: {
-    color: "#61dafb",
+    color: colors.reactBlue,
     outline: "none",
   },
 
@@ -31,8 +33,8 @@ const styles = StyleSheet.create({
   },
 
   questionTooltip: {
-    backgroundColor: "#61dafb",
-    color: "#fff",
+    backgroundColor: colors.reactBlue,
+    color: colors.white,
     textAlign: "center",
     padding: "8px",
     borderRadius: "6px",
@@ -50,19 +52,18 @@ const styles = StyleSheet.create({
   },
 
   redButton: {
-    background: "linear-gradient(#ff0000, #6f0404, #ff0000)",
+    background: "linear-gradient(red, #870202, red)",
     borderStyle: "solid",
-    borderColor: "#870202",
+    borderColor: colors.darkRed,
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
-    color: "white",
+    color: colors.white,
 
     ":hover": {
       zIndex: 1,
-
-      background: "linear-gradient(#870202, #ff0000, #870202)",
-      borderColor: "#870202",
+      background: "linear-gradient(#870202, red, #870202)",
+      borderColor: colors.darkRed,
       borderRadius: "9px",
       boxShadow: "5px 10px 15px red",
       outline: "none",
@@ -74,16 +75,16 @@ const styles = StyleSheet.create({
   greenButton: {
     background: "linear-gradient(#65a800, #98fe00, #65a800)",
     borderStyle: "solid",
-    borderColor: "#65a800",
+    borderColor: colors.darkGreen,
     borderRadius: "9px",
     cursor: "pointer",
     padding: "8px",
-    color: "white",
+    color: colors.white,
 
     ":hover": {
       zIndex: 1,
       background: "linear-gradient(#98fe00, #65a800, #98fe00)",
-      borderColor: "#65a800",
+      borderColor: colors.darkGreen,
       borderRadius: "9px",
       boxShadow: "5px 10px 15px #cbf094",
       outline: "none",
@@ -198,6 +199,7 @@ const StartTimer = () => {
           {StartTimerMessages.BUTTON}
         </button>
       )}
+      <Button onClick={handleEnable} primary={true} label="button" />
     </div>
   );
 };
