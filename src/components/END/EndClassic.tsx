@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { SiGithub } from "react-icons/si";
 import { toast } from "react-toastify";
 import { StyleSheet, css } from "aphrodite";
 import { FaHeartBroken, FaHeart } from "react-icons/fa";
-import { GiftButton } from "../../stories/buttons/GiftButton/GiftButton";
+import { GiftButton, GithubButton } from "../../stories/buttons/";
 import { useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
@@ -17,15 +16,6 @@ const styles = StyleSheet.create({
   heartIcon: {
     color: "red",
     marginBottom: "25px",
-  },
-
-  footerLink: {
-    color: "transparent",
-    textDecoration: "none",
-
-    ":hover": {
-      color: "#61dafb",
-    },
   },
 });
 
@@ -57,13 +47,13 @@ const EndClassic = () => {
       {toggleIcon ? (
         <FaHeartBroken
           onClick={handleUnlockNavigation}
-          size={70}
+          size={50}
           className={css(styles.heartIcon)}
         />
       ) : (
         <FaHeart
           onClick={handleUnlockNavigation}
-          size={70}
+          size={50}
           className={css(styles.heartIcon)}
         />
       )}
@@ -76,14 +66,13 @@ const EndClassic = () => {
         />
       </div>
       <div>
-        <a
-          className={css(styles.footerLink)}
-          href={EndClassicMessages.GITHUB}
+        <GithubButton
+          href={`${EndClassicMessages.GITHUB}`}
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <SiGithub size={70} />
-        </a>
+          size={50}
+          primary={unLockNavigation}
+        />
       </div>
     </>
   );

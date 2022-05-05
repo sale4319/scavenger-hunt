@@ -14,17 +14,13 @@
     box-shadow;
 }
 
-.storybook-button::selection {
-  background: transparent;
-}
-
 .gift-button::selection {
-  background: transparent;
+  user-select: none;
 }
 
 .gift-logo {
-  height: 40vmin;
   pointer-events: none;
+  user-select: none;
 }
 
 .gift-button--primary {

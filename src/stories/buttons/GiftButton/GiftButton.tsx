@@ -43,7 +43,7 @@ export const GiftButton = ({
       style={{ backgroundColor }}
       {...props}
     >
-      <img src={gift} className="" alt="gift-logo" /> <br />
+      <img src={gift} className="gift-logo" alt="gift-logo" /> <br />
       {label}
     </button>
   );
