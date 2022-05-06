@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../../stories/buttons/";
 import { useLockPrompt, useLockNoPrompt } from "../../utils/utils";
-import QuestionFormNew from "../../stories/forms/QuestionForm/QuestionForm";
+import { QuestionForm } from "../../stories/forms/";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
 import {
@@ -38,7 +38,7 @@ export const LevelThree = () => {
         label={LevelThreeMessages.CONTINUE}
       />
 
-      <QuestionFormNew
+      <QuestionForm
         questionIconSize={25}
         handleUnlock={handleUnlockNavigation}
         successMessage={QuestionFormMessages.WOW}

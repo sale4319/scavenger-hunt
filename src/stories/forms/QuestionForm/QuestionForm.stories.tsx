@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import QuestionForm from "./QuestionForm";
+import { QuestionForm } from "./QuestionForm";
 
 export default {
   title: "Forms/QuestionForm",

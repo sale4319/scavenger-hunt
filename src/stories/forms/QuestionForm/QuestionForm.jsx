@@ -6,7 +6,7 @@ import { QuestionFormMessages } from "../../../Messages";
 import { SecretAnswers } from "../../../PrivateRoutes";
 import "./QuestionForm.css";
 
-const QuestionForm = ({
+export const QuestionForm = ({
   questionIconSize = 30,
   handleUnlock,
   firstQuestion = "What is your first question?",
@@ -151,5 +151,3 @@ const QuestionForm = ({
     </div>
   );
 };
-
-export default QuestionForm;
