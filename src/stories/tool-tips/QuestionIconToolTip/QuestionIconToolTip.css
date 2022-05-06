@@ -1,6 +1,7 @@
 .question-icon {
   color: #61dafb;
   outline: none;
+  margin-top: -10px;
 }
 
 .question-icon::selection {
@@ -26,6 +27,7 @@
   max-width: 120px;
   bottom: 100%;
   left: 50%;
+  margin-top: -40px;
 }
 
 .question-tooltip:after {
@@ -33,6 +35,7 @@
   position: absolute;
   top: 100%; /* At the bottom of the tooltip */
   left: 50%;
+  margin-top: -7px;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;

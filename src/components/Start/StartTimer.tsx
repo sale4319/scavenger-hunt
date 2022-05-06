@@ -83,7 +83,7 @@ const StartTimer = () => {
   return (
     <div>
       <div>
-        <h1>{StartTimerMessages.TITLE}</h1>
+        <h2>{StartTimerMessages.TITLE}</h2>
       </div>
       <span className={css(styles.timeCounter)}>
         <Countdown
