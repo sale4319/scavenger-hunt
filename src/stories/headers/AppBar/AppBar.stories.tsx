@@ -1,17 +1,17 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Header } from "./Header";
+import { AppBar } from "./AppBar";
 
 export default {
-  title: "Headers/Header",
-  component: Header,
+  title: "Headers/AppBar",
+  component: AppBar,
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof Header>;
+} as ComponentMeta<typeof AppBar>;
 
-const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
+const Template: ComponentStory<typeof AppBar> = (args) => <AppBar {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Title } from "../../stories/headers";
 import { UnlockToolTip } from "../../stories/tool-tips/";
 import { PrimaryButton } from "../../stories/buttons/";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
@@ -33,8 +34,9 @@ export const LevelTwo = () => {
         content={TooltipMessages.LEVEL_TWO_CONGRATS}
         onClick={handleUnlockNavigation}
       />
-
-      <h3>{LevelTwoMessages.HINT}</h3>
+      <div>
+        <Title label={LevelTwoMessages.HINT} color="white" />
+      </div>
 
       <PrimaryButton
         onClick={routeChange}

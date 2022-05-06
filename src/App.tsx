@@ -1,32 +1,18 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { StyleSheet, css } from "aphrodite";
 import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
 import { LevelTwo } from "./components/Level/LevelTwo";
 import { LevelThree } from "./components/Level/LevelThree";
 import EndClassic from "./components/End/EndClassic";
 import { PrivateRoutes } from "./PrivateRoutes";
+import { Container } from "./stories/pages/Container/Container";
 
 import "react-toastify/dist/ReactToastify.css";
 
-const styles = StyleSheet.create({
-  app: {
-    backgroundColor: "#282c34",
-    textAlign: "center",
-    color: "white",
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "calc(10px + 2vmin)",
-  },
-});
-
 const App = () => {
   return (
-    <div className={css(styles.app)}>
+    <Container>
       <Router>
         <Routes>
           <Route
@@ -47,7 +33,7 @@ const App = () => {
       </Router>
 
       <ToastContainer autoClose={3000} hideProgressBar />
-    </div>
+    </Container>
   );
 };
 

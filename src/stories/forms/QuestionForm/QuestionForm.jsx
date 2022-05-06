@@ -1,90 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import { StyleSheet, css } from "aphrodite";
-import { QuestionIconToolTip } from "../stories/tool-tips/";
-import { SubmitButton } from "../stories/buttons/";
-import { QuestionFormMessages, TooltipMessages } from "../Messages";
-import { SecretAnswers } from "../PrivateRoutes";
+import { QuestionIconToolTip } from "../../tool-tips";
+import { SubmitButton } from "../../buttons";
+import { QuestionFormMessages } from "../../../Messages";
+import { SecretAnswers } from "../../../PrivateRoutes";
+import "./QuestionForm.css";
 
-const styles = StyleSheet.create({
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-
-  successMsg: {
-    color: "white",
-    background: "#61dafb",
-    display: "inline-block",
-    width: "100%",
-    textAlign: "center",
-    padding: "0.5rem",
-    borderRadius: "4px",
-    marginBottom: "1rem",
-    fontSize: "1.2rem",
-    fontWeight: "600",
-  },
-
-  label__input: {
-    color: "white",
-  },
-
-  label: {
-    fontSize: "1.2rem",
-    marginBottom: "0.5rem",
-  },
-
-  input: {
-    marginBottom: "20px",
-    padding: "10px",
-    borderRadius: "3px",
-    border: "1px solid #777",
-
-    ":focus": {
-      zIndex: 1,
-      borderColor: "transparent",
-      borderRadius: "3px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px #61dafb",
-      outline: "none",
-    },
-  },
-
-  formRow: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: "1.5rem",
-  },
-
-  input_error: {
-    marginBottom: "8px",
-    padding: "10px",
-    borderRadius: "3px",
-    border: "1px solid #777",
-    borderColor: "red",
-
-    ":focus": {
-      zIndex: 1,
-      borderColor: "transparent",
-      borderRadius: "3px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px red",
-      outline: "none",
-    },
-    "::placeholder": {
-      color: "#ff0000",
-    },
-  },
-
-  error: {
-    color: "#ff0000",
-    fontSize: "0.9rem",
-    marginTop: "0.3rem",
-  },
-});
-
-const Form = ({ setUnlockNavigation }) => {
+export const QuestionForm = ({
+  questionIconSize = 30,
+  handleUnlock,
+  firstQuestion = "What is your first question?",
+  firstHint = "What is your first hint?",
+  firstPlaceholder = "What is your first placeholder?",
+  secondQuestion = "What is your second question?",
+  secondHint = "What is your second hint?",
+  secondPlaceholder = "What is your second placeholder?",
+  successMessage = "What is your success message?",
+  ...props
+}) => {
   const intialValues = { answerOne: "", answerTwo: "" };
 
   const [formValues, setFormValues] = useState(intialValues);
@@ -150,73 +83,61 @@ const Form = ({ setUnlockNavigation }) => {
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmitting) {
       submit();
-      setUnlockNavigation(false);
+      handleUnlock();
     }
   }, [formErrors]);
 
   return (
-    <div className={css(styles.form)}>
+    <div className="form-container">
       {Object.keys(formErrors).length === 0 && isSubmitting && (
-        <span className={css(styles.successMsg)}>
-          {QuestionFormMessages.WOW}
-        </span>
+        <span className="success-message">{successMessage}</span>
       )}
       <form onSubmit={handleSubmit} noValidate>
-        <div className={css(styles.formRow)}>
-          <label
-            className={css(styles.label, styles.label__input)}
-            htmlFor="answerOne"
-          >
-            {QuestionFormMessages.FIRST_Q_LABEL}
+        <div className="form-row">
+          <label className="form-label" htmlFor="answerOne">
+            {firstQuestion}
             <QuestionIconToolTip
-              size={25}
+              size={questionIconSize}
               type="button"
-              content={TooltipMessages.FIRST_Q_HINT}
+              content={firstHint}
             />
           </label>
           <input
-            placeholder={QuestionFormMessages.FIRST_Q_PLACEHOLDER}
+            placeholder={firstPlaceholder}
             type="text"
             name="answerOne"
             id="answerOne"
             value={formValues.answerOne}
             onBlur={handleOnBlur}
             onChange={handleChange}
-            className={css(
-              touched.answerOne ? styles.input_error : styles.input
-            )}
+            className={touched.answerOne ? "form-input-error" : "form-input"}
           />
           {formErrors.answerOne && touched.answerOne && (
-            <span className={css(styles.error)}>{formErrors.answerOne}</span>
+            <span className="error">{formErrors.answerOne}</span>
           )}
         </div>
 
-        <div className={css(styles.formRow)}>
-          <label
-            className={css(styles.label, styles.label__input)}
-            htmlFor="answerTwo"
-          >
-            {QuestionFormMessages.SECOND_Q_LABEL}
+        <div className="form-row">
+          <label className="form-label" htmlFor="answerTwo">
+            {secondQuestion}
             <QuestionIconToolTip
-              size={25}
+              size={questionIconSize}
               type="button"
-              content={TooltipMessages.SECOND_Q_HINT}
+              content={secondHint}
             />
           </label>
           <input
-            placeholder={QuestionFormMessages.SECOND_Q_PLACEHOLDER}
+            placeholder={secondPlaceholder}
             type="text"
             name="answerTwo"
             id="answerTwo"
             value={formValues.answerTwo}
             onBlur={handleOnBlurSeperate}
             onChange={handleChange}
-            className={css(
-              isTouched.answerTwo ? styles.input_error : styles.input
-            )}
+            className={isTouched.answerTwo ? "form-input-error" : "form-input"}
           />
           {formErrors.answerTwo && isTouched.answerTwo && (
-            <span className={css(styles.error)}>{formErrors.answerTwo}</span>
+            <span className="error">{formErrors.answerTwo}</span>
           )}
         </div>
 
@@ -230,5 +151,3 @@ const Form = ({ setUnlockNavigation }) => {
     </div>
   );
 };
-
-export default Form;

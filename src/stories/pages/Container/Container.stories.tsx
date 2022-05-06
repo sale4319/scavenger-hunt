@@ -1,17 +1,19 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";
-import { Page } from "./Page";
+import { Container } from "./Container";
 
 export default {
-  title: "Pages/Page",
-  component: Page,
+  title: "Pages/Container",
+  component: Container,
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof Page>;
+} as ComponentMeta<typeof Container>;
 
-const Template: ComponentStory<typeof Page> = (args) => <Page {...args} />;
+const Template: ComponentStory<typeof Container> = (args) => (
+  <Container {...args} />
+);
 
 export const LoggedOut = Template.bind({});
 
