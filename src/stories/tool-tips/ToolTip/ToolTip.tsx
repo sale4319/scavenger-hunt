@@ -1,4 +1,5 @@
 import React from "react";
+import "./ToolTip.css";
 import Tippy from "@tippyjs/react";
 
 interface ToolTipProps {
@@ -16,7 +17,7 @@ export const ToolTip = ({
 }: ToolTipProps) => {
   return (
     <Tippy className="question-tooltip" content={content}>
-      <button type="button" className="question-button" {...props}></button>
+      <button type="button" className="tooltip-button" {...props}></button>
     </Tippy>
   );
 };

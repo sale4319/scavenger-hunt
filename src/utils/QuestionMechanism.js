@@ -8,15 +8,9 @@ import { SecretAnswers } from "../PrivateRoutes";
 
 const styles = StyleSheet.create({
   form: {
-    backgroundColor: "#282c34",
-    marginTop: "10px",
-    textAlign: "center",
-    color: "white",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
-    fontSize: "calc(10px + 2vmin)",
   },
 
   successMsg: {
