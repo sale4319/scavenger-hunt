@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { StyleSheet, css } from "aphrodite";
-import { QuestionIconToolTip } from "../stories/tool-tips/QuestionIconToolTip/QuestionIconToolTip";
+import { QuestionIconToolTip } from "../stories/tool-tips/";
 import { SubmitButton } from "../stories/buttons/";
 import { QuestionFormMessages, TooltipMessages } from "../Messages";
 import { SecretAnswers } from "../PrivateRoutes";

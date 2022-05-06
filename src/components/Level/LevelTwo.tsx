@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ToolTip } from "../../stories/tool-tips/ToolTip/ToolTip";
+import { UnlockToolTip } from "../../stories/tool-tips/";
 import { PrimaryButton } from "../../stories/buttons/";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
@@ -29,7 +29,7 @@ export const LevelTwo = () => {
 
   return (
     <div>
-      <ToolTip
+      <UnlockToolTip
         content={TooltipMessages.LEVEL_TWO_CONGRATS}
         onClick={handleUnlockNavigation}
       />

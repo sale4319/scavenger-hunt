@@ -1,20 +1,20 @@
 import React from "react";
-import "./ToolTip.css";
+import "./UnlockToolTip.css";
 import Tippy from "@tippyjs/react";
 
-interface ToolTipProps {
+interface UnlockToolTipProps {
   submit?: boolean;
   content?: string;
-  size?: 25 | 30 | 35;
+  size?: number;
   onClick?: () => void;
 }
 
-export const ToolTip = ({
+export const UnlockToolTip = ({
   submit = false,
   size = 30,
   content = "Tooltip text",
   ...props
-}: ToolTipProps) => {
+}: UnlockToolTipProps) => {
   return (
     <Tippy className="question-tooltip" content={content}>
       <button type="button" className="tooltip-button" {...props}></button>

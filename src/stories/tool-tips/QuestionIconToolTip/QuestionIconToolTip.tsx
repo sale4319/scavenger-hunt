@@ -6,7 +6,7 @@ import "./QuestionIconToolTip.css";
 interface QuestionIconToolTipProps {
   submit?: boolean;
   content?: string;
-  size?: 25 | 30 | 35;
+  size?: number;
   onClick?: () => void;
 }
 
