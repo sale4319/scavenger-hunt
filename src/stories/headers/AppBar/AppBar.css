@@ -9,7 +9,7 @@
   color: white;
   width: 100%;
   position: fixed;
-  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   transition-property: color, background, width, height, margin, padding, border,
     box-shadow;
