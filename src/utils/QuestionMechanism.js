@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import Tippy from "@tippyjs/react";
-import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { StyleSheet, css } from "aphrodite";
+import { QuestionIconToolTip } from "../stories/tool-tips/QuestionIconToolTip/QuestionIconToolTip";
+import { SubmitButton } from "../stories/buttons/";
 import { QuestionFormMessages, TooltipMessages } from "../Messages";
 import { SecretAnswers } from "../PrivateRoutes";
 
@@ -57,61 +57,10 @@ const styles = StyleSheet.create({
     },
   },
 
-  questionIcon: {
-    color: "#61dafb",
-    outline: "none",
-  },
-
-  questionButton: {
-    background: "transparent",
-    paddingTop: "5px",
-    border: "none",
-  },
-
-  questionTooltip: {
-    backgroundColor: "#61dafb",
-    color: "#fff",
-    textAlign: "center",
-    padding: "8px",
-    borderRadius: "6px",
-
-    "::after": {
-      content: '" "',
-      position: "absolute",
-      top: "100%",
-      left: "50%",
-      marginLeft: " -5px",
-      borderWidth: "5px",
-      borderStyle: "solid",
-      borderColor: "#61dafb transparent transparent transparent",
-    },
-  },
-
   formRow: {
     display: "flex",
     flexDirection: "column",
     marginBottom: "1.5rem",
-  },
-
-  button: {
-    background: "linear-gradient(#61dafb, #333)",
-    borderStyle: "solid",
-    borderColor: "#61dafb",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: "white",
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#333, #61dafb)",
-      borderColor: "#61dafb",
-      borderRadius: "9px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px #61dafb",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
   },
 
   input_error: {
@@ -138,11 +87,6 @@ const styles = StyleSheet.create({
     color: "#ff0000",
     fontSize: "0.9rem",
     marginTop: "0.3rem",
-  },
-
-  disabledBtn: {
-    cursor: "not-allowed",
-    background: "rgba($primary-color, 0.8)",
   },
 });
 
@@ -180,6 +124,7 @@ const Form = ({ setUnlockNavigation }) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setTouched(validate(formValues));
+    setIsTouched(validate(formValues));
     setIsSubmitting(true);
   };
 
@@ -229,19 +174,11 @@ const Form = ({ setUnlockNavigation }) => {
             htmlFor="answerOne"
           >
             {QuestionFormMessages.FIRST_Q_LABEL}
-            <Tippy
-              className={css(styles.questionTooltip)}
+            <QuestionIconToolTip
+              size={25}
+              type="button"
               content={TooltipMessages.FIRST_Q_HINT}
-            >
-              <i className={css(styles.questionButton)}>
-                <button disabled className={css(styles.questionButton)}>
-                  <BsFillPatchQuestionFill
-                    size={25}
-                    className={css(styles.questionIcon)}
-                  />
-                </button>
-              </i>
-            </Tippy>
+            />
           </label>
           <input
             placeholder={QuestionFormMessages.FIRST_Q_PLACEHOLDER}
@@ -266,19 +203,11 @@ const Form = ({ setUnlockNavigation }) => {
             htmlFor="answerTwo"
           >
             {QuestionFormMessages.SECOND_Q_LABEL}
-            <Tippy
-              className={css(styles.questionTooltip)}
+            <QuestionIconToolTip
+              size={25}
+              type="button"
               content={TooltipMessages.SECOND_Q_HINT}
-            >
-              <i className={css(styles.questionButton)}>
-                <button disabled className={css(styles.questionButton)}>
-                  <BsFillPatchQuestionFill
-                    size={25}
-                    className={css(styles.questionIcon)}
-                  />
-                </button>
-              </i>
-            </Tippy>
+            />
           </label>
           <input
             placeholder={QuestionFormMessages.SECOND_Q_PLACEHOLDER}
@@ -297,9 +226,12 @@ const Form = ({ setUnlockNavigation }) => {
           )}
         </div>
 
-        <button className={css(styles.button)} type="submit">
-          {QuestionFormMessages.SUBMIT_BUTTON}
-        </button>
+        <SubmitButton
+          type="submit"
+          submit={true}
+          size={"small"}
+          label={QuestionFormMessages.SUBMIT_BUTTON}
+        />
       </form>
     </div>
   );

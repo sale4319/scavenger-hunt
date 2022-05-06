@@ -1,55 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { SiGithub } from "react-icons/si";
 import { toast } from "react-toastify";
 import { StyleSheet, css } from "aphrodite";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { FaHeartBroken, FaHeart } from "react-icons/fa";
+import { GiftButton, GithubButton } from "../../stories/buttons/";
 import { useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
-import logo from "../../logo.svg";
 
 const styles = StyleSheet.create({
-  grayButton: {
-    backgroundColor: "transparent",
-    color: "white",
-    border: "none",
-    borderRadius: "80px",
-    cursor: "pointer",
-    padding: "25px",
-
-    ":hover": {
-      zIndex: 1,
-      backgroundColor: "red",
-      borderColor: "#cbf094",
-      borderRadius: "80px",
-      boxShadow: "5px 10px 15px 20px red",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-
-  colorfulButton: {
-    backgroundColor: "transparent",
-    color: "white",
-    border: "none",
-    borderRadius: "80px",
-    cursor: "pointer",
-    padding: "25px",
-
-    ":hover": {
-      background: "#61dafb",
-      zIndex: 1,
-      borderColor: "transparent",
-      borderRadius: "80px",
-      boxShadow: "5px 10px 15px 20px #61dafb",
-      outline: "none",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-
   title: {
     color: "#61dafb",
   },
@@ -57,21 +16,6 @@ const styles = StyleSheet.create({
   heartIcon: {
     color: "red",
     marginBottom: "25px",
-  },
-
-  appLogo: {
-    height: "40vmin",
-    pointerEvents: "none",
-    "::selection": { background: "transparent" },
-  },
-
-  footerLink: {
-    color: "transparent",
-    textDecoration: "none",
-
-    ":hover": {
-      color: "#61dafb",
-    },
   },
 });
 
@@ -90,7 +34,7 @@ const EndClassic = () => {
     }
   });
 
-  useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation);
+  useLockPrompt(`${PromptMessages.END}`, unLockNavigation);
 
   const handleUnlockNavigation = () => {
     setToggleIcon(!toggleIcon);
@@ -101,38 +45,34 @@ const EndClassic = () => {
     <>
       <h1 className={css(styles.title)}>{EndClassicMessages.CONGRATS}</h1>
       {toggleIcon ? (
-        <AiOutlineHeart
+        <FaHeartBroken
           onClick={handleUnlockNavigation}
-          size={70}
+          size={50}
           className={css(styles.heartIcon)}
         />
       ) : (
-        <AiFillHeart
+        <FaHeart
           onClick={handleUnlockNavigation}
-          size={70}
+          size={50}
           className={css(styles.heartIcon)}
         />
       )}
       <div>
-        <button
-          className={css(
-            toggleIcon ? styles.grayButton : styles.colorfulButton
-          )}
+        <GiftButton
+          label={EndClassicMessages.GIFT}
+          primary={toggleIcon}
+          size="large"
           onClick={routeChange}
-        >
-          <img src={logo} className={css(styles.appLogo)} alt="logo" /> <br />
-          {EndClassicMessages.GIFT}
-        </button>
+        />
       </div>
       <div>
-        <a
-          className={css(styles.footerLink)}
-          href={EndClassicMessages.GITHUB}
+        <GithubButton
+          href={`${EndClassicMessages.GITHUB}`}
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <SiGithub size={70} />
-        </a>
+          size={50}
+          primary={unLockNavigation}
+        />
       </div>
     </>
   );

@@ -1,94 +1,27 @@
 import React, { useState, useEffect, FC } from "react";
 import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
-import { BsFillPatchQuestionFill } from "react-icons/bs";
-import Tippy from "@tippyjs/react";
 import { StyleSheet, css } from "aphrodite";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { useUnlockPrompt } from "../../utils/utils";
 import { modes } from "../../flags";
+import { QuestionIconToolTip } from "../../stories/tool-tips/QuestionIconToolTip/QuestionIconToolTip";
+import { PrimaryButton } from "../../stories/buttons/";
 import {
   StartTimerMessages,
   TooltipMessages,
   PromptMessages,
 } from "../../Messages";
+import { colors } from "../../ColourPalette";
 
 const styles = StyleSheet.create({
   timeCounter: {
     fontSize: "100px",
-    color: "#61dafb",
-  },
-
-  questionIcon: {
-    color: "#61dafb",
-    outline: "none",
-  },
-
-  questionButton: {
-    background: "transparent",
-    padding: "0px",
-    border: "none",
-  },
-
-  questionTooltip: {
-    backgroundColor: "#61dafb",
-    color: "#fff",
-    textAlign: "center",
-    padding: "8px",
-    borderRadius: "6px",
-
-    "::after": {
-      content: '" "',
-      position: "absolute",
-      top: "100%",
-      left: "50%",
-      marginLeft: " -5px",
-      borderWidth: "5px",
-      borderStyle: "solid",
-      borderColor: "#61dafb transparent transparent transparent",
-    },
-  },
-
-  redButton: {
-    background: "linear-gradient(#ff0000, #333)",
-    borderStyle: "solid",
-    borderColor: "#ff0000",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: "white",
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#333, #ff0000)",
-      borderColor: "#fb5d5d",
-      borderRadius: "9px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px red",
-      outline: "none",
-    },
-  },
-
-  greenButton: {
-    background: "linear-gradient(#98fe00, #333)",
-    borderStyle: "solid",
-    borderColor: "#adff2f",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "8px",
-    color: "white",
-    ":hover": {
-      zIndex: 1,
-      background: "linear-gradient(#333, #98fe00)",
-      borderColor: "#cbf094",
-      borderRadius: "9px",
-      backgroundColor: "white",
-      boxShadow: "5px 10px 18px #cbf094",
-      outline: "none",
-    },
+    color: colors.reactBlue,
   },
 });
 
-const Completionist = () => <span>You are good to go!</span>;
+const Completionist = () => <span>{StartTimerMessages.START}</span>;
 
 const twoDigits = (num) => String(num).padStart(2, "0");
 
@@ -123,12 +56,12 @@ const StartTimer = () => {
     navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
   };
 
-  const [enableButton, setEnableButton] = useState(true);
+  const [unLockNavigation, setUnLockNavigation] = useState(true);
 
   if (modes.promptMode) useUnlockPrompt(`${PromptMessages.DEFAULT}`, true);
 
-  const handleEnable = () => {
-    setEnableButton(false);
+  const handleunLockNavigation = () => {
+    setUnLockNavigation(false);
   };
 
   useEffect(() => {
@@ -172,27 +105,18 @@ const StartTimer = () => {
 
       <p>
         {StartTimerMessages.HINT}
-        <Tippy
-          className={css(styles.questionTooltip)}
+        <QuestionIconToolTip
+          size={30}
+          onClick={handleunLockNavigation}
           content={TooltipMessages.START_HINT}
-        >
-          <button className={css(styles.questionButton)} onClick={handleEnable}>
-            <BsFillPatchQuestionFill
-              size={30}
-              className={css(styles.questionIcon)}
-            />
-          </button>
-        </Tippy>
+        />
       </p>
-      {enableButton ? (
-        <button className={css(styles.redButton)} onClick={handleEnable}>
-          {StartTimerMessages.BUTTON}
-        </button>
-      ) : (
-        <button className={css(styles.greenButton)} onClick={routeChange}>
-          {StartTimerMessages.BUTTON}
-        </button>
-      )}
+      <PrimaryButton
+        onClick={unLockNavigation ? handleunLockNavigation : routeChange}
+        primary={unLockNavigation}
+        size={"small"}
+        label={StartTimerMessages.BUTTON}
+      />
     </div>
   );
 };

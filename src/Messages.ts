@@ -39,7 +39,7 @@ export const TooltipMessages = {
   START_HINT: "Button red? It is locked.",
   LEVEL_TWO_CONGRATS: "Good job solving this one!",
   FIRST_Q_HINT: "Come on, you know this.",
-  SECOND_Q_HINT: "Best way to find it is to use inspect element. ",
+  SECOND_Q_HINT: "Find it with inspect element. ",
 };
 
 export const QuestionFormMessages = {

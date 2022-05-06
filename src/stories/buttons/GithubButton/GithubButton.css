@@ -1,0 +1,13 @@
+.github-button {
+  color: transparent;
+  text-decoration: none;
+  margin-top: 40%;
+}
+
+.github-button--primary {
+  color: transparent;
+}
+
+.github-button--secondary {
+  color: #61dafb;
+}
