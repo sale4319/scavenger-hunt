@@ -1,9 +1,10 @@
 .container {
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: calc(12px + 2vmin);
   text-align: center;
   transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -15,9 +16,17 @@
 .container-dark {
   background-color: #282c34;
   color: white;
+  transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  transition-property: color, background, width, height, margin, padding, border,
+    box-shadow;
 }
 
 .container-light {
   background-color: white;
   color: #282c34;
+  transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  transition-property: color, background, width, height, margin, padding, border,
+    box-shadow;
 }

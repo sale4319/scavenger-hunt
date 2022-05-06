@@ -12,7 +12,7 @@ export const Container = ({ children, ...props }: ContainerProps) => {
   const { darkMode } = useContext(DarkModeContext);
 
   return (
-    <article>
+    <article className={darkMode ? "container-dark" : "container-light"}>
       <AppBar />
       <section
         className={
