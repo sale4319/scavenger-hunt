@@ -3,10 +3,18 @@
   outline: none;
 }
 
+.question-icon::selection {
+  background: transparent;
+}
+
 .question-button {
   background: transparent;
   padding: 0px;
   border: none;
+}
+
+.question-button::selection {
+  background: transparent;
 }
 
 .question-tooltip {

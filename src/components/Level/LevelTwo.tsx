@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Tippy from "@tippyjs/react";
-import { StyleSheet, css } from "aphrodite";
-import { PrimaryButton } from "../../stories/buttons/PrimaryButton/PrimaryButton";
+import { ToolTip } from "../../stories/tool-tips/ToolTip/ToolTip";
+import { PrimaryButton } from "../../stories/buttons/";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
@@ -11,36 +10,6 @@ import {
   PromptMessages,
   TooltipMessages,
 } from "../../Messages";
-
-const styles = StyleSheet.create({
-  unlockButton: {
-    backgroundColor: "transparent",
-    color: "transparent",
-    border: "none",
-    padding: "0px",
-
-    "::selection": { background: "transparent" },
-  },
-
-  questionTooltip: {
-    backgroundColor: "#61dafb",
-    color: "#fff",
-    textAlign: "center",
-    padding: "8px",
-    borderRadius: "6px",
-
-    "::after": {
-      content: '" "',
-      position: "absolute",
-      top: "100%",
-      left: "50%",
-      marginLeft: " -5px",
-      borderWidth: "5px",
-      borderStyle: "solid",
-      borderColor: "#61dafb transparent transparent transparent",
-    },
-  },
-});
 
 export const LevelTwo = () => {
   const navigate = useNavigate();
@@ -60,15 +29,10 @@ export const LevelTwo = () => {
 
   return (
     <div>
-      <Tippy
-        className={css(styles.questionTooltip)}
+      <ToolTip
         content={TooltipMessages.LEVEL_TWO_CONGRATS}
-      >
-        <button
-          className={css(styles.unlockButton)}
-          onClick={handleUnlockNavigation}
-        ></button>
-      </Tippy>
+        onClick={handleUnlockNavigation}
+      />
 
       <h3>{LevelTwoMessages.HINT}</h3>
 

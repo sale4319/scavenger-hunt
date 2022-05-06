@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { PrimaryButton } from "../../stories/buttons/PrimaryButton/PrimaryButton";
+import { PrimaryButton } from "../../stories/buttons/";
 import { useLockPrompt, useLockNoPrompt } from "../../utils/utils";
 import Form from "../../utils/QuestionMechanism";
 import { PrivateRoutes } from "../../PrivateRoutes";

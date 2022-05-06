@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, css } from "aphrodite";
 import { QuestionIconToolTip } from "../stories/tool-tips/QuestionIconToolTip/QuestionIconToolTip";
-import { SubmitButton } from "../stories/buttons/SubmitButton/SubmitButton";
+import { SubmitButton } from "../stories/buttons/";
 import { QuestionFormMessages, TooltipMessages } from "../Messages";
 import { SecretAnswers } from "../PrivateRoutes";
 

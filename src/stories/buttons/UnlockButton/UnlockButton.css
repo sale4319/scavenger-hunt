@@ -1,0 +1,16 @@
+.unlock-button {
+  background: transparent;
+  color: transparent;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.unlock-button::selection {
+  background: transparent;
+}
+
+.unlock-button:hover {
+  background: linear-gradient(#333, #272727, #333);
+}

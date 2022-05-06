@@ -1,28 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { StyleSheet, css } from "aphrodite";
-import { PrimaryButton } from "../../stories/buttons/PrimaryButton/PrimaryButton";
+import { PrimaryButton, UnlockButton } from "../../stories/buttons/";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes, featFlags } from "../../flags";
 import { LevelOneMessages, PromptMessages } from "../../Messages";
-
-const styles = StyleSheet.create({
-  unlockButton: {
-    backgroundColor: "transparent",
-    color: "transparent",
-    border: "none",
-    borderRadius: "9px",
-    cursor: "pointer",
-    padding: "3px",
-
-    ":hover": {
-      background: "linear-gradient(#333, #272727, #333)",
-    },
-
-    "::selection": { background: "transparent" },
-  },
-});
 
 export const LevelOne = () => {
   const navigate = useNavigate();
@@ -42,12 +24,11 @@ export const LevelOne = () => {
 
   return (
     <div>
-      <button
-        className={css(styles.unlockButton)}
+      <UnlockButton
         onClick={handleUnlockNavigation}
-      >
-        {LevelOneMessages.UNLOCK}
-      </button>
+        label={LevelOneMessages.UNLOCK}
+      />
+
       {featFlags.test && <h3>{LevelOneMessages.HINT} </h3>}
 
       <PrimaryButton
