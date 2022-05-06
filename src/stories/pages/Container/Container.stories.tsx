@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { within, userEvent } from "@storybook/testing-library";
+import { DarkModeProvider } from "../../../providers/DarkModeContext";
 import { Container } from "./Container";
 
 export default {
@@ -12,15 +12,10 @@ export default {
 } as ComponentMeta<typeof Container>;
 
 const Template: ComponentStory<typeof Container> = (args) => (
-  <Container {...args} />
+  <DarkModeProvider>
+    <Container {...args} />
+  </DarkModeProvider>
 );
 
-export const LoggedOut = Template.bind({});
-
-export const LoggedIn = Template.bind({});
-
-LoggedIn.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  const loginButton = await canvas.getByRole("button", { name: /Log in/i });
-  await userEvent.click(loginButton);
-};
+export const Preview = Template.bind({});
+Preview.args = {};

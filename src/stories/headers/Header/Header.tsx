@@ -1,6 +1,6 @@
 import React from "react";
 
-import { PrimaryButton } from "../../buttons/PrimaryButton/PrimaryButton";
+import { PrimaryButton } from "../../buttons/";
 import "./Header.css";
 
 type User = {

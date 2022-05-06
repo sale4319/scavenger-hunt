@@ -35,7 +35,7 @@ export const LevelTwo = () => {
         onClick={handleUnlockNavigation}
       />
       <div>
-        <Title label={LevelTwoMessages.HINT} color="white" />
+        <Title label={LevelTwoMessages.HINT} />
       </div>
 
       <PrimaryButton

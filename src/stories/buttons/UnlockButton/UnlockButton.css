@@ -10,7 +10,3 @@
 .unlock-button::selection {
   background: transparent;
 }
-
-.unlock-button:hover {
-  background: linear-gradient(#333, #272727, #333);
-}

@@ -31,7 +31,7 @@ export const LevelThree = () => {
 
   return (
     <div>
-      <Title label={LevelThreeMessages.HINT} color="white" />
+      <Title label={LevelThreeMessages.HINT} />
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}

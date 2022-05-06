@@ -23,7 +23,6 @@ export const LevelThreeMessages = {
 
 export const EndClassicMessages = {
   GIFT: "Download me and find the gift inside.",
-  GITHUB: "https://github.com/alestojanovic/scavenger-hunt-v1",
   CONGRATS: "CONGRATULATIONS!",
 };
 
@@ -54,6 +53,11 @@ export const QuestionFormMessages = {
   SECOND_Q_PLACEHOLDER: "Write it when you find it",
   SECOND_Q_LABEL:
     "Answer one is now encrypted and hidden on this website. Find it ",
+};
+
+export const Links = {
+  PD_LINK: "https://productdock.com/",
+  GITHUB: "https://github.com/alestojanovic/scavenger-hunt-v1",
 };
 
 // ON HOLD

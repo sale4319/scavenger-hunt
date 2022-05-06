@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { DarkModeProvider } from "../../../providers/DarkModeContext";
 
 import { AppBar } from "./AppBar";
 
@@ -11,14 +12,11 @@ export default {
   },
 } as ComponentMeta<typeof AppBar>;
 
-const Template: ComponentStory<typeof AppBar> = (args) => <AppBar {...args} />;
+const Template: ComponentStory<typeof AppBar> = (args) => (
+  <DarkModeProvider>
+    <AppBar />
+  </DarkModeProvider>
+);
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {
-    name: "Jane Doe",
-  },
-};
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+export const Preview = Template.bind({});
+Preview.args = {};
