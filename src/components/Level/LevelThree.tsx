@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Title } from "../../stories/headers";
 import { PrimaryButton } from "../../stories/buttons/";
 import { useLockPrompt, useLockNoPrompt } from "../../utils/utils";
 import { QuestionForm } from "../../stories/forms/";
@@ -30,7 +31,7 @@ export const LevelThree = () => {
 
   return (
     <div>
-      <h3>{LevelThreeMessages.HINT}</h3>
+      <Title label={LevelThreeMessages.HINT} color="white" />
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}

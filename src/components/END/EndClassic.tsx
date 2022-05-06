@@ -2,17 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { StyleSheet, css } from "aphrodite";
+import { Title } from "../../stories/headers";
 import { FaHeartBroken, FaHeart } from "react-icons/fa";
-import { GiftButton, GithubButton } from "../../stories/buttons/";
+import { GiftButton } from "../../stories/buttons/";
 import { useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
 
 const styles = StyleSheet.create({
-  title: {
-    color: "#61dafb",
-  },
-
   heartIcon: {
     color: "red",
     marginBottom: "25px",
@@ -43,7 +40,12 @@ const EndClassic = () => {
 
   return (
     <>
-      <h1 className={css(styles.title)}>{EndClassicMessages.CONGRATS}</h1>
+      <Title
+        label={EndClassicMessages.CONGRATS}
+        titleSize="large"
+        color="#61dafb"
+      />
+
       {toggleIcon ? (
         <FaHeartBroken
           onClick={handleUnlockNavigation}
@@ -63,15 +65,6 @@ const EndClassic = () => {
           primary={toggleIcon}
           size="large"
           onClick={routeChange}
-        />
-      </div>
-      <div>
-        <GithubButton
-          href={`${EndClassicMessages.GITHUB}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          size={50}
-          primary={unLockNavigation}
         />
       </div>
     </>

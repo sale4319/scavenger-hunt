@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Title } from "../../stories/headers";
 import { PrimaryButton, UnlockButton } from "../../stories/buttons/";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
@@ -29,7 +30,7 @@ export const LevelOne = () => {
         label={LevelOneMessages.UNLOCK}
       />
 
-      {featFlags.test && <h3>{LevelOneMessages.HINT} </h3>}
+      {featFlags.test && <Title label={LevelOneMessages.HINT} color="white" />}
 
       <PrimaryButton
         onClick={routeChange}

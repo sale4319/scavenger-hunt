@@ -2,6 +2,7 @@ import React, { useState, useEffect, FC } from "react";
 import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
+import { Title } from "../../stories/headers";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { useUnlockPrompt } from "../../utils/utils";
 import { modes } from "../../flags";
@@ -83,7 +84,11 @@ const StartTimer = () => {
   return (
     <div>
       <div>
-        <h2>{StartTimerMessages.TITLE}</h2>
+        <Title
+          titleSize="large"
+          label={StartTimerMessages.TITLE}
+          color="white"
+        />
       </div>
       <span className={css(styles.timeCounter)}>
         <Countdown
@@ -103,14 +108,18 @@ const StartTimer = () => {
         />
       </span>
 
-      <p>
-        {StartTimerMessages.HINT}
+      <div>
+        <Title
+          titleSize="small"
+          label={StartTimerMessages.HINT}
+          color="white"
+        />
         <QuestionIconToolTip
           size={30}
           onClick={handleunLockNavigation}
           content={TooltipMessages.START_HINT}
         />
-      </p>
+      </div>
       <PrimaryButton
         onClick={unLockNavigation ? handleunLockNavigation : routeChange}
         primary={unLockNavigation}
