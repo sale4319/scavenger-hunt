@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { Container } from "./stories/pages/";
 import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
 import { LevelTwo } from "./components/Level/LevelTwo";
 import { LevelThree } from "./components/Level/LevelThree";
 import EndClassic from "./components/End/EndClassic";
 import { PrivateRoutes } from "./PrivateRoutes";
-import { Container } from "./stories/pages/Container/Container";
 
 import "react-toastify/dist/ReactToastify.css";
 

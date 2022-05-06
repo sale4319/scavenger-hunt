@@ -13,13 +13,19 @@
   padding: 0.5rem;
   border-radius: 4px;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.form-label,
-.form-input {
+.form-label--dark,
+.form-input--dark {
   color: white;
+}
+
+.form-label--light,
+.form-input--light {
+  color: #282c34;
 }
 
 .form-label {

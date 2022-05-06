@@ -1,47 +1,46 @@
+import React, { useContext } from "react";
+import { DarkModeContext } from "../../../providers/DarkModeContext";
 import { GithubButton } from "../../buttons/";
 import reactHeart from "../../assets/reactHeart.svg";
-import { EndClassicMessages } from "../../../Messages";
-import { modes } from "../../../flags";
+import PDBlue from "../../assets/PDBlue.svg";
+import { Links } from "../../../Messages";
 import "./AppBar.css";
 
-type User = {
-  name: string;
+export const AppBar = () => {
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+  const handleClick = () => {
+    toggleDarkMode();
+  };
+
+  return (
+    <header>
+      <div
+        className={
+          darkMode
+            ? "app-wrapper app-wrapper--dark"
+            : "app-wrapper app-wrapper--light"
+        }
+      >
+        <div>
+          <GithubButton
+            href={`${Links.GITHUB}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            size={35}
+          />
+        </div>
+        <a href={`${Links.PD_LINK}`} target="_blank" rel="noopener noreferrer">
+          <img src={PDBlue} alt="gift-logo" />
+        </a>
+        <div>
+          <img
+            className="pointer"
+            src={reactHeart}
+            alt="gift-logo"
+            onClick={handleClick}
+          />
+        </div>
+      </div>
+    </header>
+  );
 };
-
-interface AppBarProps {
-  user?: User;
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
-}
-
-export const AppBar = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: AppBarProps) => (
-  <header>
-    <div className="app-wrapper">
-      <div>
-        <GithubButton
-          href={`${EndClassicMessages.GITHUB}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          size={35}
-        />
-        <h1 className="app-h1">Scavenger Hunt</h1>
-      </div>
-      <div className="separator" />
-      <div>
-        {/* TODO: enable when I make light mode */}
-        {modes.lightMode && (
-          <>
-            <img src={reactHeart} alt="gift-logo" />
-            <h1>Light Mode</h1>
-          </>
-        )}
-      </div>
-    </div>
-  </header>
-);

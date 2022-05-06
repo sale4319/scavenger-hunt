@@ -9,11 +9,21 @@
   color: white;
   width: 100%;
   position: fixed;
+  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
+  transition-property: color, background, width, height, margin, padding, border,
+    box-shadow;
+}
+
+.app-wrapper--dark {
+  background-color: #1e1e1e;
+  color: white;
   box-shadow: inset 0 0 50px #1e1e1e, /* inner white */ inset 20px 0 80px gray;
 }
-.separator {
-  padding: 0px 50px;
+.app-wrapper--light {
+  background-color: white;
+  color: #1e1e1e;
+  box-shadow: inset 0 0 50px white, /* inner white */ inset 20px 0 80px #cecece;
 }
 
 .app-h1 {
@@ -23,4 +33,8 @@
   margin: 6px 0 6px 10px;
   display: inline-block;
   vertical-align: top;
+}
+
+.pointer {
+  cursor: pointer;
 }

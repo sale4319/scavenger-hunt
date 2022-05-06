@@ -30,7 +30,7 @@ export const LevelOne = () => {
         label={LevelOneMessages.UNLOCK}
       />
 
-      {featFlags.test && <Title label={LevelOneMessages.HINT} color="white" />}
+      {featFlags.test && <Title label={LevelOneMessages.HINT} />}
 
       <PrimaryButton
         onClick={routeChange}

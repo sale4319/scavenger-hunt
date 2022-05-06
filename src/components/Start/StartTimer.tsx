@@ -84,11 +84,7 @@ const StartTimer = () => {
   return (
     <div>
       <div>
-        <Title
-          titleSize="large"
-          label={StartTimerMessages.TITLE}
-          color="white"
-        />
+        <Title titleSize="large" label={StartTimerMessages.TITLE} />
       </div>
       <span className={css(styles.timeCounter)}>
         <Countdown
@@ -109,11 +105,7 @@ const StartTimer = () => {
       </span>
 
       <div>
-        <Title
-          titleSize="small"
-          label={StartTimerMessages.HINT}
-          color="white"
-        />
+        <Title titleSize="small" label={StartTimerMessages.HINT} />
         <QuestionIconToolTip
           size={30}
           onClick={handleunLockNavigation}

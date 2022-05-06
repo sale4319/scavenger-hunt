@@ -1,29 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkModeContext } from "../../../providers/DarkModeContext";
 
-import { AppBar } from "../../headers/";
+import { AppBar } from "../../headers";
 import "./Container.css";
 
 interface ContainerProps {
-  children;
+  children: any;
 }
 
-type User = {
-  name: string;
-};
-
 export const Container = ({ children, ...props }: ContainerProps) => {
-  const [user, setUser] = React.useState<User>();
+  const { darkMode } = useContext(DarkModeContext);
 
   return (
     <article>
-      <AppBar
-        user={user}
-        onLogin={() => setUser({ name: "Jane Doe" })}
-        onLogout={() => setUser(undefined)}
-        onCreateAccount={() => setUser({ name: "Jane Doe" })}
-      />
-
-      <section>{children}</section>
+      <AppBar />
+      <section
+        className={
+          darkMode ? "container container-dark" : "container container-light"
+        }
+      >
+        {children}
+      </section>
     </article>
   );
 };
