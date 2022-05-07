@@ -1,22 +1,23 @@
-#githubButton {
-  background: transparent url("../../assets/github.svg") no-repeat center;
-  background-size: 35px 35px;
+#darkMode {
+  background: transparent url("../../assets/reactHeart.svg") no-repeat center;
+  background-size: 30px 30px;
   width: 35px;
   height: 35px;
   filter: grayscale(100%);
   border: none;
+  border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-#githubButton:hover,
-#githubButton:focus {
+#darkMode:hover,
+#darkMode:focus {
   filter: none;
   background-color: transparent;
   cursor: pointer;
 }
 
-#githubButton.clicked {
+#darkMode.clicked {
   filter: none !important;
   background-color: transparent;
 }

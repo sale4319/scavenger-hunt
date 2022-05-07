@@ -1,5 +1,4 @@
 import React from "react";
-import { FaGithubAlt } from "react-icons/fa";
 import "./GithubButton.css";
 
 interface GithubButtonProps {
@@ -21,15 +20,9 @@ export const GithubButton = ({
   rel,
   ...props
 }: GithubButtonProps) => {
-  const mode = primary ? "github-button--primary" : "github-button--secondary";
   return (
     <a href={href} target={target} rel={rel}>
-      <FaGithubAlt
-        size={size}
-        className={["github-button", mode].join(" ")}
-        style={{ backgroundColor }}
-        {...props}
-      />
+      <button id="githubButton" style={{ backgroundColor }}></button>
     </a>
   );
 };

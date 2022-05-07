@@ -1,16 +1,12 @@
 import React, { useContext } from "react";
 import { DarkModeContext } from "../../../providers/DarkModeContext";
-import { GithubButton } from "../../buttons/";
-import reactHeart from "../../assets/reactHeart.svg";
+import { GithubButton, DarkModeButton } from "../../buttons/";
 import PDBlue from "../../assets/PDBlue.svg";
 import { Links } from "../../../Messages";
 import "./AppBar.css";
 
 export const AppBar = () => {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-  const handleClick = () => {
-    toggleDarkMode();
-  };
+  const { darkMode } = useContext(DarkModeContext);
 
   return (
     <header>
@@ -30,15 +26,10 @@ export const AppBar = () => {
           />
         </div>
         <a href={`${Links.PD_LINK}`} target="_blank" rel="noopener noreferrer">
-          <img src={PDBlue} alt="gift-logo" />
+          <img src={PDBlue} id="pdButton" alt="gift-logo" />
         </a>
         <div>
-          <img
-            className="pointer"
-            src={reactHeart}
-            alt="gift-logo"
-            onClick={handleClick}
-          />
+          <DarkModeButton />
         </div>
       </div>
     </header>
