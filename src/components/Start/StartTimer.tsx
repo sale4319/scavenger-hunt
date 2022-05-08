@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const Completionist = () => <span>{StartTimerMessages.START}</span>;
+const Completionist = () => (
+  <Title titleSize="medium" label={StartTimerMessages.START} color="#25d0ff" />
+);
 
 const twoDigits = (num) => String(num).padStart(2, "0");
 

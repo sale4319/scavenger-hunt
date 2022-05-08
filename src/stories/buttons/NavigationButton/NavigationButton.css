@@ -1,6 +1,9 @@
 #githubButton {
   background: transparent no-repeat center;
   content: url("../../assets/github.svg");
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
   filter: grayscale(100%);
   border: none;
   cursor: pointer;
@@ -17,6 +20,9 @@
 #pdButton {
   background: transparent no-repeat center;
   content: url("../../assets/PDBlue.svg");
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
   filter: grayscale(100%);
   border: none;
   cursor: pointer;

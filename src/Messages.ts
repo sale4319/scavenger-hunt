@@ -1,5 +1,5 @@
 export const StartTimerMessages = {
-  START: "You are good to go!",
+  START: "Time is up! Refresh to restart the counter.",
   TITLE: "Happy Hacking",
   HINT: "This button seems to be broken... can we fix it ",
   BUTTON: "You have to start somewhere",
