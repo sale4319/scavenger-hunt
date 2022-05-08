@@ -12,9 +12,9 @@ Since the game is targeting people who are learning computer science it is highl
 
 In case you would like to try it out locally, you will need to make PrivateRoutes.js file in your source folder and set up your routes there, or just 'fix' App.js and hardcode the url parameters in `<Router>`.
 
-`PrivateRoutes.js`
-
 ---
+
+`PrivateRoutes.js`
 
 ```
 export const PrivateRoutes = {
@@ -42,7 +42,7 @@ When this issue is dealt with your project will start with `yarn start` command.
 - [x] Security patch for found vulnerabilities
 - [x] New version of gameplay for all Stages
 - [x] Migrate to TypeScript and write finish tests
-- [ ] Create Logic and Styling for Stage 4
-- [ ] Create Logic and Styling for Stage 5
-- [ ] Implement Storybook and export/import all components
+- [x] Create Logic and Styling for Stage 4
+- [x] Create Logic and Styling for Stage 5
+- [x] Implement Storybook and export/import all components
 - [ ] Write/Finish tests
