@@ -15,17 +15,13 @@ const Template: ComponentStory<typeof NavigationButton> = (args) => (
   <NavigationButton {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const GithubButton = Template.bind({});
+GithubButton.args = {
   id: "githubButton",
+  light: false,
 };
 
-export const Large = Template.bind({});
-Large.args = {
+export const PDButton = Template.bind({});
+GithubButton.args = {
   id: "pdButton",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  id: "githubButton",
 };
