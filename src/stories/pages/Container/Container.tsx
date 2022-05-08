@@ -16,7 +16,9 @@ export const Container = ({ children, ...props }: ContainerProps) => {
       <AppBar />
       <section
         className={
-          darkMode ? "container container-dark" : "container container-light"
+          darkMode
+            ? "container section-container container-dark "
+            : "container section-container container-light"
         }
       >
         {children}

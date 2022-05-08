@@ -1,9 +1,11 @@
-import React, { createContext, useState } from "react";
+import React, { createContext } from "react";
+import { useLocalStorage } from "../utils/useLocalStorage";
 
 const DarkModeContext = createContext();
 
 function DarkModeProvider(props) {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", true);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };

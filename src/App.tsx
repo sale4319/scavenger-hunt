@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { DarkModeProvider } from "./providers/DarkModeContext";
 import { Container } from "./stories/pages/";
 import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
@@ -13,36 +12,26 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
-    <DarkModeProvider>
-      <Container>
-        <Router>
-          <Routes>
-            <Route
-              path={PrivateRoutes.PARAM_START_TIMER}
-              element={<StartTimer />}
-            />
-            <Route
-              path={PrivateRoutes.PARAM_LEVEL_ONE}
-              element={<LevelOne />}
-            />
-            <Route
-              path={PrivateRoutes.PARAM_LEVEL_TWO}
-              element={<LevelTwo />}
-            />
-            <Route
-              path={PrivateRoutes.PARAM_LEVEL_THREE}
-              element={<LevelThree />}
-            />
-            <Route
-              path={PrivateRoutes.PARAM_END_CLASSIC}
-              element={<EndClassic />}
-            />
-          </Routes>
-        </Router>
+    <Container>
+      <Routes>
+        <Route
+          path={PrivateRoutes.PARAM_START_TIMER}
+          element={<StartTimer />}
+        />
+        <Route path={PrivateRoutes.PARAM_LEVEL_ONE} element={<LevelOne />} />
+        <Route path={PrivateRoutes.PARAM_LEVEL_TWO} element={<LevelTwo />} />
+        <Route
+          path={PrivateRoutes.PARAM_LEVEL_THREE}
+          element={<LevelThree />}
+        />
+        <Route
+          path={PrivateRoutes.PARAM_END_CLASSIC}
+          element={<EndClassic />}
+        />
+      </Routes>
 
-        <ToastContainer autoClose={3000} hideProgressBar />
-      </Container>
-    </DarkModeProvider>
+      <ToastContainer autoClose={3000} hideProgressBar />
+    </Container>
   );
 };
 

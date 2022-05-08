@@ -1,16 +1,11 @@
 import React, { useContext } from "react";
 import { DarkModeContext } from "../../../providers/DarkModeContext";
-import { GithubButton } from "../../buttons/";
-import reactHeart from "../../assets/reactHeart.svg";
-import PDBlue from "../../assets/PDBlue.svg";
+import { NavigationButton, DarkModeButton } from "../../buttons/";
 import { Links } from "../../../Messages";
 import "./AppBar.css";
 
 export const AppBar = () => {
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
-  const handleClick = () => {
-    toggleDarkMode();
-  };
+  const { darkMode } = useContext(DarkModeContext);
 
   return (
     <header>
@@ -21,25 +16,23 @@ export const AppBar = () => {
             : "app-wrapper app-wrapper--light"
         }
       >
-        <div>
-          <GithubButton
-            href={`${Links.GITHUB}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            size={35}
-          />
-        </div>
-        <a href={`${Links.PD_LINK}`} target="_blank" rel="noopener noreferrer">
-          <img src={PDBlue} alt="gift-logo" />
-        </a>
-        <div>
-          <img
-            className="pointer"
-            src={reactHeart}
-            alt="gift-logo"
-            onClick={handleClick}
-          />
-        </div>
+        <NavigationButton
+          id="githubButton"
+          href={`${Links.GITHUB}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          light={darkMode}
+        />
+
+        <NavigationButton
+          id="pdButton"
+          href={`${Links.PD_LINK}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          light={darkMode}
+        />
+
+        <DarkModeButton />
       </div>
     </header>
   );

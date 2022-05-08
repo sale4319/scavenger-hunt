@@ -19,7 +19,6 @@ export const QuestionIconToolTip = ({
   return (
     <Tippy className="question-tooltip" content={content}>
       <button type="button" className="question-button" {...props}>
-        {" "}
         <BsFillPatchQuestionFill size={size} className="question-icon" />
       </button>
     </Tippy>

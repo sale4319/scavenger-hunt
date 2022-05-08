@@ -1,0 +1,54 @@
+#githubButton {
+  background: transparent no-repeat center;
+  content: url("../../assets/github.svg");
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+  filter: grayscale(100%);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#githubButton:hover,
+#githubButton:focus {
+  filter: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#pdButton {
+  background: transparent no-repeat center;
+  content: url("../../assets/PDBlue.svg");
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+  filter: grayscale(100%);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#pdButton:hover,
+#pdButton:focus {
+  filter: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input[type="checkbox" i] {
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+.light-mode {
+  filter: none !important;
+  background-color: transparent;
+}
+
+.dark-mode {
+  filter: none;
+  background-color: transparent;
+  cursor: pointer;
+}

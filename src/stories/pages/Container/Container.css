@@ -1,32 +1,30 @@
 .container {
-  min-height: 100vh;
-
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   font-size: calc(12px + 2vmin);
   text-align: center;
-  transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-  transition-property: color, background, width, height, margin, padding, border,
-    box-shadow;
+  transition: background-color 0.3s ease-in-out, filter 0.6s ease-in-out;
 }
 
 .container-dark {
   background-color: #282c34;
   color: white;
-  transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-  transition-property: color, background, width, height, margin, padding, border,
-    box-shadow;
+  transition: background-color 0.3s ease-in-out, filter 0.6s ease-in-out;
 }
 
 .container-light {
   background-color: white;
   color: #282c34;
-  transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: background-color 0.3s ease-in-out, filter 0.6s ease-in-out;
+}
 
-  transition-property: color, background, width, height, margin, padding, border,
-    box-shadow;
+.section-container {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 34px;
+  padding: 48px 20px;
+  margin: 0 auto;
+  max-width: 80%;
 }

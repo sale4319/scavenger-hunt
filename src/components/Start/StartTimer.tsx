@@ -6,7 +6,7 @@ import { Title } from "../../stories/headers";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { useUnlockPrompt } from "../../utils/utils";
 import { modes } from "../../flags";
-import { QuestionIconToolTip } from "../../stories/tool-tips/QuestionIconToolTip/QuestionIconToolTip";
+import { QuestionIconToolTip } from "../../stories/tool-tips/";
 import { PrimaryButton } from "../../stories/buttons/";
 import {
   StartTimerMessages,
@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const Completionist = () => <span>{StartTimerMessages.START}</span>;
+const Completionist = () => (
+  <Title titleSize="medium" label={StartTimerMessages.START} color="#25d0ff" />
+);
 
 const twoDigits = (num) => String(num).padStart(2, "0");
 
@@ -104,14 +106,14 @@ const StartTimer = () => {
         />
       </span>
 
-      <div>
-        <Title titleSize="small" label={StartTimerMessages.HINT} />
-        <QuestionIconToolTip
-          size={30}
-          onClick={handleunLockNavigation}
-          content={TooltipMessages.START_HINT}
-        />
-      </div>
+      <Title titleSize="medium" label={StartTimerMessages.HINT} />
+
+      <QuestionIconToolTip
+        size={30}
+        onClick={handleunLockNavigation}
+        content={TooltipMessages.START_HINT}
+      />
+
       <PrimaryButton
         onClick={unLockNavigation ? handleunLockNavigation : routeChange}
         primary={unLockNavigation}

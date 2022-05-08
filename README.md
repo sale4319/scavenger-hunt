@@ -12,6 +12,23 @@ Since the game is targeting people who are learning computer science it is highl
 
 In case you would like to try it out locally, you will need to make PrivateRoutes.js file in your source folder and set up your routes there, or just 'fix' App.js and hardcode the url parameters in `<Router>`.
 
+`PrivateRoutes.js`
+
+---
+
+```
+export const PrivateRoutes = {
+  PARAM_START_TIMER: "/",
+  PARAM_LEVEL_ONE: "/stepOne",
+  PARAM_LEVEL_TWO: "/stepTwo",
+  PARAM_LEVEL_THREE: "/stepThree",
+  PARAM_LEVEL_FOUR: "/stepFour",
+  PARAM_END_CLASSIC: "/stepFive",
+};
+```
+
+---
+
 When this issue is dealt with your project will start with `yarn start` command.
 
 ## Development path
