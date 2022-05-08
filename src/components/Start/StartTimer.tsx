@@ -106,7 +106,7 @@ const StartTimer = () => {
         />
       </span>
 
-      <Title titleSize="small" label={StartTimerMessages.HINT} />
+      <Title titleSize="medium" label={StartTimerMessages.HINT} />
 
       <QuestionIconToolTip
         size={30}

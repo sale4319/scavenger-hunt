@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { StyleSheet, css } from "aphrodite";
 import { Title } from "../../stories/headers";
 import { FaHeartBroken, FaHeart } from "react-icons/fa";
 import { GiftButton } from "../../stories/buttons/";
 import { useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
-
-const styles = StyleSheet.create({
-  heartIcon: {
-    color: "red",
-    marginBottom: "25px",
-  },
-});
 
 const EndClassic = () => {
   const navigate = useNavigate();
@@ -47,17 +39,9 @@ const EndClassic = () => {
       />
 
       {toggleIcon ? (
-        <FaHeartBroken
-          onClick={handleUnlockNavigation}
-          size={50}
-          className={css(styles.heartIcon)}
-        />
+        <FaHeartBroken onClick={handleUnlockNavigation} size={50} color="red" />
       ) : (
-        <FaHeart
-          onClick={handleUnlockNavigation}
-          size={50}
-          className={css(styles.heartIcon)}
-        />
+        <FaHeart onClick={handleUnlockNavigation} size={50} color="red" />
       )}
       <div>
         <GiftButton
