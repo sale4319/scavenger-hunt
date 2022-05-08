@@ -37,7 +37,7 @@
   padding: 10px;
   border-radius: 3px;
   border: 1px solid #777;
-  margin: 8px;
+  margin-bottom: 8px;
 }
 .form-input:focus {
   z-index: 1;
@@ -63,7 +63,7 @@
   border-radius: 3px;
   border: 1px solid #777;
   border-color: red;
-  transition: 1s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .form-input-error:focus {
