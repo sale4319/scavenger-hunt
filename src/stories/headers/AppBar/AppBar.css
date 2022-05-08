@@ -31,26 +31,3 @@
   display: inline-block;
   vertical-align: top;
 }
-
-#pdButton {
-  background: transparent no-repeat center;
-  background-size: 35px 35px;
-  width: 35px;
-  height: 35px;
-  filter: grayscale(100%);
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-
-#pdButton:hover,
-#pdButton:focus {
-  filter: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-#pdButton.clicked {
-  filter: none !important;
-  background-color: transparent;
-}

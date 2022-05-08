@@ -1,31 +1,31 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { GithubButton } from "./GithubButton";
+import { NavigationButton } from "./NavigationButton";
 
 export default {
-  title: "Buttons/GithubButton",
-  component: GithubButton,
+  title: "Buttons/NavigationButton",
+  component: NavigationButton,
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof GithubButton>;
+} as ComponentMeta<typeof NavigationButton>;
 
-const Template: ComponentStory<typeof GithubButton> = (args) => (
-  <GithubButton {...args} />
+const Template: ComponentStory<typeof NavigationButton> = (args) => (
+  <NavigationButton {...args} />
 );
 
 export const Primary = Template.bind({});
 Primary.args = {
-  size: 35,
+  id: "githubButton",
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: 45,
+  id: "pdButton",
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: 25,
+  id: "githubButton",
 };
