@@ -2,7 +2,7 @@
 
 ## The idea
 
-This is an interactive web application which is designed to limit users to doing things in certain way while preventing them to skip any steps. You should be aware that confusing and annoying user experience is **intended** and not a design flaw. Frustration is part of the game just as much as it is part of programming.
+This is an interactive web application which is designed to limit users to doing things in certain way while preventing them to skip any steps. You should be aware that confusing user experience is **intended** and not a design flaw. Frustration is part of the game just as much as it is part of programming.
 
 ## Gameplay
 
@@ -10,11 +10,11 @@ Since the game is targeting people who are learning computer science it is highl
 
 ## Running the project locally
 
-In case you would like to try it out locally, you will need to make PrivateRoutes.js file in your source folder and set up your routes there, or just 'fix' App.js and hardcode the url parameters in `<Router>`.
+In case you would like to try it out locally, you will need to make PrivateRoutes.ts file in your source folder and set up your routes there, or just 'fix' App.js and hardcode the url parameters in `<Router>`.
 
 ---
 
-`PrivateRoutes.js`
+`PrivateRoutes.ts`
 
 ```
 export const PrivateRoutes = {
