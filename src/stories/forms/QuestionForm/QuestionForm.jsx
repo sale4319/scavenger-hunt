@@ -140,7 +140,6 @@ export const QuestionForm = ({
             <span className="error">{formErrors.answerTwo}</span>
           )}
         </div>
-
         <SubmitButton
           type="submit"
           submit={true}

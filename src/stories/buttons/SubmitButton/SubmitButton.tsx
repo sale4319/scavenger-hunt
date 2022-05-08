@@ -16,13 +16,11 @@ export const SubmitButton = ({
   label,
   ...props
 }: SubmitButtonProps) => {
-  const mode = submit ? "storybook-button--submit" : "storybook-button--purple";
+  const mode = submit ? "button-submit--blue" : "button-submit--purple";
   return (
     <button
       type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
+      className={["button-submit", `button-submit-${size}`, mode].join(" ")}
       style={{ backgroundColor }}
       {...props}
     >

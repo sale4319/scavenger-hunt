@@ -1,10 +1,29 @@
-.storybook-button--submit {
+.button-submit {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border-style: solid;
+  border-radius: 9px;
+  cursor: pointer;
+  padding: 3rem;
+  color: white;
+  margin-top: 10px;
+  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  transition-property: color, background, width, height, margin, padding, border,
+    box-shadow;
+}
+
+.button-submit::selection {
+  background: transparent;
+}
+
+.button-submit--blue {
   color: white;
   background: linear-gradient(#61dafb, #0097c1, #61dafb);
   border-color: #0097c1;
 }
 
-.storybook-button--submit:hover {
+.button-submit--blue:hover {
   z-index: 1;
   background: linear-gradient(#0097c1, #61dafb, #0097c1);
   border-color: #0097c1;
@@ -13,17 +32,30 @@
   outline: none;
 }
 
-.storybook-button--purple {
+.button-submit--purple {
   color: white;
   background: linear-gradient(#a800a2, #ff00f7, #a800a2);
   border-color: #a800a2;
 }
 
-.storybook-button--purple:hover {
+.button-submit--purple:hover {
   z-index: 1;
   background: linear-gradient(#ff00f7, #a800a2, #ff00f7);
   border-color: #a800a2;
   border-radius: 9px;
   box-shadow: 5px 10px 15px #ff00f7;
   outline: none;
+}
+
+.button-submit-small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.button-submit-medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.sbutton-submit-large {
+  font-size: 16px;
+  padding: 12px 24px;
 }
