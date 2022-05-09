@@ -13,12 +13,11 @@ import {
   TooltipMessages,
   PromptMessages,
 } from "../../Messages";
-import { colors } from "../../ColourPalette";
 
 const styles = StyleSheet.create({
   timeCounter: {
     fontSize: "100px",
-    color: colors.reactBlue,
+    color: "#61dafb",
   },
 });
 
