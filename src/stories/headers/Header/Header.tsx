@@ -1,27 +1,27 @@
+/* eslint-disable no-empty-pattern */
 import React from "react";
 
-import { PrimaryButton } from "../../buttons/";
+// import { PrimaryButton } from "../../buttons/";
 import "./Header.css";
 
-type User = {
-  name: string;
-};
+// type User = {
+//   name: string;
+// };
 
 interface HeaderProps {
-  user?: User;
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
+  // user?: User;
+  // onLogin: () => void;
+  // onLogout: () => void;
+  // onCreateAccount: () => void;
 }
 
-export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
+export const Header = ({}: // user,
+// onLogin,
+// onLogout,
+// onCreateAccount,
+HeaderProps) => (
   <header>
-    <div className="wrapper">
+    {/* <div className="wrapper">
       <div>
         <svg
           width="32"
@@ -66,6 +66,6 @@ export const Header = ({
           </>
         )}
       </div>
-    </div>
+    </div> */}
   </header>
 );

@@ -1,25 +1,25 @@
 import React from "react";
 
-import { Header } from "../../headers/";
+// import { Header } from "../../headers/";
 import "./Page.css";
 
-type User = {
-  name: string;
-};
+// type User = {
+//   name: string;
+// };
 
 export const Page: React.VFC = () => {
-  const [user, setUser] = React.useState<User>();
+  // const [user, setUser] = React.useState<User>();
 
   return (
     <article>
-      <Header
+      {/* <Header
         user={user}
         onLogin={() => setUser({ name: "Jane Doe" })}
         onLogout={() => setUser(undefined)}
         onCreateAccount={() => setUser({ name: "Jane Doe" })}
-      />
+      /> */}
 
-      <section>
+      {/* <section>
         <h2>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{" "}
@@ -85,7 +85,7 @@ export const Page: React.VFC = () => {
           </svg>
           Viewports addon in the toolbar
         </div>
-      </section>
+      </section> */}
     </article>
   );
 };
