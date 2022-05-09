@@ -4,6 +4,7 @@ import { DarkModeContext } from "../../../providers/DarkModeContext";
 import { Title } from "../../headers";
 import { SubmitButton } from "../../buttons";
 import { PrivateRoutes } from "../../../PrivateRoutes";
+import { DefaultMessages } from "../../../Messages";
 import "./PageNotFound.css";
 
 export const PageNotFound = () => {
@@ -22,11 +23,11 @@ export const PageNotFound = () => {
             : "page-not-found-container  container-light"
         }
       >
-        <Title
-          label="Ooops... what happened? Here have a fancy button."
-          titleSize="large"
+        <Title label={DefaultMessages.PAGE_NOT_FOUNS} titleSize="large" />
+        <SubmitButton
+          onClick={routeChange}
+          label={DefaultMessages.FANCY_BUTTON}
         />
-        <SubmitButton onClick={routeChange} label="I will take you home" />
       </section>
     </article>
   );

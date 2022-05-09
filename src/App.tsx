@@ -29,7 +29,7 @@ const App = () => {
           path={PrivateRoutes.PARAM_END_CLASSIC}
           element={<EndClassic />}
         />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path={PrivateRoutes.PARAM_404} element={<PageNotFound />} />
       </Routes>
 
       <ToastContainer autoClose={3000} hideProgressBar />

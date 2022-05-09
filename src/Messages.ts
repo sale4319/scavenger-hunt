@@ -57,7 +57,12 @@ export const QuestionFormMessages = {
 
 export const Links = {
   PD_LINK: "https://productdock.com/",
-  GITHUB: "https://github.com/alestojanovic/scavenger-hunt-v1",
+  GITHUB: "https://github.com/alestojanovic/scavenger-hunt-main",
+};
+
+export const DefaultMessages = {
+  PAGE_NOT_FOUNS: "Ooops... what happened? Here have a fancy button.",
+  FANCY_BUTTON: "I will take you home",
 };
 
 // ON HOLD
