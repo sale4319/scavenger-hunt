@@ -32,21 +32,6 @@
   outline: none;
 }
 
-.button-submit--purple {
-  color: white;
-  background: linear-gradient(#a800a2, #ff00f7, #a800a2);
-  border-color: #a800a2;
-}
-
-.button-submit--purple:hover {
-  z-index: 1;
-  background: linear-gradient(#ff00f7, #a800a2, #ff00f7);
-  border-color: #a800a2;
-  border-radius: 9px;
-  box-shadow: 5px 10px 15px #ff00f7;
-  outline: none;
-}
-
 .button-submit-small {
   font-size: 12px;
   padding: 10px 16px;
