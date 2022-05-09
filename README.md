@@ -10,11 +10,11 @@ Since the game is targeting people who are learning computer science it is highl
 
 ## Running the project locally
 
-In case you would like to try it out locally, you will need to make PrivateRoutes.ts file in your source folder and set up your routes there, or just 'fix' App.js and hardcode the url parameters in `<Router>`.
+In case you would like to try it out locally, you will need to make PrivateRoutes.ts file in your source folder and set up your routes there, or just 'fix' App.tsx and hardcode the url parameters in `<Route>` path.
 
 ---
 
-`PrivateRoutes.ts`
+`PrivateRoutes.ts` template
 
 ```
 export const PrivateRoutes = {
@@ -34,20 +34,22 @@ export const SecretAnswers = {
 
 ---
 
-When this issue is dealt with your project will start with `yarn start` command.
+When this issue is dealt with your project will start with `yarn start` command, and if you want storybook then use `yarn storybook`.
 
 ## Development path
 
 - [x] Setup Router, PrivateRoutes and Navigation
 - [x] Create persistent countdown timer, Logic, and Styling for Level 1
-- [x] Create Logic and Styling for Stage 2
-- [x] Create Logic and Styling for Stage 3
+- [x] Create Logic and Styling for Level 2
+- [x] Create Logic and Styling for Level 3
 - [x] Restructure the project to have better code quality and architecture
 - [x] Migrate CSS to JSS and change package manager to yarn
 - [x] Security patch for found vulnerabilities
 - [x] New version of gameplay for all Stages
-- [x] Migrate to TypeScript and write finish tests
-- [x] Create Logic and Styling for Stage 4
-- [x] Create Logic and Styling for Stage 5
+- [x] Create Logic and Styling for Level 4
+- [x] Create Logic and Styling for Level 5
 - [x] Implement Storybook and export/import all components
+- [x] Create themes with useContext API and persist them with localStorage
+- [x] Add 404 page
+- [ ] Migrate completely to TypeScript
 - [ ] Write/Finish tests
