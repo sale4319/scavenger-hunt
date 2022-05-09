@@ -31,30 +31,18 @@
 .gift-button--primary:hover {
   z-index: 1;
   border-radius: 50%;
-  box-shadow: inset 0 0 50px #f0f, /* inner white */ inset 20px 0 80px red,
-    /* inner left magenta short */ inset -20px 0 80px red,
-    /* inner right cyan short */ inset 20px 0 300px red,
-    /* inner left magenta broad */ inset -20px 0 300px red,
-    /* inner right cyan broad */ 0 0 50px #f0f,
-    /* outer white */ -10px 0 80px red,
-    /* outer left magenta */ 10px 0 80px #f0f;
+  box-shadow: #ff0066 10px 22px 70px 4px, inset 10px 22px 70px 4px #ff0066;
 }
 
 .gift-button--secondary {
-  color: salmon;
+  color: #ff0055;
   background: transparent;
 }
 
 .gift-button--secondary:hover {
   z-index: 1;
   border-radius: 50%;
-  box-shadow: inset 0 0 50px #fff, /* inner white */ inset 20px 0 80px #1fcbfb,
-    /* inner left magenta short */ inset -20px 0 80px #61dafb,
-    /* inner right cyan short */ inset 20px 0 300px #1fcbfb,
-    /* inner left magenta broad */ inset -20px 0 300px #61dafb,
-    /* inner right cyan broad */ 0 0 50px #fff,
-    /* outer white */ -10px 0 80px #1fcbfb,
-    /* outer left magenta */ 10px 0 80px #61dafb;
+  box-shadow: #2bd1ff 10px 22px 70px 4px, inset 10px 22px 70px 4px #2bd1ff;
 }
 
 .gift-button--small {

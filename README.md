@@ -25,6 +25,11 @@ export const PrivateRoutes = {
   PARAM_LEVEL_FOUR: "/stepFour",
   PARAM_END_CLASSIC: "/stepFive",
 };
+
+export const SecretAnswers = {
+  ANSWER_ONE: "YourAnswer",
+  ANSWER_TWO: crypt("salt", "YourAnswer"),
+};
 ```
 
 ---
