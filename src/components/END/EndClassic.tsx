@@ -35,7 +35,7 @@ const EndClassic = () => {
       <Title
         label={EndClassicMessages.CONGRATS}
         titleSize="large"
-        color="#61dafb"
+        color="var(--react-blue)"
       />
 
       {toggleIcon ? (

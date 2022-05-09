@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { QuestionIconToolTip } from "../../tool-tips";
 import { SubmitButton } from "../../buttons";
-import { QuestionFormMessages } from "../../../Messages";
+import { QuestionFormMessages, DefaultMessages } from "../../../Messages";
 import { SecretAnswers } from "../../../PrivateRoutes";
 import "./QuestionForm.css";
 
@@ -144,7 +144,7 @@ export const QuestionForm = ({
           type="submit"
           submit={true}
           size={"small"}
-          label={QuestionFormMessages.SUBMIT_BUTTON}
+          label={DefaultMessages.SUBMIT_BUTTON}
         />
       </form>
     </div>

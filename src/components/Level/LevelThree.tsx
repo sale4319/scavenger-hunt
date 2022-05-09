@@ -11,6 +11,7 @@ import {
   PromptMessages,
   QuestionFormMessages,
   TooltipMessages,
+  DefaultMessages,
 } from "../../Messages";
 
 export const LevelThree = () => {
@@ -36,7 +37,7 @@ export const LevelThree = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        label={LevelThreeMessages.CONTINUE}
+        label={DefaultMessages.CONTINUE_BUTTON}
       />
 
       <QuestionForm

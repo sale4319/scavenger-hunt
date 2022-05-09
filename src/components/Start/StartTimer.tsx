@@ -17,12 +17,16 @@ import {
 const styles = StyleSheet.create({
   timeCounter: {
     fontSize: "100px",
-    color: "#61dafb",
+    color: "var(--react-blue)",
   },
 });
 
 const Completionist = () => (
-  <Title titleSize="medium" label={StartTimerMessages.START} color="#25d0ff" />
+  <Title
+    titleSize="medium"
+    label={StartTimerMessages.START}
+    color="var(--react-darker-blue)"
+  />
 );
 
 const twoDigits = (num) => String(num).padStart(2, "0");

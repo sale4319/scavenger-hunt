@@ -10,6 +10,7 @@ import {
   LevelTwoMessages,
   PromptMessages,
   TooltipMessages,
+  DefaultMessages,
 } from "../../Messages";
 
 export const LevelTwo = () => {
@@ -42,7 +43,7 @@ export const LevelTwo = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        label={LevelTwoMessages.CONTINUE}
+        label={DefaultMessages.CONTINUE_BUTTON}
       />
     </div>
   );

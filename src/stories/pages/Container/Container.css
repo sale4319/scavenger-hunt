@@ -10,14 +10,14 @@
 }
 
 .container-dark {
-  background-color: #282c34;
+  background-color: var(--black);
   color: white;
   transition: background-color 0.3s ease-in-out, filter 0.6s ease-in-out;
 }
 
 .container-light {
   background-color: white;
-  color: #282c34;
+  color: var(--black);
   transition: background-color 0.3s ease-in-out, filter 0.6s ease-in-out;
 }
 
