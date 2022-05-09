@@ -16,7 +16,7 @@ export const SubmitButton = ({
   label,
   ...props
 }: SubmitButtonProps) => {
-  const mode = submit ? "button-submit--blue" : "button-submit--purple";
+  const mode = submit ? "button-submit--blue" : "glow-on-hover";
   return (
     <button
       type="button"

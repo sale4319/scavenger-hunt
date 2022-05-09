@@ -6,6 +6,7 @@ import { LevelOne } from "./components/Level/LevelOne";
 import { LevelTwo } from "./components/Level/LevelTwo";
 import { LevelThree } from "./components/Level/LevelThree";
 import EndClassic from "./components/End/EndClassic";
+import { PageNotFound } from "./stories/pages/";
 import { PrivateRoutes } from "./PrivateRoutes";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -28,6 +29,7 @@ const App = () => {
           path={PrivateRoutes.PARAM_END_CLASSIC}
           element={<EndClassic />}
         />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
 
       <ToastContainer autoClose={3000} hideProgressBar />

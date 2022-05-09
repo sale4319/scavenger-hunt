@@ -17,5 +17,9 @@
     "jsx": "react-jsx",
     "noImplicitAny": false
   },
-  "include": ["src", "deprecated/examples/QuestionForm.deprecated.jsx"]
+  "include": [
+    "src",
+    "deprecated/examples/QuestionForm.deprecated.jsx",
+    "deprecated/examples/Header"
+  ]
 }

@@ -1,2 +1,2 @@
-export { Page } from "./Page/Page";
+export { PageNotFound } from "./PageNotFound/PageNotFound";
 export { Container } from "./Container/Container";
