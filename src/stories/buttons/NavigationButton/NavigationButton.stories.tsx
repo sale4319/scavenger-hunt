@@ -22,6 +22,11 @@ GithubButton.args = {
 };
 
 export const PDButton = Template.bind({});
-GithubButton.args = {
+PDButton.args = {
   id: "pdButton",
+};
+
+export const trelloButton = Template.bind({});
+trelloButton.args = {
+  id: "trelloButton",
 };
