@@ -10,14 +10,14 @@
 }
 
 .container-dark {
-  background-color: var(--black);
+  background-color: #282c34;
   color: white;
   transition: background-color 0.3s ease-in-out, filter 0.6s ease-in-out;
 }
 
 .container-light {
   background-color: white;
-  color: var(--black);
+  color: #282c34;
   transition: background-color 0.3s ease-in-out, filter 0.6s ease-in-out;
 }
 
@@ -26,5 +26,5 @@
   line-height: 34px;
   padding: 48px 20px;
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 40vw;
 }
