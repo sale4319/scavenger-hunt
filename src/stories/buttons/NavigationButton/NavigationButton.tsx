@@ -22,13 +22,8 @@ export const NavigationButton = ({
 }: NavigationButtonProps) => {
   const mode = light ? "dark-mode" : "light-mode";
   return (
-    <>
-      <input type="checkbox" id={id} />
-      <label htmlFor={id}>
-        <a href={href} target={target} rel={rel}>
-          <img className={mode} id={id} alt="logo" />
-        </a>
-      </label>
-    </>
+    <a href={href} target={target} rel={rel}>
+      <img className={mode} id={id} alt="logo" />
+    </a>
   );
 };

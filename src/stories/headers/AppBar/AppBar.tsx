@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { DarkModeContext } from "../../../providers/DarkModeContext";
 import { NavigationButton, DarkModeButton } from "../../buttons/";
+import { featFlags } from "../../../flags";
 import { Links } from "../../../Messages";
 import "./AppBar.css";
 
@@ -31,7 +32,15 @@ export const AppBar = () => {
           rel="noopener noreferrer"
           light={darkMode}
         />
-
+        {featFlags.trello && (
+          <NavigationButton
+            id="trelloButton"
+            href={`${Links.TRELLO}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            light={darkMode}
+          />
+        )}
         <DarkModeButton />
       </div>
     </header>

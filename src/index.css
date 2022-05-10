@@ -1,6 +1,9 @@
 :root {
   --black: #282c34;
   --white: white;
+  --react-blue: #61dafb;
+  --react-darker-blue: #2bd1ff;
+  --react-darkest-blue: #0097c1;
 }
 
 body {

@@ -1,5 +1,5 @@
 .question-icon {
-  color: #61dafb;
+  color: var(--react-blue);
   outline: none;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .question-tooltip {
-  background-color: #61dafb;
+  background-color: var(--react-blue);
   color: white;
   text-align: center;
   padding: 7px;
@@ -39,5 +39,5 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #61dafb transparent transparent transparent;
+  border-color: var(--react-blue) transparent transparent transparent;
 }

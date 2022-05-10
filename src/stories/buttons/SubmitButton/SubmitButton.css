@@ -19,16 +19,24 @@
 
 .button-submit--blue {
   color: white;
-  background: linear-gradient(#61dafb, #0097c1, #61dafb);
-  border-color: #0097c1;
+  background: linear-gradient(
+    var(--react-blue),
+    var(--react-darkest-blue),
+    var(--react-blue)
+  );
+  border-color: var(--react-darkest-blue);
 }
 
 .button-submit--blue:hover {
   z-index: 1;
-  background: linear-gradient(#0097c1, #61dafb, #0097c1);
-  border-color: #0097c1;
+  background: linear-gradient(
+    var(--react-darkest-blue),
+    var(--react-blue),
+    var(--react-darkest-blue)
+  );
+  border-color: var(--react-darkest-blue);
   border-radius: 9px;
-  box-shadow: 5px 10px 15px #61dafb;
+  box-shadow: 5px 10px 15px var(--react-blue);
   outline: none;
 }
 
