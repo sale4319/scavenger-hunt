@@ -1,0 +1,78 @@
+.skip-position {
+  position: fixed;
+  top: 80%;
+  left: 85%;
+  margin-top: 0;
+}
+
+.skip-button {
+  min-width: 100px;
+  min-height: 35px;
+  line-height: 35px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  background-color: transparent;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+.skip-text {
+  position: relative;
+  z-index: 2;
+}
+
+.skip-button-dark {
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.skip-button-dark:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #61dafb;
+  transition: all 0.35s;
+}
+
+.skip-button-dark:hover {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+.skip-button-dark:hover:after {
+  width: 100%;
+}
+
+.skip-button-light:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all 0.35s;
+}
+
+.skip-button-light {
+  color: #282c34;
+  border: 2px solid #282c34;
+}
+
+.skip-button-light:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
+.skip-button-light:hover:after {
+  width: 100%;
+}
+
+.unlock-button::selection {
+  background: transparent;
+}

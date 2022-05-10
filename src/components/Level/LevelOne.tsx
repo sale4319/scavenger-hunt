@@ -1,23 +1,31 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Title } from "../../stories/headers";
-import { PrimaryButton, UnlockButton } from "../../stories/buttons/";
+import {
+  PrimaryButton,
+  SkipButton,
+  UnlockButton,
+} from "../../stories/buttons/";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes, featFlags } from "../../flags";
-import { LevelOneMessages, PromptMessages } from "../../Messages";
+import {
+  DefaultMessages,
+  LevelOneMessages,
+  PromptMessages,
+} from "../../Messages";
 
 export const LevelOne = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
-  const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_LEVEL_TWO}`);
-  };
-
   modes.promptMode
     ? useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation)
     : useLockNoPrompt(unLockNavigation);
+
+  const routeChange = () => {
+    navigate(`${PrivateRoutes.PARAM_LEVEL_TWO}`);
+  };
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
@@ -37,6 +45,10 @@ export const LevelOne = () => {
         primary={unLockNavigation}
         size={"small"}
         label={LevelOneMessages.CONTINUE}
+      />
+      <SkipButton
+        onClick={handleUnlockNavigation}
+        label={DefaultMessages.SKIP_BUTTON}
       />
     </div>
   );

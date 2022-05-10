@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { UNSAFE_NavigationContext as NavigationContext } from "react-router-dom";
 
@@ -30,6 +31,14 @@ export function useUnlockPrompt(message, when = true) {
     },
     [message]
   );
+
+  useUnlocker(blocker, when);
+}
+
+export function useUnlockNoPrompt(when = true) {
+  const blocker = React.useCallback((tx) => {
+    tx.retry();
+  });
 
   useUnlocker(blocker, when);
 }

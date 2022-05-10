@@ -24,7 +24,7 @@
 }
 
 .gift-button--primary {
-  color: var(--react-blue);
+  color: #61dafb;
   background: transparent;
 }
 
@@ -42,8 +42,7 @@
 .gift-button--secondary:hover {
   z-index: 1;
   border-radius: 50%;
-  box-shadow: var(--react-darker-blue) 10px 22px 70px 4px,
-    inset 10px 22px 70px 4px var(--react-darker-blue);
+  box-shadow: #2bd1ff 10px 22px 70px 4px, inset 10px 22px 70px 4px #2bd1ff;
 }
 
 .gift-button--small {

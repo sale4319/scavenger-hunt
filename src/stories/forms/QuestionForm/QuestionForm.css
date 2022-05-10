@@ -6,7 +6,7 @@
 
 .success-message {
   color: white;
-  background: var(--react-blue);
+  background: #61dafb;
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -44,7 +44,7 @@
   border-color: transparent;
   border-radius: 3px;
   background-color: white;
-  box-shadow: 5px 10px 18px var(--react-blue);
+  box-shadow: 5px 10px 18px #61dafb;
   outline: none;
   transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 

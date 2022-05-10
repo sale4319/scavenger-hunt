@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { DarkModeContext } from "../../../providers/DarkModeContext";
-
 import { AppBar } from "../../headers";
 import "./Container.css";
 

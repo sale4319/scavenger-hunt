@@ -24,7 +24,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   label: "Your medium title",
   titleSize: "medium",
-  color: "var(--react-blue)",
+  color: "#61dafb",
 };
 
 export const Small = Template.bind({});
