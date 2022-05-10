@@ -63,4 +63,5 @@ export const DefaultMessages = {
   FANCY_BUTTON: "I will take you home",
   CONTINUE_BUTTON: "PASS",
   SUBMIT_BUTTON: "Submit",
+  SKIP_BUTTON: "skip",
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Title } from "../../stories/headers";
 import { UnlockToolTip } from "../../stories/tool-tips/";
-import { PrimaryButton } from "../../stories/buttons/";
+import { PrimaryButton, SkipButton } from "../../stories/buttons/";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
@@ -17,13 +17,13 @@ export const LevelTwo = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
-  const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
-  };
-
   modes.promptMode
     ? useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation)
     : useLockNoPrompt(unLockNavigation);
+
+  const routeChange = () => {
+    navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
+  };
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
@@ -44,6 +44,10 @@ export const LevelTwo = () => {
         primary={unLockNavigation}
         size={"small"}
         label={DefaultMessages.CONTINUE_BUTTON}
+      />
+      <SkipButton
+        onClick={handleUnlockNavigation}
+        label={DefaultMessages.SKIP_BUTTON}
       />
     </div>
   );

@@ -11,10 +11,10 @@ import { EndClassicMessages, PromptMessages } from "../../Messages";
 const EndClassic = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
-  const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
-  };
   const [toggleIcon, setToggleIcon] = useState(true);
+
+  useLockPrompt(`${PromptMessages.END}`, unLockNavigation);
+
   useEffect(() => {
     if (toggleIcon) {
       return;
@@ -23,11 +23,13 @@ const EndClassic = () => {
     }
   });
 
-  useLockPrompt(`${PromptMessages.END}`, unLockNavigation);
+  const routeChange = () => {
+    navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
+  };
 
   const handleUnlockNavigation = () => {
     setToggleIcon(!toggleIcon);
-    setUnlockNavigation(false);
+    setUnlockNavigation(!toggleIcon);
   };
 
   return (

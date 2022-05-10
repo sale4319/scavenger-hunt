@@ -19,7 +19,7 @@
 }
 
 .question-tooltip {
-  background-color: var(--react-blue);
+  background-color: #61dafb;
   color: white;
   text-align: center;
   padding: 7px;
@@ -39,5 +39,5 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: var(--react-blue) transparent transparent transparent;
+  border-color: #61dafb transparent transparent transparent;
 }

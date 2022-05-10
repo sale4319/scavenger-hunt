@@ -58,16 +58,16 @@ const StartTimer = () => {
   );
   const wantedDelay = 86400000; //Milliseconds
   const navigate = useNavigate();
+  const [unLockNavigation, setUnlockNavigation] = useState(true);
+
+  if (modes.promptMode) useUnlockPrompt(`${PromptMessages.DEFAULT}`, true);
+
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
   };
 
-  const [unLockNavigation, setUnLockNavigation] = useState(true);
-
-  if (modes.promptMode) useUnlockPrompt(`${PromptMessages.DEFAULT}`, true);
-
   const handleunLockNavigation = () => {
-    setUnLockNavigation(false);
+    setUnlockNavigation(false);
   };
 
   useEffect(() => {
