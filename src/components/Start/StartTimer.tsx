@@ -117,12 +117,14 @@ const StartTimer = () => {
         content={TooltipMessages.START_HINT}
       />
 
-      <PrimaryButton
-        onClick={unLockNavigation ? handleunLockNavigation : routeChange}
-        primary={unLockNavigation}
-        size={"small"}
-        label={StartTimerMessages.BUTTON}
-      />
+      <div>
+        <PrimaryButton
+          onClick={unLockNavigation ? handleunLockNavigation : routeChange}
+          primary={unLockNavigation}
+          size={"small"}
+          label={StartTimerMessages.BUTTON}
+        />
+      </div>
     </div>
   );
 };
