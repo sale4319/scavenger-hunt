@@ -8,7 +8,7 @@ interface SkipButtonProps {
   onClick?: () => void;
 }
 
-export const SkipButton = ({ label, ...props }: SkipButtonProps) => {
+export const SkipButton = ({ label = "skip", ...props }: SkipButtonProps) => {
   const { darkMode } = useContext(DarkModeContext);
   const mode = darkMode ? "skip-button-dark" : "skip-button-light";
   return (

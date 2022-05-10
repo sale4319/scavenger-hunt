@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { DarkModeProvider } from "../../../providers/DarkModeContext";
 
 import { SkipButton } from "./SkipButton";
 
@@ -12,7 +13,9 @@ export default {
 } as ComponentMeta<typeof SkipButton>;
 
 const Template: ComponentStory<typeof SkipButton> = (args) => (
-  <SkipButton {...args} />
+  <DarkModeProvider>
+    <SkipButton {...args} />
+  </DarkModeProvider>
 );
 
 export const Skip = Template.bind({});
