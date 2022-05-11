@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { PrimaryButton, SubmitButton } from "../../buttons";
 import { questions } from "./QuizSet";
 import "./QuizForm.css";
-import { PrimaryButton } from "../../buttons";
 
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === true) {
       setScore(score + 1);
@@ -22,7 +23,6 @@ function Quiz() {
 
   return (
     <>
-      <h1 className="header">Quiz</h1>
       <div className="app">
         {showScore ? (
           <div className="score-section">
@@ -54,7 +54,7 @@ function Quiz() {
           </>
         )}
       </div>
-      <PrimaryButton label="pass" primary={true} />
+      <SubmitButton size="small" label="Submit" submit={true} />
     </>
   );
 }
