@@ -5,6 +5,7 @@ import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
 import { LevelTwo } from "./components/Level/LevelTwo";
 import { LevelThree } from "./components/Level/LevelThree";
+import { TestPage } from "./TestPage";
 import EndClassic from "./components/End/EndClassic";
 import { PageNotFound } from "./stories/pages/";
 import { PrivateRoutes } from "./PrivateRoutes";
@@ -29,6 +30,7 @@ const App = () => {
           path={PrivateRoutes.PARAM_END_CLASSIC}
           element={<EndClassic />}
         />
+        <Route path={PrivateRoutes.TEST} element={<TestPage />} />
         <Route path={PrivateRoutes.PARAM_404} element={<PageNotFound />} />
       </Routes>
 
