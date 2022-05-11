@@ -46,8 +46,6 @@
   margin-bottom: 12px;
 }
 
-/*  */
-
 .answers {
   margin-bottom: 20px;
 }
@@ -65,7 +63,6 @@
   min-width: 80px;
   min-height: 35px;
   border: 2px solid #75f8e2;
-  transition: all 0.35s;
 }
 
 .answer.selected {
@@ -80,11 +77,6 @@
 .answer.incorrect {
   background: #fcb0b0;
   font-weight: bold;
-}
-
-.answerStatus {
-  font-weight: bold;
-  margin-bottom: 20px;
 }
 
 .answer-text {

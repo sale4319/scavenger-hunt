@@ -9,9 +9,8 @@ import TestPage from "./TestPage";
 import EndClassic from "./components/End/EndClassic";
 import { PageNotFound } from "./stories/pages/";
 import { PrivateRoutes } from "./PrivateRoutes";
-
+import { QuizOne } from "./components/Start/QuizOne";
 import "react-toastify/dist/ReactToastify.css";
-import { QuizOne } from "./components/Level/QuizOne";
 
 const App = () => {
   return (

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, Fragment } from "react";
-
+import { QuizFormMessages } from "../../../Messages";
 import "./QuizForm.css";
 
 const Question = ({ question, setAnswerStatus }) => {
@@ -103,11 +103,10 @@ export const Quiz = ({ questions, handleUnlock }) => {
   if (questionIndex == null) {
     return (
       <div className="quiz">
-        <h1>Start Quiz</h1>
-        <p>This is a simple React quiz.</p>
-        <p>I made it work.</p>
+        <h1>{QuizFormMessages.TITLE}</h1>
+        <p>{QuizFormMessages.DESCRIPTION}</p>
         <button className="quiz-button start" onClick={onNextClick}>
-          Start
+          {QuizFormMessages.START_BUTTON}
         </button>
       </div>
     );
@@ -117,18 +116,19 @@ export const Quiz = ({ questions, handleUnlock }) => {
     <div className="quiz">
       {quizComplete ? (
         <Fragment>
-          <h1>Quiz complete!</h1>
+          <h1>{QuizFormMessages.TITLE_COMPLETE}</h1>
           <p>
-            You answered {correctAnswerCount} questions correctly (out of a
-            total {questions.length} questions)
+            {QuizFormMessages.CORRECT_ANSWERS}
+            {correctAnswerCount}
+            {QuizFormMessages.TOTAL_QUESTIONS} {questions.length}
           </p>
           {questionIndex != null && correctAnswerCount === 6 ? (
             <button className="quiz-button restart" onClick={handleUnlock}>
-              Unlock
+              {QuizFormMessages.UNLOCK_BUTTON}
             </button>
           ) : (
             <button className="quiz-button restart " onClick={onRestartClick}>
-              Restart
+              {QuizFormMessages.RESTART_BUTTON}
             </button>
           )}
         </Fragment>
@@ -138,22 +138,16 @@ export const Quiz = ({ questions, handleUnlock }) => {
             currentQuestionIndex={questionIndex}
             totalQuestionsCount={questions.length}
           />
-          {/* <div className=""></div> */}
           <Question
             question={questions[questionIndex]}
             setAnswerStatus={setAnswerStatus}
           />
           {answerStatus != null && (
             <div>
-              {/* <div className="answerStatus">
-                {!!answerStatus
-                  ? "Correct! :)"
-                  : "Your answer was incorrect :("}
-              </div> */}
               <button className="quiz-button next" onClick={onNextClick}>
                 {questionIndex === questions.length - 1
-                  ? "See results of this quiz"
-                  : "Next Question ->"}
+                  ? `${QuizFormMessages.RESULTS_BUTTON}`
+                  : `${QuizFormMessages.NEXT_BUTTON}`}
               </button>
             </div>
           )}
