@@ -5,7 +5,7 @@ import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
 import { LevelTwo } from "./components/Level/LevelTwo";
 import { LevelThree } from "./components/Level/LevelThree";
-import { TestPage } from "./TestPage";
+import TestPage from "./TestPage";
 import EndClassic from "./components/End/EndClassic";
 import { PageNotFound } from "./stories/pages/";
 import { PrivateRoutes } from "./PrivateRoutes";

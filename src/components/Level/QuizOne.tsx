@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Quiz from "../../stories/forms/QuizForm/QuizForm";
+import { Quiz } from "../../stories/forms/QuizForm/QuizForm";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
 import { DefaultMessages, PromptMessages } from "../../Messages";
 import { PrimaryButton } from "../../stories/buttons";
-import { Title } from "../../stories/headers";
+import { questions } from "../../QuizSets";
 
 export const QuizOne = () => {
   const navigate = useNavigate();
@@ -26,14 +26,13 @@ export const QuizOne = () => {
 
   return (
     <>
-      <Title label="Quiz" />
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
         label={DefaultMessages.CONTINUE_BUTTON}
       />
-      <Quiz />
+      <Quiz questions={questions} handleUnlock={handleUnlockNavigation} />
     </>
   );
 };
