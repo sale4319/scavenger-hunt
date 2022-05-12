@@ -5,6 +5,7 @@ import { PrimaryButton, SkipButton } from "../../stories/buttons/";
 import { useLockNoPrompt, useUnlockNoPrompt } from "../../utils/utils";
 import { QuestionForm } from "../../stories/forms/";
 import { PrivateRoutes } from "../../PrivateRoutes";
+import { modes } from "../../flags";
 import {
   LevelThreeMessages,
   QuestionFormMessages,
@@ -20,7 +21,7 @@ export const LevelThree = () => {
   skip ? useLockNoPrompt(unLockNavigation) : useUnlockNoPrompt(true);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
+    navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`);
   };
 
   const routeSkip = () => {
@@ -56,8 +57,9 @@ export const LevelThree = () => {
         secondHint={TooltipMessages.SECOND_Q_HINT}
         secondPlaceholder={QuestionFormMessages.SECOND_Q_PLACEHOLDER}
       />
-
-      <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_BUTTON} />
+      {modes.skipMode && (
+        <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_BUTTON} />
+      )}
     </div>
   );
 };

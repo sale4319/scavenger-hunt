@@ -63,7 +63,7 @@ const StartTimer = () => {
   if (modes.promptMode) useUnlockPrompt(`${PromptMessages.DEFAULT}`, true);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
+    navigate(`${PrivateRoutes.PARAM_QUIZ_ONE}`);
   };
 
   const handleunLockNavigation = () => {

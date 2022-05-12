@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Title } from "../../stories/headers";
-import {
-  PrimaryButton,
-  SkipButton,
-  UnlockButton,
-} from "../../stories/buttons/";
+import { Quiz } from "../../stories/forms/QuizForm/QuizForm";
 import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
-import { modes, featFlags } from "../../flags";
-import {
-  DefaultMessages,
-  LevelOneMessages,
-  PromptMessages,
-} from "../../Messages";
+import { modes } from "../../flags";
+import { DefaultMessages, PromptMessages } from "../../Messages";
+import { PrimaryButton, SkipButton } from "../../stories/buttons";
+import { questionSetThree } from "../../QuizSets";
 
-export const LevelOne = () => {
+export const QuizThree = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
@@ -24,7 +17,7 @@ export const LevelOne = () => {
     : useLockNoPrompt(unLockNavigation);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_QUIZ_TWO}`);
+    navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
   };
 
   const handleUnlockNavigation = () => {
@@ -32,19 +25,16 @@ export const LevelOne = () => {
   };
 
   return (
-    <div>
-      <UnlockButton
-        onClick={handleUnlockNavigation}
-        label={LevelOneMessages.UNLOCK}
-      />
-
-      {featFlags.test && <Title label={LevelOneMessages.HINT} />}
-
+    <>
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        label={LevelOneMessages.CONTINUE}
+        label={DefaultMessages.CONTINUE_BUTTON}
+      />
+      <Quiz
+        questions={questionSetThree}
+        handleUnlock={handleUnlockNavigation}
       />
       {modes.skipMode && (
         <SkipButton
@@ -52,6 +42,6 @@ export const LevelOne = () => {
           label={DefaultMessages.SKIP_BUTTON}
         />
       )}
-    </div>
+    </>
   );
 };

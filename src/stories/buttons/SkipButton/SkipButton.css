@@ -1,12 +1,12 @@
 .skip-position {
   position: fixed;
-  top: 80%;
-  left: 85%;
+  top: 85%;
+  left: 70%;
   margin-top: 0;
 }
 
 .skip-button {
-  min-width: 100px;
+  min-width: 80px;
   min-height: 35px;
   line-height: 35px;
   font-size: 18px;
@@ -48,6 +48,11 @@
   width: 100%;
 }
 
+.skip-button-light {
+  color: #282c34;
+  border: 2px solid #282c34;
+}
+
 .skip-button-light:after {
   position: absolute;
   content: "";
@@ -57,11 +62,6 @@
   height: 100%;
   background: #ff003b;
   transition: all 0.35s;
-}
-
-.skip-button-light {
-  color: #282c34;
-  border: 2px solid #282c34;
 }
 
 .skip-button-light:hover {
