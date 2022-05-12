@@ -78,7 +78,7 @@ export const questionSetTwo = [
     correctAnswerIndex: 0,
   },
   {
-    question: "In ReactJS, what is State??",
+    question: "In ReactJS, what is State?",
     answers: [
       "It's a temporary storage of the elements",
       "It's a state of the execution of the ReactJS application",
@@ -111,66 +111,105 @@ export const questionSetTwo = [
 
 export const questionSetThree = [
   {
-    question: "In what contintent is Indonesia?",
-    answers: ["South America", "Europe", "Asia"],
+    question:
+      "What of the following is used in React.js to increase performance?",
+    answers: [
+      "Original DOM",
+      "Virtual DOM",
+      "Both A and B.",
+      "None of the above.",
+    ],
+    correctAnswerIndex: 1,
+  },
+  {
+    question:
+      "Which of the following keyword is used to create a class inheritance?",
+    answers: ["Create", "Inherits", "Extends", "This"],
     correctAnswerIndex: 2,
   },
   {
-    question: "What is 64 * 3",
-    answers: [186, 192, 197, 400],
-    correctAnswerIndex: 1,
+    question:
+      "What is the declarative way to render a dynamic list of components based on values in an array?",
+    answers: [
+      "Using the reduce array method",
+      "Using the <Each /> component",
+      "Using the Array.map() method",
+      "With a for/while loop",
+    ],
+    correctAnswerIndex: 2,
   },
   {
-    question: "How many faces does a decahedron have?",
-    answers: [8, 10, 12],
-    correctAnswerIndex: 1,
-  },
-  {
-    question: "What's the capital city of England?",
-    answers: ["London", "Paris", "Berlin"],
+    question: "What are the two ways to handle data in React?",
+    answers: [
+      "State & Props",
+      "Services & Components",
+      "State & Services",
+      "State & Component",
+    ],
     correctAnswerIndex: 0,
   },
   {
-    question: "Is JavaScript the same as Java?",
-    answers: ["Yes, it is", "No, it isn't"],
-    correctAnswerIndex: 1,
+    question: "Does React.js create a VIRTUAL DOM in the memory?",
+    answers: ["Yes", "No", "Maybe"],
+    correctAnswerIndex: 0,
   },
   {
-    question: "What month comes after November?",
-    answers: ["January", "March", "December"],
+    question: "What is Reconciliation?",
+    answers: [
+      "The process through which React deletes the DOM",
+      "The process through which React updates and deletes the component",
+      "It is a process to set the state",
+      "The process through which React updates the DOM",
+    ],
     correctAnswerIndex: 2,
   },
 ];
 
 export const questionSetFour = [
   {
-    question: "In what contintent is Indonesia?",
-    answers: ["South America", "Europe", "Asia"],
-    correctAnswerIndex: 2,
-  },
-  {
-    question: "What is 64 * 3",
-    answers: [186, 192, 197, 400],
+    question: "Who developed React.js?",
+    answers: ["Apple", "Facebook", "Twitter", "Google"],
     correctAnswerIndex: 1,
   },
   {
-    question: "How many faces does a decahedron have?",
-    answers: [8, 10, 12],
+    question:
+      "Life cycle of components methods falls under following categories?",
+    answers: [
+      "Mounting, Unmounting",
+      "Mounting, Updating",
+      "Updating, Unmounting",
+      "Mounting, Updating, Unmounting",
+    ],
+    correctAnswerIndex: 3,
+  },
+  {
+    question: "React.js Covers only the view layer of the app.",
+    answers: ["Yes", "No", "Maybe"],
     correctAnswerIndex: 1,
   },
   {
-    question: "What's the capital city of England?",
-    answers: ["London", "Paris", "Berlin"],
+    question: "What is the DOM?",
+    answers: [
+      "Document Object Model",
+      "Data Object Model",
+      "Data Option Model",
+      "Documentation Object Model",
+    ],
     correctAnswerIndex: 0,
   },
   {
-    question: "Is JavaScript the same as Java?",
-    answers: ["Yes, it is", "No, it isn't"],
+    question: "React components can be?",
+    answers: [
+      "UseState, Stateless",
+      "Statefull, Stateless",
+      "Unstatefull Statefull",
+      "None of these",
+    ],
     correctAnswerIndex: 1,
   },
   {
-    question: "What month comes after November?",
-    answers: ["January", "March", "December"],
-    correctAnswerIndex: 2,
+    question: "Can we write a comment in SVG file?",
+    answers: ["Yes", "No", "Maybe"],
+    correctAnswerIndex: 0,
   },
 ];

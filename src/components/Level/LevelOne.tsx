@@ -46,10 +46,12 @@ export const LevelOne = () => {
         size={"small"}
         label={LevelOneMessages.CONTINUE}
       />
-      <SkipButton
-        onClick={handleUnlockNavigation}
-        label={DefaultMessages.SKIP_BUTTON}
-      />
+      {modes.skipMode && (
+        <SkipButton
+          onClick={handleUnlockNavigation}
+          label={DefaultMessages.SKIP_BUTTON}
+        />
+      )}
     </div>
   );
 };

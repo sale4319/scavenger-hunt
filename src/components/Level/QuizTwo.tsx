@@ -33,10 +33,12 @@ export const QuizTwo = () => {
         label={DefaultMessages.CONTINUE_BUTTON}
       />
       <Quiz questions={questionSetTwo} handleUnlock={handleUnlockNavigation} />
-      <SkipButton
-        onClick={handleUnlockNavigation}
-        label={DefaultMessages.SKIP_BUTTON}
-      />
+      {modes.skipMode && (
+        <SkipButton
+          onClick={handleUnlockNavigation}
+          label={DefaultMessages.SKIP_BUTTON}
+        />
+      )}
     </>
   );
 };

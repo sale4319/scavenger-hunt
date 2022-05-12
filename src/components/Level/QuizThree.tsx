@@ -6,9 +6,9 @@ import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
 import { DefaultMessages, PromptMessages } from "../../Messages";
 import { PrimaryButton, SkipButton } from "../../stories/buttons";
-import { questionSetOne } from "../../QuizSets";
+import { questionSetThree } from "../../QuizSets";
 
-export const QuizOne = () => {
+export const QuizThree = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
@@ -17,7 +17,7 @@ export const QuizOne = () => {
     : useLockNoPrompt(unLockNavigation);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
+    navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
   };
 
   const handleUnlockNavigation = () => {
@@ -32,7 +32,10 @@ export const QuizOne = () => {
         size={"small"}
         label={DefaultMessages.CONTINUE_BUTTON}
       />
-      <Quiz questions={questionSetOne} handleUnlock={handleUnlockNavigation} />
+      <Quiz
+        questions={questionSetThree}
+        handleUnlock={handleUnlockNavigation}
+      />
       {modes.skipMode && (
         <SkipButton
           onClick={handleUnlockNavigation}
