@@ -11,6 +11,7 @@ import { PageNotFound } from "./stories/pages/";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { QuizOne } from "./components/Start/QuizOne";
 import "react-toastify/dist/ReactToastify.css";
+import { QuizTwo } from "./components/Level/QuizTwo";
 
 const App = () => {
   return (
@@ -20,8 +21,9 @@ const App = () => {
           path={PrivateRoutes.PARAM_START_TIMER}
           element={<StartTimer />}
         />
-        <Route path={PrivateRoutes.PARAM_LEVEL_ONE} element={<LevelOne />} />
         <Route path={PrivateRoutes.PARAM_QUIZ_ONE} element={<QuizOne />} />
+        <Route path={PrivateRoutes.PARAM_LEVEL_ONE} element={<LevelOne />} />
+        <Route path={PrivateRoutes.PARAM_QUIZ_TWO} element={<QuizTwo />} />
         <Route path={PrivateRoutes.PARAM_LEVEL_TWO} element={<LevelTwo />} />
         <Route
           path={PrivateRoutes.PARAM_LEVEL_THREE}
