@@ -1,6 +1,7 @@
 .title {
-  font-weight: 900;
-  line-height: 27px;
+  font-family: Optima, sans-serif;
+  font-weight: bold;
+  line-height: 30px;
   margin-top: 30px;
   vertical-align: top;
   display: inline-block;
@@ -23,6 +24,6 @@
   padding: 15px;
 }
 .title--large {
-  font-size: 45px;
+  font-size: 30px;
   padding: 35px;
 }

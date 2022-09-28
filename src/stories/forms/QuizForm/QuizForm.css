@@ -10,12 +10,15 @@
   border-radius: 5px;
   padding: 20px;
   box-shadow: 10px 10px 42px 0px black;
+  font-family: Optima, sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   color: white;
 }
 
 .quiz-button {
+  font-family: Optima, sans-serif;
+  font-size: 1rem;
   margin: 0 auto;
   display: block;
   background: #e8e8e8;

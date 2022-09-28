@@ -12,7 +12,7 @@ export const LevelOneMessages = {
 };
 
 export const LevelTwoMessages = {
-  HINT: "You must be a real programmer to solve this one...",
+  HINT: "You can find the the missing button with inspect element",
 };
 
 export const LevelThreeMessages = {
@@ -63,13 +63,14 @@ export const DefaultMessages = {
   FANCY_BUTTON: "I will take you home",
   CONTINUE_BUTTON: "PASS",
   SUBMIT_BUTTON: "Submit",
-  SKIP_BUTTON: "skip",
+  SKIP_QUIZ: "Skip quiz",
+  SKIP_LEVEL: "Skip level",
 };
 
 export const QuizFormMessages = {
   TITLE: "Welcome to React Quiz",
   DESCRIPTION:
-    "This is a simple quiz that you need to solve in order to move on",
+    "This is a simple React quiz that you need to solve in order to move on",
   TITLE_COMPLETE: "Quiz complete!",
   CORRECT_ANSWERS: "You answered ",
   TOTAL_QUESTIONS: " questions correctly out of a total:",

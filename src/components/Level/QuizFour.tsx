@@ -42,7 +42,7 @@ export const QuizFour = () => {
       />
       <Quiz questions={questionSetFour} handleUnlock={handleUnlockNavigation} />
       {modes.skipMode && (
-        <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_BUTTON} />
+        <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_QUIZ} />
       )}
     </>
   );

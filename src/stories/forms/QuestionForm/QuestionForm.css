@@ -7,6 +7,7 @@
 .success-message {
   color: #75f8e2;
   background: transparent;
+  font-family: Optima, sans-serif;
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -29,6 +30,7 @@
 }
 
 .form-label {
+  font-family: Optima, sans-serif;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }

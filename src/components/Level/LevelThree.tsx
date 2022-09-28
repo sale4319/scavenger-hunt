@@ -32,7 +32,7 @@ export const LevelThree = () => {
 
   return (
     <div>
-      <Title label={LevelThreeMessages.HINT} />
+      <Title titleSize="small" label={LevelThreeMessages.HINT} />
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}
@@ -54,7 +54,7 @@ export const LevelThree = () => {
       {modes.skipMode && (
         <SkipButton
           onClick={handleUnlockNavigation}
-          label={DefaultMessages.SKIP_BUTTON}
+          label={DefaultMessages.SKIP_LEVEL}
         />
       )}
     </div>
