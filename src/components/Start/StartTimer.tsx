@@ -18,16 +18,9 @@ const styles = StyleSheet.create({
   timeCounter: {
     fontSize: "100px",
     color: "var(--react-blue)",
+    lineHeight:"120px"
   },
 });
-
-const Completionist = () => (
-  <Title
-    titleSize="medium"
-    label={StartTimerMessages.START}
-    color="var(--react-darker-blue)"
-  />
-);
 
 const twoDigits = (num) => String(num).padStart(2, "0");
 
@@ -38,17 +31,13 @@ type Props = {
   completed: any;
 };
 
-const renderer: FC<Props> = ({ hours, minutes, seconds, completed }) => {
-  if (completed) {
-    return <Completionist />;
-  } else {
+const renderer: FC<Props> = ({ hours, minutes, seconds }) => {
     return (
       <span>
         {twoDigits(hours)}:{twoDigits(minutes)}:{twoDigits(seconds)}
       </span>
     );
   }
-};
 
 let getLocalStorageValue = (s: any) => localStorage.getItem(s);
 
@@ -89,7 +78,8 @@ const StartTimer = () => {
   return (
     <div>
       <div>
-        <Title titleSize="large" label={StartTimerMessages.TITLE} />
+        <Title titleSize="medium" label={StartTimerMessages.TITLE} />
+        <Title titleSize="small" color="#75F8E2" label={StartTimerMessages.INSTRUCTION} />
       </div>
       <span className={css(styles.timeCounter)}>
         <Countdown
