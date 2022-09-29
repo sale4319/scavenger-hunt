@@ -1,25 +1,29 @@
 import React from "react";
 import Tippy from "@tippyjs/react";
-import { BsFillPatchQuestionFill } from "react-icons/bs";
+import QuestionIcon from "../../assets/question-icon.svg";
 import "./QuestionIconToolTip.css";
 
 interface QuestionIconToolTipProps {
   submit?: boolean;
   content?: string;
-  size?: number;
+  size?: "small" | "medium" | "large";
   onClick?: () => void;
 }
 
 export const QuestionIconToolTip = ({
   submit = false,
-  size = 30,
+  size = "medium",
   content = "Tooltip text",
   ...props
 }: QuestionIconToolTipProps) => {
   return (
     <Tippy className="question-tooltip" content={content}>
       <button type="button" className="question-button" {...props}>
-        <BsFillPatchQuestionFill size={size} className="question-icon" />
+        <img
+          src={QuestionIcon}
+          className={["question-icon", `question-icon--${size}`].join(" ")}
+          alt="hint"
+        />
       </button>
     </Tippy>
   );

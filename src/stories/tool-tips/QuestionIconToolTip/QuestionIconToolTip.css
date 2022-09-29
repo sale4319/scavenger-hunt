@@ -1,6 +1,18 @@
 .question-icon {
-  color: var(--react-blue);
   outline: none;
+}
+
+.question-icon--small {
+  height: 25px;
+  width: 25px;
+}
+.question-icon--medium {
+  height: 30px;
+  width: 30px;
+}
+.question-icon--large {
+  height: 35px;
+  width: 35px;
 }
 
 .question-icon::selection {

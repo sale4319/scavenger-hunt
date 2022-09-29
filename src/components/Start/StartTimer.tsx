@@ -98,7 +98,7 @@ const StartTimer = () => {
       <Title titleSize="medium" label={StartTimerMessages.HINT} />
 
       <QuestionIconToolTip
-        size={30}
+        size="medium"
         onClick={handleunLockNavigation}
         content={TooltipMessages.START_HINT}
       />

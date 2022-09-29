@@ -28,13 +28,12 @@ export const Container = ({ children, ...props }: ContainerProps) => {
       >
         {children}
       </section>
-      <button onClick={handleStop}>
-        <img
-          src={questionMark}
-          className={isPlaying ? "question-mark" : "question-mark--paused"}
-          alt="question"
-        />
-      </button>
+      <img
+        src={questionMark}
+        className={isPlaying ? "question-mark" : "question-mark--paused"}
+        alt="question"
+        onClick={handleStop}
+      />
     </article>
   );
 };

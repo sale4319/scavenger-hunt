@@ -2,9 +2,8 @@
   height: 90vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
-  font-size: calc(12px + 2vmin);
+  align-items: center;
   text-align: center;
 }
 
@@ -31,7 +30,6 @@
   right: 2%;
   margin-top: 0;
   height: 90px;
-  animation-play-state: running;
 }
 
 .question-mark--paused {

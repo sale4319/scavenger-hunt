@@ -7,7 +7,7 @@ import { SecretAnswers } from "../../../PrivateRoutes";
 import "./QuestionForm.css";
 
 export const QuestionForm = ({
-  questionIconSize = 30,
+  questionIconSize = "small",
   handleUnlock,
   firstQuestion = "What is your first question?",
   firstHint = "What is your first hint?",

@@ -38,7 +38,7 @@ export const LevelThree = () => {
       />
 
       <QuestionForm
-        questionIconSize={25}
+        questionIconSize="small"
         handleUnlock={handleUnlockNavigation}
         successMessage={QuestionFormMessages.WOW}
         firstQuestion={QuestionFormMessages.FIRST_Q_LABEL}
