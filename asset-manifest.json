@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.70be6875.css",
-    "main.js": "/static/js/main.a4c29e5f.js",
-    "static/media/mark-question.png": "/static/media/mark-question.87c6ebeba95219ad49ba.png",
+    "main.css": "/static/css/main.251af805.css",
+    "main.js": "/static/js/main.b6329203.js",
+    "static/media/question-mark.png": "/static/media/question-mark.a6995e1ff12002535eb8.png",
     "static/media/reactHeart.svg": "/static/media/reactHeart.edceb35430eb2cc1cabb.svg",
     "static/media/gift.svg": "/static/media/gift.5f48876c37c299bd572d81b0039d0c1a.svg",
     "static/media/github.svg": "/static/media/github.51aa1f9e734853188793.svg",
     "index.html": "/index.html",
     "static/media/PDBlue.svg": "/static/media/PDBlue.5c677b241af9337eb424.svg",
     "static/media/trello.svg": "/static/media/trello.8124686483bfdf513492.svg",
-    "main.70be6875.css.map": "/static/css/main.70be6875.css.map",
-    "main.a4c29e5f.js.map": "/static/js/main.a4c29e5f.js.map"
+    "main.251af805.css.map": "/static/css/main.251af805.css.map",
+    "main.b6329203.js.map": "/static/js/main.b6329203.js.map"
   },
   "entrypoints": [
-    "static/css/main.70be6875.css",
-    "static/js/main.a4c29e5f.js"
+    "static/css/main.251af805.css",
+    "static/js/main.b6329203.js"
   ]
 }
