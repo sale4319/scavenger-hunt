@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { DarkModeContext } from "../../../providers/DarkModeContext";
 import { AppBar } from "../../headers";
+import questionMark from "../../assets/mark-question.png";
 import "./Container.css";
 
 interface ContainerProps {
@@ -22,6 +23,7 @@ export const Container = ({ children, ...props }: ContainerProps) => {
       >
         {children}
       </section>
+      <img src={questionMark} className="question-mark" alt="question" />
     </article>
   );
 };
