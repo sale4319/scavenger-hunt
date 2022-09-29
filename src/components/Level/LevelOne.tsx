@@ -6,22 +6,16 @@ import {
   SkipButton,
   UnlockButton,
 } from "../../stories/buttons/";
-import { useLockNoPrompt, useLockPrompt } from "../../utils/utils";
+import { useLockNoPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes, featFlags } from "../../flags";
-import {
-  DefaultMessages,
-  LevelOneMessages,
-  PromptMessages,
-} from "../../Messages";
+import { DefaultMessages, LevelOneMessages } from "../../Messages";
 
 export const LevelOne = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
-  modes.promptMode
-    ? useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation)
-    : useLockNoPrompt(unLockNavigation);
+  useLockNoPrompt(unLockNavigation);
 
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_QUIZ_TWO}`);

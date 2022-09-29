@@ -7,7 +7,7 @@
   font-size: calc(12px + 2vmin);
   text-align: center;
   background-image: url("../../assets/question-mark-icon.svg");
-  background-position: bottom right;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: 140px;
 }

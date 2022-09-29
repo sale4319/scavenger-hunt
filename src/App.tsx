@@ -41,7 +41,18 @@ const App = () => {
         <Route path={PrivateRoutes.PARAM_404} element={<PageNotFound />} />
       </Routes>
 
-      <ToastContainer autoClose={3000} hideProgressBar />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <ToastContainer />
     </Container>
   );
 };

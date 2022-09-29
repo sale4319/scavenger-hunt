@@ -4,21 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
 import { Title } from "../../stories/headers";
 import { PrivateRoutes } from "../../PrivateRoutes";
-import { useUnlockPrompt } from "../../utils/utils";
-import { modes } from "../../flags";
 import { QuestionIconToolTip } from "../../stories/tool-tips/";
 import { PrimaryButton } from "../../stories/buttons/";
-import {
-  StartTimerMessages,
-  TooltipMessages,
-  PromptMessages,
-} from "../../Messages";
+import { StartTimerMessages, TooltipMessages } from "../../Messages";
 
 const styles = StyleSheet.create({
   timeCounter: {
     fontSize: "100px",
     color: "var(--react-blue)",
-    lineHeight:"120px"
+    lineHeight: "120px",
   },
 });
 
@@ -32,12 +26,12 @@ type Props = {
 };
 
 const renderer: FC<Props> = ({ hours, minutes, seconds }) => {
-    return (
-      <span>
-        {twoDigits(hours)}:{twoDigits(minutes)}:{twoDigits(seconds)}
-      </span>
-    );
-  }
+  return (
+    <span>
+      {twoDigits(hours)}:{twoDigits(minutes)}:{twoDigits(seconds)}
+    </span>
+  );
+};
 
 let getLocalStorageValue = (s: any) => localStorage.getItem(s);
 
@@ -48,8 +42,6 @@ const StartTimer = () => {
   const wantedDelay = 86400000; //Milliseconds
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
-
-  if (modes.promptMode) useUnlockPrompt(`${PromptMessages.DEFAULT}`, true);
 
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_QUIZ_ONE}`);
@@ -79,7 +71,11 @@ const StartTimer = () => {
     <div>
       <div>
         <Title titleSize="medium" label={StartTimerMessages.TITLE} />
-        <Title titleSize="small" color="#75F8E2" label={StartTimerMessages.INSTRUCTION} />
+        <Title
+          titleSize="small"
+          color="#75F8E2"
+          label={StartTimerMessages.INSTRUCTION}
+        />
       </div>
       <span className={css(styles.timeCounter)}>
         <Countdown
