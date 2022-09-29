@@ -31,11 +31,20 @@
   right: 2%;
   margin-top: 0;
   height: 90px;
+  animation-play-state: running;
+}
+
+.question-mark--paused {
+  position: absolute;
+  bottom: 13%;
+  right: 2%;
+  margin-top: 0;
+  height: 90px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .question-mark {
-    animation: question-mark-spin infinite 10s linear;
+    animation: question-mark-spin infinite 5s linear;
   }
 }
 
