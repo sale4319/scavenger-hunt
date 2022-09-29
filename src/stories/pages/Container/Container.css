@@ -6,6 +6,10 @@
   justify-content: space-evenly;
   font-size: calc(12px + 2vmin);
   text-align: center;
+  background-image: url("../../assets/question-mark-icon.svg");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 140px;
 }
 
 .container-dark {
@@ -19,7 +23,6 @@
 }
 
 .section-container {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 34px;
   padding: 5px 20px;
   margin: 0 auto;
