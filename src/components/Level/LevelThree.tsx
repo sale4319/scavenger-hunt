@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Title } from "../../stories/headers";
 import { PrimaryButton, SkipButton } from "../../stories/buttons/";
-import { useLockNoPrompt, useLockPrompt  } from "../../utils/utils";
+import { useLockNoPrompt } from "../../utils/utils";
 import { QuestionForm } from "../../stories/forms/";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
@@ -11,16 +11,13 @@ import {
   QuestionFormMessages,
   TooltipMessages,
   DefaultMessages,
-  PromptMessages
 } from "../../Messages";
 
 export const LevelThree = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
-  modes.promptMode
-    ? useLockPrompt(`${PromptMessages.DEFAULT}`, unLockNavigation)
-    : useLockNoPrompt(unLockNavigation);
+  useLockNoPrompt(unLockNavigation);
 
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`);
@@ -41,7 +38,7 @@ export const LevelThree = () => {
       />
 
       <QuestionForm
-        questionIconSize={25}
+        questionIconSize="small"
         handleUnlock={handleUnlockNavigation}
         successMessage={QuestionFormMessages.WOW}
         firstQuestion={QuestionFormMessages.FIRST_Q_LABEL}

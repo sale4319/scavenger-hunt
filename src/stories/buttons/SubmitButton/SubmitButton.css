@@ -1,16 +1,14 @@
 .button-submit {
   font-family: Optima, sans-serif;
-  font-weight: 700;
-  border-style: solid;
-  border-radius: 9px;
-  cursor: pointer;
-  padding: 3rem;
-  color: white;
+  margin: 0 auto;
   margin-top: 10px;
-  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-  transition-property: color, background, width, height, margin, padding, border,
-    box-shadow;
+  margin-bottom: 10px;
+  display: block;
+  background: #e8e8e8;
+  border: 0;
+  cursor: pointer;
+  border-bottom: 3px solid #c9c9c9;
+  border-radius: 3px;
 }
 
 .button-submit::selection {
@@ -18,30 +16,29 @@
 }
 
 .button-submit--blue {
-  color: white;
-  background: linear-gradient(#61dafb, #0097c1, #61dafb);
-  border-color: #0097c1;
+  color: black;
+  background: #e8e8e8;
+  border-color: #75f8e2;
 }
 
 .button-submit--blue:hover {
   z-index: 1;
-  background: linear-gradient(#0097c1, #61dafb, #0097c1);
-  border-color: #0097c1;
-  border-radius: 9px;
-  box-shadow: 5px 10px 15px #61dafb;
+  background: #6ad85c;
+  border-color: #75f8e2;
+  border-radius: 2px;
   outline: none;
 }
 
 .button-submit-small {
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px 16px;
 }
 .button-submit-medium {
-  font-size: 16px;
+  font-size: 18px;
   padding: 11px 20px;
 }
 .button-submit-large {
-  font-size: 18px;
+  font-size: 20px;
   padding: 12px 24px;
 }
 

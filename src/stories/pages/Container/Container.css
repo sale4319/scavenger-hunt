@@ -2,9 +2,8 @@
   height: 90vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
-  font-size: calc(12px + 2vmin);
+  align-items: center;
   text-align: center;
 }
 
@@ -19,9 +18,39 @@
 }
 
 .section-container {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 34px;
   padding: 5px 20px;
   margin: 0 auto;
   max-width: 800px;
+}
+
+.question-mark {
+  position: absolute;
+  bottom: 13%;
+  right: 2.5%;
+  margin-top: 0;
+  height: 90px;
+}
+
+.question-mark--paused {
+  position: absolute;
+  bottom: 13%;
+  right: 2.5%;
+  margin-top: 0;
+  height: 90px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .question-mark {
+    animation: question-mark-spin infinite 5s linear;
+  }
+}
+
+@keyframes question-mark-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

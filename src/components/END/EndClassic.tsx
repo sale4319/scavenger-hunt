@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Title } from "../../stories/headers";
@@ -15,35 +15,44 @@ const EndClassic = () => {
 
   useLockPrompt(`${PromptMessages.END}`, unLockNavigation);
 
-  useEffect(() => {
-    if (toggleIcon) {
-      return;
-    } else {
-      toast.success(PromptMessages.THANKS);
-    }
-  });
-
   const routeChange = () => {
     navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
+  };
+
+  const notify = () => {
+    toast(PromptMessages.THANKS, {
+      icon: "🚀",
+      position: "top-right",
+      pauseOnHover: false,
+      draggable: false,
+    });
   };
 
   const handleUnlockNavigation = () => {
     setToggleIcon(!toggleIcon);
     setUnlockNavigation(!toggleIcon);
+    notify();
   };
 
   return (
     <>
-      <Title
-        label={EndClassicMessages.CONGRATS}
-        titleSize="large"
-        color="var(--react-blue)"
-      />
+      <div>
+        <Title
+          label={EndClassicMessages.CONGRATS}
+          titleSize="medium"
+          color="var(--react-blue)"
+        />
 
+        <Title
+          label={EndClassicMessages.END}
+          titleSize="small"
+          color="#75F8E2"
+        />
+      </div>
       {toggleIcon ? (
         <FaHeartBroken onClick={handleUnlockNavigation} size={50} color="red" />
       ) : (
-        <FaHeart onClick={handleUnlockNavigation} size={50} color="red" />
+        <FaHeart size={50} color="red" />
       )}
       <div>
         <GiftButton

@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { DarkModeContext } from "../../../providers/DarkModeContext";
 import { AppBar } from "../../headers";
+import questionMark from "../../assets/question-mark.png";
 import "./Container.css";
 
 interface ContainerProps {
@@ -9,6 +10,11 @@ interface ContainerProps {
 
 export const Container = ({ children, ...props }: ContainerProps) => {
   const { darkMode } = useContext(DarkModeContext);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const handleStop = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <article className={darkMode ? "container-dark" : "container-light"}>
@@ -22,6 +28,12 @@ export const Container = ({ children, ...props }: ContainerProps) => {
       >
         {children}
       </section>
+      <img
+        src={questionMark}
+        className={isPlaying ? "question-mark" : "question-mark--paused"}
+        alt="question"
+        onClick={handleStop}
+      />
     </article>
   );
 };

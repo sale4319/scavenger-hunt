@@ -91,7 +91,7 @@ export const questionSetTwo = [
     question: "How many elements can a valid react component return?",
     answers: [
       "1 Element",
-      "More than 1 element, it isn't",
+      "More than 1 element",
       "React does not return element",
       "None of the mentioned",
     ],
@@ -183,9 +183,9 @@ export const questionSetFour = [
     correctAnswerIndex: 3,
   },
   {
-    question: "React.js Covers only the view layer of the app.",
+    question: "React.js covers only the view layer of the app.",
     answers: ["Yes", "No", "Maybe"],
-    correctAnswerIndex: 1,
+    correctAnswerIndex: 0,
   },
   {
     question: "What is the DOM?",
