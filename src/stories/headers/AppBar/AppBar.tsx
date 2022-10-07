@@ -24,23 +24,22 @@ export const AppBar = () => {
           rel="noopener noreferrer"
           light={darkMode}
         />
-
-        <NavigationButton
-          id="pdButton"
-          href={`${Links.PD_LINK}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          light={darkMode}
-        />
-        {featFlags.trello && (
+        {featFlags.pd && (
           <NavigationButton
-            id="trelloButton"
-            href={`${Links.TRELLO}`}
+            id="pdButton"
+            href={`${Links.PD_LINK}`}
             target="_blank"
             rel="noopener noreferrer"
             light={darkMode}
           />
         )}
+        <NavigationButton
+          id="trelloButton"
+          href={`${Links.TRELLO}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          light={darkMode}
+        />
         <DarkModeButton />
       </div>
     </header>
