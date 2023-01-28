@@ -2,13 +2,13 @@
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border-bottom: 1px solid #0000001a;
   background-color: #1e1e1e;
-  padding: 12px 0px;
+  padding: 3px 0px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   color: white;
   width: 100%;
-  position: fixed;
+  position: relative;
 }
 
 .app-wrapper--dark {

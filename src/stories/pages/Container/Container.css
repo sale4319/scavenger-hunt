@@ -19,25 +19,24 @@
 
 .section-container {
   line-height: 34px;
-  padding: 5px 20px;
-  margin: 0 auto;
+  margin: auto;
   max-width: 800px;
 }
 
 .question-mark {
   position: absolute;
-  bottom: 13%;
-  right: 2.5%;
+  bottom: 4%;
+  left: 2%;
   margin-top: 0;
-  height: 90px;
+  height: 70px;
 }
 
 .question-mark--paused {
   position: absolute;
-  bottom: 13%;
-  right: 2.5%;
+  bottom: 4%;
+  left: 2%;
   margin-top: 0;
-  height: 90px;
+  height: 70px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

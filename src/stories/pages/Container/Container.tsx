@@ -17,23 +17,25 @@ export const Container = ({ children, ...props }: ContainerProps) => {
   };
 
   return (
-    <article className={darkMode ? "container-dark" : "container-light"}>
+    <>
       <AppBar />
-      <section
-        className={
-          darkMode
-            ? "container section-container container-dark "
-            : "container section-container container-light"
-        }
-      >
-        {children}
-      </section>
-      <img
-        src={questionMark}
-        className={isPlaying ? "question-mark" : "question-mark--paused"}
-        alt="question"
-        onClick={handleStop}
-      />
-    </article>
+      <article className={darkMode ? "container-dark" : "container-light"}>
+        <section
+          className={
+            darkMode
+              ? "container section-container container-dark "
+              : "container section-container container-light"
+          }
+        >
+          {children}
+        </section>
+        <img
+          src={questionMark}
+          className={isPlaying ? "question-mark" : "question-mark--paused"}
+          alt="question"
+          onClick={handleStop}
+        />
+      </article>
+    </>
   );
 };

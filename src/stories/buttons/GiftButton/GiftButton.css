@@ -31,7 +31,7 @@
 .gift-button--primary:hover {
   z-index: 1;
   border-radius: 50%;
-  box-shadow: #ff0066 10px 22px 70px 4px, inset 10px 22px 70px 4px #ff0066;
+  box-shadow: #ff0066 10px 12px 25px 4px, inset 10px 12px 25px 4px #ff0066;
 }
 
 .gift-button--secondary {
@@ -42,7 +42,7 @@
 .gift-button--secondary:hover {
   z-index: 1;
   border-radius: 50%;
-  box-shadow: #2bd1ff 10px 22px 70px 4px, inset 10px 22px 70px 4px #2bd1ff;
+  box-shadow: #2bd1ff 10px 12px 25px 4px, inset 10px 12px 25px 4px #2bd1ff;
 }
 
 .gift-button--small {
