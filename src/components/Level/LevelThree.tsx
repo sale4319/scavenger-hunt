@@ -28,7 +28,9 @@ export const LevelThree = () => {
   };
 
   const routeSkip = () => {
-    navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
+    modes.quizMode
+      ? navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`)
+      : navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
   };
 
   const handleUnlockNavigation = () => {
