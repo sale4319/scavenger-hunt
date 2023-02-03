@@ -108,7 +108,7 @@ const StartTimer = () => {
           onClick={unLockNavigation ? handleunLockNavigation : routeChange}
           primary={unLockNavigation}
           size={"small"}
-          label={StartTimerMessages.BUTTON}
+          unlock={unLockNavigation}
         />
       </div>
     </div>

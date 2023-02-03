@@ -8,7 +8,7 @@ import { useLockPrompt } from "../../utils/utils";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
 
-const EndClassic = () => {
+const FinishClassic = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
   const [toggleIcon, setToggleIcon] = useState(true);
@@ -66,4 +66,4 @@ const EndClassic = () => {
   );
 };
 
-export default React.memo(EndClassic);
+export default React.memo(FinishClassic);

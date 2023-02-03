@@ -28,7 +28,7 @@ export const QuizTwo = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        label={DefaultMessages.CONTINUE_BUTTON}
+        unlock={unLockNavigation}
       />
       <Quiz questions={questionSetTwo} handleUnlock={handleUnlockNavigation} />
       {modes.skipMode && (

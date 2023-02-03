@@ -38,7 +38,7 @@ export const QuizFour = () => {
         onClick={skip ? routeChange : routeSkip}
         primary={skip && unLockNavigation}
         size={"small"}
-        label={DefaultMessages.CONTINUE_BUTTON}
+        unlock={skip && unLockNavigation}
       />
       <Quiz questions={questionSetFour} handleUnlock={handleUnlockNavigation} />
       {modes.skipMode && (

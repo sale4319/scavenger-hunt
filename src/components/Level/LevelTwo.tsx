@@ -40,7 +40,7 @@ export const LevelTwo = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        label={DefaultMessages.CONTINUE_BUTTON}
+        unlock={unLockNavigation}
       />
       {modes.skipMode && (
         <SkipButton

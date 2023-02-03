@@ -5,7 +5,7 @@ import StartTimer from "./components/Start/StartTimer";
 import { LevelOne } from "./components/Level/LevelOne";
 import { LevelTwo } from "./components/Level/LevelTwo";
 import { LevelThree } from "./components/Level/LevelThree";
-import EndClassic from "./components/End/EndClassic";
+import FinishClassic from "./components/Finish/FinishClassic";
 import { QuizOne } from "./components/Start/QuizOne";
 import { QuizTwo } from "./components/Level/QuizTwo";
 import { QuizThree } from "./components/Level/QuizThree";
@@ -39,7 +39,7 @@ const App = () => {
           <Route path={PrivateRoutes.PARAM_QUIZ_FOUR} element={<QuizFour />} />
           <Route
             path={PrivateRoutes.PARAM_END_CLASSIC}
-            element={<EndClassic />}
+            element={<FinishClassic />}
           />
           <Route path={PrivateRoutes.TEST} element={<TestPage />} />
           <Route path={PrivateRoutes.PARAM_404} element={<PageNotFound />} />

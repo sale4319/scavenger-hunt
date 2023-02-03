@@ -38,7 +38,7 @@ export const LevelOne = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        label={LevelOneMessages.CONTINUE}
+        unlock={unLockNavigation}
       />
       {modes.skipMode && (
         <SkipButton
