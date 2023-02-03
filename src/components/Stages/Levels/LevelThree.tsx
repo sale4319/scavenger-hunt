@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Title } from "../../stories/headers";
-import { PrimaryButton, SkipButton } from "../../stories/buttons/";
-import { useLockNoPrompt, useUnlockNoPrompt } from "../../utils/lockNavigation";
-import { QuestionForm } from "../../stories/forms/";
-import { PrivateRoutes } from "../../PrivateRoutes";
-import { modes } from "../../flags";
+import { Title } from "../../../stories/headers";
+import { PrimaryButton, SkipButton } from "../../../stories/buttons";
+import {
+  useLockNoPrompt,
+  useUnlockNoPrompt,
+} from "../../../utils/lockNavigation";
+import { QuestionForm } from "../../../stories/forms";
+import { PrivateRoutes } from "../../../PrivateRoutes";
+import { modes } from "../../../flags";
 import {
   LevelThreeMessages,
   QuestionFormMessages,
   TooltipMessages,
   DefaultMessages,
-} from "../../Messages";
+} from "../../../Messages";
 
 export const LevelThree = () => {
   const navigate = useNavigate();
@@ -49,6 +52,7 @@ export const LevelThree = () => {
         primary={skip && unLockNavigation}
         size={"small"}
         isLocked={skip && unLockNavigation}
+        data-testid="continueButton"
       />
 
       <QuestionForm

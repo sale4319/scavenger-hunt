@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Quiz } from "../../stories/forms/QuizForm/QuizForm";
-import { useLockNoPrompt } from "../../utils/lockNavigation";
-import { PrivateRoutes } from "../../PrivateRoutes";
-import { modes } from "../../flags";
-import { DefaultMessages } from "../../Messages";
-import { PrimaryButton, SkipButton } from "../../stories/buttons";
-import { questionSetThree } from "../../QuizSets";
+import { Quiz } from "../../../stories/forms/QuizForm/QuizForm";
+import { useLockNoPrompt } from "../../../utils/lockNavigation";
+import { PrivateRoutes } from "../../../PrivateRoutes";
+import { modes } from "../../../flags";
+import { DefaultMessages } from "../../../Messages";
+import { PrimaryButton, SkipButton } from "../../../stories/buttons";
+import { questionSetThree } from "../../../QuizSets";
 
 export const QuizThree = () => {
   const navigate = useNavigate();

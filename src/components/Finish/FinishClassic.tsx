@@ -50,7 +50,12 @@ const FinishClassic = () => {
         />
       </div>
       {toggleIcon ? (
-        <FaHeartBroken onClick={handleUnlockNavigation} size={50} color="red" />
+        <FaHeartBroken
+          onClick={handleUnlockNavigation}
+          size={50}
+          color="red"
+          data-testid="unlockButton"
+        />
       ) : (
         <FaHeart size={50} color="red" />
       )}
@@ -60,6 +65,7 @@ const FinishClassic = () => {
           primary={toggleIcon}
           size="large"
           onClick={routeChange}
+          data-testid="continueButton"
         />
       </div>
     </>

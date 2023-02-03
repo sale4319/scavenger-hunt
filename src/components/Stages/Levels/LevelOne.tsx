@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Title } from "../../stories/headers";
+import { Title } from "../../../stories/headers";
 import {
   PrimaryButton,
   SkipButton,
   UnlockButton,
-} from "../../stories/buttons/";
-import { useLockNoPrompt } from "../../utils/lockNavigation";
-import { PrivateRoutes } from "../../PrivateRoutes";
-import { modes, featFlags } from "../../flags";
-import { DefaultMessages, LevelOneMessages } from "../../Messages";
+} from "../../../stories/buttons";
+import { useLockNoPrompt } from "../../../utils/lockNavigation";
+import { PrivateRoutes } from "../../../PrivateRoutes";
+import { modes } from "../../../flags";
+import { DefaultMessages, LevelOneMessages } from "../../../Messages";
 
 export const LevelOne = () => {
   const navigate = useNavigate();
@@ -30,17 +30,19 @@ export const LevelOne = () => {
   return (
     <div>
       <UnlockButton
+        data-testid="unlockButton"
         onClick={handleUnlockNavigation}
         label={LevelOneMessages.UNLOCK}
       />
 
-      {featFlags.test && <Title label={LevelOneMessages.HINT} />}
+      <Title label={LevelOneMessages.HINT} />
 
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
         isLocked={unLockNavigation}
+        data-testid="continueButton"
       />
       {modes.skipMode && (
         <SkipButton
