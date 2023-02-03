@@ -1,8 +1,8 @@
-import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { StyleSheetTestUtils } from "aphrodite";
 import { StartTimerMessages } from "../../Messages";
 import StartTimer from "./StartTimer";
+import { DarkModeProvider } from "../../providers/DarkModeContext";
 
 const mockedUsedNavigate = jest.fn();
 
@@ -19,17 +19,34 @@ afterEach(() => {
 });
 
 test("Renders header", () => {
-  render(<StartTimer />);
+  render(
+    <DarkModeProvider>
+      <StartTimer />
+    </DarkModeProvider>
+  );
   const header = screen.getByText(StartTimerMessages.TITLE);
   expect(header).toBeInTheDocument();
 });
 
 test("First click enable the button", () => {
-  // const setStateMock = jest.fn();
-  // const useStateMock = (useState: any) => [useState, setStateMock];
-  // jest.spyOn(React, "useState").mockImplementation(useStateMock);
-  render(<StartTimer />);
-  const button = screen.getByText(StartTimerMessages.BUTTON);
+  render(
+    <DarkModeProvider>
+      <StartTimer />
+    </DarkModeProvider>
+  );
+  const button = screen.getByTestId("unlockButton");
   fireEvent.click(button);
-  // expect(setStateMock).toBeCalledWith(false);
+  expect(mockedUsedNavigate).not.toHaveBeenCalledWith("/levelOne");
+});
+
+test("Second click navigates to /levelOne", () => {
+  render(
+    <DarkModeProvider>
+      <StartTimer />
+    </DarkModeProvider>
+  );
+  const button = screen.getByTestId("unlockButton");
+  fireEvent.click(button);
+  fireEvent.click(button);
+  expect(mockedUsedNavigate).toHaveBeenCalledWith("/levelOne");
 });

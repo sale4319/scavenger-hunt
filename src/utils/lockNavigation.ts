@@ -24,9 +24,9 @@ export function useUnlocker(blocker: any, when = true) {
   }, [navigator, blocker, when]);
 }
 
-export function useUnlockPrompt(message, when = true) {
+export function useUnlockPrompt(message: string, when = true) {
   const blocker = React.useCallback(
-    (tx) => {
+    (tx: any) => {
       if (window.confirm(message)) tx.retry();
     },
     [message]

@@ -112,6 +112,7 @@ const StartTimer = () => {
           primary={unLockNavigation}
           size={"small"}
           isLocked={unLockNavigation}
+          data-testid="unlockButton"
         />
       </div>
     </div>
