@@ -6,7 +6,7 @@ import {
   SkipButton,
   UnlockButton,
 } from "../../stories/buttons/";
-import { useLockNoPrompt } from "../../utils/utils";
+import { useLockNoPrompt } from "../../utils/lockNavigation";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes, featFlags } from "../../flags";
 import { DefaultMessages, LevelOneMessages } from "../../Messages";

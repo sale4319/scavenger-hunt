@@ -11,7 +11,6 @@ import { QuizTwo } from "./components/Level/QuizTwo";
 import { QuizThree } from "./components/Level/QuizThree";
 import { QuizFour } from "./components/Level/QuizFour";
 import { PageNotFound } from "./stories/pages/";
-import TestPage from "./TestPage";
 import { PrivateRoutes } from "./PrivateRoutes";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -41,7 +40,6 @@ const App = () => {
             path={PrivateRoutes.PARAM_END_CLASSIC}
             element={<FinishClassic />}
           />
-          <Route path={PrivateRoutes.TEST} element={<TestPage />} />
           <Route path={PrivateRoutes.PARAM_404} element={<PageNotFound />} />
         </Routes>
       </Container>

@@ -2,13 +2,13 @@
 import React from "react";
 import { UNSAFE_NavigationContext as NavigationContext } from "react-router-dom";
 
-export function useUnlocker(blocker, when = true) {
-  const { navigator } = React.useContext(NavigationContext);
+export function useUnlocker(blocker: any, when = true) {
+  const { navigator } = React.useContext(NavigationContext) as any;
 
   React.useEffect(() => {
     if (!when) return;
 
-    const unlock = navigator.block((tx) => {
+    const unlock = navigator.block((tx: any) => {
       const autoUnlockingTx = {
         ...tx,
         retry() {
@@ -36,20 +36,20 @@ export function useUnlockPrompt(message, when = true) {
 }
 
 export function useUnlockNoPrompt(when = true) {
-  const blocker = React.useCallback((tx) => {
+  const blocker = React.useCallback<Function>((tx: any) => {
     tx.retry();
-  });
+  }, []);
 
   useUnlocker(blocker, when);
 }
 
-export function useBlocker(blocker, when = true) {
-  const { navigator } = React.useContext(NavigationContext);
+export function useBlocker(blocker: any, when = true) {
+  const { navigator } = React.useContext(NavigationContext) as any;
 
   React.useEffect(() => {
     if (!when) return;
 
-    const lock = navigator.block((tx) => {
+    const lock = navigator.block((tx: any) => {
       const autoLockingTx = {
         ...tx,
         retry() {
@@ -64,9 +64,10 @@ export function useBlocker(blocker, when = true) {
   }, [navigator, blocker, when]);
 }
 
-export function useLockPrompt(message, when = true) {
+export function useLockPrompt(message: string, when = true) {
   const blocker = React.useCallback(() => {
-    if (window.confirm(message));
+    if (window.confirm(message)) {
+    }
   }, [message]);
 
   useBlocker(blocker, when);

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { Title } from "../../stories/headers";
 import { FaHeartBroken, FaHeart } from "react-icons/fa";
 import { GiftButton } from "../../stories/buttons";
-import { useLockPrompt } from "../../utils/utils";
+import { useLockPrompt } from "../../utils/lockNavigation";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
 

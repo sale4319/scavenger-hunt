@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Quiz } from "../../stories/forms/QuizForm/QuizForm";
-import { useLockNoPrompt, useUnlockNoPrompt } from "../../utils/utils";
+import { useLockNoPrompt, useUnlockNoPrompt } from "../../utils/lockNavigation";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
 import { DefaultMessages } from "../../Messages";

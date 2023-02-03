@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Title } from "../../stories/headers";
 import { UnlockToolTip } from "../../stories/tool-tips/";
 import { PrimaryButton, SkipButton } from "../../stories/buttons/";
-import { useLockNoPrompt } from "../../utils/utils";
+import { useLockNoPrompt } from "../../utils/lockNavigation";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
 import {
