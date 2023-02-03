@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Title } from "../../stories/headers";
 import { PrimaryButton, SkipButton } from "../../stories/buttons/";
-import { useLockNoPrompt } from "../../utils/utils";
+import { useLockNoPrompt, useUnlockNoPrompt } from "../../utils/utils";
 import { QuestionForm } from "../../stories/forms/";
 import { PrivateRoutes } from "../../PrivateRoutes";
 import { modes } from "../../flags";
@@ -16,25 +16,37 @@ import {
 export const LevelThree = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
+  const [skip, setSkip] = useState(true);
 
-  useLockNoPrompt(unLockNavigation);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  skip ? useLockNoPrompt(unLockNavigation) : useUnlockNoPrompt(true);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`);
+    modes.quizMode
+      ? navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`)
+      : navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
+  };
+
+  const routeSkip = () => {
+    navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
   };
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
   };
 
+  const handleSkip = () => {
+    setSkip(false);
+  };
+
   return (
     <div>
       <Title titleSize="small" label={LevelThreeMessages.HINT} />
       <PrimaryButton
-        onClick={routeChange}
-        primary={unLockNavigation}
+        onClick={skip ? routeChange : routeSkip}
+        primary={skip && unLockNavigation}
         size={"small"}
-        unlock={unLockNavigation}
+        isLocked={skip && unLockNavigation}
       />
 
       <QuestionForm
@@ -49,10 +61,7 @@ export const LevelThree = () => {
         secondPlaceholder={QuestionFormMessages.SECOND_Q_PLACEHOLDER}
       />
       {modes.skipMode && (
-        <SkipButton
-          onClick={handleUnlockNavigation}
-          label={DefaultMessages.SKIP_LEVEL}
-        />
+        <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_LEVEL} />
       )}
     </div>
   );

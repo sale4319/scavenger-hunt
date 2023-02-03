@@ -18,7 +18,9 @@ export const LevelOne = () => {
   useLockNoPrompt(unLockNavigation);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_QUIZ_TWO}`);
+    modes.quizMode
+      ? navigate(`${PrivateRoutes.PARAM_QUIZ_TWO}`)
+      : navigate(`${PrivateRoutes.PARAM_LEVEL_TWO}`);
   };
 
   const handleUnlockNavigation = () => {
@@ -38,7 +40,7 @@ export const LevelOne = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        unlock={unLockNavigation}
+        isLocked={unLockNavigation}
       />
       {modes.skipMode && (
         <SkipButton

@@ -28,7 +28,7 @@ export const QuizTwo = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        unlock={unLockNavigation}
+        isLocked={unLockNavigation}
       />
       <Quiz questions={questionSetTwo} handleUnlock={handleUnlockNavigation} />
       {modes.skipMode && (

@@ -15,7 +15,7 @@ interface PrimaryButtonProps {
    */
   size?: "small" | "medium" | "large";
 
-  unlock?: boolean;
+  isLocked?: boolean;
   /**
    * Button contents
    */
@@ -33,7 +33,7 @@ export const PrimaryButton = ({
   primary = false,
   size = "medium",
   backgroundColor,
-  unlock,
+  isLocked,
   label,
   ...props
 }: PrimaryButtonProps) => {
@@ -49,7 +49,7 @@ export const PrimaryButton = ({
       style={{ backgroundColor }}
       {...props}
     >
-      {unlock ? "Locked" : unlock === undefined ? label : "Unlocked"}
+      {isLocked ? "Locked" : isLocked === undefined ? label : "Unlocked"}
     </button>
   );
 };

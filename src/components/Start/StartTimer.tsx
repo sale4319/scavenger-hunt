@@ -7,6 +7,7 @@ import { PrivateRoutes } from "../../PrivateRoutes";
 import { QuestionIconToolTip } from "../../stories/tool-tips/";
 import { PrimaryButton } from "../../stories/buttons/";
 import { StartTimerMessages, TooltipMessages } from "../../Messages";
+import { modes } from "../../flags";
 
 const styles = StyleSheet.create({
   timeCounter: {
@@ -44,7 +45,9 @@ const StartTimer = () => {
   const [unLockNavigation, setUnlockNavigation] = useState(true);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_QUIZ_ONE}`);
+    modes.quizMode
+      ? navigate(`${PrivateRoutes.PARAM_QUIZ_ONE}`)
+      : navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
   };
 
   const handleunLockNavigation = () => {
@@ -108,7 +111,7 @@ const StartTimer = () => {
           onClick={unLockNavigation ? handleunLockNavigation : routeChange}
           primary={unLockNavigation}
           size={"small"}
-          unlock={unLockNavigation}
+          isLocked={unLockNavigation}
         />
       </div>
     </div>

@@ -28,7 +28,7 @@ export const QuizThree = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        unlock={unLockNavigation}
+        isLocked={unLockNavigation}
       />
       <Quiz
         questions={questionSetThree}
