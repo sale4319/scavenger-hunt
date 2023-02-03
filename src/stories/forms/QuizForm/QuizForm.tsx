@@ -17,7 +17,7 @@ const Question = ({ question, setAnswerStatus }) => {
   }, [question]);
 
   const getClasses = (index) => {
-    let classes = [];
+    let classes: any = [];
     if (selectedAnswerIndex != null) {
       if (selectedAnswerIndex === index) {
         classes.push("selected");
@@ -38,7 +38,7 @@ const Question = ({ question, setAnswerStatus }) => {
     <div className="question">
       <div className="questionText">{question.question}</div>
       <div className="answers">
-        {question.answers.map((answer, index) => {
+        {question.answers.map((answer: string, index) => {
           return (
             <div
               key={index}
@@ -71,7 +71,7 @@ const ProgressBar = ({ currentQuestionIndex, totalQuestionsCount }) => {
 };
 
 export const Quiz = ({ questions, handleUnlock }) => {
-  const [questionIndex, setQuestionIndex] = useState(null);
+  const [questionIndex, setQuestionIndex] = useState<any>(null);
   const [answerStatus, setAnswerStatus] = useState(null);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
   const [quizComplete, setQuizComplete] = useState(false);

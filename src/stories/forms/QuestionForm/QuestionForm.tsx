@@ -6,6 +6,23 @@ import { QuestionFormMessages, DefaultMessages } from "../../../Messages";
 import { SecretAnswers } from "../../../PrivateRoutes";
 import "./QuestionForm.css";
 
+type Errors = {
+  answerOne: string;
+  answerTwo: string;
+};
+
+type QuestionFormProps = {
+  questionIconSize: "small" | "medium" | "large";
+  handleUnlock: () => void;
+  firstQuestion: string;
+  firstHint: string;
+  firstPlaceholder: string;
+  secondQuestion: string;
+  secondHint: string;
+  secondPlaceholder: string;
+  successMessage: string;
+};
+
 export const QuestionForm = ({
   questionIconSize = "small",
   handleUnlock,
@@ -17,13 +34,13 @@ export const QuestionForm = ({
   secondPlaceholder = "What is your second placeholder?",
   successMessage = "What is your success message?",
   ...props
-}) => {
-  const intialValues = { answerOne: "", answerTwo: "" };
+}: QuestionFormProps) => {
+  const intialValues: Errors = { answerOne: "", answerTwo: "" };
 
   const [formValues, setFormValues] = useState(intialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [touched, setTouched] = useState({});
-  const [isTouched, setIsTouched] = useState({});
+  const [formErrors, setFormErrors] = useState<any>({});
+  const [touched, setTouched] = useState<any>({});
+  const [isTouched, setIsTouched] = useState<any>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submit = () => {
@@ -55,8 +72,8 @@ export const QuestionForm = ({
     setIsSubmitting(true);
   };
 
-  const validate = (values) => {
-    let errors = {};
+  const validate = (values: any) => {
+    let errors: any = {};
     const a1 = `${SecretAnswers.ANSWER_ONE}`;
     const a2 = `${SecretAnswers.ANSWER_TWO}`;
     const regex1 = RegExp("^$|^" + a1 + "|^([FG]?\\d{5}|\\d{5}[AB])$");
@@ -96,11 +113,7 @@ export const QuestionForm = ({
         <div className="form-row">
           <label className="form-label" htmlFor="answerOne">
             {firstQuestion}
-            <QuestionIconToolTip
-              size={questionIconSize}
-              type="button"
-              content={firstHint}
-            />
+            <QuestionIconToolTip size={questionIconSize} content={firstHint} />
           </label>
           <input
             placeholder={firstPlaceholder}
@@ -120,11 +133,7 @@ export const QuestionForm = ({
         <div className="form-row">
           <label className="form-label" htmlFor="answerTwo">
             {secondQuestion}
-            <QuestionIconToolTip
-              size={questionIconSize}
-              type="button"
-              content={secondHint}
-            />
+            <QuestionIconToolTip size={questionIconSize} content={secondHint} />
           </label>
           <input
             placeholder={secondPlaceholder}
@@ -141,10 +150,10 @@ export const QuestionForm = ({
           )}
         </div>
         <SubmitButton
-          type="submit"
           submit={true}
           size={"small"}
           label={DefaultMessages.SUBMIT_BUTTON}
+          type="submit"
         />
       </form>
     </div>
