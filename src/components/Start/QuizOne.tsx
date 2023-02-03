@@ -29,6 +29,7 @@ export const QuizOne = () => {
         primary={unLockNavigation}
         size={"small"}
         isLocked={unLockNavigation}
+        data-testid="continueButton"
       />
       <Quiz questions={questionSetOne} handleUnlock={handleUnlockNavigation} />
       {modes.skipMode && (

@@ -29,6 +29,7 @@ export const QuizThree = () => {
         primary={unLockNavigation}
         size={"small"}
         isLocked={unLockNavigation}
+        data-testid="continueButton"
       />
       <Quiz
         questions={questionSetThree}
