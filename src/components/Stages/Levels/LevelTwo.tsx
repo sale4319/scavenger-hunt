@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { Title } from "../../../stories/headers";
 import { UnlockToolTip } from "../../../stories/tool-tips";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
@@ -10,12 +11,11 @@ import {
   TooltipMessages,
   DefaultMessages,
 } from "../../../Messages";
-import { FeatureFlagContext } from "../../../providers/FeatureFlagContext";
 
 export const LevelTwo = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
-  const { quizMode, skipMode } = useContext(FeatureFlagContext);
+  const { quizMode, skipMode } = useContext(GameSettingsContext);
 
   useLockNoPrompt(unLockNavigation);
 

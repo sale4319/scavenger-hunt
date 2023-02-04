@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DarkModeContext } from "../../../providers/DarkModeContext";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import "./SkipButton.css";
 
 interface SkipButtonProps {
@@ -9,7 +9,7 @@ interface SkipButtonProps {
 }
 
 export const SkipButton = ({ label = "skip", ...props }: SkipButtonProps) => {
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(GameSettingsContext);
   const mode = darkMode ? "skip-button-dark" : "skip-button-light";
   return (
     <button

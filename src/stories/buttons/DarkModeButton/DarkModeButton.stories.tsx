@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { DarkModeProvider } from "../../../providers/DarkModeContext";
+import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 
 import { DarkModeButton } from "./DarkModeButton";
 
@@ -10,9 +10,9 @@ export default {
 } as ComponentMeta<typeof DarkModeButton>;
 
 const Template: ComponentStory<typeof DarkModeButton> = (args) => (
-  <DarkModeProvider>
+  <GameSettingsProvider>
     <DarkModeButton />
-  </DarkModeProvider>
+  </GameSettingsProvider>
 );
 
 export const Default = Template.bind({});

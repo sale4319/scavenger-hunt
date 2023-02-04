@@ -13,10 +13,12 @@ import { QuizFour } from "./components/Stages/Quizes/QuizFour";
 import { PageNotFound } from "./stories/pages/";
 import { PrivateRoutes } from "./PrivateRoutes";
 import "react-toastify/dist/ReactToastify.css";
+import { AppBar } from "./stories/headers/AppBar/AppBar";
 
 const App = () => {
   return (
     <>
+      <AppBar />
       <Container>
         <Routes>
           <Route

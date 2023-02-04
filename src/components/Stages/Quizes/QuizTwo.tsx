@@ -6,12 +6,12 @@ import { PrivateRoutes } from "../../../PrivateRoutes";
 import { DefaultMessages } from "../../../Messages";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { questionSetTwo } from "../../../QuizSets";
-import { FeatureFlagContext } from "../../../providers/FeatureFlagContext";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 
 export const QuizTwo = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState<boolean>(true);
-  const { skipMode } = useContext(FeatureFlagContext);
+  const { skipMode } = useContext(GameSettingsContext);
 
   useLockNoPrompt(unLockNavigation);
 

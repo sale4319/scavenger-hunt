@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FeatureFlagContext } from "../../../providers/FeatureFlagContext";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { Title } from "../../../stories/headers";
 import {
   PrimaryButton,
@@ -14,7 +14,7 @@ import { DefaultMessages, LevelOneMessages } from "../../../Messages";
 export const LevelOne = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
-  const { quizMode, skipMode } = useContext(FeatureFlagContext);
+  const { quizMode, skipMode } = useContext(GameSettingsContext);
 
   useLockNoPrompt(unLockNavigation);
 

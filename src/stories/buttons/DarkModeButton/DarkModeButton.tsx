@@ -1,15 +1,19 @@
 import React, { useContext } from "react";
-import { DarkModeContext } from "../../../providers/DarkModeContext";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { useLocalStorage } from "../../../utils/useLocalStorage";
 import "./DarkModeButton.css";
 
-export const DarkModeButton = () => {
+type DarkModeProps = {
+  noStyle?: boolean;
+};
+
+export const DarkModeButton = ({ noStyle = true }: DarkModeProps) => {
   let clickedClass = "clicked";
   const body = document.body;
   const lightTheme = "light";
   const darkTheme = "dark";
   const [theme, setTheme] = useLocalStorage("theme", darkTheme);
-  const { toggleDarkMode } = useContext(DarkModeContext);
+  const { toggleDarkMode } = useContext(GameSettingsContext);
 
   if (theme === lightTheme || theme === darkTheme) {
     body.classList.add(theme);
@@ -33,8 +37,8 @@ export const DarkModeButton = () => {
   return (
     <button
       className={theme === "light" ? clickedClass : ""}
-      id="darkMode"
+      id={"darkMode"}
       onClick={(e) => switchTheme(e)}
-    ></button>
+    />
   );
 };

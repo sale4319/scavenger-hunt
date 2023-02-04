@@ -1,41 +1,41 @@
 import React, { createContext } from "react";
 import { useLocalStorage } from "../utils/useLocalStorage";
 
-const FeatureFlagContext = createContext<any>({});
+const GameSettingsContext = createContext<any>({});
 
-function FeatureFlagProvider(props: any) {
+function GameSettingsProvider(props: any) {
   const [quizMode, setQuizMode] = useLocalStorage("quiz mode", false);
-  const [promptMode, setPromptMode] = useLocalStorage("prompt mode", false);
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
   const [skipMode, setSkipMode] = useLocalStorage("skip mode", false);
 
   const toggleQuizMode = () => {
     setQuizMode(!quizMode);
   };
-  const togglePromptMode = () => {
-    setPromptMode(!promptMode);
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
   const toggleSkipMode = () => {
     setSkipMode(!skipMode);
   };
   return (
     <div>
-      <FeatureFlagContext.Provider
+      <GameSettingsContext.Provider
         value={{
           quizMode,
-          promptMode,
           skipMode,
+          darkMode,
+          setDarkMode,
           setQuizMode,
-          setPromptMode,
           setSkipMode,
           toggleQuizMode,
-          togglePromptMode,
           toggleSkipMode,
+          toggleDarkMode,
         }}
       >
         {props.children}
-      </FeatureFlagContext.Provider>
+      </GameSettingsContext.Provider>
     </div>
   );
 }
 
-export { FeatureFlagContext, FeatureFlagProvider };
+export { GameSettingsContext, GameSettingsProvider };

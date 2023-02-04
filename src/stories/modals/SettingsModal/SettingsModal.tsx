@@ -1,14 +1,12 @@
 import { useContext, useEffect } from "react";
-import { DarkModeContext } from "../../../providers/DarkModeContext";
-import { FeatureFlagContext } from "../../../providers/FeatureFlagContext";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { ToggleSwitch } from "../../buttons/ToggleSwitch/ToggleSwitch";
 import { Title } from "../../headers";
 import "./SettingsModal.css";
 
 export const SettingsModal = ({ onRequestClose }) => {
-  const { quizMode, skipMode, setSkipMode, setQuizMode } =
-    useContext(FeatureFlagContext);
-  const { darkMode } = useContext(DarkModeContext);
+  const { quizMode, skipMode, setSkipMode, setQuizMode, darkMode } =
+    useContext(GameSettingsContext);
   // Use useEffect to add an event listener to the document
   useEffect(() => {
     function onKeyDown(event) {

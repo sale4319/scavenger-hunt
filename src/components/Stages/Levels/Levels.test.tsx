@@ -6,7 +6,7 @@ import {
   LevelTwoMessages,
 } from "../../../Messages";
 import { LevelOne } from "./LevelOne";
-import { DarkModeProvider } from "../../../providers/DarkModeContext";
+import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
 import { LevelTwo } from "./LevelTwo";
 import { LevelThree } from "./LevelThree";
@@ -27,25 +27,25 @@ afterEach(() => {
 
 const RenderedLevelOne = (
   <MemoryRouter>
-    <DarkModeProvider>
+    <GameSettingsProvider>
       <LevelOne />
-    </DarkModeProvider>
+    </GameSettingsProvider>
   </MemoryRouter>
 );
 
 const RenderedLevelTwo = (
   <MemoryRouter>
-    <DarkModeProvider>
+    <GameSettingsProvider>
       <LevelTwo />
-    </DarkModeProvider>
+    </GameSettingsProvider>
   </MemoryRouter>
 );
 
 const RenderedLevelThree = (
   <MemoryRouter>
-    <DarkModeProvider>
+    <GameSettingsProvider>
       <LevelThree />
-    </DarkModeProvider>
+    </GameSettingsProvider>
   </MemoryRouter>
 );
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DarkModeContext } from "../../../providers/DarkModeContext";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import "./Title.css";
 
 interface TitleProps {
@@ -14,7 +14,7 @@ export const Title = ({
   titleSize = "medium",
   ...props
 }: TitleProps) => {
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(GameSettingsContext);
   const mode = darkMode ? "title-dark" : "title--light";
   return (
     <header

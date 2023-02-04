@@ -7,7 +7,7 @@ import { PrivateRoutes } from "../../PrivateRoutes";
 import { QuestionIconToolTip } from "../../stories/tool-tips/";
 import { PrimaryButton } from "../../stories/buttons/";
 import { StartTimerMessages, TooltipMessages } from "../../Messages";
-import { FeatureFlagContext } from "../../providers/FeatureFlagContext";
+import { GameSettingsContext } from "../../providers/GameSettingsContext";
 
 const styles = StyleSheet.create({
   timeCounter: {
@@ -43,7 +43,7 @@ const StartTimer = () => {
   const wantedDelay = 86400000; //Milliseconds
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
-  const { quizMode } = useContext(FeatureFlagContext);
+  const { quizMode } = useContext(GameSettingsContext);
 
   const routeChange = () => {
     quizMode

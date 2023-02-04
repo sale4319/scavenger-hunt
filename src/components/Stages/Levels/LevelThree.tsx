@@ -11,13 +11,13 @@ import {
   TooltipMessages,
   DefaultMessages,
 } from "../../../Messages";
-import { FeatureFlagContext } from "../../../providers/FeatureFlagContext";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 
 export const LevelThree = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState<boolean>(true);
   const [skip, setSkip] = useState(false);
-  const { quizMode, skipMode } = useContext(FeatureFlagContext);
+  const { quizMode, skipMode } = useContext(GameSettingsContext);
 
   useLockNoPrompt(unLockNavigation);
 

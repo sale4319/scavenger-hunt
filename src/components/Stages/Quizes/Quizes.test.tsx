@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { DarkModeProvider } from "../../../providers/DarkModeContext";
+import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
 import { QuizOne } from "../../Start/QuizOne";
 import { QuizTwo } from "./QuizTwo";
@@ -23,33 +23,33 @@ afterEach(() => {
 
 const RenderedQuizOne = (
   <MemoryRouter>
-    <DarkModeProvider>
+    <GameSettingsProvider>
       <QuizOne />
-    </DarkModeProvider>
+    </GameSettingsProvider>
   </MemoryRouter>
 );
 
 const RenderedQuizTwo = (
   <MemoryRouter>
-    <DarkModeProvider>
+    <GameSettingsProvider>
       <QuizTwo />
-    </DarkModeProvider>
+    </GameSettingsProvider>
   </MemoryRouter>
 );
 
 const RenderedQuizThree = (
   <MemoryRouter>
-    <DarkModeProvider>
+    <GameSettingsProvider>
       <QuizThree />
-    </DarkModeProvider>
+    </GameSettingsProvider>
   </MemoryRouter>
 );
 
 const RenderedQuizFour = (
   <MemoryRouter>
-    <DarkModeProvider>
+    <GameSettingsProvider>
       <QuizFour />
-    </DarkModeProvider>
+    </GameSettingsProvider>
   </MemoryRouter>
 );
 

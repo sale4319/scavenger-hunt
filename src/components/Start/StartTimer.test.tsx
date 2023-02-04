@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { StyleSheetTestUtils } from "aphrodite";
 import { StartTimerMessages } from "../../Messages";
 import StartTimer from "./StartTimer";
-import { DarkModeProvider } from "../../providers/DarkModeContext";
+import { GameSettingsProvider } from "../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
 
 const mockedUsedNavigate = jest.fn();
@@ -21,9 +21,9 @@ afterEach(() => {
 
 const RenderedComponent = (
   <MemoryRouter>
-    <DarkModeProvider>
+    <GameSettingsProvider>
       <StartTimer />
-    </DarkModeProvider>
+    </GameSettingsProvider>
   </MemoryRouter>
 );
 

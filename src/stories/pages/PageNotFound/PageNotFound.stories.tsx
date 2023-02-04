@@ -2,7 +2,7 @@ import React from "react";
 import { addDecorator } from "@storybook/react";
 import { MemoryRouter } from "react-router";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { DarkModeProvider } from "../../../providers/DarkModeContext";
+import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { PageNotFound } from "./PageNotFound";
 
 addDecorator((story) => (
@@ -18,9 +18,9 @@ export default {
 } as ComponentMeta<typeof PageNotFound>;
 
 const Template: ComponentStory<typeof PageNotFound> = (args) => (
-  <DarkModeProvider>
+  <GameSettingsProvider>
     <PageNotFound />
-  </DarkModeProvider>
+  </GameSettingsProvider>
 );
 
 export const Preview = Template.bind({});
