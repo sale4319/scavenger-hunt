@@ -1,39 +1,34 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Title } from "../../../stories/headers";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
-import {
-  useLockNoPrompt,
-  useUnlockNoPrompt,
-} from "../../../utils/lockNavigation";
+import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import { QuestionForm } from "../../../stories/forms";
 import { PrivateRoutes } from "../../../PrivateRoutes";
-import { modes } from "../../../flags";
 import {
   LevelThreeMessages,
   QuestionFormMessages,
   TooltipMessages,
   DefaultMessages,
 } from "../../../Messages";
+import { FeatureFlagContext } from "../../../providers/FeatureFlagContext";
 
 export const LevelThree = () => {
   const navigate = useNavigate();
-  const [unLockNavigation, setUnlockNavigation] = useState(true);
-  const [skip, setSkip] = useState(true);
+  const [unLockNavigation, setUnlockNavigation] = useState<boolean>(true);
+  const [skip, setSkip] = useState(false);
+  const { quizMode, skipMode } = useContext(FeatureFlagContext);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  skip ? useLockNoPrompt(unLockNavigation) : useUnlockNoPrompt(true);
+  useLockNoPrompt(unLockNavigation);
 
   const routeChange = () => {
-    modes.quizMode
-      ? navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`)
-      : navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
-  };
-
-  const routeSkip = () => {
-    modes.quizMode
-      ? navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`)
-      : navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
+    if (quizMode) {
+      navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`);
+    } else if (skip) {
+      navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
+    } else if (!skip && !quizMode) {
+      navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
+    }
   };
 
   const handleUnlockNavigation = () => {
@@ -41,17 +36,18 @@ export const LevelThree = () => {
   };
 
   const handleSkip = () => {
-    setSkip(false);
+    setSkip(true);
+    setUnlockNavigation(false);
   };
 
   return (
     <div>
       <Title titleSize="small" label={LevelThreeMessages.HINT} />
       <PrimaryButton
-        onClick={skip ? routeChange : routeSkip}
-        primary={skip && unLockNavigation}
+        onClick={routeChange}
+        primary={unLockNavigation}
         size={"small"}
-        isLocked={skip && unLockNavigation}
+        isLocked={unLockNavigation}
         data-testid="continueButton"
       />
 
@@ -66,7 +62,7 @@ export const LevelThree = () => {
         secondHint={TooltipMessages.SECOND_Q_HINT}
         secondPlaceholder={QuestionFormMessages.SECOND_Q_PLACEHOLDER}
       />
-      {modes.skipMode && (
+      {skipMode && (
         <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_LEVEL} />
       )}
     </div>

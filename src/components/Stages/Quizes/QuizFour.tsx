@@ -1,51 +1,49 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Quiz } from "../../../stories/forms/QuizForm/QuizForm";
-import {
-  useLockNoPrompt,
-  useUnlockNoPrompt,
-} from "../../../utils/lockNavigation";
+import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import { PrivateRoutes } from "../../../PrivateRoutes";
-import { modes } from "../../../flags";
 import { DefaultMessages } from "../../../Messages";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { questionSetFour } from "../../../QuizSets";
+import { FeatureFlagContext } from "../../../providers/FeatureFlagContext";
 
 export const QuizFour = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
-  const [skip, setSkip] = useState(true);
+  const [skip, setSkip] = useState(false);
+  const { skipMode } = useContext(FeatureFlagContext);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  skip ? useLockNoPrompt(unLockNavigation) : useUnlockNoPrompt(true);
+  useLockNoPrompt(unLockNavigation);
 
   const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
-  };
-
-  const routeSkip = () => {
-    navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
-  };
-
-  const handleSkip = () => {
-    setSkip(false);
+    if (!skip) {
+      navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
+    } else if (skip) {
+      navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
+    }
   };
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
   };
 
+  const handleSkip = () => {
+    setSkip(true);
+    setUnlockNavigation(false);
+  };
+
   return (
     <>
       <PrimaryButton
-        onClick={skip ? routeChange : routeSkip}
-        primary={skip && unLockNavigation}
+        onClick={routeChange}
+        primary={unLockNavigation}
         size={"small"}
-        isLocked={skip && unLockNavigation}
+        isLocked={unLockNavigation}
         data-testid="continueButton"
       />
       <Quiz questions={questionSetFour} handleUnlock={handleUnlockNavigation} />
-      {modes.skipMode && (
+      {skipMode && (
         <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_QUIZ} />
       )}
     </>

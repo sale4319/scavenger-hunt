@@ -1,0 +1,46 @@
+.toggle-container {
+  margin: 10px 0 10px 0;
+}
+
+.toggle-label {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.toggle-text {
+  margin-left: 30px;
+  font-size: small;
+  font-weight: bold;
+}
+
+.toggle-switch {
+  border: none;
+  height: 2em;
+  width: 5em;
+  border-radius: 1em;
+  margin: 10px 0 10px 0;
+}
+
+.toggle-switch--on {
+  background: #5ed37a;
+  transition: left 0.3s ease-out;
+}
+
+.toggle-switch--off {
+  background: linear-gradient(#ccc, #eee);
+  transition: left 0.3s ease-out;
+}
+
+.toggle-switch .knob {
+  position: relative;
+  width: 1.9em;
+  height: 1.9em;
+  background: #f9f8f8;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  left: 0em;
+  transition: left 0.3s ease-out;
+}
+.toggle-switch .knob.active {
+  left: 3em;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC } from "react";
+import React, { useState, useEffect, FC, useContext } from "react";
 import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
@@ -7,7 +7,7 @@ import { PrivateRoutes } from "../../PrivateRoutes";
 import { QuestionIconToolTip } from "../../stories/tool-tips/";
 import { PrimaryButton } from "../../stories/buttons/";
 import { StartTimerMessages, TooltipMessages } from "../../Messages";
-import { modes } from "../../flags";
+import { FeatureFlagContext } from "../../providers/FeatureFlagContext";
 
 const styles = StyleSheet.create({
   timeCounter: {
@@ -43,9 +43,10 @@ const StartTimer = () => {
   const wantedDelay = 86400000; //Milliseconds
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
+  const { quizMode } = useContext(FeatureFlagContext);
 
   const routeChange = () => {
-    modes.quizMode
+    quizMode
       ? navigate(`${PrivateRoutes.PARAM_QUIZ_ONE}`)
       : navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
   };

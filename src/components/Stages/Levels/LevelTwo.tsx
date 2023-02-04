@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Title } from "../../../stories/headers";
 import { UnlockToolTip } from "../../../stories/tool-tips";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import { PrivateRoutes } from "../../../PrivateRoutes";
-import { modes } from "../../../flags";
 import {
   LevelTwoMessages,
   TooltipMessages,
   DefaultMessages,
 } from "../../../Messages";
+import { FeatureFlagContext } from "../../../providers/FeatureFlagContext";
 
 export const LevelTwo = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
+  const { quizMode, skipMode } = useContext(FeatureFlagContext);
 
   useLockNoPrompt(unLockNavigation);
 
   const routeChange = () => {
-    modes.quizMode
+    quizMode
       ? navigate(`${PrivateRoutes.PARAM_QUIZ_THREE}`)
       : navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
   };
@@ -46,7 +47,7 @@ export const LevelTwo = () => {
         isLocked={unLockNavigation}
         data-testid="continueButton"
       />
-      {modes.skipMode && (
+      {skipMode && (
         <SkipButton
           onClick={handleUnlockNavigation}
           label={DefaultMessages.SKIP_LEVEL}

@@ -3,6 +3,7 @@ import { DarkModeContext } from "../../../providers/DarkModeContext";
 import { AppBar } from "../../headers";
 import questionMark from "../../assets/question-mark.png";
 import "./Container.css";
+import { SettingsModal } from "../../modals/SettingsModal/SettingsModal";
 
 interface ContainerProps {
   children: any;
@@ -11,6 +12,12 @@ interface ContainerProps {
 export const Container = ({ children, ...props }: ContainerProps) => {
   const { darkMode } = useContext(DarkModeContext);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isModalOpen, setModalIsOpen] = useState(false);
+
+  console.log(useState("hello")[1]);
+  const toggleModal = () => {
+    setModalIsOpen(!isModalOpen);
+  };
 
   const handleStop = () => {
     setIsPlaying(!isPlaying);
@@ -29,12 +36,15 @@ export const Container = ({ children, ...props }: ContainerProps) => {
         >
           {children}
         </section>
-        <img
-          src={questionMark}
-          className={isPlaying ? "question-mark" : "question-mark--paused"}
-          alt="question"
-          onClick={handleStop}
-        />
+        {isModalOpen && <SettingsModal onRequestClose={toggleModal} />}
+        <button className="settings-button" onClick={toggleModal} type="button">
+          <img
+            src={questionMark}
+            className={isPlaying ? "question-mark" : "question-mark--paused"}
+            alt="question"
+            onClick={handleStop}
+          />
+        </button>
       </article>
     </>
   );
