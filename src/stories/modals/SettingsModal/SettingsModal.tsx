@@ -55,7 +55,13 @@ export const SettingsModal = ({ onRequestClose }) => {
           toggle={skipMode}
           label="Skip mode"
         />
-        <button className="main-button" type="button" onClick={onRequestClose}>
+        <button
+          className={[
+            "main-button",
+            `main-button--${darkMode ? "dark" : "light"}`,
+          ].join(" ")}
+          onClick={onRequestClose}
+        >
           Close
         </button>
       </div>
