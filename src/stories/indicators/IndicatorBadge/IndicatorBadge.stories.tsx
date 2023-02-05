@@ -1,4 +1,3 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { IndicatorBadge } from "./IndicatorBadge";

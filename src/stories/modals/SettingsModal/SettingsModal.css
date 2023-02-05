@@ -19,12 +19,12 @@
   padding: 20px;
   width: 560px;
 }
-.modal__container--dark {
+.modal__container--light {
   background: linear-gradient(#fefcfc, #fffcfc);
   color: black;
 }
 
-.modal__container--light {
+.modal__container--dark {
   background: linear-gradient(#2a2a2a, #393939);
   color: white;
 }
@@ -41,11 +41,11 @@
   transition: transform 100ms ease-out;
 }
 
-.main-button--light {
+.main-button--dark {
   background: #b7c4cf;
 }
 
-.main-button--dark {
+.main-button--light {
   background: #93c6e7;
 }
 

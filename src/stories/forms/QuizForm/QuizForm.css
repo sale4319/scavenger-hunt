@@ -10,24 +10,24 @@
   padding: 20px;
   box-shadow: 1px 1px 1px 1px black;
   font-family: Optima, sans-serif;
-  font-size: 1.2rem;
+  font-size: 19px;
   font-weight: 600;
-  margin-bottom: 20%;
+  margin-top: 3%;
 }
 
-.quiz--dark {
+.quiz--light {
   background: linear-gradient(#fefcfc, #fffcfc);
   color: black;
 }
 
-.quiz--light {
+.quiz--dark {
   background: linear-gradient(#2a2a2a, #393939);
   color: white;
 }
 
 .quiz-button {
   font-family: Optima, sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   margin: 0 auto;
   display: block;
   background: #e8e8e8;
@@ -61,7 +61,7 @@
   right: 80%;
 }
 .questionText {
-  font-size: 1.2em;
+  font-size: 19px;
   margin: 20px 0;
   margin-bottom: 12px;
 }
@@ -128,7 +128,7 @@
 }
 
 .progressBar .text {
-  font-size: 0.7em;
+  font-size: 11px;
   position: absolute;
   z-index: 10;
 }

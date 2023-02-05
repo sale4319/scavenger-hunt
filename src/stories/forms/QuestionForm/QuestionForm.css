@@ -7,7 +7,7 @@
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px black;
   font-family: Optima, sans-serif;
-  font-size: 1.2rem;
+  font-size: 19px;
   font-weight: 600;
 }
 
@@ -24,18 +24,18 @@
   background: transparent;
   font-family: Optima, sans-serif;
   width: 90%;
-  padding: 0.5rem;
+  padding: 8px;
   border: 1px solid;
   border-radius: 4px;
-  margin-top: 0.8rem;
-  font-size: 1.2rem;
+  margin-top: 13px;
+  font-size: 19px;
   font-weight: 600;
 }
 
 .form-label {
   font-family: Optima, sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 19px;
+  margin-bottom: 8px;
 }
 
 .form-label--dark {
@@ -98,6 +98,6 @@
 
 .error {
   color: red;
-  font-size: 0.9rem;
-  margin-top: 0.3rem;
+  font-size: 14px;
+  margin-top: 5px;
 }

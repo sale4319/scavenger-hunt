@@ -7,7 +7,7 @@
   max-height: 300px;
   border-radius: 50%;
   cursor: pointer;
-  padding: 3rem;
+  padding: 48px;
   transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 
   transition-property: color, background, width, height, margin, padding, border,
