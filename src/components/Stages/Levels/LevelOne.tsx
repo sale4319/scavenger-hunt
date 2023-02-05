@@ -31,12 +31,13 @@ export const LevelOne = () => {
 
   return (
     <div>
-      <PlaceHolder size="medium" />
-      <UnlockButton
-        data-testid="unlockButton"
-        onClick={handleUnlockNavigation}
-        label={LevelOneMessages.UNLOCK}
-      />
+      <PlaceHolder size="large">
+        <UnlockButton
+          data-testid="unlockButton"
+          onClick={handleUnlockNavigation}
+          label={LevelOneMessages.UNLOCK}
+        />
+      </PlaceHolder>
 
       <Title label={LevelOneMessages.HINT} />
 

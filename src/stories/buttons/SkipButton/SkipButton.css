@@ -1,7 +1,7 @@
 .skip-position {
-  position: fixed;
-  bottom: 4%;
-  right: 2%;
+  position: absolute;
+  top: 12%;
+  right: 5%;
   margin-top: 0;
 }
 

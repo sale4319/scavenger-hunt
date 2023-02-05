@@ -13,7 +13,7 @@ export const LevelOneMessages = {
 };
 
 export const LevelTwoMessages = {
-  HINT: "You can find the the missing button with inspect element",
+  HINT: "Looks like you are missing a button here. You might want to find it with inspect element",
 };
 
 export const LevelThreeMessages = {

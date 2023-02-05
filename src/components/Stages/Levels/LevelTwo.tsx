@@ -32,15 +32,14 @@ export const LevelTwo = () => {
 
   return (
     <div>
-      <PlaceHolder size="large" />
-      <UnlockToolTip
-        content={TooltipMessages.LEVEL_TWO_CONGRATS}
-        onClick={handleUnlockNavigation}
-        data-testid="unlockButton"
-      />
-      <div>
-        <Title titleSize="small" label={LevelTwoMessages.HINT} />
-      </div>
+      <PlaceHolder size="large">
+        <UnlockToolTip
+          content={TooltipMessages.LEVEL_TWO_CONGRATS}
+          onClick={handleUnlockNavigation}
+          data-testid="unlockButton"
+        />
+      </PlaceHolder>
+      <Title label={LevelTwoMessages.HINT} />
 
       <PrimaryButton
         onClick={routeChange}
