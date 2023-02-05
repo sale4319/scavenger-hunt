@@ -9,13 +9,14 @@
   font-family: Optima, sans-serif;
   font-size: 19px;
   font-weight: 600;
-}
-
-.form-container--dark {
-  background: linear-gradient(#fefcfc, #fffcfc);
+  margin-top: 2%;
 }
 
 .form-container--light {
+  background: linear-gradient(#fefcfc, #fffcfc);
+}
+
+.form-container--dark {
   background: linear-gradient(#2a2a2a, #393939);
 }
 
@@ -38,11 +39,11 @@
   margin-bottom: 8px;
 }
 
-.form-label--dark {
+.form-label--light {
   color: black;
 }
 
-.form-label--light {
+.form-label--dark {
   color: white;
 }
 
