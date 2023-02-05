@@ -19,14 +19,14 @@
   padding: 20px;
   width: 560px;
 }
-.modal__container--light {
-  background: #fefefe;
+.modal__container--dark {
+  background: linear-gradient(#fefcfc, #fffcfc);
   color: black;
 }
 
-.modal__container--dark {
-  background: #393939;
-  color: #fefefe;
+.modal__container--light {
+  background: linear-gradient(#2a2a2a, #393939);
+  color: white;
 }
 
 .main-button {
@@ -41,10 +41,18 @@
   transition: transform 100ms ease-out;
 }
 
-.main-button--dark {
+.main-button--light {
   background: #b7c4cf;
 }
 
-.main-button--light {
+.main-button--dark {
   background: #93c6e7;
+}
+
+.title {
+  font-family: Optima, sans-serif;
+  font-weight: bold;
+  line-height: 30px;
+  vertical-align: top;
+  display: inline-block;
 }

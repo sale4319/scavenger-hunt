@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
+import { SettingsModalMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { ToggleSwitch } from "../../buttons/ToggleSwitch/ToggleSwitch";
-import { Title } from "../../headers";
 import "./SettingsModal.css";
 
 export const SettingsModal = ({ onRequestClose }) => {
@@ -37,12 +37,8 @@ export const SettingsModal = ({ onRequestClose }) => {
           `modal__container--${darkMode ? "dark" : "light"}`,
         ].join(" ")}
       >
-        <Title label="Settings" titleSize="medium" />
-
-        <Title
-          label="Bellow you can turn on and off available modes:"
-          titleSize="small"
-        />
+        <h2 className="title">{SettingsModalMessages.TITLE}</h2>
+        <h3 className="title">{SettingsModalMessages.INFO}</h3>
         <ToggleSwitch
           onClick={handleQuizMode}
           toggle={quizMode}

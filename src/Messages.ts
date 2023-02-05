@@ -1,6 +1,7 @@
 export const StartTimerMessages = {
   TITLE: "Welcome, here are your pointers:",
-  INSTRUCTION:"In each level you will have to solve a puzzle to enable the red button, each level is followed up by a quiz, all answers must be correct to continue. You have an option to skip any level or quiz by unlocking red button, but skipping will never take you to the end level.",
+  INSTRUCTION:
+    "In each level you will have to solve a puzzle to enable the red button, each level is followed up by a quiz, all answers must be correct to continue. You have an option to skip any level or quiz by unlocking red button, but skipping will never take you to the end level.",
   HINT: "This button seems to be broken... can we fix it",
   BUTTON: "You have to start somewhere",
 };
@@ -80,4 +81,9 @@ export const QuizFormMessages = {
   UNLOCK_BUTTON: "Continue",
   NEXT_BUTTON: "Next Question >>",
   RESULTS_BUTTON: "See results of the quiz",
+};
+
+export const SettingsModalMessages = {
+  TITLE: "Settings",
+  INFO: "Bellow you can turn on and off available modes:",
 };
