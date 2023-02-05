@@ -1,0 +1,37 @@
+.indicator-badge {
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: top;
+  width: calc(56px * 1.5);
+}
+
+.indicator {
+  height: 6px;
+  line-height: 6px;
+}
+
+.indicator > span {
+  display: inline-block;
+  width: 12px;
+  height: 6px;
+  margin-right: 3px;
+  background-color: lightgray;
+  border-radius: 2px;
+  line-height: 6px;
+}
+
+.indicator--orange {
+  background-color: #faab78 !important;
+}
+
+.indicator--green {
+  background-color: #5ed37a !important;
+}
+
+.indicator--red {
+  background-color: #ff7171 !important;
+}
+
+.indicator--blue {
+  background-color: #0090bb !important;
+}
