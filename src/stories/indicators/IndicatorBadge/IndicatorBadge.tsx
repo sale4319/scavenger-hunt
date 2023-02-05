@@ -3,15 +3,17 @@ import "./IndicatorBadge.css";
 type IndicatorBadgeProps = {
   level: number;
   color?: string;
+  size?: "small" | "medium" | "large";
 };
 
 export const IndicatorBadge = ({
   level,
   color = "green",
+  size = "medium",
 }: IndicatorBadgeProps) => {
   return (
     <div data-testid="parentDiv" className={"indicator-badge"}>
-      <div className="indicator">
+      <div className={["indicator", `indicator--${size}`].join(" ")}>
         <span
           className={level >= 1 ? `indicator--${color}` : undefined}
           data-testid={level >= 1 ? "coloured" : undefined}
