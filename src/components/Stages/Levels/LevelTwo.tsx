@@ -11,6 +11,7 @@ import {
   TooltipMessages,
   DefaultMessages,
 } from "../../../Messages";
+import { PlaceHolder } from "../../../stories/headers/PlaceHolder/PlaceHolder";
 
 export const LevelTwo = () => {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ export const LevelTwo = () => {
 
   return (
     <div>
+      <PlaceHolder size="large" />
       <UnlockToolTip
         content={TooltipMessages.LEVEL_TWO_CONGRATS}
         onClick={handleUnlockNavigation}

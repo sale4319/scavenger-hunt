@@ -1,0 +1,28 @@
+.placeholder-container {
+  display: block;
+  line-height: 34px;
+  margin: auto;
+  max-width: 800px;
+}
+
+.placeholder-container--small {
+  min-height: 100px;
+}
+
+.placeholder-container--medium {
+  min-height: 125px;
+}
+
+.placeholder-container--large {
+  min-height: 150px;
+}
+
+.placeholder-container-dark {
+  background-color: #282c34;
+  color: white;
+}
+
+.placeholder-container-light {
+  background-color: white;
+  color: #282c34;
+}

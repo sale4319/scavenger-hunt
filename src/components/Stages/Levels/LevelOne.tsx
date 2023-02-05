@@ -10,6 +10,7 @@ import {
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import { PrivateRoutes } from "../../../PrivateRoutes";
 import { DefaultMessages, LevelOneMessages } from "../../../Messages";
+import { PlaceHolder } from "../../../stories/headers/PlaceHolder/PlaceHolder";
 
 export const LevelOne = () => {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ export const LevelOne = () => {
 
   return (
     <div>
+      <PlaceHolder size="medium" />
       <UnlockButton
         data-testid="unlockButton"
         onClick={handleUnlockNavigation}

@@ -13,7 +13,6 @@ export const Container = ({ children, ...props }: ContainerProps) => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isModalOpen, setModalIsOpen] = useState(false);
 
-  console.log(useState("hello")[1]);
   const toggleModal = () => {
     setModalIsOpen(!isModalOpen);
   };
