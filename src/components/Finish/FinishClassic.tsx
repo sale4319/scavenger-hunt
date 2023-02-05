@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Title } from "../../stories/headers";
@@ -15,9 +15,9 @@ const FinishClassic = () => {
 
   useLockPrompt(`${PromptMessages.END}`, unLockNavigation);
 
-  const routeChange = () => {
+  const routeChange = useCallback(() => {
     navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
-  };
+  }, [unLockNavigation]);
 
   const notify = () => {
     toast(PromptMessages.THANKS, {

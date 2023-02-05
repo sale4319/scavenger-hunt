@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Title } from "../../../stories/headers";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
@@ -21,7 +21,7 @@ export const LevelThree = () => {
 
   useLockNoPrompt(unLockNavigation);
 
-  const routeChange = () => {
+  const routeChange = useCallback(() => {
     if (quizMode) {
       navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`);
     } else if (skip) {
@@ -29,7 +29,7 @@ export const LevelThree = () => {
     } else if (!skip && !quizMode) {
       navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
     }
-  };
+  }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Quiz } from "../../stories/forms/QuizForm/QuizForm";
 import { useLockNoPrompt } from "../../utils/lockNavigation";
@@ -15,9 +15,9 @@ export const QuizOne = () => {
 
   useLockNoPrompt(unLockNavigation);
 
-  const routeChange = () => {
+  const routeChange = useCallback(() => {
     navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
-  };
+  }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);

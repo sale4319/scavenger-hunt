@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Quiz } from "../../../stories/forms/QuizForm/QuizForm";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
@@ -16,13 +16,13 @@ export const QuizFour = () => {
 
   useLockNoPrompt(unLockNavigation);
 
-  const routeChange = () => {
+  const routeChange = useCallback(() => {
     if (!skip) {
       navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
     } else if (skip) {
       navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
     }
-  };
+  }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);

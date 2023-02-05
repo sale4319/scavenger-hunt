@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useContext } from "react";
 import { QuestionIconToolTip } from "../../tool-tips";
 import { SubmitButton } from "../../buttons";

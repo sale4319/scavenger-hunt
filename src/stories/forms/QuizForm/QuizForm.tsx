@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, Fragment, useContext } from "react";
 import { QuizFormMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";

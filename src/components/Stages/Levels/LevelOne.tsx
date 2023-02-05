@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { Title } from "../../../stories/headers";
@@ -19,11 +19,11 @@ export const LevelOne = () => {
 
   useLockNoPrompt(unLockNavigation);
 
-  const routeChange = () => {
+  const routeChange = useCallback(() => {
     quizMode
       ? navigate(`${PrivateRoutes.PARAM_QUIZ_TWO}`)
       : navigate(`${PrivateRoutes.PARAM_LEVEL_TWO}`);
-  };
+  }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);

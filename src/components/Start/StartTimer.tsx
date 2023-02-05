@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC, useContext } from "react";
+import React, { useState, useEffect, FC, useContext, useCallback } from "react";
 import Countdown from "react-countdown";
 import { useNavigate } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
@@ -45,11 +45,11 @@ const StartTimer = () => {
   const [unLockNavigation, setUnlockNavigation] = useState(true);
   const { quizMode } = useContext(GameSettingsContext);
 
-  const routeChange = () => {
+  const routeChange = useCallback(() => {
     quizMode
       ? navigate(`${PrivateRoutes.PARAM_QUIZ_ONE}`)
       : navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
-  };
+  }, [unLockNavigation]);
 
   const handleunLockNavigation = () => {
     setUnlockNavigation(false);

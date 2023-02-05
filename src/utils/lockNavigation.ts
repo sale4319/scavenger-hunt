@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import { UNSAFE_NavigationContext as NavigationContext } from "react-router-dom";
 
