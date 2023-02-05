@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Container } from "./stories/pages/";
-import StartTimer from "./components/Start/StartTimer";
+import Start from "./components/Start/Start";
 import { LevelOne } from "./components/Stages/Levels/LevelOne";
 import { LevelTwo } from "./components/Stages/Levels/LevelTwo";
 import { LevelThree } from "./components/Stages/Levels/LevelThree";
@@ -21,10 +21,7 @@ const App = () => {
       <AppBar />
       <Container>
         <Routes>
-          <Route
-            path={PrivateRoutes.PARAM_START_TIMER}
-            element={<StartTimer />}
-          />
+          <Route path={PrivateRoutes.PARAM_START_TIMER} element={<Start />} />
           <Route path={PrivateRoutes.PARAM_QUIZ_ONE} element={<QuizOne />} />
           <Route path={PrivateRoutes.PARAM_LEVEL_ONE} element={<LevelOne />} />
           <Route path={PrivateRoutes.PARAM_QUIZ_TWO} element={<QuizTwo />} />
