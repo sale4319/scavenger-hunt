@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { QuestionIconToolTip } from "../../tool-tips";
 import { SubmitButton } from "../../buttons";
 import { QuestionFormMessages, DefaultMessages } from "../../../Messages";
 import { SecretAnswers } from "../../../PrivateRoutes";
 import "./QuestionForm.css";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 
 type Errors = {
   answerOne: string;
@@ -42,6 +43,7 @@ export const QuestionForm = ({
   const [touched, setTouched] = useState<any>({});
   const [isTouched, setIsTouched] = useState<any>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { darkMode } = useContext(GameSettingsContext);
 
   const submit = () => {
     console.log(formValues);
@@ -105,13 +107,24 @@ export const QuestionForm = ({
   }, [formErrors]);
 
   return (
-    <div className="form-container">
+    <div
+      className={[
+        "form-container",
+        `form-container--${darkMode ? "dark" : "light"}`,
+      ].join(" ")}
+    >
       {Object.keys(formErrors).length === 0 && isSubmitting && (
         <span className="success-message">{successMessage}</span>
       )}
       <form onSubmit={handleSubmit} noValidate>
         <div className="form-row">
-          <label className="form-label" htmlFor="answerOne">
+          <label
+            className={[
+              "form-label",
+              `form-label--${darkMode ? "dark" : "light"}`,
+            ].join(" ")}
+            htmlFor="answerOne"
+          >
             {firstQuestion}
             <QuestionIconToolTip size={questionIconSize} content={firstHint} />
           </label>
@@ -131,7 +144,13 @@ export const QuestionForm = ({
         </div>
 
         <div className="form-row">
-          <label className="form-label" htmlFor="answerTwo">
+          <label
+            className={[
+              "form-label",
+              `form-label--${darkMode ? "dark" : "light"}`,
+            ].join(" ")}
+            htmlFor="answerTwo"
+          >
             {secondQuestion}
             <QuestionIconToolTip size={questionIconSize} content={secondHint} />
           </label>

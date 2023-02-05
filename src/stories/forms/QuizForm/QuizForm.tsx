@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useContext } from "react";
 import { QuizFormMessages } from "../../../Messages";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import "./QuizForm.css";
 
 const Question = ({ question, setAnswerStatus }) => {
@@ -75,6 +76,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
   const [answerStatus, setAnswerStatus] = useState(null);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
   const [quizComplete, setQuizComplete] = useState(false);
+  const { darkMode } = useContext(GameSettingsContext);
 
   useEffect(() => {
     setAnswerStatus(null);
@@ -102,7 +104,9 @@ export const Quiz = ({ questions, handleUnlock }) => {
 
   if (questionIndex == null) {
     return (
-      <div className="quiz">
+      <div
+        className={["quiz", `quiz--${darkMode ? "dark" : "light"}`].join(" ")}
+      >
         <h1>{QuizFormMessages.TITLE}</h1>
         <p>{QuizFormMessages.DESCRIPTION}</p>
         <button className="quiz-button start" onClick={onNextClick}>
@@ -113,7 +117,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
   }
 
   return (
-    <div className="quiz">
+    <div className={["quiz", `quiz--${darkMode ? "dark" : "light"}`].join(" ")}>
       {quizComplete ? (
         <Fragment>
           <h1>{QuizFormMessages.TITLE_COMPLETE}</h1>
