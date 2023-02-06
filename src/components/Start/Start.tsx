@@ -19,7 +19,7 @@ export const Start = () => {
   };
 
   return (
-    <div>
+    <>
       <Title titleSize="medium" label={StartTimerMessages.TITLE} />
       <Title
         titleSize="small"
@@ -44,6 +44,6 @@ export const Start = () => {
         isLocked={unLockNavigation}
         data-testid="unlockButton"
       />
-    </div>
+    </>
   );
 };

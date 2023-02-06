@@ -40,7 +40,7 @@ export const RoutingProvider = ({ children }) => {
       : navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
   };
 
-  const routeLevelThree = (condition) => {
+  const routeLevelThree = (condition: boolean) => {
     if (quizMode) {
       navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`);
     } else if (condition) {
@@ -66,7 +66,7 @@ export const RoutingProvider = ({ children }) => {
     navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
   };
 
-  const routeQuizFour = (condition) => {
+  const routeQuizFour = (condition: boolean) => {
     if (!condition) {
       navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
     } else if (condition) {

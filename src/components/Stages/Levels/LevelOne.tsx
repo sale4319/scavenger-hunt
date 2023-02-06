@@ -27,7 +27,7 @@ export const LevelOne = () => {
   };
 
   return (
-    <div>
+    <>
       <PlaceHolder size="large">
         <UnlockButton
           data-testid="unlockButton"
@@ -51,6 +51,6 @@ export const LevelOne = () => {
           label={DefaultMessages.SKIP_LEVEL}
         />
       )}
-    </div>
+    </>
   );
 };

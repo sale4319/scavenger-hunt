@@ -28,7 +28,7 @@ export const LevelTwo = () => {
   };
 
   return (
-    <div>
+    <>
       <PlaceHolder size="large">
         <UnlockToolTip
           content={TooltipMessages.LEVEL_TWO_CONGRATS}
@@ -51,6 +51,6 @@ export const LevelTwo = () => {
           label={DefaultMessages.SKIP_LEVEL}
         />
       )}
-    </div>
+    </>
   );
 };
