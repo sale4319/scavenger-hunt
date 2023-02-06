@@ -17,7 +17,7 @@ export const GameSettingsContext = createContext<any>(defaultValues);
 
 export const GameSettingsProvider = ({ children }) => {
   const [quizMode, setQuizMode] = useLocalStorage("quiz mode", false);
-  const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", true);
   const [skipMode, setSkipMode] = useLocalStorage("skip mode", false);
 
   const toggleQuizMode = () => {
