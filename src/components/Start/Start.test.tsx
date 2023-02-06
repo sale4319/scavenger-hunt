@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { StyleSheetTestUtils } from "aphrodite";
 import { StartTimerMessages } from "../../Messages";
-import Start from "./Start";
+import { Start } from "./Start";
 import { GameSettingsProvider } from "../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Container } from "./stories/pages/";
-import Start from "./components/Start/Start";
+import { Start } from "./components/Start/Start";
 import { LevelOne } from "./components/Stages/Levels/LevelOne";
 import { LevelTwo } from "./components/Stages/Levels/LevelTwo";
 import { LevelThree } from "./components/Stages/Levels/LevelThree";

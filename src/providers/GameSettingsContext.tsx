@@ -1,9 +1,21 @@
 import React, { createContext } from "react";
 import { useLocalStorage } from "../utils/useLocalStorage";
 
-const GameSettingsContext = createContext<any>({});
+const defaultValues = {
+  quizMode: true,
+  darkMode: true,
+  skipMode: true,
+  setDarkMode: () => {},
+  setQuizMode: () => {},
+  setSkipMode: () => {},
+  toggleQuizMode: () => {},
+  toggleDarkMode: () => {},
+  toggleSkipMode: () => {},
+};
 
-function GameSettingsProvider(props: any) {
+export const GameSettingsContext = createContext<any>(defaultValues);
+
+export const GameSettingsProvider = ({ children }) => {
   const [quizMode, setQuizMode] = useLocalStorage("quiz mode", false);
   const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
   const [skipMode, setSkipMode] = useLocalStorage("skip mode", false);
@@ -18,24 +30,20 @@ function GameSettingsProvider(props: any) {
     setSkipMode(!skipMode);
   };
   return (
-    <div>
-      <GameSettingsContext.Provider
-        value={{
-          quizMode,
-          skipMode,
-          darkMode,
-          setDarkMode,
-          setQuizMode,
-          setSkipMode,
-          toggleQuizMode,
-          toggleSkipMode,
-          toggleDarkMode,
-        }}
-      >
-        {props.children}
-      </GameSettingsContext.Provider>
-    </div>
+    <GameSettingsContext.Provider
+      value={{
+        quizMode,
+        skipMode,
+        darkMode,
+        setDarkMode,
+        setQuizMode,
+        setSkipMode,
+        toggleQuizMode,
+        toggleSkipMode,
+        toggleDarkMode,
+      }}
+    >
+      {children}
+    </GameSettingsContext.Provider>
   );
-}
-
-export { GameSettingsContext, GameSettingsProvider };
+};

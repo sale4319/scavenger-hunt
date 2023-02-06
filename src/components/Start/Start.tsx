@@ -8,7 +8,7 @@ import { StartTimerMessages, TooltipMessages } from "../../Messages";
 import { GameSettingsContext } from "../../providers/GameSettingsContext";
 import { CountdownTimer } from "../../stories/timer/CountdownTimer/CountdownTimer";
 
-const Start = () => {
+export const Start = () => {
   const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
   const { quizMode } = useContext(GameSettingsContext);
@@ -52,5 +52,3 @@ const Start = () => {
     </div>
   );
 };
-
-export default Start;
