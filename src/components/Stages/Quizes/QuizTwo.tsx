@@ -1,22 +1,21 @@
 import React, { useCallback, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { RoutingContext } from "../../../providers/RoutingContext";
 import { Quiz } from "../../../stories/forms/QuizForm/QuizForm";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
-import { PrivateRoutes } from "../../../PrivateRoutes";
-import { DefaultMessages } from "../../../Messages";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { questionSetTwo } from "../../../QuizSets";
-import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { DefaultMessages } from "../../../Messages";
 
 export const QuizTwo = () => {
-  const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState<boolean>(true);
   const { skipMode } = useContext(GameSettingsContext);
+  const { routeQuizTwo } = useContext(RoutingContext);
 
   useLockNoPrompt(unLockNavigation);
 
   const routeChange = useCallback(() => {
-    navigate(`${PrivateRoutes.PARAM_LEVEL_TWO}`);
+    routeQuizTwo();
   }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {

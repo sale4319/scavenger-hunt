@@ -1,22 +1,21 @@
-import React, { useCallback, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useCallback, useContext, useState } from "react";
+import { RoutingContext } from "../../providers/RoutingContext";
 import { toast } from "react-toastify";
 import { Title } from "../../stories/headers";
 import { FaHeartBroken, FaHeart } from "react-icons/fa";
 import { GiftButton } from "../../stories/buttons";
 import { useLockPrompt } from "../../utils/lockNavigation";
-import { PrivateRoutes } from "../../PrivateRoutes";
 import { EndClassicMessages, PromptMessages } from "../../Messages";
 
 const FinishClassic = () => {
-  const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
   const [toggleIcon, setToggleIcon] = useState(true);
+  const { routeFinish } = useContext(RoutingContext);
 
   useLockPrompt(`${PromptMessages.END}`, unLockNavigation);
 
   const routeChange = useCallback(() => {
-    navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
+    routeFinish();
   }, [unLockNavigation]);
 
   const notify = () => {

@@ -1,22 +1,17 @@
 import React, { useState, useContext, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { RoutingContext } from "../../providers/RoutingContext";
 import { Title } from "../../stories/headers";
-import { PrivateRoutes } from "../../PrivateRoutes";
 import { QuestionIconToolTip } from "../../stories/tool-tips";
 import { PrimaryButton } from "../../stories/buttons";
-import { StartTimerMessages, TooltipMessages } from "../../Messages";
-import { GameSettingsContext } from "../../providers/GameSettingsContext";
 import { CountdownTimer } from "../../stories/timer/CountdownTimer/CountdownTimer";
+import { StartTimerMessages, TooltipMessages } from "../../Messages";
 
 export const Start = () => {
-  const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
-  const { quizMode } = useContext(GameSettingsContext);
+  const { routeStart } = useContext(RoutingContext);
 
   const routeChange = useCallback(() => {
-    quizMode
-      ? navigate(`${PrivateRoutes.PARAM_QUIZ_ONE}`)
-      : navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
+    routeStart();
   }, [unLockNavigation]);
 
   const handleunLockNavigation = () => {

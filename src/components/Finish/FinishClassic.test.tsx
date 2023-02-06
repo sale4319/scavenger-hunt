@@ -4,6 +4,7 @@ import { EndClassicMessages } from "../../Messages";
 import FinishClassic from "./FinishClassic";
 import { GameSettingsProvider } from "../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
+import { RoutingProvider } from "../../providers/RoutingContext";
 
 const mockedUsedNavigate = jest.fn();
 
@@ -22,7 +23,9 @@ afterEach(() => {
 const RenderedComponent = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <FinishClassic />
+      <RoutingProvider>
+        <FinishClassic />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );

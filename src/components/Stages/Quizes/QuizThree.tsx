@@ -1,22 +1,21 @@
 import React, { useCallback, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Quiz } from "../../../stories/forms/QuizForm/QuizForm";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
-import { PrivateRoutes } from "../../../PrivateRoutes";
 import { DefaultMessages } from "../../../Messages";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { questionSetThree } from "../../../QuizSets";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { RoutingContext } from "../../../providers/RoutingContext";
 
 export const QuizThree = () => {
-  const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
   const { skipMode } = useContext(GameSettingsContext);
+  const { routeQuizThree } = useContext(RoutingContext);
 
   useLockNoPrompt(unLockNavigation);
 
   const routeChange = useCallback(() => {
-    navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
+    routeQuizThree();
   }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {

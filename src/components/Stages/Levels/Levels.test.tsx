@@ -10,6 +10,11 @@ import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
 import { LevelTwo } from "./LevelTwo";
 import { LevelThree } from "./LevelThree";
+import userEvent from "@testing-library/user-event";
+import {
+  RoutingContext,
+  RoutingProvider,
+} from "../../../providers/RoutingContext";
 
 const mockedUsedNavigate = jest.fn();
 
@@ -28,7 +33,9 @@ afterEach(() => {
 const RenderedLevelOne = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <LevelOne />
+      <RoutingProvider>
+        <LevelOne />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );
@@ -36,7 +43,9 @@ const RenderedLevelOne = (
 const RenderedLevelTwo = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <LevelTwo />
+      <RoutingProvider>
+        <LevelTwo />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );
@@ -44,7 +53,9 @@ const RenderedLevelTwo = (
 const RenderedLevelThree = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <LevelThree />
+      <RoutingProvider>
+        <LevelThree />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );
@@ -91,8 +102,8 @@ describe("Test level two", () => {
     render(RenderedLevelTwo);
     const unlockButton = screen.getByTestId("unlockButton");
     const continueButton = screen.getByTestId("continueButton");
-    fireEvent.click(unlockButton);
-    fireEvent.click(continueButton);
+    userEvent.click(unlockButton);
+    userEvent.click(continueButton);
     expect(mockedUsedNavigate).toHaveBeenCalledWith("/levelThree");
   });
 });

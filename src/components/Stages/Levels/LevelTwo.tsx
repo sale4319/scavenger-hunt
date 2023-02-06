@@ -1,29 +1,26 @@
 import React, { useCallback, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { RoutingContext } from "../../../providers/RoutingContext";
 import { Title } from "../../../stories/headers";
 import { UnlockToolTip } from "../../../stories/tool-tips";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
+import { PlaceHolder } from "../../../stories/headers/PlaceHolder/PlaceHolder";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
-import { PrivateRoutes } from "../../../PrivateRoutes";
 import {
   LevelTwoMessages,
   TooltipMessages,
   DefaultMessages,
 } from "../../../Messages";
-import { PlaceHolder } from "../../../stories/headers/PlaceHolder/PlaceHolder";
 
 export const LevelTwo = () => {
-  const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
-  const { quizMode, skipMode } = useContext(GameSettingsContext);
+  const { skipMode } = useContext(GameSettingsContext);
+  const { routeLevelTwo } = useContext(RoutingContext);
 
   useLockNoPrompt(unLockNavigation);
 
   const routeChange = useCallback(() => {
-    quizMode
-      ? navigate(`${PrivateRoutes.PARAM_QUIZ_THREE}`)
-      : navigate(`${PrivateRoutes.PARAM_LEVEL_THREE}`);
+    routeLevelTwo();
   }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {

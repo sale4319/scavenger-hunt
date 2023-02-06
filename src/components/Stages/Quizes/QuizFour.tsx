@@ -1,27 +1,22 @@
 import React, { useCallback, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Quiz } from "../../../stories/forms/QuizForm/QuizForm";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
-import { PrivateRoutes } from "../../../PrivateRoutes";
 import { DefaultMessages } from "../../../Messages";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { questionSetFour } from "../../../QuizSets";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { RoutingContext } from "../../../providers/RoutingContext";
 
 export const QuizFour = () => {
-  const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
   const [skip, setSkip] = useState(false);
   const { skipMode } = useContext(GameSettingsContext);
+  const { routeQuizFour } = useContext(RoutingContext);
 
   useLockNoPrompt(unLockNavigation);
 
   const routeChange = useCallback(() => {
-    if (!skip) {
-      navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
-    } else if (skip) {
-      navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
-    }
+    routeQuizFour(skip);
   }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {

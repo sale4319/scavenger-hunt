@@ -1,34 +1,27 @@
 import React, { useCallback, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { RoutingContext } from "../../../providers/RoutingContext";
 import { Title } from "../../../stories/headers";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import { QuestionForm } from "../../../stories/forms";
-import { PrivateRoutes } from "../../../PrivateRoutes";
 import {
   LevelThreeMessages,
   QuestionFormMessages,
   TooltipMessages,
   DefaultMessages,
 } from "../../../Messages";
-import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 
 export const LevelThree = () => {
-  const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState<boolean>(true);
   const [skip, setSkip] = useState(false);
-  const { quizMode, skipMode } = useContext(GameSettingsContext);
+  const { skipMode } = useContext(GameSettingsContext);
+  const { routeLevelThree } = useContext(RoutingContext);
 
   useLockNoPrompt(unLockNavigation);
 
   const routeChange = useCallback(() => {
-    if (quizMode) {
-      navigate(`${PrivateRoutes.PARAM_QUIZ_FOUR}`);
-    } else if (skip) {
-      navigate(`${PrivateRoutes.PARAM_START_TIMER}`);
-    } else if (!skip && !quizMode) {
-      navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
-    }
+    routeLevelThree(skip);
   }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {

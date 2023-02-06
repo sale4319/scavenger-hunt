@@ -6,6 +6,7 @@ import { QuizTwo } from "./QuizTwo";
 import { QuizThree } from "./QuizThree";
 import { QuizFour } from "./QuizFour";
 import { StyleSheetTestUtils } from "aphrodite";
+import { RoutingProvider } from "../../../providers/RoutingContext";
 
 const mockedUsedNavigate = jest.fn();
 
@@ -24,7 +25,9 @@ afterEach(() => {
 const RenderedQuizOne = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <QuizOne />
+      <RoutingProvider>
+        <QuizOne />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );
@@ -32,7 +35,9 @@ const RenderedQuizOne = (
 const RenderedQuizTwo = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <QuizTwo />
+      <RoutingProvider>
+        <QuizTwo />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );
@@ -40,7 +45,9 @@ const RenderedQuizTwo = (
 const RenderedQuizThree = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <QuizThree />
+      <RoutingProvider>
+        <QuizThree />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );
@@ -48,7 +55,9 @@ const RenderedQuizThree = (
 const RenderedQuizFour = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <QuizFour />
+      <RoutingProvider>
+        <QuizFour />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );

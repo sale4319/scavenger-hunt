@@ -4,6 +4,7 @@ import { StartTimerMessages } from "../../Messages";
 import { Start } from "./Start";
 import { GameSettingsProvider } from "../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
+import { RoutingProvider } from "../../providers/RoutingContext";
 
 const mockedUsedNavigate = jest.fn();
 
@@ -22,7 +23,9 @@ afterEach(() => {
 const RenderedComponent = (
   <MemoryRouter>
     <GameSettingsProvider>
-      <Start />
+      <RoutingProvider>
+        <Start />
+      </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>
 );
