@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useCallback, useContext, useState } from "react";
+import { GameSettingsContext } from "../../providers/GameSettingsContext";
+import { RoutingContext } from "../../providers/RoutingContext";
 import { Quiz } from "../../stories/forms/QuizForm/QuizForm";
-import { useLockNoPrompt } from "../../utils/utils";
-import { PrivateRoutes } from "../../PrivateRoutes";
-import { modes } from "../../flags";
+import { useLockNoPrompt } from "../../utils/lockNavigation";
 import { DefaultMessages } from "../../Messages";
 import { PrimaryButton, SkipButton } from "../../stories/buttons";
 import { questionSetOne } from "../../QuizSets";
 
 export const QuizOne = () => {
-  const navigate = useNavigate();
   const [unLockNavigation, setUnlockNavigation] = useState(true);
+  const { skipMode } = useContext(GameSettingsContext);
+  const { routeQuizOne } = useContext(RoutingContext);
 
   useLockNoPrompt(unLockNavigation);
 
-  const routeChange = () => {
-    navigate(`${PrivateRoutes.PARAM_LEVEL_ONE}`);
-  };
+  const routeChange = useCallback(() => {
+    routeQuizOne();
+  }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
@@ -28,10 +28,11 @@ export const QuizOne = () => {
         onClick={routeChange}
         primary={unLockNavigation}
         size={"small"}
-        label={DefaultMessages.CONTINUE_BUTTON}
+        isLocked={unLockNavigation}
+        data-testid="continueButton"
       />
       <Quiz questions={questionSetOne} handleUnlock={handleUnlockNavigation} />
-      {modes.skipMode && (
+      {skipMode && (
         <SkipButton
           onClick={handleUnlockNavigation}
           label={DefaultMessages.SKIP_QUIZ}

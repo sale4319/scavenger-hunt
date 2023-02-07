@@ -59,5 +59,5 @@ When this issue is dealt with your project will start with `yarn start` command,
 - [x] Implement Storybook and export/import all components
 - [x] Create themes with useContext API and persist them with localStorage
 - [x] Add 404 page
-- [ ] Migrate completely to TypeScript
-- [ ] Write/Finish tests
+- [x] Migrate completely to TypeScript
+- [x] Write/Finish tests

@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
-import { DarkModeProvider } from "./providers/DarkModeContext";
 import App from "./App";
+import { GameSettingsProvider } from "./providers/GameSettingsContext";
 import "./index.css";
+import { RoutingProvider } from "./providers/RoutingContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,9 +13,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <HashRouter>
-      <DarkModeProvider>
-        <App />
-      </DarkModeProvider>
+      <GameSettingsProvider>
+        <RoutingProvider>
+          <App />
+        </RoutingProvider>
+      </GameSettingsProvider>
     </HashRouter>
   </React.StrictMode>
 );

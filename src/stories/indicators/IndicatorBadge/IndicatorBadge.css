@@ -1,0 +1,52 @@
+.indicator-badge {
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.indicator {
+  height: 6px;
+}
+
+.indicator > span {
+  display: inline-block;
+  background-color: lightgray;
+  border-radius: 2px;
+}
+
+.indicator--small > span {
+  line-height: 6px;
+  width: 12px;
+  height: 6px;
+  margin-right: 3px;
+}
+
+.indicator--medium > span {
+  line-height: 12px;
+  width: 24px;
+  height: 12px;
+  margin-right: 4px;
+}
+
+.indicator--large > span {
+  line-height: 24px;
+  width: 48px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.indicator--orange {
+  background-color: #faab78 !important;
+}
+
+.indicator--green {
+  background-color: #5ed37a !important;
+}
+
+.indicator--red {
+  background-color: #ff7171 !important;
+}
+
+.indicator--blue {
+  background-color: #0090bb !important;
+}

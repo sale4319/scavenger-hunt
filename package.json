@@ -12,7 +12,6 @@
     "@types/node": "^16.11.32",
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
-    "aphrodite": "^2.4.0",
     "react": "^18.1.0",
     "react-countdown": "2.2.0",
     "react-dom": "^18.1.0",
@@ -37,7 +36,9 @@
       "react-app",
       "react-app/jest"
     ],
-    "rules": {},
+    "rules": {
+      "react-hooks/exhaustive-deps": "off"
+    },
     "overrides": [
       {
         "files": [
