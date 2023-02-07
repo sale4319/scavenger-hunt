@@ -5,7 +5,6 @@ import { QuizOne } from "../../Start/QuizOne";
 import { QuizTwo } from "./QuizTwo";
 import { QuizThree } from "./QuizThree";
 import { QuizFour } from "./QuizFour";
-import { StyleSheetTestUtils } from "aphrodite";
 import { RoutingProvider } from "../../../providers/RoutingContext";
 
 const mockedUsedNavigate = jest.fn();
@@ -14,13 +13,6 @@ jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockedUsedNavigate,
 }));
-
-beforeEach(() => {
-  StyleSheetTestUtils.suppressStyleInjection();
-});
-afterEach(() => {
-  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-});
 
 const RenderedQuizOne = (
   <MemoryRouter>

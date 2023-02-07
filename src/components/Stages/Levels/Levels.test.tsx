@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { StyleSheetTestUtils } from "aphrodite";
 import {
   LevelOneMessages,
   LevelThreeMessages,
@@ -11,10 +10,7 @@ import { MemoryRouter } from "react-router-dom";
 import { LevelTwo } from "./LevelTwo";
 import { LevelThree } from "./LevelThree";
 import userEvent from "@testing-library/user-event";
-import {
-  RoutingContext,
-  RoutingProvider,
-} from "../../../providers/RoutingContext";
+import { RoutingProvider } from "../../../providers/RoutingContext";
 
 const mockedUsedNavigate = jest.fn();
 
@@ -22,13 +18,6 @@ jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockedUsedNavigate,
 }));
-
-beforeEach(() => {
-  StyleSheetTestUtils.suppressStyleInjection();
-});
-afterEach(() => {
-  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-});
 
 const RenderedLevelOne = (
   <MemoryRouter>

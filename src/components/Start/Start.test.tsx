@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { StyleSheetTestUtils } from "aphrodite";
 import { StartTimerMessages } from "../../Messages";
 import { Start } from "./Start";
 import { GameSettingsProvider } from "../../providers/GameSettingsContext";
@@ -12,13 +11,6 @@ jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockedUsedNavigate,
 }));
-
-beforeEach(() => {
-  StyleSheetTestUtils.suppressStyleInjection();
-});
-afterEach(() => {
-  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-});
 
 const RenderedComponent = (
   <MemoryRouter>
