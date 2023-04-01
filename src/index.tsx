@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import App from "./App";
 import { GameSettingsProvider } from "./providers/GameSettingsContext";
-import "./index.css";
 import { RoutingProvider } from "./providers/RoutingContext";
+import "./index.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

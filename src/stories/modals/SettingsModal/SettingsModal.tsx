@@ -1,7 +1,9 @@
 import { useContext, useEffect } from "react";
 import { SettingsModalMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
-import { ToggleSwitch } from "../../buttons/ToggleSwitch/ToggleSwitch";
+import { ToggleSwitch } from "../../buttons";
+import { PrimaryButton } from "../../buttons";
+
 import "./SettingsModal.css";
 
 export const SettingsModal = ({ onRequestClose }) => {
@@ -9,7 +11,7 @@ export const SettingsModal = ({ onRequestClose }) => {
     useContext(GameSettingsContext);
   // Use useEffect to add an event listener to the document
   useEffect(() => {
-    function onKeyDown(event) {
+    function onKeyEsc(event: { keyCode: number }) {
       if (event.keyCode === 27) {
         // Close the modal when the Escape key is pressed
         onRequestClose();
@@ -18,12 +20,12 @@ export const SettingsModal = ({ onRequestClose }) => {
 
     // Prevent scrolling
     document.body.style.overflow = "hidden";
-    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("keydown", onKeyEsc);
 
     // Clear things up when unmounting this component
     return () => {
       document.body.style.overflow = "visible";
-      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("keydown", onKeyEsc);
     };
   });
 
@@ -40,24 +42,23 @@ export const SettingsModal = ({ onRequestClose }) => {
         <h2 className="title">{SettingsModalMessages.TITLE}</h2>
         <h3 className="title">{SettingsModalMessages.INFO}</h3>
         <ToggleSwitch
-          onClick={handleQuizMode}
+          onChange={handleQuizMode}
+          defaultChecked={quizMode}
           toggle={quizMode}
           label="Quiz mode"
         />
         <ToggleSwitch
-          onClick={handleSkipMode}
+          onChange={handleSkipMode}
+          defaultChecked={quizMode}
           toggle={skipMode}
           label="Skip mode"
         />
-        <button
-          className={[
-            "main-button",
-            `main-button--${darkMode ? "dark" : "light"}`,
-          ].join(" ")}
+        <PrimaryButton
+          size={"medium"}
           onClick={onRequestClose}
-        >
-          Close
-        </button>
+          label="Close"
+          mode="close"
+        />
       </div>
     </div>
   );

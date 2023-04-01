@@ -1,78 +1,23 @@
 .skip-position {
   position: absolute;
-  top: 12%;
-  right: 5%;
+  top: 6%;
+  right: 10%;
   margin-top: 0;
 }
 
 .skip-button {
-  min-width: 80px;
-  min-height: 35px;
-  line-height: 35px;
-  font-size: 18px;
-  font-family: Optima, sans-serif;
-  text-decoration: none;
-  background-color: transparent;
-  letter-spacing: 2px;
-  text-align: center;
-  transition: all 0.35s;
+  background: transparent no-repeat center;
+  content: url("../../assets/skip.svg");
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
 }
 
-.skip-text {
-  position: relative;
-  z-index: 2;
-}
-
-.skip-button-dark {
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.skip-button-dark:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #61dafb;
-  transition: all 0.35s;
-}
-
-.skip-button-dark:hover {
-  background-color: transparent;
-  border: 2px solid #fff;
-}
-
-.skip-button-dark:hover:after {
-  width: 100%;
-}
-
-.skip-button-light {
-  color: #282c34;
-  border: 2px solid #282c34;
-}
-
-.skip-button-light:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #ff003b;
-  transition: all 0.35s;
-}
-
-.skip-button-light:hover {
-  color: #fff;
-  background-color: transparent;
-}
-
-.skip-button-light:hover:after {
-  width: 100%;
-}
-
-.unlock-button::selection {
-  background: transparent;
+.skip-button:hover {
+  transition: transform 200ms;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 400ms;
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
 }

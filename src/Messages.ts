@@ -56,12 +56,13 @@ export const QuestionFormMessages = {
 export const Links = {
   TRELLO: "https://pmp-trello.netlify.app/",
   PD_LINK: "https://productdock.com/",
-  GITHUB: "https://github.com/alestojanovic/scavenger-hunt-main",
+  GITHUB: "https://github.com/sale4319/scavenger-hunt",
 };
 
 export const DefaultMessages = {
-  PAGE_NOT_FOUNS: "Ooops... what happened? Here have a fancy button.",
-  FANCY_BUTTON: "I will take you home",
+  PAGE_NOT_FOUND: "Page not found",
+  FOUR_O_FOUR: "404",
+  FANCY_BUTTON: "Go Home",
   CONTINUE_BUTTON: "PASS",
   SUBMIT_BUTTON: "Submit",
   SKIP_QUIZ: "Skip quiz",
@@ -78,8 +79,8 @@ export const QuizFormMessages = {
   START_BUTTON: "Start",
   RESTART_BUTTON: "Restart",
   UNLOCK_BUTTON: "Continue",
-  NEXT_BUTTON: "Next Question >>",
-  RESULTS_BUTTON: "See results of the quiz",
+  NEXT_BUTTON: "Next >>",
+  RESULTS_BUTTON: "Results >",
 };
 
 export const SettingsModalMessages = {

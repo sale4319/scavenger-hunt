@@ -1,4 +1,3 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { PrimaryButton } from "./PrimaryButton";
@@ -18,26 +17,45 @@ const Template: ComponentStory<typeof PrimaryButton> = (args) => (
   <PrimaryButton {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Fill = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: "Button",
+Fill.args = {
+  mode: "fill",
+  label: "Fill In",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Button",
+export const Pulse = Template.bind({});
+Pulse.args = {
+  mode: "pulse",
+  label: "Pulse",
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  label: "Button",
+export const Close = Template.bind({});
+Close.args = {
+  mode: "close",
+  label: "Close",
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  label: "Button",
+export const Raise = Template.bind({});
+Raise.args = {
+  mode: "raise",
+  label: "Raise",
+};
+
+export const Up = Template.bind({});
+Up.args = {
+  mode: "up",
+  label: "Fill Up",
+};
+
+export const Slide = Template.bind({});
+Slide.args = {
+  mode: "slide",
+  label: "Slide",
+};
+
+export const Offset = Template.bind({});
+Offset.args = {
+  mode: "offset",
+  label: "Offset",
 };

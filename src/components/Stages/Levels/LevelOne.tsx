@@ -8,7 +8,7 @@ import {
   UnlockButton,
 } from "../../../stories/buttons";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
-import { PlaceHolder } from "../../../stories/headers/PlaceHolder/PlaceHolder";
+import { PlaceHolder } from "../../../stories/headers";
 import { DefaultMessages, LevelOneMessages } from "../../../Messages";
 
 export const LevelOne = () => {
@@ -41,7 +41,7 @@ export const LevelOne = () => {
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}
-        size={"small"}
+        size={"medium"}
         isLocked={unLockNavigation}
         data-testid="continueButton"
       />

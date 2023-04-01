@@ -1,24 +1,25 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Container } from "./stories/pages/";
-import { Start } from "./components/Start/Start";
-import { LevelOne } from "./components/Stages/Levels/LevelOne";
-import { LevelTwo } from "./components/Stages/Levels/LevelTwo";
-import { LevelThree } from "./components/Stages/Levels/LevelThree";
-import FinishClassic from "./components/Finish/FinishClassic";
-import { QuizOne } from "./components/Start/QuizOne";
-import { QuizTwo } from "./components/Stages/Quizes/QuizTwo";
-import { QuizThree } from "./components/Stages/Quizes/QuizThree";
-import { QuizFour } from "./components/Stages/Quizes/QuizFour";
+import { AppMenu } from "./stories/headers";
 import { PageNotFound } from "./stories/pages/";
+import { Start } from "./components/Stages/Levels";
+import { LevelOne } from "./components/Stages/Levels";
+import { LevelTwo } from "./components/Stages/Levels";
+import { LevelThree } from "./components/Stages/Levels";
+import { FinishClassic } from "./components/Stages/Levels";
+import { QuizOne } from "./components/Stages/Quizes";
+import { QuizTwo } from "./components/Stages/Quizes";
+import { QuizThree } from "./components/Stages/Quizes";
+import { QuizFour } from "./components/Stages/Quizes";
 import { PrivateRoutes } from "./PrivateRoutes";
+
 import "react-toastify/dist/ReactToastify.css";
-import { AppBar } from "./stories/headers/AppBar/AppBar";
 
 const App = () => {
   return (
     <>
-      <AppBar />
+      <AppMenu />
       <Container>
         <Routes>
           <Route path={PrivateRoutes.PARAM_START_TIMER} element={<Start />} />

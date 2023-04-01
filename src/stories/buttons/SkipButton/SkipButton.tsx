@@ -17,7 +17,7 @@ export const SkipButton = ({ label = "skip", ...props }: SkipButtonProps) => {
       className={["skip-position skip-button", mode].join(" ")}
       {...props}
     >
-      <span className="skip-text">{label}</span>
+      <i className="skip-button"></i>
     </button>
   );
 };

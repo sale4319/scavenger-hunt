@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { QuestionIconToolTip } from "../../tool-tips";
-import { SubmitButton } from "../../buttons";
+import { PrimaryButton } from "../../buttons";
 import { QuestionFormMessages, DefaultMessages } from "../../../Messages";
 import { SecretAnswers } from "../../../PrivateRoutes";
 import "./QuestionForm.css";
@@ -167,11 +167,11 @@ export const QuestionForm = ({
             <span className="error">{formErrors.answerTwo}</span>
           )}
         </div>
-        <SubmitButton
-          submit={true}
-          size={"small"}
+        <PrimaryButton
+          size={"medium"}
           label={DefaultMessages.SUBMIT_BUTTON}
-          type="submit"
+          buttonType="submit"
+          mode="up"
         />
       </form>
     </div>

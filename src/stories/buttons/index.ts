@@ -1,7 +1,9 @@
-export { PrimaryButton } from "./PrimaryButton/PrimaryButton";
-export { SubmitButton } from "./SubmitButton/SubmitButton";
+export { DarkModeButton } from "./DarkModeButton/DarkModeButton";
 export { GiftButton } from "./GiftButton/GiftButton";
 export { NavigationButton } from "./NavigationButton/NavigationButton";
-export { UnlockButton } from "./UnlockButton/UnlockButton";
-export { DarkModeButton } from "./DarkModeButton/DarkModeButton";
+export { PassButton } from "./PassButton/PassButton";
+export { PrimaryButton } from "./PrimaryButton/PrimaryButton";
 export { SkipButton } from "./SkipButton/SkipButton";
+export { SubmitButton } from "./SubmitButton/SubmitButton";
+export { ToggleSwitch } from "./ToggleSwitch/ToggleSwitch";
+export { UnlockButton } from "./UnlockButton/UnlockButton";

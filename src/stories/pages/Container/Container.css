@@ -1,5 +1,5 @@
 .container {
-  padding-top: 70px;
+  padding-top: 90px;
   text-align: center;
 }
 
@@ -19,38 +19,30 @@
   max-width: 800px;
 }
 
-.question-mark {
-  position: absolute;
-
-  height: 70px;
-}
-
-.question-mark--paused {
-  position: absolute;
-  height: 70px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .question-mark {
-    animation: question-mark-spin infinite 5s linear;
-  }
-}
-
-@keyframes question-mark-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .settings-button {
   position: absolute;
-  top: 10%;
-  left: 5%;
+  top: 6%;
+  right: 5%;
   margin-top: 0;
   padding: 0;
   background-color: transparent;
   border: none;
+}
+
+.settings-icon {
+  background: transparent no-repeat center;
+  content: url("../../assets/settings.svg");
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  transition: transform 200ms;
+}
+
+.settings-icon:hover {
+  transition: transform 200ms;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 400ms;
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
 }
