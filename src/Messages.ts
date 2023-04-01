@@ -56,7 +56,7 @@ export const QuestionFormMessages = {
 export const Links = {
   TRELLO: "https://pmp-trello.netlify.app/",
   PD_LINK: "https://productdock.com/",
-  GITHUB: "https://github.com/alestojanovic/scavenger-hunt-main",
+  GITHUB: "https://github.com/sale4319/scavenger-hunt",
 };
 
 export const DefaultMessages = {

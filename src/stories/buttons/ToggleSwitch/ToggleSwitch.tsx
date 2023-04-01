@@ -3,26 +3,31 @@ import "./ToggleSwitch.css";
 interface PrimaryButtonProps {
   toggle?: boolean;
   label?: string;
-  onClick?: () => void;
+  defaultChecked?: boolean;
+  onChange?: () => void;
 }
 
 export const ToggleSwitch = ({
   toggle,
   label,
-  onClick,
+  onChange,
+  defaultChecked,
   ...props
 }: PrimaryButtonProps) => {
   return (
     <div className="toggle-container">
       <span className="toggle-label">{label}</span>
-      <div
-        onClick={onClick}
-        className={[
-          "toggle-switch",
-          `toggle-switch--${toggle ? "on" : "off"}`,
-        ].join(" ")}
-      >
-        <div className={toggle ? "knob active" : "knob"} />
+      <div>
+        <label className="toggle-switch">
+          <input
+            className="toggle-switch-input"
+            type="checkbox"
+            onChange={onChange}
+            defaultChecked={toggle}
+          />
+          <span className="slider round"></span>
+        </label>
+        <br />
         {toggle ? (
           <span className="toggle-text">on</span>
         ) : (
