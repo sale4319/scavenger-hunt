@@ -1,6 +1,6 @@
 import "./ToggleSwitch.css";
 
-interface PrimaryButtonProps {
+interface ToggleSwitchProps {
   toggle?: boolean;
   label?: string;
   defaultChecked?: boolean;
@@ -13,7 +13,7 @@ export const ToggleSwitch = ({
   onChange,
   defaultChecked,
   ...props
-}: PrimaryButtonProps) => {
+}: ToggleSwitchProps) => {
   return (
     <div className="toggle-container">
       <span className="toggle-label">{label}</span>

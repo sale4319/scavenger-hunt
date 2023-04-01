@@ -6,7 +6,7 @@ import { SubmitButton } from "../../buttons";
 import { PrivateRoutes } from "../../../PrivateRoutes";
 import { DefaultMessages } from "../../../Messages";
 import "./PageNotFound.css";
-import { PlaceHolder } from "../../headers/PlaceHolder/PlaceHolder";
+import { PlaceHolder } from "../../headers";
 
 export const PageNotFound = () => {
   const { darkMode } = useContext(GameSettingsContext);

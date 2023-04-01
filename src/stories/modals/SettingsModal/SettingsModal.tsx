@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
 import { SettingsModalMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
-import { ToggleSwitch } from "../../buttons/ToggleSwitch/ToggleSwitch";
-import "./SettingsModal.css";
-
+import { ToggleSwitch } from "../../buttons";
 import { PrimaryButton } from "../../buttons";
+
+import "./SettingsModal.css";
 
 export const SettingsModal = ({ onRequestClose }) => {
   const { quizMode, skipMode, setSkipMode, setQuizMode, darkMode } =

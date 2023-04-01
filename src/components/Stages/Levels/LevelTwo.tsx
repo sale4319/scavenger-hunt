@@ -4,7 +4,7 @@ import { RoutingContext } from "../../../providers/RoutingContext";
 import { Title } from "../../../stories/headers";
 import { UnlockToolTip } from "../../../stories/tool-tips";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
-import { PlaceHolder } from "../../../stories/headers/PlaceHolder/PlaceHolder";
+import { PlaceHolder } from "../../../stories/headers";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import {
   LevelTwoMessages,

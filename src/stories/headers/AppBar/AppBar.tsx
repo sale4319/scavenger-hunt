@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { NavigationButton, DarkModeButton } from "../../buttons/";
 import { Links } from "../../../Messages";
