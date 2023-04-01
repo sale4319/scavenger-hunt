@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
-import { Title } from "../../headers";
-import { SubmitButton } from "../../buttons";
+import { PrimaryButton } from "../../buttons";
 import { PrivateRoutes } from "../../../PrivateRoutes";
 import { DefaultMessages } from "../../../Messages";
 import "./PageNotFound.css";
@@ -17,11 +16,16 @@ export const PageNotFound = () => {
 
   return (
     <section className={darkMode ? "container-dark " : "container-light"}>
-      <PlaceHolder size="small" />
-      <Title label={DefaultMessages.PAGE_NOT_FOUNS} titleSize="large" />
-      <SubmitButton
+      <PlaceHolder size="medium" />
+      <div className="error">{DefaultMessages.FOUR_O_FOUR}</div>
+      <br />
+      <br />
+      <span className="info">{DefaultMessages.PAGE_NOT_FOUND}</span>
+      <PlaceHolder size="medium" />
+      <PrimaryButton
         onClick={routeChange}
         label={DefaultMessages.FANCY_BUTTON}
+        mode="offset"
       />
     </section>
   );

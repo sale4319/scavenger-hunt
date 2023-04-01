@@ -60,8 +60,9 @@ export const Links = {
 };
 
 export const DefaultMessages = {
-  PAGE_NOT_FOUNS: "Ooops... what happened? Here have a fancy button.",
-  FANCY_BUTTON: "I will take you home",
+  PAGE_NOT_FOUND: "Page not found",
+  FOUR_O_FOUR: "404",
+  FANCY_BUTTON: "Go Home",
   CONTINUE_BUTTON: "PASS",
   SUBMIT_BUTTON: "Submit",
   SKIP_QUIZ: "Skip quiz",
