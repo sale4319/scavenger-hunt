@@ -16,7 +16,6 @@ export const PrimaryButton = ({
   size = "medium",
   mode = "fill",
   isLocked,
-
   label,
   ...props
 }: PrimaryButtonProps) => {
@@ -31,7 +30,6 @@ export const PrimaryButton = ({
       className={[
         "primary-button",
         `primary-button--${size}`,
-
         toggleColor,
       ].join(" ")}
       {...props}

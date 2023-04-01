@@ -1,7 +1,7 @@
 {
   "name": "scavenger-hunt",
   "version": "0.1.0",
-  "homepage": "http://mysillygame.com/",
+  "homepage": "mysillygame.com",
   "private": true,
   "dependencies": {
     "react": "^18.1.0",

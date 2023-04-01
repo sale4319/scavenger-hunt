@@ -51,8 +51,8 @@
 }
 
 .fill--locked {
-  --color: red;
-  --hover: red;
+  --color: #e91e63;
+  --hover: #e91e63;
 }
 
 .pulse {
@@ -93,6 +93,8 @@
 .primary-button {
   color: var(--color);
   transition: 0.25s;
+  user-select: none;
+  cursor: pointer;
 }
 
 .primary-button:hover,

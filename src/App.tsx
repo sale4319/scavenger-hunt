@@ -12,13 +12,14 @@ import { QuizThree } from "./components/Stages/Quizes/QuizThree";
 import { QuizFour } from "./components/Stages/Quizes/QuizFour";
 import { PageNotFound } from "./stories/pages/";
 import { PrivateRoutes } from "./PrivateRoutes";
+import { AppMenu } from "./stories/headers/AppMenu/AppMenu";
+
 import "react-toastify/dist/ReactToastify.css";
-import { AppBar } from "./stories/headers/AppBar/AppBar";
 
 const App = () => {
   return (
     <>
-      <AppBar />
+      <AppMenu />
       <Container>
         <Routes>
           <Route path={PrivateRoutes.PARAM_START_TIMER} element={<Start />} />

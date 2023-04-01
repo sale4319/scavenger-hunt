@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
-import questionMark from "../../assets/question-mark.png";
 import "./Container.css";
 import { SettingsModal } from "../../modals/SettingsModal/SettingsModal";
 
@@ -10,15 +9,10 @@ interface ContainerProps {
 
 export const Container = ({ children, ...props }: ContainerProps) => {
   const { darkMode } = useContext(GameSettingsContext);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [isModalOpen, setModalIsOpen] = useState(false);
 
   const toggleModal = () => {
     setModalIsOpen(!isModalOpen);
-  };
-
-  const handleStop = () => {
-    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -35,12 +29,7 @@ export const Container = ({ children, ...props }: ContainerProps) => {
         </section>
         {isModalOpen && <SettingsModal onRequestClose={toggleModal} />}
         <button className="settings-button" onClick={toggleModal} type="button">
-          <img
-            src={questionMark}
-            className={isPlaying ? "question-mark" : "question-mark--paused"}
-            alt="question"
-            onClick={handleStop}
-          />
+          <i className="settings-icon"></i>
         </button>
       </article>
     </div>
