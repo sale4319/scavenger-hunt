@@ -78,8 +78,8 @@ export const QuizFormMessages = {
   START_BUTTON: "Start",
   RESTART_BUTTON: "Restart",
   UNLOCK_BUTTON: "Continue",
-  NEXT_BUTTON: "Next Question >>",
-  RESULTS_BUTTON: "See results of the quiz",
+  NEXT_BUTTON: "Next >>",
+  RESULTS_BUTTON: "Results >",
 };
 
 export const SettingsModalMessages = {

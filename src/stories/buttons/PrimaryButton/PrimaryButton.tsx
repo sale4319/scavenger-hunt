@@ -1,52 +1,39 @@
-import React from "react";
 import "./PrimaryButton.css";
 
 interface PrimaryButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
   primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
   size?: "small" | "medium" | "large";
-
+  mode?: "fill" | "pulse" | "close" | "raise" | "up" | "slide" | "offset";
+  buttonType?: "button" | "submit";
   isLocked?: boolean;
-  /**
-   * Button contents
-   */
   label?: string;
-  /**
-   * Optional click handler
-   */
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const PrimaryButton = ({
-  primary = false,
+  primary,
+  buttonType,
   size = "medium",
-  backgroundColor,
+  mode = "fill",
   isLocked,
+
   label,
   ...props
 }: PrimaryButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+  const toggleColor = primary
+    ? "fill--locked"
+    : primary === undefined
+    ? mode
+    : "pulse--unlocked";
   return (
     <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={{ backgroundColor }}
+      type={buttonType}
+      className={[
+        "primary-button",
+        `primary-button--${size}`,
+
+        toggleColor,
+      ].join(" ")}
       {...props}
     >
       {isLocked ? "Locked" : isLocked === undefined ? label : "Unlocked"}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment, useContext } from "react";
 import { QuizFormMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { PrimaryButton } from "../../buttons";
 import "./QuizForm.css";
 
 const Question = ({ question, setAnswerStatus }) => {
@@ -108,9 +109,13 @@ export const Quiz = ({ questions, handleUnlock }) => {
       >
         <h1>{QuizFormMessages.TITLE}</h1>
         <p>{QuizFormMessages.DESCRIPTION}</p>
-        <button className="quiz-button start" onClick={onNextClick}>
-          {QuizFormMessages.START_BUTTON}
-        </button>
+        <p>
+          <PrimaryButton
+            mode="up"
+            onClick={onNextClick}
+            label={QuizFormMessages.START_BUTTON}
+          />
+        </p>
       </div>
     );
   }
@@ -126,13 +131,21 @@ export const Quiz = ({ questions, handleUnlock }) => {
             {QuizFormMessages.TOTAL_QUESTIONS} {questions.length}
           </p>
           {questionIndex != null && correctAnswerCount === 6 ? (
-            <button className="quiz-button restart" onClick={handleUnlock}>
-              {QuizFormMessages.UNLOCK_BUTTON}
-            </button>
+            <p>
+              <PrimaryButton
+                mode="slide"
+                onClick={handleUnlock}
+                label={QuizFormMessages.UNLOCK_BUTTON}
+              />
+            </p>
           ) : (
-            <button className="quiz-button restart " onClick={onRestartClick}>
-              {QuizFormMessages.RESTART_BUTTON}
-            </button>
+            <p>
+              <PrimaryButton
+                mode="raise"
+                onClick={onRestartClick}
+                label={QuizFormMessages.RESTART_BUTTON}
+              />
+            </p>
           )}
         </Fragment>
       ) : (
@@ -147,11 +160,15 @@ export const Quiz = ({ questions, handleUnlock }) => {
           />
           {answerStatus != null && (
             <div>
-              <button className="quiz-button next" onClick={onNextClick}>
-                {questionIndex === questions.length - 1
-                  ? `${QuizFormMessages.RESULTS_BUTTON}`
-                  : `${QuizFormMessages.NEXT_BUTTON}`}
-              </button>
+              <PrimaryButton
+                mode="slide"
+                onClick={onNextClick}
+                label={
+                  questionIndex === questions.length - 1
+                    ? `${QuizFormMessages.RESULTS_BUTTON}`
+                    : `${QuizFormMessages.NEXT_BUTTON}`
+                }
+              />
             </div>
           )}
         </Fragment>

@@ -4,6 +4,8 @@ import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { ToggleSwitch } from "../../buttons/ToggleSwitch/ToggleSwitch";
 import "./SettingsModal.css";
 
+import { PrimaryButton } from "../../buttons";
+
 export const SettingsModal = ({ onRequestClose }) => {
   const { quizMode, skipMode, setSkipMode, setQuizMode, darkMode } =
     useContext(GameSettingsContext);
@@ -51,15 +53,12 @@ export const SettingsModal = ({ onRequestClose }) => {
           toggle={skipMode}
           label="Skip mode"
         />
-        <button
-          className={[
-            "main-button",
-            `main-button--${darkMode ? "dark" : "light"}`,
-          ].join(" ")}
+        <PrimaryButton
+          size={"small"}
           onClick={onRequestClose}
-        >
-          Close
-        </button>
+          label="Close"
+          mode="close"
+        />
       </div>
     </div>
   );

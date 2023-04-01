@@ -36,7 +36,7 @@ export const Start = () => {
         onClick={handleunLockNavigation}
         content={TooltipMessages.START_HINT}
       />
-      <br></br>
+      <br />
       <PrimaryButton
         onClick={unLockNavigation ? handleunLockNavigation : routeChange}
         primary={unLockNavigation}
