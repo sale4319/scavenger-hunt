@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.51a1bc1f.css",
-    "main.js": "/static/js/main.f2209d17.js",
-    "static/media/question-mark.png": "/static/media/question-mark.a6995e1ff12002535eb8.png",
-    "static/media/reactHeart.svg": "/static/media/reactHeart.edceb35430eb2cc1cabb.svg",
-    "static/media/question-icon.svg": "/static/media/question-icon.c378d8117de63d13c55b34cf28164e38.svg",
-    "static/media/gift.svg": "/static/media/gift.5f48876c37c299bd572d81b0039d0c1a.svg",
-    "static/media/github.svg": "/static/media/github.51aa1f9e734853188793.svg",
-    "index.html": "/index.html",
-    "static/media/PDBlue.svg": "/static/media/PDBlue.5c677b241af9337eb424.svg",
-    "static/media/trello.svg": "/static/media/trello.8124686483bfdf513492.svg",
-    "main.51a1bc1f.css.map": "/static/css/main.51a1bc1f.css.map",
-    "main.f2209d17.js.map": "/static/js/main.f2209d17.js.map"
+    "main.css": "/mysillygame.com/static/css/main.0835b001.css",
+    "main.js": "/mysillygame.com/static/js/main.67d1f76e.js",
+    "static/media/reactHeart.svg": "/mysillygame.com/static/media/reactHeart.edceb35430eb2cc1cabb.svg",
+    "static/media/question-icon.svg": "/mysillygame.com/static/media/question-icon.c378d8117de63d13c55b34cf28164e38.svg",
+    "static/media/gift.svg": "/mysillygame.com/static/media/gift.5f48876c37c299bd572d81b0039d0c1a.svg",
+    "static/media/settings.svg": "/mysillygame.com/static/media/settings.66b8b6f64fa4a4778963.svg",
+    "static/media/github.svg": "/mysillygame.com/static/media/github.16bce5b5b173cfc1adae.svg",
+    "index.html": "/mysillygame.com/index.html",
+    "static/media/PDBlue.svg": "/mysillygame.com/static/media/PDBlue.5c677b241af9337eb424.svg",
+    "static/media/skip.svg": "/mysillygame.com/static/media/skip.e117f08411a252a5fcbd.svg",
+    "static/media/trello.svg": "/mysillygame.com/static/media/trello.51ce5a7436aa49164df3.svg",
+    "main.0835b001.css.map": "/mysillygame.com/static/css/main.0835b001.css.map",
+    "main.67d1f76e.js.map": "/mysillygame.com/static/js/main.67d1f76e.js.map"
   },
   "entrypoints": [
-    "static/css/main.51a1bc1f.css",
-    "static/js/main.f2209d17.js"
+    "static/css/main.0835b001.css",
+    "static/js/main.67d1f76e.js"
   ]
 }
