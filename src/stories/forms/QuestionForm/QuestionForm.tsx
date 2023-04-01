@@ -168,7 +168,7 @@ export const QuestionForm = ({
           )}
         </div>
         <PrimaryButton
-          size={"small"}
+          size={"medium"}
           label={DefaultMessages.SUBMIT_BUTTON}
           buttonType="submit"
           mode="up"

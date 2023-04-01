@@ -20,7 +20,7 @@
   user-select: none;
 }
 
-.error {
+.page-error {
   text-align: center;
   font-family: "Gilda Display", serif;
   font-size: 95px;
@@ -31,15 +31,15 @@
   line-height: 60px;
   margin: auto;
   position: absolute;
-  top: 30%;
-  bottom: 0;
+  top: 0;
+  bottom: 10%;
   left: -60px;
   right: 0;
   animation: noise 2s linear infinite;
   overflow: default;
 }
 
-.error:after {
+.page-error:after {
   content: "404";
   font-family: "Gilda Display", serif;
   font-size: 100px;
@@ -59,7 +59,7 @@
   animation: noise-1 0.2s linear infinite;
 }
 
-.info {
+.page-info {
   text-align: center;
   font-family: "Gilda Display", serif;
   font-size: 25px;
@@ -71,14 +71,14 @@
   margin: auto;
   position: absolute;
   top: 140px;
-  bottom: 0;
+  bottom: 5%;
   left: 0;
   right: 0;
   animation: noise-3 1s linear infinite;
   color: #e91e63;
 }
 
-.error:before {
+.page-error:before {
   content: "404";
   font-family: "Gilda Display", serif;
   font-size: 100px;

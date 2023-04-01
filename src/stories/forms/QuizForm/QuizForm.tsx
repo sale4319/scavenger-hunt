@@ -114,6 +114,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
             mode="up"
             onClick={onNextClick}
             label={QuizFormMessages.START_BUTTON}
+            size="medium"
           />
         </p>
       </div>
@@ -136,6 +137,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
                 mode="slide"
                 onClick={handleUnlock}
                 label={QuizFormMessages.UNLOCK_BUTTON}
+                size="medium"
               />
             </p>
           ) : (
@@ -144,6 +146,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
                 mode="raise"
                 onClick={onRestartClick}
                 label={QuizFormMessages.RESTART_BUTTON}
+                size="medium"
               />
             </p>
           )}
@@ -163,6 +166,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
               <PrimaryButton
                 mode="slide"
                 onClick={onNextClick}
+                size="medium"
                 label={
                   questionIndex === questions.length - 1
                     ? `${QuizFormMessages.RESULTS_BUTTON}`

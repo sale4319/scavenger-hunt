@@ -40,7 +40,7 @@ export const Start = () => {
       <PrimaryButton
         onClick={unLockNavigation ? handleunLockNavigation : routeChange}
         primary={unLockNavigation}
-        size={"small"}
+        size={"medium"}
         isLocked={unLockNavigation}
         data-testid="unlockButton"
       />

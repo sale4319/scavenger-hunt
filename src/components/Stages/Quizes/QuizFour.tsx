@@ -33,7 +33,7 @@ export const QuizFour = () => {
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}
-        size={"small"}
+        size={"medium"}
         isLocked={unLockNavigation}
         data-testid="continueButton"
       />

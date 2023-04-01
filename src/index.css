@@ -4,6 +4,7 @@
   --react-blue: #61dafb;
   --react-darker-blue: #2bd1ff;
   --react-darkest-blue: #0097c1;
+  overflow: hidden;
 }
 
 body {
@@ -14,7 +15,6 @@ body {
   font-family: "Ubuntu", sans-serif;
   background: var(--background-color);
   color: var(--text-color);
-  overflow: hidden;
 }
 body.dark {
   --background-color: var(--black);

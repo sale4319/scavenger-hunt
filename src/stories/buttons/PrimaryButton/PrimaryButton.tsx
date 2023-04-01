@@ -19,11 +19,7 @@ export const PrimaryButton = ({
   label,
   ...props
 }: PrimaryButtonProps) => {
-  const toggleColor = primary
-    ? "fill--locked"
-    : primary === undefined
-    ? mode
-    : "pulse--unlocked";
+  const toggleColor = primary ? "fill" : primary === undefined ? mode : "pulse";
   return (
     <button
       type={buttonType}

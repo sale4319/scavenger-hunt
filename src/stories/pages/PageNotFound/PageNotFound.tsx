@@ -17,10 +17,8 @@ export const PageNotFound = () => {
   return (
     <section className={darkMode ? "container-dark " : "container-light"}>
       <PlaceHolder size="medium" />
-      <div className="error">{DefaultMessages.FOUR_O_FOUR}</div>
-      <br />
-      <br />
-      <span className="info">{DefaultMessages.PAGE_NOT_FOUND}</span>
+      <div className="page-error">{DefaultMessages.FOUR_O_FOUR}</div>
+      <span className="page-info">{DefaultMessages.PAGE_NOT_FOUND}</span>
       <PlaceHolder size="medium" />
       <PrimaryButton
         onClick={routeChange}

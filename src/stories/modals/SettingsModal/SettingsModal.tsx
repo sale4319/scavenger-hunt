@@ -54,7 +54,7 @@ export const SettingsModal = ({ onRequestClose }) => {
           label="Skip mode"
         />
         <PrimaryButton
-          size={"small"}
+          size={"medium"}
           onClick={onRequestClose}
           label="Close"
           mode="close"

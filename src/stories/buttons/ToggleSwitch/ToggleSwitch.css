@@ -54,11 +54,11 @@
 }
 
 .toggle-switch-input:checked + .slider {
-  background-color: #5ed37a;
+  background-color: #e91e63;
 }
 
 .toggle-switch-input:focus + .slider {
-  box-shadow: 0 0 1px #5ed37a;
+  box-shadow: 0 0 1px #e91e63;
 }
 
 .toggle-switch-input:checked + .slider:before {
