@@ -4,39 +4,38 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 5px 0;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px black;
-  font-family: Optima, sans-serif;
   font-size: 19px;
   font-weight: 600;
   margin-top: 2%;
+  border: 2px solid;
 }
 
 .form-container--light {
-  background: linear-gradient(#fefcfc, #fffcfc);
+  background: white;
+  border-color: #282c34;
 }
 
 .form-container--dark {
-  background: linear-gradient(#2a2a2a, #393939);
+  background: #282c34;
+  border-color: white;
 }
 
 .success-message {
   color: #75f8e2;
   background: transparent;
-  font-family: Optima, sans-serif;
   width: 90%;
   padding: 8px;
   border: 1px solid;
-  border-radius: 4px;
   margin-top: 13px;
   font-size: 19px;
   font-weight: 600;
 }
 
 .form-label {
-  font-family: Optima, sans-serif;
   font-size: 19px;
   margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
 }
 
 .form-label--light {
@@ -49,14 +48,12 @@
 
 .form-input {
   padding: 10px;
-  border-radius: 3px;
-  border: 1px solid #75f8e2;
+  border: 1px solid #282c34;
   margin-bottom: 8px;
 }
 .form-input:focus {
   z-index: 1;
-  border-color: #75f8e2;
-  border-radius: 3px;
+  border-color: #282c34;
   background-color: white;
   box-shadow: 5px 10px 15px #61dafb;
   outline: none;
@@ -74,7 +71,6 @@
 .form-input-error {
   margin: 8px;
   padding: 10px;
-  border-radius: 3px;
   border: 1px solid;
   border-color: red;
   transition: 0.3s ease-in-out;
@@ -83,7 +79,6 @@
 .form-input-error:focus {
   z-index: 1;
   border-color: transparent;
-  border-radius: 3px;
   background-color: white;
   box-shadow: 5px 10px 15px red;
   outline: none;
@@ -95,6 +90,11 @@
 
 .form-input-error::placeholder {
   color: red;
+  font-family: "Audiowide", sans-serif;
+}
+
+.form-input::placeholder {
+  font-family: "Audiowide", sans-serif;
 }
 
 .error {
