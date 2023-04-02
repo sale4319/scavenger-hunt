@@ -1,6 +1,9 @@
 ### What did I do?
 
-<!-- Write comment -->
+<!--
+- [ ] Write comment
+- [ ] Another one
+-->
 
 ### How to test changes?
 
@@ -8,4 +11,4 @@
 
 ### Deployment
 
-[Live at]() <!-- Add deployment link to () -->
+<!-- [Live at]()  Add deployment link to () -->
