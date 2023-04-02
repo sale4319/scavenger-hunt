@@ -1,9 +1,9 @@
 .mobile-view-container {
-  padding-top: 90px;
+  padding-top: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(12px + 2vmin);
+  font-size: 18px;
   text-align: center;
 }
