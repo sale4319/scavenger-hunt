@@ -67,6 +67,7 @@ export const DefaultMessages = {
   SUBMIT_BUTTON: "Submit",
   SKIP_QUIZ: "Skip quiz",
   SKIP_LEVEL: "Skip level",
+  MOBILE_VIEW: "Please use desktop device to play the game.",
 };
 
 export const QuizFormMessages = {
