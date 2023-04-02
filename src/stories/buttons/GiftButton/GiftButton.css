@@ -1,16 +1,14 @@
 .gift-button {
   font-weight: 700;
-  background-color: transparent;
+  font-family: "Audiowide", sans-serif;
   border: none;
   max-width: 300px;
   max-height: 300px;
   border-radius: 50%;
   cursor: pointer;
   padding: 48px;
-  transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-  transition-property: color, background, width, height, margin, padding, border,
-    box-shadow;
+  transition: 0.5s;
+  box-shadow: 0 0 0 50px rgba(255, 0, 0, 0);
 }
 
 .gift-button::selection {
@@ -28,9 +26,7 @@
 }
 
 .gift-button--primary:hover {
-  z-index: 1;
-  border-radius: 50%;
-  box-shadow: #ff0066 10px 12px 25px 4px, inset 10px 12px 25px 4px #ff0066;
+  box-shadow: 0 0 0 0px #61dafb;
 }
 
 .gift-button--secondary {
@@ -39,9 +35,7 @@
 }
 
 .gift-button--secondary:hover {
-  z-index: 1;
-  border-radius: 50%;
-  box-shadow: #2bd1ff 10px 12px 25px 4px, inset 10px 12px 25px 4px #2bd1ff;
+  box-shadow: 0 0 0 0px #e91e63;
 }
 
 .gift-button--small {
