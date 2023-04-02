@@ -24,7 +24,7 @@ type QuestionFormProps = {
 };
 
 export const QuestionForm = ({
-  questionIconSize = "small",
+  questionIconSize = "medium",
   handleUnlock,
   firstQuestion = "What is your first question?",
   firstHint = "What is your first hint?",

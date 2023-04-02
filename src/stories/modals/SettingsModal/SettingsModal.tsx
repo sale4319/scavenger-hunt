@@ -3,6 +3,7 @@ import { SettingsModalMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { ToggleSwitch } from "../../buttons";
 import { PrimaryButton } from "../../buttons";
+import { Title } from "../../headers";
 
 import "./SettingsModal.css";
 
@@ -39,8 +40,8 @@ export const SettingsModal = ({ onRequestClose }) => {
           `modal__container--${darkMode ? "dark" : "light"}`,
         ].join(" ")}
       >
-        <h2 className="title">{SettingsModalMessages.TITLE}</h2>
-        <h3 className="title">{SettingsModalMessages.INFO}</h3>
+        <Title titleSize="medium" label={SettingsModalMessages.TITLE} />
+        <Title titleSize="small" label={SettingsModalMessages.INFO} />
         <ToggleSwitch
           onChange={handleQuizMode}
           defaultChecked={quizMode}

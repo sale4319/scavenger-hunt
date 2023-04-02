@@ -52,11 +52,11 @@ const FinishClassic = () => {
         <FaHeartBroken
           onClick={handleUnlockNavigation}
           size={50}
-          color="red"
+          color="#e91e63"
           data-testid="unlockButton"
         />
       ) : (
-        <FaHeart size={50} color="red" />
+        <FaHeart size={50} color="#e91e63" />
       )}
       <div>
         <GiftButton

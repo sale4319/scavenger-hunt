@@ -9,10 +9,9 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Optima, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Audiowide", sans-serif;
   background: var(--background-color);
   color: var(--text-color);
 }

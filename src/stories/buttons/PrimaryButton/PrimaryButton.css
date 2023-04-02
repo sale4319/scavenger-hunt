@@ -32,7 +32,7 @@
 }
 .slide:hover,
 .slide:focus {
-  box-shadow: inset 6.5em 0 0 0 var(--hover);
+  box-shadow: inset 8em 0 0 0 var(--hover);
 }
 .offset {
   box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);

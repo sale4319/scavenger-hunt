@@ -34,7 +34,7 @@ export const PromptMessages = {
 };
 
 export const TooltipMessages = {
-  START_HINT: "Button red? It is locked.",
+  START_HINT: "Try to click.",
   LEVEL_TWO_CONGRATS: "Good job solving this one!",
   FIRST_Q_HINT: "Come on, you know this.",
   SECOND_Q_HINT: "Find it with inspect element. ",
@@ -46,11 +46,11 @@ export const QuestionFormMessages = {
   WOW: "Good job passing! Even if you hacked it...",
   FIRST_Q_WRONG: "That is not true!",
   FIRST_Q_PLACEHOLDER: "You can guess",
-  FIRST_Q_LABEL: "Which frontend framework is the best ",
+  FIRST_Q_LABEL: "Which frontend framework is the best",
   SECOND_Q_WRONG: "That is not correct.",
   SECOND_Q_PLACEHOLDER: "Write it when you find it",
   SECOND_Q_LABEL:
-    "Answer one is now encrypted and hidden on this website. Find it ",
+    "Answer one is now encrypted and hidden on this website. Find it",
 };
 
 export const Links = {
@@ -85,5 +85,5 @@ export const QuizFormMessages = {
 
 export const SettingsModalMessages = {
   TITLE: "Settings",
-  INFO: "Bellow you can turn on and off available modes:",
+  INFO: "Set available modes:",
 };

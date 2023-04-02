@@ -28,14 +28,15 @@ export const Start = () => {
       />
 
       <CountdownTimer />
+      <div style={{ display: "flex" }}>
+        <Title titleSize="medium" label={StartTimerMessages.HINT} />
+        <QuestionIconToolTip
+          size="large"
+          onClick={handleunLockNavigation}
+          content={TooltipMessages.START_HINT}
+        />
+      </div>
 
-      <Title titleSize="medium" label={StartTimerMessages.HINT} />
-
-      <QuestionIconToolTip
-        size="medium"
-        onClick={handleunLockNavigation}
-        content={TooltipMessages.START_HINT}
-      />
       <br />
       <PrimaryButton
         onClick={unLockNavigation ? handleunLockNavigation : routeChange}

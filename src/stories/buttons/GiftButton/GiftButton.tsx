@@ -21,7 +21,11 @@ export const GiftButton = ({
   return (
     <button
       type="button"
-      className={["gift-button", `gift-button--${size}`, mode].join(" ")}
+      className={[
+        "gift-button outside_inside",
+        `gift-button--${size}`,
+        mode,
+      ].join(" ")}
       style={{ backgroundColor }}
       {...props}
     >
