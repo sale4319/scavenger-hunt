@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+
+type SetValue<T> = Dispatch<SetStateAction<T>>;
 
 // Hook
-export function useLocalStorage(key: string, initialValue: any) {
+export function useLocalStorage<T>(
+  key: string,
+  initialValue: T
+): [T, SetValue<T>] {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = useState(() => {
@@ -21,7 +26,7 @@ export function useLocalStorage(key: string, initialValue: any) {
   });
   // Return a wrapped version of useState's setter function that ...
   // ... persists the new value to localStorage.
-  const setValue = (value: any) => {
+  const setValue: SetValue<T> = (value) => {
     try {
       // Allow value to be a function so we have same API as useState
       const valueToStore =

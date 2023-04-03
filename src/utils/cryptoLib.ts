@@ -13,7 +13,10 @@ export const crypt = (salt: string, text: string) => {
     .join("");
 };
 
-export const decrypt = (salt: string, encoded: any) => {
+export const decrypt = (
+  salt: string,
+  encoded: { match: (arg0: RegExp) => string[] }
+) => {
   const textToChars = (text: string) =>
     text.split("").map((c) => c.charCodeAt(0));
   const applySaltToChar = (code) =>
