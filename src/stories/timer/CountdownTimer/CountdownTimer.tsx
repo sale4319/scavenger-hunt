@@ -1,17 +1,10 @@
 import React, { useState, useEffect, FC } from "react";
-import Countdown from "react-countdown";
+import Countdown, { CountdownRenderProps } from "react-countdown";
 import "./CountdownTimer.css";
 
-const twoDigits = (num) => String(num).padStart(2, "0");
+const twoDigits = (num: number) => String(num).padStart(2, "0");
 
-type Props = {
-  hours: any;
-  minutes: any;
-  seconds: any;
-  completed: any;
-};
-
-const renderer: FC<Props> = ({ hours, minutes, seconds }) => {
+const renderer: FC<CountdownRenderProps> = ({ hours, minutes, seconds }) => {
   return (
     <span>
       {twoDigits(hours)}:{twoDigits(minutes)}:{twoDigits(seconds)}
@@ -19,7 +12,7 @@ const renderer: FC<Props> = ({ hours, minutes, seconds }) => {
   );
 };
 
-let getLocalStorageValue = (s: any) => localStorage.getItem(s);
+let getLocalStorageValue = (s: string) => localStorage.getItem(s);
 
 export const CountdownTimer = () => {
   const [data, setData] = useState(
@@ -48,7 +41,7 @@ export const CountdownTimer = () => {
       <Countdown
         date={data.date + data.delay}
         renderer={renderer}
-        onStart={(delta) => {
+        onStart={(_delta) => {
           if (localStorage.getItem("end_date") == null)
             localStorage.setItem(
               "end_date",

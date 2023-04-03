@@ -1,13 +1,17 @@
-import React from "react";
+import { History, Transition } from "history";
+import { useCallback, useContext, useEffect } from "react";
+import { Navigator } from "react-router";
 import { UNSAFE_NavigationContext as NavigationContext } from "react-router-dom";
 
-export function useUnlocker(blocker: any, when = true) {
-  const { navigator } = React.useContext(NavigationContext) as any;
+type ExtendNavigator = Navigator & Pick<History, "block">;
 
-  React.useEffect(() => {
+function useUnlocker(blocker: (tx: Transition) => void, when = true) {
+  const { navigator } = useContext(NavigationContext);
+
+  useEffect(() => {
     if (!when) return;
 
-    const unlock = navigator.block((tx: any) => {
+    const unlock = (navigator as ExtendNavigator).block((tx: Transition) => {
       const autoUnlockingTx = {
         ...tx,
         retry() {
@@ -24,8 +28,8 @@ export function useUnlocker(blocker: any, when = true) {
 }
 
 export function useUnlockPrompt(message: string, when = true) {
-  const blocker = React.useCallback(
-    (tx: any) => {
+  const blocker = useCallback(
+    (tx: Transition) => {
       if (window.confirm(message)) tx.retry();
     },
     [message]
@@ -35,20 +39,20 @@ export function useUnlockPrompt(message: string, when = true) {
 }
 
 export function useUnlockNoPrompt(when = true) {
-  const blocker = React.useCallback<Function>((tx: any) => {
+  const blocker = useCallback((tx: Transition) => {
     tx.retry();
   }, []);
 
   useUnlocker(blocker, when);
 }
 
-export function useBlocker(blocker: any, when = true) {
-  const { navigator } = React.useContext(NavigationContext) as any;
+function useBlocker(blocker: (tx: Transition) => void, when = true) {
+  const { navigator } = useContext(NavigationContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!when) return;
 
-    const lock = navigator.block((tx: any) => {
+    const lock = (navigator as ExtendNavigator).block((tx: Transition) => {
       const autoLockingTx = {
         ...tx,
         retry() {
@@ -64,7 +68,7 @@ export function useBlocker(blocker: any, when = true) {
 }
 
 export function useLockPrompt(message: string, when = true) {
-  const blocker = React.useCallback(() => {
+  const blocker = useCallback(() => {
     if (window.confirm(message)) {
     }
   }, [message]);
@@ -73,6 +77,6 @@ export function useLockPrompt(message: string, when = true) {
 }
 
 export function useLockNoPrompt(when = true) {
-  const blocker = React.useCallback(() => {}, []);
+  const blocker = useCallback(() => {}, []);
   useBlocker(blocker, when);
 }

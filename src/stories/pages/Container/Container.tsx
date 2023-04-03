@@ -4,7 +4,7 @@ import "./Container.css";
 import { SettingsModal } from "../../modals/SettingsModal/SettingsModal";
 
 interface ContainerProps {
-  children: any;
+  children: React.ReactNode;
 }
 
 export const Container = ({ children, ...props }: ContainerProps) => {

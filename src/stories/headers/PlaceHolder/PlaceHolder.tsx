@@ -3,7 +3,7 @@ import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import "./PlaceHolder.css";
 
 interface PlaceHolderProps {
-  children?: any;
+  children?: React.ReactNode;
   size?: "small" | "medium" | "large";
 }
 
