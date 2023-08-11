@@ -10,6 +10,10 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
+if (window && !window.__ENV__) {
+  window.__ENV__ = {};
+}
+
 root.render(
   <React.StrictMode>
     <HashRouter>

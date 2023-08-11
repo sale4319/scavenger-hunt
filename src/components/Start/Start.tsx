@@ -5,6 +5,7 @@ import { QuestionIconToolTip } from "../../stories/tool-tips";
 import { PrimaryButton } from "../../stories/buttons";
 import { CountdownTimer } from "../../stories/timer/CountdownTimer/CountdownTimer";
 import { StartTimerMessages, TooltipMessages } from "../../Messages";
+import { isFeatureFlagEnabled } from "../../utils/featureFlag";
 
 export const Start = () => {
   const [unLockNavigation, setUnlockNavigation] = useState(true);
@@ -21,11 +22,14 @@ export const Start = () => {
   return (
     <>
       <Title titleSize="medium" label={StartTimerMessages.TITLE} />
-      <Title
-        titleSize="small"
-        color="#75F8E2"
-        label={StartTimerMessages.INSTRUCTION}
-      />
+
+      {isFeatureFlagEnabled("TEST_PURPOSE_ONLY") && (
+        <Title
+          titleSize="small"
+          color="#75F8E2"
+          label={StartTimerMessages.INSTRUCTION}
+        />
+      )}
 
       <CountdownTimer />
       <div style={{ display: "flex" }}>
