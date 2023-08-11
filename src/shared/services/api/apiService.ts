@@ -1,8 +1,7 @@
-import { response } from "msw";
 import { API_URL, DATA_FETCH_ERROR } from "./mocks/constants";
-import { Headers } from "./types";
+import { ApiService, Headers } from "./types";
 
-class apiService {
+class Service implements ApiService {
   private headers: Headers = {
     "Content-Type": "application/json",
   };
@@ -13,7 +12,7 @@ class apiService {
       credentials: "same-origin",
       headers: this.getHeaders(),
     })
-      .then((response) => apiService.handleErrors(response))
+      .then((response) => Service.handleErrors(response))
       .then((response) => response.json());
   };
 
@@ -29,4 +28,4 @@ class apiService {
   }
 }
 
-export default new apiService();
+export default new Service();
