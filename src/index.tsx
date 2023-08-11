@@ -5,14 +5,36 @@ import App from "./App";
 import { GameSettingsProvider } from "./providers/GameSettingsContext";
 import { RoutingProvider } from "./providers/RoutingContext";
 import "./index.css";
-
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+import {
+  IS_DEVELOPMENT,
+  MOCK_API_REQUESTS,
+  PUBLIC_URL,
+} from "./shared/services/api/mocks/constants";
+import { worker } from "./shared/services/api/mocks/browser";
 
 if (window && !window.__ENV__) {
   window.__ENV__ = {};
 }
+
+if (IS_DEVELOPMENT) {
+  if (window.location.pathname === process.env.PUBLIC_URL) {
+    window.location.pathname = `${process.env.PUBLIC_URL}/`;
+  }
+
+  if (MOCK_API_REQUESTS) {
+    /* eslint-disable-next-line @typescript-eslint/no-floating-promises */
+    worker.start({
+      serviceWorker: {
+        url: `${PUBLIC_URL}/mockServiceWorker.js`,
+      },
+      onUnhandledRequest: "bypass",
+    });
+  }
+}
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 
 root.render(
   <React.StrictMode>
