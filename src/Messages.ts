@@ -1,7 +1,7 @@
 export const StartTimerMessages = {
   TITLE: "Welcome, here are your pointers:",
   INSTRUCTION:
-    "In each level you will have to solve a puzzle to enable the red button, each level is followed up by a quiz, all answers must be correct to continue. You have an option to skip any level or quiz by unlocking red button, but skipping will never take you to the end level.",
+    "In each level you will have to solve a puzzle to unlock the red button. This will allow you to pass to the next level. If you enable quiz mode each level will be followed up by a quiz, all answers must be correct to continue. You can enable skip mode and skip any level or quiz, but skipping will never take you to the final level.",
   HINT: "This button seems to be locked... can we unlock it",
 };
 
@@ -63,7 +63,6 @@ export const DefaultMessages = {
   PAGE_NOT_FOUND: "Page not found",
   FOUR_O_FOUR: "404",
   FANCY_BUTTON: "Go Home",
-  CONTINUE_BUTTON: "PASS",
   SUBMIT_BUTTON: "Submit",
   SKIP_QUIZ: "Skip quiz",
   SKIP_LEVEL: "Skip level",
