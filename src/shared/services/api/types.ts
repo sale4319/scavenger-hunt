@@ -11,4 +11,4 @@ export type TestObject = {
   testEndpoint: TestList[];
 };
 
-export type TestList = { info: string; info2: number; infor3: string };
+export type TestList = { info: string; info2: number; info3: string };

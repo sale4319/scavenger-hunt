@@ -10,7 +10,8 @@ import {
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import { PlaceHolder } from "../../../stories/headers";
 import { DefaultMessages, LevelOneMessages } from "../../../Messages";
-import { TestList, TestObject } from "../../../shared/services/api/types";
+import { TestList } from "../../../shared/services/api/types";
+import testPurposesFixture from "../../../shared/services/api/mocks/fixtures/testPurposesFixture.json";
 import ApiService from "../../../shared/services/api/apiService";
 import { isFeatureFlagEnabled } from "../../../utils/featureFlag";
 
@@ -22,9 +23,13 @@ export const LevelOne = () => {
 
   useLockNoPrompt(unLockNavigation);
   useEffect(() => {
-    ApiService.fetchMockData().then((testObject: TestObject) => {
-      setTestData(testObject.testEndpoint);
-    });
+    ApiService.fetchMockData()
+      .then((testList: TestList[]) => {
+        setTestData(testList);
+      })
+      .catch(() => {
+        setTestData(testPurposesFixture.testEndpoint);
+      });
   }, []);
 
   const routeChange = useCallback(() => {
@@ -46,9 +51,9 @@ export const LevelOne = () => {
       </PlaceHolder>
       {isFeatureFlagEnabled("TEST_PURPOSE_ONLY") &&
         testData &&
-        testData.map((info, index, infoList) => (
+        testData.map((info, index) => (
           <p key={index}>
-            {info.info} {info.info2} {info.infor3} {infoList.length}
+            {info.info} {info.info2} {info.info3}
           </p>
         ))}
 
