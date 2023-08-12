@@ -4,7 +4,7 @@ import testPurposesFixture from "../../shared/services/api/mocks/fixtures/testPu
 export const URL = `*/api/testEndpoint`;
 
 export const testPurposesHandler = (
-  fixture?: Record<string, string | number>,
+  fixture?: Array<Record<string, string | number | null | undefined>>,
   status?: number,
   delay?: number
 ) =>
@@ -12,6 +12,6 @@ export const testPurposesHandler = (
     res(
       ctx.delay(delay),
       ctx.status(status || 200, "Mocked status"),
-      ctx.json(fixture || testPurposesFixture)
+      ctx.json(fixture || testPurposesFixture.testEndpoint)
     )
   );
