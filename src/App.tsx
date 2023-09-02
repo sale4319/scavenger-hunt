@@ -4,9 +4,13 @@ import { Container } from "./stories/pages/";
 import { AppMenu } from "./stories/headers";
 import { PageNotFound } from "./stories/pages/";
 import { Start } from "./components/Stages/Levels";
-import { LevelOne } from "./components/Stages/Levels";
-import { LevelTwo } from "./components/Stages/Levels";
-import { LevelThree } from "./components/Stages/Levels";
+import {
+  LevelOne,
+  LevelTwo,
+  LevelThree,
+  LevelFour,
+} from "./components/Stages/Levels";
+
 import { FinishClassic } from "./components/Stages/Levels";
 import { QuizOne } from "./components/Stages/Quizes";
 import { QuizTwo } from "./components/Stages/Quizes";
@@ -58,6 +62,10 @@ const App = () => {
               <Route
                 path={PrivateRoutes.PARAM_QUIZ_FOUR}
                 element={<QuizFour />}
+              />
+              <Route
+                path={PrivateRoutes.PARAM_LEVEL_FOUR}
+                element={<LevelFour />}
               />
               <Route
                 path={PrivateRoutes.PARAM_END_CLASSIC}

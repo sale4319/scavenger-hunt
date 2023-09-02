@@ -7,17 +7,14 @@
   font-size: 19px;
   font-weight: 600;
   margin-top: 2%;
-  border: 2px solid;
 }
 
 .form-container--light {
   background: white;
-  border-color: #282c34;
 }
 
 .form-container--dark {
   background: #282c34;
-  border-color: white;
 }
 
 .success-message {
@@ -33,9 +30,9 @@
 
 .form-label {
   font-size: 19px;
-  margin-bottom: 8px;
   display: flex;
   justify-content: center;
+  gap: 5px;
 }
 
 .form-label--light {
@@ -49,7 +46,6 @@
 .form-input {
   padding: 10px;
   border: 1px solid #282c34;
-  margin-bottom: 8px;
 }
 .form-input:focus {
   z-index: 1;
@@ -66,10 +62,10 @@
 .form-row {
   display: flex;
   flex-direction: column;
+  margin-bottom: 8px;
 }
 
 .form-input-error {
-  margin: 8px;
   padding: 10px;
   border: 1px solid;
   border-color: red;
@@ -100,5 +96,4 @@
 .error {
   color: red;
   font-size: 14px;
-  margin-top: 5px;
 }

@@ -137,9 +137,14 @@ export const QuestionForm = ({
             onChange={handleChange}
             className={touched.answerOne ? "form-input-error" : "form-input"}
           />
-          {formErrors.answerOne && touched.answerOne && (
-            <span className="error">{formErrors.answerOne}</span>
-          )}
+
+          <span className="error">
+            {formErrors.answerOne && touched.answerOne ? (
+              formErrors.answerOne
+            ) : (
+              <br />
+            )}
+          </span>
         </div>
 
         <div className="form-row">
@@ -163,9 +168,14 @@ export const QuestionForm = ({
             onChange={handleChange}
             className={isTouched.answerTwo ? "form-input-error" : "form-input"}
           />
-          {formErrors.answerTwo && isTouched.answerTwo && (
-            <span className="error">{formErrors.answerTwo}</span>
-          )}
+
+          <span className="error">
+            {formErrors.answerTwo && isTouched.answerTwo ? (
+              formErrors.answerTwo
+            ) : (
+              <br />
+            )}
+          </span>
         </div>
         <PrimaryButton
           size={"medium"}
