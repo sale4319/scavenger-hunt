@@ -3,25 +3,25 @@ import "./DraggingPuzzle.css";
 
 interface DraggingPuzzleProps {
   handleUnlockNavigation?: () => void;
-  label?: string;
+
   mode?: "pulse";
   onClick?: () => void;
 }
 
 function DraggingPuzzle({
   handleUnlockNavigation,
-  label = "Drag me hard",
+
   mode = "pulse",
 }: DraggingPuzzleProps) {
   const containerWidth = 150;
-  const containerHeight = 150;
+  const containerHeight = 100;
 
   const [buttonPosition, setButtonPosition] = useState<{
     x: number;
     y: number;
   }>({
-    x: containerWidth + 450, // Adjust initial position
-    y: containerHeight + 150, // Adjust initial position
+    x: containerWidth + 500, // Adjust initial position left/right
+    y: containerHeight, // Adjust initial position top/bottom
   });
   const [buttonClickable, setButtonClickable] = useState(false);
 
@@ -32,8 +32,8 @@ function DraggingPuzzle({
   };
 
   const handleMouseMove = (e: MouseEvent) => {
-    const newX = e.clientX - 60; // Adjust cursor position on button
-    const newY = e.clientY - 20; // Adjust cursor position on button
+    const newX = e.clientX - 80; // Adjust cursor position left/right on button
+    const newY = e.clientY - 20; // Adjust cursor position top/bottom on button
     setButtonPosition({ x: newX, y: newY });
 
     if (
@@ -67,7 +67,7 @@ function DraggingPuzzle({
       onMouseDown={handleMouseDown}
       onClick={handleButtonClick}
     >
-      {label}
+      {buttonClickable ? "Aw yiiiieeaas" : "Drag me harder"}
     </button>
   );
 }

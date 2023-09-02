@@ -7,17 +7,14 @@
   font-size: 19px;
   font-weight: 600;
   margin-top: 2%;
-  border: 2px solid;
 }
 
 .form-container--light {
   background: white;
-  border-color: #282c34;
 }
 
 .form-container--dark {
   background: #282c34;
-  border-color: white;
 }
 
 .success-message {

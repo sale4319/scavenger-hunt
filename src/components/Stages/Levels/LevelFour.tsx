@@ -1,37 +1,32 @@
 import React, { useCallback, useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { RoutingContext } from "../../../providers/RoutingContext";
-import { Title } from "../../../stories/headers";
+import { PlaceHolder, Title } from "../../../stories/headers";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
 
-import { LevelThreeMessages, DefaultMessages } from "../../../Messages";
+import { DefaultMessages, LevelFourMessages } from "../../../Messages";
 import DraggingPuzzle from "../../../stories/puzzles/DraggingPuzzle/DraggingPuzzle";
 
 export const LevelFour = () => {
   const [unLockNavigation, setUnlockNavigation] = useState<boolean>(true);
-  const [skip, setSkip] = useState(false);
   const { skipMode } = useContext(GameSettingsContext);
-  const { routeLevelThree } = useContext(RoutingContext);
+  const { routeLevelFour } = useContext(RoutingContext);
 
   useLockNoPrompt(unLockNavigation);
 
   const routeChange = useCallback(() => {
-    routeLevelThree(skip);
+    routeLevelFour();
   }, [unLockNavigation]);
 
   const handleUnlockNavigation = () => {
     setUnlockNavigation(false);
   };
 
-  const handleSkip = () => {
-    setSkip(true);
-    setUnlockNavigation(false);
-  };
-
   return (
     <>
-      <Title titleSize="small" label={LevelThreeMessages.HINT} />
+      <PlaceHolder size="small" />
+      <Title titleSize="medium" label={LevelFourMessages.HINT} />
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}
@@ -42,7 +37,10 @@ export const LevelFour = () => {
 
       <DraggingPuzzle handleUnlockNavigation={handleUnlockNavigation} />
       {skipMode && (
-        <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_LEVEL} />
+        <SkipButton
+          onClick={handleUnlockNavigation}
+          label={DefaultMessages.SKIP_LEVEL}
+        />
       )}
     </>
   );

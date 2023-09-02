@@ -19,6 +19,10 @@ export const LevelThreeMessages = {
   HINT: "You must answer questions below correctly to pass. First question you will have to guess, second one you will have to find or decrypt...",
 };
 
+export const LevelFourMessages = {
+  HINT: "Now you will do some dragging, drag long and hard.",
+};
+
 export const EndClassicMessages = {
   CONGRATS: "CONGRATULATIONS!",
   END: "You have successfully completed the current version of the game, clicking on gift image will take you to the beginning.",

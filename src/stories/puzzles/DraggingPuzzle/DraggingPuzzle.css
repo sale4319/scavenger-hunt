@@ -40,7 +40,6 @@
   color: #fff;
 }
 
-/* Style the button with a shadow effect when clickable */
 #draggable-button.clickable:hover,
 #draggable-button.clickable:focus {
   border-color: var(--hover);
