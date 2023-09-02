@@ -53,11 +53,12 @@
 }
 
 .corner-shine {
-  width: 155px;
+  width: 183px;
   height: 40px;
   position: absolute;
   bottom: 30px;
   left: 40px;
   background-color: transparent;
+  animation: pulse 0.6s;
   box-shadow: var(--shadow);
 }

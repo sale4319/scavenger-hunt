@@ -69,7 +69,7 @@ function DraggingPuzzle({
         onMouseDown={handleMouseDown}
         onClick={handleButtonClick}
       >
-        {buttonClickable ? "Aw yiiiieeaas" : "Drag me harder"}
+        {buttonClickable ? "Aww Yiieeaasss" : "Drag me harder"}
       </button>
       {buttonClickable ? <div className="corner-shine"></div> : <></>}
     </>
