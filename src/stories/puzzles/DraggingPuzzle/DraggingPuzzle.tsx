@@ -3,14 +3,12 @@ import "./DraggingPuzzle.css";
 
 interface DraggingPuzzleProps {
   handleUnlockNavigation?: () => void;
-
-  mode?: "pulse";
+  mode?: string;
   onClick?: () => void;
 }
 
 function DraggingPuzzle({
   handleUnlockNavigation,
-
   mode = "pulse",
 }: DraggingPuzzleProps) {
   const containerWidth = 150;
