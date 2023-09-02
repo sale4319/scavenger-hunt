@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3c0339cb.css",
-    "main.js": "/static/js/main.c29a4b8f.js",
+    "main.css": "/static/css/main.6ae95e4c.css",
+    "main.js": "/static/js/main.f9b82d79.js",
     "static/media/reactHeart.svg": "/static/media/reactHeart.edceb35430eb2cc1cabb.svg",
     "static/media/gift.svg": "/static/media/gift.ddb08f6063321c69d52fd03f7896424b.svg",
     "static/media/settings.svg": "/static/media/settings.66b8b6f64fa4a4778963.svg",
@@ -11,11 +11,11 @@
     "static/media/skip.svg": "/static/media/skip.e117f08411a252a5fcbd.svg",
     "static/media/question-icon.svg": "/static/media/question-icon.9b49356192239ab8228058729db6c8e2.svg",
     "static/media/trello.svg": "/static/media/trello.51ce5a7436aa49164df3.svg",
-    "main.3c0339cb.css.map": "/static/css/main.3c0339cb.css.map",
-    "main.c29a4b8f.js.map": "/static/js/main.c29a4b8f.js.map"
+    "main.6ae95e4c.css.map": "/static/css/main.6ae95e4c.css.map",
+    "main.f9b82d79.js.map": "/static/js/main.f9b82d79.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c0339cb.css",
-    "static/js/main.c29a4b8f.js"
+    "static/css/main.6ae95e4c.css",
+    "static/js/main.f9b82d79.js"
   ]
 }
