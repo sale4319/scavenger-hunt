@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import "./DraggingPuzzle.css";
 
 interface DraggingPuzzleProps {
@@ -11,6 +12,8 @@ function DraggingPuzzle({
   handleUnlockNavigation,
   mode = "pulse",
 }: DraggingPuzzleProps) {
+  const { darkMode } = useContext(GameSettingsContext);
+  const dark = darkMode ? "light" : "dark";
   const containerWidth = 150;
   const containerHeight = 100;
 
@@ -61,7 +64,7 @@ function DraggingPuzzle({
     <>
       <button
         id="draggable-button"
-        className={[buttonClickable ? mode : "clickable"].join(" ")}
+        className={[dark, buttonClickable ? mode : "clickable"].join(" ")}
         style={{ left: buttonPosition.x, top: buttonPosition.y }}
         onMouseDown={handleMouseDown}
         onClick={handleButtonClick}

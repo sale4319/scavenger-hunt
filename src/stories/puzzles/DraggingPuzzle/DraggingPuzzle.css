@@ -44,10 +44,12 @@
   color: #fff;
 }
 
-#draggable-button.clickable:hover,
-#draggable-button.clickable:focus {
-  border-color: var(--hover);
+#draggable-button.clickable.light {
   color: #fff;
+}
+
+#draggable-button.clickable.dark {
+  color: #282c34;
 }
 
 .corner-shine {
