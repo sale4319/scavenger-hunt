@@ -1,0 +1,19 @@
+#draggable-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  transition: cursor 0.3s, background-color 0.3s;
+}
+
+#draggable-button.clickable {
+  cursor: pointer;
+  background-color: red; /* Change the button color to red when clickable */
+}
+
+/* Style the button with a shadow effect when clickable */
+#draggable-button.clickable:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}

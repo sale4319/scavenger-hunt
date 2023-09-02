@@ -16,6 +16,7 @@ import { PrivateRoutes } from "./PrivateRoutes";
 
 import "react-toastify/dist/ReactToastify.css";
 import { MobileWarning } from "./stories/pages/MobileWarning/MobileWarning";
+import { LevelFour } from "./components/Stages/Levels/LevelFour";
 
 const App = () => {
   return (
@@ -58,6 +59,10 @@ const App = () => {
               <Route
                 path={PrivateRoutes.PARAM_QUIZ_FOUR}
                 element={<QuizFour />}
+              />
+              <Route
+                path={PrivateRoutes.PARAM_LEVEL_FOUR}
+                element={<LevelFour />}
               />
               <Route
                 path={PrivateRoutes.PARAM_END_CLASSIC}
