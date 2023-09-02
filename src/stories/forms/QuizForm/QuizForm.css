@@ -99,5 +99,5 @@
 .progressBar .text {
   font-size: 11px;
   position: absolute;
-  z-index: 10;
+  z-index: 3;
 }

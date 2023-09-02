@@ -60,15 +60,18 @@ function DraggingPuzzle({
   };
 
   return (
-    <button
-      id="draggable-button"
-      className={[buttonClickable ? mode : "clickable"].join(" ")}
-      style={{ left: buttonPosition.x, top: buttonPosition.y }}
-      onMouseDown={handleMouseDown}
-      onClick={handleButtonClick}
-    >
-      {buttonClickable ? "Aw yiiiieeaas" : "Drag me harder"}
-    </button>
+    <>
+      <button
+        id="draggable-button"
+        className={[buttonClickable ? mode : "clickable"].join(" ")}
+        style={{ left: buttonPosition.x, top: buttonPosition.y }}
+        onMouseDown={handleMouseDown}
+        onClick={handleButtonClick}
+      >
+        {buttonClickable ? "Aw yiiiieeaas" : "Drag me harder"}
+      </button>
+      {buttonClickable ? <div className="corner-shine"></div> : <></>}
+    </>
   );
 }
 
