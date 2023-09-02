@@ -1,26 +1,27 @@
 import React, { useState } from "react";
-import "./SliperyClick.css";
+import "./DraggingPuzzle.css";
 
-interface SliperyClickProps {
-  unlock?: boolean;
+interface DraggingPuzzleProps {
+  handleUnlockNavigation?: () => void;
   label?: string;
+  mode?: "pulse";
   onClick?: () => void;
 }
 
-function SliperyClick({
-  unlock = false,
-  label = "Unlock button",
-  ...props
-}: SliperyClickProps) {
-  const containerWidth = 400;
-  const containerHeight = 400;
+function DraggingPuzzle({
+  handleUnlockNavigation,
+  label = "Drag me hard",
+  mode = "pulse",
+}: DraggingPuzzleProps) {
+  const containerWidth = 150;
+  const containerHeight = 150;
 
   const [buttonPosition, setButtonPosition] = useState<{
     x: number;
     y: number;
   }>({
-    x: (containerWidth - 40) / 2, // Adjust for button size
-    y: (containerHeight - 40) / 2, // Adjust for button size
+    x: containerWidth + 450, // Adjust initial position
+    y: containerHeight + 150, // Adjust initial position
   });
   const [buttonClickable, setButtonClickable] = useState(false);
 
@@ -31,13 +32,13 @@ function SliperyClick({
   };
 
   const handleMouseMove = (e: MouseEvent) => {
-    const newX = e.clientX - 20; // Adjust for button size
-    const newY = e.clientY - 20; // Adjust for button size
+    const newX = e.clientX - 60; // Adjust cursor position on button
+    const newY = e.clientY - 20; // Adjust cursor position on button
     setButtonPosition({ x: newX, y: newY });
 
     if (
       newX >= 0 &&
-      newX <= containerWidth - 40 &&
+      newX <= containerWidth - 20 &&
       newY >= window.innerHeight - containerHeight &&
       newY <= window.innerHeight - 20
     ) {
@@ -53,24 +54,22 @@ function SliperyClick({
   };
 
   const handleButtonClick = () => {
-    if (buttonClickable) {
-      alert("wow");
+    if (buttonClickable && handleUnlockNavigation) {
+      handleUnlockNavigation();
     } else return;
   };
 
   return (
-    <div>
-      <button
-        id="draggable-button"
-        className={buttonClickable ? "clickable" : ""}
-        style={{ left: buttonPosition.x, top: buttonPosition.y }}
-        onMouseDown={handleMouseDown}
-        onClick={handleButtonClick}
-      >
-        Drag Me
-      </button>
-    </div>
+    <button
+      id="draggable-button"
+      className={[buttonClickable ? mode : "clickable"].join(" ")}
+      style={{ left: buttonPosition.x, top: buttonPosition.y }}
+      onMouseDown={handleMouseDown}
+      onClick={handleButtonClick}
+    >
+      {label}
+    </button>
   );
 }
 
-export default SliperyClick;
+export default DraggingPuzzle;

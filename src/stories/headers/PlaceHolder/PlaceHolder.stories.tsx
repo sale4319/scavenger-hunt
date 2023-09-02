@@ -4,7 +4,7 @@ import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { PlaceHolder } from "./PlaceHolder";
 
 export default {
-  title: "Pages/Container",
+  title: "Headers/PlaceHolder",
   component: PlaceHolder,
   parameters: {
     layout: "fullscreen",

@@ -1,0 +1,48 @@
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+.pulse {
+  --color: #8ed622;
+  --hover: #8ed622;
+}
+
+.pulse:hover,
+.pulse:focus {
+  background: var(--hover);
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+#draggable-button {
+  color: var(--color);
+  transition: 0.25s;
+  user-select: none;
+  cursor: pointer;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  padding: 10px 20px;
+  position: absolute;
+  transition: cursor 0.3s, background-color 0.3s;
+}
+
+#draggable-button.clickable {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+/* Style the button with a shadow effect when clickable */
+#draggable-button.clickable:hover,
+#draggable-button.clickable:focus {
+  border-color: var(--hover);
+  color: #fff;
+}

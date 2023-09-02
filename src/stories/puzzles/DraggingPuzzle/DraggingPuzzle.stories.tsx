@@ -3,20 +3,20 @@ import React from "react";
 import { MemoryRouter } from "react-router";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
-import { PageNotFound } from "./PageNotFound";
+import DraggingPuzzle from "./DraggingPuzzle";
 
 export default {
-  title: "Pages/PageNotFound",
-  component: PageNotFound,
+  title: "Puzzles/DraggingPuzzle",
+  component: DraggingPuzzle,
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof PageNotFound>;
+} as ComponentMeta<typeof DraggingPuzzle>;
 
-const Template: ComponentStory<typeof PageNotFound> = (args) => (
+const Template: ComponentStory<typeof DraggingPuzzle> = (args) => (
   <GameSettingsProvider>
     <MemoryRouter initialEntries={["/"]}>
-      <PageNotFound />
+      <DraggingPuzzle />
     </MemoryRouter>
   </GameSettingsProvider>
 );

@@ -6,7 +6,7 @@ import { PrimaryButton, SkipButton } from "../../../stories/buttons";
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
 
 import { LevelThreeMessages, DefaultMessages } from "../../../Messages";
-import SliperyClick from "../../../stories/puzzles/SliperyClick/SliperyClick";
+import DraggingPuzzle from "../../../stories/puzzles/DraggingPuzzle/DraggingPuzzle";
 
 export const LevelFour = () => {
   const [unLockNavigation, setUnlockNavigation] = useState<boolean>(true);
@@ -40,7 +40,7 @@ export const LevelFour = () => {
         data-testid="continueButton"
       />
 
-      <SliperyClick />
+      <DraggingPuzzle handleUnlockNavigation={handleUnlockNavigation} />
       {skipMode && (
         <SkipButton onClick={handleSkip} label={DefaultMessages.SKIP_LEVEL} />
       )}
