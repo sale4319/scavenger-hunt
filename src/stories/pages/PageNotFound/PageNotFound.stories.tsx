@@ -1,25 +1,25 @@
-import React from "react";
-
 import { MemoryRouter } from "react-router";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { PageNotFound } from "./PageNotFound";
 
-export default {
+const meta: Meta<typeof PageNotFound> = {
   title: "Pages/PageNotFound",
   component: PageNotFound,
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof PageNotFound>;
+};
 
-const Template: ComponentStory<typeof PageNotFound> = (args) => (
-  <GameSettingsProvider>
-    <MemoryRouter initialEntries={["/"]}>
-      <PageNotFound />
-    </MemoryRouter>
-  </GameSettingsProvider>
-);
+export default meta;
+type Story = StoryObj<typeof PageNotFound>;
 
-export const Preview = Template.bind({});
-Preview.args = {};
+export const Fill: Story = {
+  render: () => (
+    <GameSettingsProvider>
+      <MemoryRouter initialEntries={["/"]}>
+        <PageNotFound />
+      </MemoryRouter>
+    </GameSettingsProvider>
+  ),
+};

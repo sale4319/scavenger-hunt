@@ -3,11 +3,7 @@ import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { useLocalStorage } from "../../../utils/useLocalStorage";
 import "./DarkModeButton.css";
 
-type DarkModeProps = {
-  noStyle?: boolean;
-};
-
-export const DarkModeButton = ({ noStyle = true }: DarkModeProps) => {
+export const DarkModeButton = () => {
   let clickedClass = "clicked";
   const body = document.body;
   const lightTheme = "light";

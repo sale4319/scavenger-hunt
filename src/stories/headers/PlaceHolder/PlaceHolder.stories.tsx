@@ -1,21 +1,22 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { PlaceHolder } from "./PlaceHolder";
 
-export default {
+const meta: Meta<typeof PlaceHolder> = {
   title: "Headers/PlaceHolder",
   component: PlaceHolder,
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof PlaceHolder>;
+};
 
-const Template: ComponentStory<typeof PlaceHolder> = (args) => (
-  <GameSettingsProvider>
-    <PlaceHolder {...args} />
-  </GameSettingsProvider>
-);
+export default meta;
+type Story = StoryObj<typeof PlaceHolder>;
 
-export const Preview = Template.bind({});
-Preview.args = {};
+export const Preview: Story = {
+  render: () => (
+    <GameSettingsProvider>
+      <PlaceHolder />
+    </GameSettingsProvider>
+  ),
+};

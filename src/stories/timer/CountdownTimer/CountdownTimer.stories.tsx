@@ -1,15 +1,14 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { CountdownTimer } from "./CountdownTimer";
 
-export default {
+const meta: Meta<typeof CountdownTimer> = {
   title: "timer/CountdownTimer",
   component: CountdownTimer,
-  argTypes: {},
-} as ComponentMeta<typeof CountdownTimer>;
+};
 
-const Template: ComponentStory<typeof CountdownTimer> = () => (
-  <CountdownTimer />
-);
+export default meta;
+type Story = StoryObj<typeof CountdownTimer>;
 
-export const Settings = Template.bind({});
-Settings.args = {};
+export const Timer: Story = {
+  render: () => <CountdownTimer />,
+};

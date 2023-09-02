@@ -1,7 +1,6 @@
 export { DarkModeButton } from "./DarkModeButton/DarkModeButton";
 export { GiftButton } from "./GiftButton/GiftButton";
 export { NavigationButton } from "./NavigationButton/NavigationButton";
-export { PassButton } from "./PassButton/PassButton";
 export { PrimaryButton } from "./PrimaryButton/PrimaryButton";
 export { SkipButton } from "./SkipButton/SkipButton";
 export { SubmitButton } from "./SubmitButton/SubmitButton";

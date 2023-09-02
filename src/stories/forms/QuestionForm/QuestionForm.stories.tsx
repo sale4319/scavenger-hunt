@@ -1,15 +1,18 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { QuestionForm } from "./QuestionForm";
 
-export default {
+const meta: Meta<typeof QuestionForm> = {
   title: "Forms/QuestionForm",
   component: QuestionForm,
-} as ComponentMeta<typeof QuestionForm>;
+  parameters: {
+    layout: "fullscreen",
+  },
+};
 
-const Template: ComponentStory<typeof QuestionForm> = (args) => (
-  <QuestionForm {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof QuestionForm>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: () => <QuestionForm />,
+};

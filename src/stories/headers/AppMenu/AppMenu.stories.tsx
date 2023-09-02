@@ -1,13 +1,19 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { Meta, StoryObj } from "@storybook/react";
+import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { AppMenu } from "./AppMenu";
 
-export default {
+const meta: Meta<typeof AppMenu> = {
   title: "Headers/AppMenu",
   component: AppMenu,
-} as ComponentMeta<typeof AppMenu>;
+};
 
-const Template: ComponentStory<typeof AppMenu> = () => <AppMenu />;
+export default meta;
+type Story = StoryObj<typeof AppMenu>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: () => (
+    <GameSettingsProvider>
+      <AppMenu />
+    </GameSettingsProvider>
+  ),
+};

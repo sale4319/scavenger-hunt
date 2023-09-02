@@ -1,32 +1,23 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { NavigationButton } from "./NavigationButton";
 
-export default {
+const meta: Meta<typeof NavigationButton> = {
   title: "Buttons/NavigationButton",
   component: NavigationButton,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof NavigationButton>;
-
-const Template: ComponentStory<typeof NavigationButton> = (args) => (
-  <NavigationButton {...args} />
-);
-
-export const GithubButton = Template.bind({});
-GithubButton.args = {
-  id: "githubButton",
-  light: false,
 };
 
-export const PDButton = Template.bind({});
-PDButton.args = {
-  id: "pdButton",
+export default meta;
+type Story = StoryObj<typeof NavigationButton>;
+
+export const GithubButton: Story = {
+  render: () => <NavigationButton id="githubButton" light={false} />,
 };
 
-export const trelloButton = Template.bind({});
-trelloButton.args = {
-  id: "trelloButton",
+export const PDButton: Story = {
+  render: () => <NavigationButton id="pdButton" />,
+};
+
+export const TrelloButton: Story = {
+  render: () => <NavigationButton id="trelloButton" />,
 };

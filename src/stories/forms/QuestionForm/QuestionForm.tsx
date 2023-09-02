@@ -12,15 +12,15 @@ type Errors = {
 };
 
 type QuestionFormProps = {
-  questionIconSize: "small" | "medium" | "large";
-  handleUnlock: () => void;
-  firstQuestion: string;
-  firstHint: string;
-  firstPlaceholder: string;
-  secondQuestion: string;
-  secondHint: string;
-  secondPlaceholder: string;
-  successMessage: string;
+  questionIconSize?: "small" | "medium" | "large";
+  handleUnlock?: () => void;
+  firstQuestion?: string;
+  firstHint?: string;
+  firstPlaceholder?: string;
+  secondQuestion?: string;
+  secondHint?: string;
+  secondPlaceholder?: string;
+  successMessage?: string;
 };
 
 export const QuestionForm = ({
@@ -101,7 +101,7 @@ export const QuestionForm = ({
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmitting) {
       submit();
-      handleUnlock();
+      if (handleUnlock) handleUnlock();
     }
   }, [formErrors]);
 

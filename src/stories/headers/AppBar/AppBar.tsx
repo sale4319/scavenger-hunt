@@ -30,7 +30,7 @@ export const AppBar = () => {
           rel="noopener noreferrer"
           light={darkMode}
         />
-        <DarkModeButton noStyle={false} />
+        <DarkModeButton />
       </div>
     </header>
   );

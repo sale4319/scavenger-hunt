@@ -1,21 +1,22 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { Container } from "./Container";
 
-export default {
+const meta: Meta<typeof Container> = {
   title: "Pages/Container",
   component: Container,
   parameters: {
     layout: "fullscreen",
   },
-} as ComponentMeta<typeof Container>;
+};
 
-const Template: ComponentStory<typeof Container> = (args) => (
-  <GameSettingsProvider>
-    <Container {...args} />
-  </GameSettingsProvider>
-);
+export default meta;
+type Story = StoryObj<typeof Container>;
 
-export const Preview = Template.bind({});
-Preview.args = {};
+export const Preview: Story = {
+  render: () => (
+    <GameSettingsProvider>
+      <Container children />
+    </GameSettingsProvider>
+  ),
+};

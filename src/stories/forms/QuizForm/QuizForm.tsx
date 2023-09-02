@@ -4,6 +4,17 @@ import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { PrimaryButton } from "../../buttons";
 import "./QuizForm.css";
 
+type QuizProps = {
+  questions?: QuestionProps;
+  handleUnlock?: () => void;
+};
+
+type QuestionProps = {
+  question: string;
+  answers: string[];
+  correctAnswerIndex: number;
+}[];
+
 const Question = ({ question, setAnswerStatus }) => {
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
 
@@ -71,7 +82,7 @@ const ProgressBar = ({ currentQuestionIndex, totalQuestionsCount }) => {
   );
 };
 
-export const Quiz = ({ questions, handleUnlock }) => {
+export const Quiz = ({ questions, handleUnlock }: QuizProps) => {
   const [questionIndex, setQuestionIndex] = useState<any>(null);
   const [answerStatus, setAnswerStatus] = useState(null);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
@@ -89,7 +100,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
   }, [answerStatus]);
 
   const onNextClick = () => {
-    if (questionIndex === questions.length - 1) {
+    if (questions && questionIndex === questions.length - 1) {
       setQuizComplete(true);
     } else {
       setQuestionIndex(questionIndex == null ? 0 : questionIndex + 1);
@@ -129,7 +140,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
           <p>
             {QuizFormMessages.CORRECT_ANSWERS}
             {correctAnswerCount}
-            {QuizFormMessages.TOTAL_QUESTIONS} {questions.length}
+            {QuizFormMessages.TOTAL_QUESTIONS} {questions && questions.length}
           </p>
           {questionIndex != null && correctAnswerCount === 6 ? (
             <p>
@@ -155,10 +166,10 @@ export const Quiz = ({ questions, handleUnlock }) => {
         <Fragment>
           <ProgressBar
             currentQuestionIndex={questionIndex}
-            totalQuestionsCount={questions.length}
+            totalQuestionsCount={questions && questions.length}
           />
           <Question
-            question={questions[questionIndex]}
+            question={questions && questions[questionIndex]}
             setAnswerStatus={setAnswerStatus}
           />
           {answerStatus != null && (
@@ -168,7 +179,7 @@ export const Quiz = ({ questions, handleUnlock }) => {
                 onClick={onNextClick}
                 size="medium"
                 label={
-                  questionIndex === questions.length - 1
+                  questions && questionIndex === questions.length - 1
                     ? `${QuizFormMessages.RESULTS_BUTTON}`
                     : `${QuizFormMessages.NEXT_BUTTON}`
                 }

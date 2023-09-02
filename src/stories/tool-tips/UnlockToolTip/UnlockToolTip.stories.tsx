@@ -1,15 +1,15 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { UnlockToolTip } from "./UnlockToolTip";
 
-export default {
+const meta: Meta<typeof UnlockToolTip> = {
   title: "ToolTips/UnlockToolTip",
   component: UnlockToolTip,
-} as ComponentMeta<typeof UnlockToolTip>;
+};
 
-const Template: ComponentStory<typeof UnlockToolTip> = (args) => (
-  <UnlockToolTip {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof UnlockToolTip>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: () => <UnlockToolTip />,
+};

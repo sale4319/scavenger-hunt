@@ -1,39 +1,28 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { GiftButton } from "./GiftButton";
 
-export default {
+const meta: Meta<typeof GiftButton> = {
   title: "Buttons/GiftButton",
   component: GiftButton,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof GiftButton>;
-
-const Template: ComponentStory<typeof GiftButton> = (args) => (
-  <GiftButton {...args} />
-);
-
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: "Button",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Button",
+export default meta;
+type Story = StoryObj<typeof GiftButton>;
+
+export const Primary: Story = {
+  render: () => <GiftButton primary label="Button" />,
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  label: "Button",
+export const Secondary: Story = {
+  render: () => <GiftButton label="Button" />,
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  label: "Button",
+export const Large: Story = {
+  render: () => <GiftButton label="Button" size="large" />,
+};
+
+export const Small: Story = {
+  render: () => <GiftButton label="Button" size="small" />,
 };

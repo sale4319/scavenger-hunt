@@ -1,15 +1,14 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { SettingsModal } from "./SettingsModal";
 
-export default {
+const meta: Meta<typeof SettingsModal> = {
   title: "Modals/SettingsModal",
   component: SettingsModal,
-  argTypes: {},
-} as ComponentMeta<typeof SettingsModal>;
+};
 
-const Template: ComponentStory<typeof SettingsModal> = (args) => (
-  <SettingsModal {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof SettingsModal>;
 
-export const Settings = Template.bind({});
-Settings.args = {};
+export const Fill: Story = {
+  render: () => <SettingsModal />,
+};
