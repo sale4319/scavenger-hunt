@@ -8,7 +8,7 @@ import { LevelOne } from "./LevelOne";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
 import { LevelTwo } from "./LevelTwo";
-import { LevelThree } from "./LevelThree";
+import { LevelFour } from "./LevelFour";
 import { RoutingProvider } from "../../../providers/RoutingContext";
 
 const mockedUsedNavigate = jest.fn();
@@ -42,7 +42,7 @@ const RenderedLevelThree = (
   <MemoryRouter>
     <GameSettingsProvider>
       <RoutingProvider>
-        <LevelThree />
+        <LevelFour />
       </RoutingProvider>
     </GameSettingsProvider>
   </MemoryRouter>

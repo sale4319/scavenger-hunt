@@ -16,11 +16,11 @@ export const LevelTwoMessages = {
 };
 
 export const LevelThreeMessages = {
-  HINT: "You must answer questions below correctly to pass. First question you will have to guess, second one you will have to find or decrypt...",
+  HINT: "Now you will do some dragging, drag long and hard.",
 };
 
 export const LevelFourMessages = {
-  HINT: "Now you will do some dragging, drag long and hard.",
+  HINT: "You must answer questions below correctly to pass. First question you will have to guess, second one you will have to find or decrypt...",
 };
 
 export const EndClassicMessages = {

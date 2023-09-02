@@ -4,9 +4,13 @@ import { Container } from "./stories/pages/";
 import { AppMenu } from "./stories/headers";
 import { PageNotFound } from "./stories/pages/";
 import { Start } from "./components/Stages/Levels";
-import { LevelOne } from "./components/Stages/Levels";
-import { LevelTwo } from "./components/Stages/Levels";
-import { LevelThree } from "./components/Stages/Levels";
+import {
+  LevelOne,
+  LevelTwo,
+  LevelThree,
+  LevelFour,
+} from "./components/Stages/Levels";
+
 import { FinishClassic } from "./components/Stages/Levels";
 import { QuizOne } from "./components/Stages/Quizes";
 import { QuizTwo } from "./components/Stages/Quizes";
@@ -16,7 +20,6 @@ import { PrivateRoutes } from "./PrivateRoutes";
 
 import "react-toastify/dist/ReactToastify.css";
 import { MobileWarning } from "./stories/pages/MobileWarning/MobileWarning";
-import { LevelFour } from "./components/Stages/Levels/LevelFour";
 
 const App = () => {
   return (
