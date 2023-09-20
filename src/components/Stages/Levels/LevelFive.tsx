@@ -19,7 +19,7 @@ export const LevelFive = () => {
       <PlaceHolder size="large" />
 
       <Title label={LevelFiveMessages.HINT} />
-      {isFeatureFlagEnabled("TEST_PURPOSE_ONLY") && (
+      {isFeatureFlagEnabled("LEVEL_FIVE_UNLOCK") && (
         <PrimaryButton
           onClick={routeChange}
           primary={false}
