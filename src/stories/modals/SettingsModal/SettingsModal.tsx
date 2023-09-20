@@ -7,7 +7,11 @@ import { Title } from "../../headers";
 
 import "./SettingsModal.css";
 
-export const SettingsModal = ({ onRequestClose }) => {
+type SettingsModalProps = {
+  onRequestClose?: () => void;
+};
+
+export const SettingsModal = ({ onRequestClose }: SettingsModalProps) => {
   const { quizMode, skipMode, setSkipMode, setQuizMode, darkMode } =
     useContext(GameSettingsContext);
   // Use useEffect to add an event listener to the document
@@ -15,7 +19,7 @@ export const SettingsModal = ({ onRequestClose }) => {
     function onKeyEsc(event: { keyCode: number }) {
       if (event.keyCode === 27) {
         // Close the modal when the Escape key is pressed
-        onRequestClose();
+        onRequestClose && onRequestClose();
       }
     }
 

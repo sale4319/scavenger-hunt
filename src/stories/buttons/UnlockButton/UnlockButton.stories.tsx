@@ -1,21 +1,15 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { UnlockButton } from "./UnlockButton";
 
-export default {
+const meta: Meta<typeof UnlockButton> = {
   title: "Buttons/UnlockButton",
   component: UnlockButton,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof UnlockButton>;
+};
 
-const Template: ComponentStory<typeof UnlockButton> = (args) => (
-  <UnlockButton {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof UnlockButton>;
 
-export const Unlock = Template.bind({});
-Unlock.args = {
-  unlock: true,
+export const Unlock: Story = {
+  render: () => <UnlockButton unlock={true} />,
 };

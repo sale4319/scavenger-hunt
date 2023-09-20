@@ -1,20 +1,19 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { IndicatorBadge } from "./IndicatorBadge";
 
-export default {
+const meta: Meta<typeof IndicatorBadge> = {
   title: "indicators/IndicatorBadge",
   component: IndicatorBadge,
-  parameters: {
-    layout: "fullscreen",
-  },
-} as ComponentMeta<typeof IndicatorBadge>;
+};
 
-const Template: ComponentStory<typeof IndicatorBadge> = (args) => (
-  <GameSettingsProvider>
-    <IndicatorBadge {...args} />
-  </GameSettingsProvider>
-);
+export default meta;
+type Story = StoryObj<typeof IndicatorBadge>;
 
-export const Indicator = Template.bind({});
-Indicator.args = { level: 3, color: "blue" };
+export const Indicator: Story = {
+  render: () => (
+    <GameSettingsProvider>
+      <IndicatorBadge level={3} color="blue" />
+    </GameSettingsProvider>
+  ),
+};

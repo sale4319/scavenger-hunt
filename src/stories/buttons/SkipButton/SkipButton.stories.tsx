@@ -1,22 +1,20 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 
 import { SkipButton } from "./SkipButton";
 
-export default {
+const meta: Meta<typeof SkipButton> = {
   title: "Buttons/SkipButton",
   component: SkipButton,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof SkipButton>;
+};
 
-const Template: ComponentStory<typeof SkipButton> = (args) => (
-  <GameSettingsProvider>
-    <SkipButton {...args} />
-  </GameSettingsProvider>
-);
+export default meta;
+type Story = StoryObj<typeof SkipButton>;
 
-export const Skip = Template.bind({});
-Skip.args = {};
+export const Skip: Story = {
+  render: () => (
+    <GameSettingsProvider>
+      <SkipButton />
+    </GameSettingsProvider>
+  ),
+};

@@ -43,7 +43,7 @@ export const AppMenu = () => {
         <i className="trelloButton"></i>
       </a>
       <div className="menu-item">
-        <DarkModeButton noStyle={false} />
+        <DarkModeButton />
       </div>
     </nav>
   );

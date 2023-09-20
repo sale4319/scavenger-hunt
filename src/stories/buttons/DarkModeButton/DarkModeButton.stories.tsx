@@ -1,18 +1,21 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 
 import { DarkModeButton } from "./DarkModeButton";
 
-export default {
+const meta: Meta<typeof DarkModeButton> = {
   title: "Buttons/DarkModeButton",
   component: DarkModeButton,
-} as ComponentMeta<typeof DarkModeButton>;
+};
 
-const Template: ComponentStory<typeof DarkModeButton> = (args) => (
-  <GameSettingsProvider>
-    <DarkModeButton />
-  </GameSettingsProvider>
-);
+export default meta;
+type Story = StoryObj<typeof DarkModeButton>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: () => (
+    <GameSettingsProvider>
+      <DarkModeButton />
+    </GameSettingsProvider>
+  ),
+};

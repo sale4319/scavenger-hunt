@@ -1,41 +1,27 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { SubmitButton } from "./SubmitButton";
 
-export default {
+const meta: Meta<typeof SubmitButton> = {
   title: "Buttons/SubmitButton",
   component: SubmitButton,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof SubmitButton>;
-
-const Template: ComponentStory<typeof SubmitButton> = (args) => (
-  <SubmitButton {...args} />
-);
-
-export const Primary = Template.bind({});
-Primary.args = {
-  submit: true,
-  label: "Button",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Button",
+export default meta;
+type Story = StoryObj<typeof SubmitButton>;
+
+export const Primary: Story = {
+  render: () => <SubmitButton submit={true} label="Button" />,
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  submit: true,
-  size: "large",
-  label: "Button",
+export const Secondary: Story = {
+  render: () => <SubmitButton label="Button" />,
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  submit: true,
-  size: "small",
-  label: "Button",
+export const Large: Story = {
+  render: () => <SubmitButton label="Button" submit={true} size="large" />,
+};
+
+export const Small: Story = {
+  render: () => <SubmitButton label="Button" submit={true} size="small" />,
 };
