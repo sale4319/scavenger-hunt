@@ -5,10 +5,14 @@
 - [ ] Another one
 -->
 
+<!--
 ### How to test changes?
 
-<!-- Locally or on deployment if available -->
+Locally or on deployment if available
+-->
 
+<!--
 ### Deployment
 
-<!-- [Live at]()  Add deployment link to () -->
+[Live at]()  Add deployment link to ()
+ -->
