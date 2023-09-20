@@ -10,6 +10,7 @@ const defaultValues = {
   routeLevelTwo: () => {},
   routeLevelThree: () => {},
   routeLevelFour: (condition: boolean) => {},
+  routeLevelFive: () => {},
   routeFinish: () => {},
   routeQuizOne: () => {},
   routeQuizTwo: () => {},
@@ -42,8 +43,8 @@ export const RoutingProvider = ({ children }) => {
   };
   const routeLevelThree = () => {
     quizMode
-      ? navigate(`${PrivateRoutes.PARAM_LEVEL_FOUR}`)
-      : navigate(`${PrivateRoutes.PARAM_LEVEL_FOUR}`);
+      ? navigate(`${PrivateRoutes.PARAM_LEVEL_FIVE}`)
+      : navigate(`${PrivateRoutes.PARAM_LEVEL_FIVE}`);
   };
 
   const routeLevelFour = (condition: boolean) => {
@@ -54,6 +55,12 @@ export const RoutingProvider = ({ children }) => {
     } else if (!condition && !quizMode) {
       navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
     }
+  };
+
+  const routeLevelFive = () => {
+    quizMode
+      ? navigate(`${PrivateRoutes.PARAM_LEVEL_FOUR}`)
+      : navigate(`${PrivateRoutes.PARAM_LEVEL_FOUR}`);
   };
 
   const routeFinish = () => {
@@ -88,6 +95,7 @@ export const RoutingProvider = ({ children }) => {
         routeLevelTwo,
         routeLevelThree,
         routeLevelFour,
+        routeLevelFive,
         routeFinish,
         routeQuizOne,
         routeQuizTwo,

@@ -1,25 +1,25 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { Container } from "./stories/pages/";
 import { AppMenu } from "./stories/headers";
-import { PageNotFound } from "./stories/pages/";
-import { Start } from "./components/Stages/Levels";
+import { Container, PageNotFound, MobileWarning } from "./stories/pages/";
 import {
+  Start,
   LevelOne,
   LevelTwo,
   LevelThree,
   LevelFour,
+  LevelFive,
+  FinishClassic,
 } from "./components/Stages/Levels";
-
-import { FinishClassic } from "./components/Stages/Levels";
-import { QuizOne } from "./components/Stages/Quizes";
-import { QuizTwo } from "./components/Stages/Quizes";
-import { QuizThree } from "./components/Stages/Quizes";
-import { QuizFour } from "./components/Stages/Quizes";
+import {
+  QuizOne,
+  QuizTwo,
+  QuizThree,
+  QuizFour,
+} from "./components/Stages/Quizes";
 import { PrivateRoutes } from "./PrivateRoutes";
 
 import "react-toastify/dist/ReactToastify.css";
-import { MobileWarning } from "./stories/pages/MobileWarning/MobileWarning";
 
 const App = () => {
   return (
@@ -54,6 +54,10 @@ const App = () => {
               <Route
                 path={PrivateRoutes.PARAM_QUIZ_THREE}
                 element={<QuizThree />}
+              />
+              <Route
+                path={PrivateRoutes.PARAM_LEVEL_FIVE}
+                element={<LevelFive />}
               />
               <Route
                 path={PrivateRoutes.PARAM_LEVEL_THREE}
