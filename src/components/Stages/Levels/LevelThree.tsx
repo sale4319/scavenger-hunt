@@ -1,12 +1,12 @@
-import React, { useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { RoutingContext } from "../../../providers/RoutingContext";
 import { PlaceHolder, Title } from "../../../stories/headers";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
-import { useLockNoPrompt } from "../../../utils/lockNavigation";
-
-import { DefaultMessages, LevelThreeMessages } from "../../../Messages";
 import DraggingPuzzle from "../../../stories/puzzles/DraggingPuzzle/DraggingPuzzle";
+
+import { useLockNoPrompt } from "../../../utils/lockNavigation";
+import { DefaultMessages, LevelThreeMessages } from "../../../Messages";
 
 export const LevelThree = () => {
   const [unLockNavigation, setUnlockNavigation] = useState<boolean>(true);

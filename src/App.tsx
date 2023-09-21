@@ -17,8 +17,8 @@ import {
   QuizThree,
   QuizFour,
 } from "./components/Stages/Quizes";
-import { PrivateRoutes } from "./PrivateRoutes";
 
+import { PrivateRoutes } from "./PrivateRoutes";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {

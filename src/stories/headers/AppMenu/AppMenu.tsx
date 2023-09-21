@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { Links } from "../../../Messages";
-import { DarkModeButton } from "../../buttons";
-import "./AppMenu.css";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { DarkModeButton } from "../../buttons";
+
+import { Links } from "../../../Messages";
+import "./AppMenu.css";
 
 export const AppMenu = () => {
   const { darkMode } = useContext(GameSettingsContext);

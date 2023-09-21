@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
-import "./Container.css";
 import { SettingsModal } from "../../modals/SettingsModal/SettingsModal";
+import "./Container.css";
 
 interface ContainerProps {
   children: React.ReactNode;

@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import "./SkipButton.css";
 
 interface SkipButtonProps {
   label?: string;
-
   onClick?: () => void;
 }
 

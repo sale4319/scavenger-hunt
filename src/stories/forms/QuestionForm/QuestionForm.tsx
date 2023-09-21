@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { QuestionIconToolTip } from "../../tool-tips";
 import { PrimaryButton } from "../../buttons";
 import { QuestionFormMessages, DefaultMessages } from "../../../Messages";

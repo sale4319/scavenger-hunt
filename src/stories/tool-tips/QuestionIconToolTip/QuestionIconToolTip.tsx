@@ -1,4 +1,3 @@
-import React from "react";
 import Tippy from "@tippyjs/react";
 import QuestionIcon from "../../assets/question-icon.svg";
 import "./QuestionIconToolTip.css";

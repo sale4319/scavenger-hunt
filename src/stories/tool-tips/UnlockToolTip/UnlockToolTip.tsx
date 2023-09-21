@@ -1,4 +1,3 @@
-import React from "react";
 import "./UnlockToolTip.css";
 import Tippy from "@tippyjs/react";
 
