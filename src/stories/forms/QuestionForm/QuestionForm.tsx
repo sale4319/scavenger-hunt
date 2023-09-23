@@ -106,12 +106,7 @@ export const QuestionForm = ({
   }, [formErrors]);
 
   return (
-    <div
-      className={[
-        "form-container",
-        `form-container--${darkMode ? "dark" : "light"}`,
-      ].join(" ")}
-    >
+    <div className="form-container">
       {Object.keys(formErrors).length === 0 && isSubmitting && (
         <span className="success-message">{successMessage}</span>
       )}

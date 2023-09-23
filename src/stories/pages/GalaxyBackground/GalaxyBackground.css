@@ -1,0 +1,164 @@
+.bg {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -3;
+}
+
+.bg-dark {
+  background-color: #282c34;
+  color: white;
+}
+
+.bg-light {
+  filter: invert(1);
+  background-color: linear-gradient(to right, red, yellow);
+  color: #282c34;
+}
+
+.bg:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+@keyframes sf-fly-by-1 {
+  from {
+    transform: translateZ(-600px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateZ(0);
+    opacity: 0.5;
+  }
+}
+@keyframes sf-fly-by-2 {
+  from {
+    transform: translateZ(-1200px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateZ(-600px);
+    opacity: 0.5;
+  }
+}
+@keyframes sf-fly-by-3 {
+  from {
+    transform: translateZ(-1800px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateZ(-1200px);
+    opacity: 0.5;
+  }
+}
+.star-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 900px;
+  -webkit-perspective: 900px;
+  z-index: -1;
+}
+.star-field .layer {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 5px;
+  width: 5px;
+  border-radius: 2px;
+}
+
+.star-field .layer-dark {
+  box-shadow: -411px -476px #cccccc, 777px -407px #d4d4d4, -387px -477px #fcfcfc,
+    -91px -235px #d4d4d4, 491px -460px #f7f7f7, 892px -128px #f7f7f7,
+    758px -277px #ededed, 596px 378px #cccccc, 647px 423px whitesmoke,
+    183px 389px #c7c7c7, 524px -237px #f0f0f0, 679px -535px #e3e3e3,
+    158px 399px #ededed, 157px 249px #ededed, 81px -450px #ebebeb,
+    719px -360px #c2c2c2, -499px 473px #e8e8e8, -158px -349px #d4d4d4,
+    870px -134px #cfcfcf, 446px 404px #c2c2c2, 440px 490px #d4d4d4,
+    414px 507px #e6e6e6, -12px 246px #fcfcfc, -384px 369px #e3e3e3,
+    641px -413px #fcfcfc, 822px 516px #dbdbdb, 449px 132px #c2c2c2,
+    727px 146px #f7f7f7, -315px -488px #e6e6e6, 952px -70px #e3e3e3,
+    -869px -29px #dbdbdb, 502px 80px #dedede, 764px 342px #e0e0e0,
+    -150px -380px #dbdbdb, 654px -426px #e3e3e3, -325px -263px #c2c2c2,
+    755px -447px #c7c7c7, 729px -177px #c2c2c2, -682px -391px #e6e6e6,
+    554px -176px #ededed, -85px -428px #d9d9d9, 714px 55px #e8e8e8,
+    359px -285px #cfcfcf, -362px -508px #dedede, 468px -265px #fcfcfc,
+    74px -500px #c7c7c7, -514px 383px #dbdbdb, 730px -92px #cfcfcf,
+    -112px 287px #c9c9c9, -853px 79px #d6d6d6, 828px 475px #d6d6d6,
+    -681px 13px #fafafa, -176px 209px #f0f0f0, 758px 457px #fafafa,
+    -383px -454px #ededed, 813px 179px #d1d1d1, 608px 98px whitesmoke,
+    -860px -65px #c4c4c4, -572px 272px #f7f7f7, 459px 533px #fcfcfc,
+    624px -481px #e6e6e6, 790px 477px #dedede, 731px -403px #ededed,
+    70px -534px #cccccc, -23px 510px #cfcfcf, -652px -237px whitesmoke,
+    -690px 367px #d1d1d1, 810px 536px #d1d1d1, 774px 293px #c9c9c9,
+    -362px 97px #c2c2c2, 563px 47px #dedede, 313px 475px #e0e0e0,
+    839px -491px #e3e3e3, -217px 377px #d4d4d4, -581px 239px #c2c2c2,
+    -857px 72px #cccccc, -23px 340px #dedede, -837px 246px white,
+    170px -502px #cfcfcf, 822px -443px #e0e0e0, 795px 497px #e0e0e0,
+    -814px -337px #cfcfcf, 206px -339px #f2f2f2, -779px 108px #e6e6e6,
+    808px 2px #d4d4d4, 665px 41px #d4d4d4, -564px 64px #cccccc,
+    -380px 74px #cfcfcf, -369px -60px #f7f7f7, 47px -495px #e3e3e3,
+    -383px 368px #f7f7f7, 419px 288px #d1d1d1, -598px -50px #c2c2c2,
+    -833px 187px #c4c4c4, 378px 325px whitesmoke, -703px 375px #d6d6d6,
+    392px 520px #d9d9d9, -492px -60px #c4c4c4, 759px 288px #ebebeb,
+    98px -412px #c4c4c4, -911px -277px #c9c9c9;
+}
+
+.star-field .layer-light {
+  box-shadow: -411px -476px #000000, 777px -407px #222222, -387px -477px #333333,
+    -91px -235px #222222, 491px -460px #444444, 892px -128px #444444,
+    758px -277px #333333, 596px 378px #000000, 647px 423px #333333,
+    183px 389px #444444, 524px -237px #333333, 679px -535px #444444,
+    158px 399px #333333, 157px 249px #333333, 81px -450px #444444,
+    719px -360px #333333, -499px 473px #222222, -158px -349px #222222,
+    870px -134px #222222, 446px 404px #222222, 440px 490px #222222,
+    414px 507px #333333, -12px 246px #333333, -384px 369px #333333,
+    641px -413px #333333, 822px 516px #222222, 449px 132px #222222,
+    727px 146px #444444, -315px -488px #333333, 952px -70px #333333,
+    -869px -29px #222222, 502px 80px #444444, 764px 342px #333333,
+    -150px -380px #222222, 654px -426px #333333, -325px -263px #222222,
+    755px -447px #444444, 729px -177px #222222, -682px -391px #333333,
+    554px -176px #333333, -85px -428px #222222, 714px 55px #222222,
+    359px -285px #222222, -362px -508px #444444, 468px -265px #444444,
+    74px -500px #444444, -514px 383px #222222, 730px -92px #333333,
+    -112px 287px #222222, -853px 79px #222222, 828px 475px #222222,
+    -681px 13px #444444, -176px 209px #333333, 758px 457px #444444,
+    -383px -454px #333333, 813px 179px #222222, 608px 98px #333333,
+    -860px -65px #222222, -572px 272px #444444, 459px 533px #333333,
+    624px -481px #333333, 790px 477px #222222, 731px -403px #333333,
+    70px -534px #000000, -23px 510px #333333, -652px -237px #333333,
+    -690px 367px #222222, 810px 536px #222222, 774px 293px #222222,
+    -362px 97px #222222, 563px 47px #333333, 313px 475px #333333,
+    839px -491px #333333, -217px 377px #222222, -581px 239px #222222,
+    -857px 72px #000000, -23px 340px #333333, -837px 246px #222222,
+    170px -502px #333333, 822px -443px #333333, 795px 497px #333333,
+    -814px -337px #333333, 206px -339px #333333, -779px 108px #333333,
+    808px 2px #222222, 665px 41px #222222, -564px 64px #000000,
+    -380px 74px #333333, -369px -60px #444444, 47px -495px #333333,
+    -383px 368px #444444, 419px 288px #222222, -598px -50px #222222,
+    -833px 187px #222222, 378px 325px #333333, -703px 375px #222222,
+    392px 520px #333333, -492px -60px #222222, 759px 288px #444444,
+    98px -412px #222222, -911px -277px #222222;
+}
+
+.star-field .layer:nth-child(1) {
+  animation: sf-fly-by-1 40s linear infinite;
+}
+.star-field .layer:nth-child(2) {
+  animation: sf-fly-by-2 15s linear infinite;
+}
+.star-field .layer:nth-child(3) {
+  animation: sf-fly-by-3 10s linear infinite;
+}
