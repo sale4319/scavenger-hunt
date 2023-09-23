@@ -1,4 +1,4 @@
-.mobile-view-container {
+.mobileViewContainer {
   padding-top: 250px;
   display: flex;
   flex-direction: column;
@@ -6,4 +6,12 @@
   justify-content: center;
   font-size: 18px;
   text-align: center;
+}
+
+.containerDark {
+  color: white;
+}
+
+.containerLight {
+  color: #282c34;
 }

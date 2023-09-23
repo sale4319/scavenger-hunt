@@ -1,5 +1,5 @@
 import { useCallback, useContext, useState } from "react";
-import { LevelThreeMessages, DefaultMessages } from "../../../Messages";
+import { LevelSixMessages, DefaultMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { RoutingContext } from "../../../providers/RoutingContext";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
@@ -25,7 +25,7 @@ export const LevelSix = () => {
   return (
     <>
       <PlaceHolder size="small" />
-      <Title titleSize="medium" label={LevelThreeMessages.HINT} />
+      <Title titleSize="medium" label={LevelSixMessages.HINT} />
       <PrimaryButton
         onClick={routeChange}
         primary={unLockNavigation}
