@@ -9,6 +9,7 @@ import {
   LevelThree,
   LevelFour,
   LevelFive,
+  LevelSix,
   FinishClassic,
 } from "./components/Stages/Levels";
 import {
@@ -58,6 +59,10 @@ const App = () => {
               <Route
                 path={PrivateRoutes.PARAM_LEVEL_FIVE}
                 element={<LevelFive />}
+              />
+              <Route
+                path={PrivateRoutes.PARAM_LEVEL_SIX}
+                element={<LevelSix />}
               />
               <Route
                 path={PrivateRoutes.PARAM_LEVEL_THREE}
