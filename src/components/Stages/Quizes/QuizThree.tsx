@@ -1,11 +1,12 @@
-import React, { useCallback, useContext, useState } from "react";
-import { Quiz } from "../../../stories/forms/QuizForm/QuizForm";
-import { useLockNoPrompt } from "../../../utils/lockNavigation";
-import { DefaultMessages } from "../../../Messages";
-import { PrimaryButton, SkipButton } from "../../../stories/buttons";
-import { questionSetThree } from "../../../QuizSets";
+import { useCallback, useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { RoutingContext } from "../../../providers/RoutingContext";
+import { PrimaryButton, SkipButton } from "../../../stories/buttons";
+import { Quiz } from "../../../stories/forms/QuizForm/QuizForm";
+import { questionSetThree } from "../../../QuizSets";
+
+import { useLockNoPrompt } from "../../../utils/lockNavigation";
+import { DefaultMessages } from "../../../Messages";
 
 export const QuizThree = () => {
   const [unLockNavigation, setUnlockNavigation] = useState(true);

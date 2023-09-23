@@ -1,10 +1,11 @@
-import React, { useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { RoutingContext } from "../../../providers/RoutingContext";
 import { Title } from "../../../stories/headers";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
-import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import { QuestionForm } from "../../../stories/forms";
+
+import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import {
   QuestionFormMessages,
   TooltipMessages,

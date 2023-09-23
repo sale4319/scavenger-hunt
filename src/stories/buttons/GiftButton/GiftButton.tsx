@@ -1,4 +1,3 @@
-import React from "react";
 import gift from "../../assets/gift.svg";
 import "./GiftButton.css";
 

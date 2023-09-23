@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
-import "./DraggingPuzzle.css";
+import styles from "./DraggingPuzzle.module.css";
 
 interface DraggingPuzzleProps {
   handleUnlockNavigation?: () => void;
@@ -10,10 +10,10 @@ interface DraggingPuzzleProps {
 
 function DraggingPuzzle({
   handleUnlockNavigation,
-  mode = "pulse",
+  mode = styles.pulse,
 }: DraggingPuzzleProps) {
   const { darkMode } = useContext(GameSettingsContext);
-  const dark = darkMode ? "light" : "dark";
+  const dark = darkMode ? styles.light : styles.dark;
   const containerWidth = 150;
   const containerHeight = 100;
 
@@ -63,15 +63,15 @@ function DraggingPuzzle({
   return (
     <>
       <button
-        id="draggable-button"
-        className={[dark, buttonClickable ? mode : "clickable"].join(" ")}
+        id={styles.draggableButton}
+        className={[dark, buttonClickable ? mode : styles.clickable].join(" ")}
         style={{ left: buttonPosition.x, top: buttonPosition.y }}
         onMouseDown={handleMouseDown}
         onClick={handleButtonClick}
       >
         {buttonClickable ? "Aww Yiieeaasss" : "Drag me harder"}
       </button>
-      {buttonClickable ? <div className="corner-shine"></div> : <></>}
+      {buttonClickable ? <div className={styles.cornerShine}></div> : <></>}
     </>
   );
 }

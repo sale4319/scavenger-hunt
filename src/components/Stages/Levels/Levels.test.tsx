@@ -1,15 +1,13 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
+import { RoutingProvider } from "../../../providers/RoutingContext";
+import { LevelOne, LevelTwo, LevelFour } from "./";
 import {
+  LevelFourMessages,
   LevelOneMessages,
-  LevelThreeMessages,
   LevelTwoMessages,
 } from "../../../Messages";
-import { LevelOne } from "./LevelOne";
-import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
-import { MemoryRouter } from "react-router-dom";
-import { LevelTwo } from "./LevelTwo";
-import { LevelFour } from "./LevelFour";
-import { RoutingProvider } from "../../../providers/RoutingContext";
 
 const mockedUsedNavigate = jest.fn();
 
@@ -38,7 +36,7 @@ const RenderedLevelTwo = (
   </MemoryRouter>
 );
 
-const RenderedLevelThree = (
+const RenderedLevelFour = (
   <MemoryRouter>
     <GameSettingsProvider>
       <RoutingProvider>
@@ -94,15 +92,15 @@ describe("Test level two", () => {
   });
 });
 
-describe("Test level three", () => {
+describe("Test level four", () => {
   test("Renders header", () => {
-    render(RenderedLevelThree);
-    const header = screen.getByText(LevelThreeMessages.HINT);
+    render(RenderedLevelFour);
+    const header = screen.getByText(LevelFourMessages.HINT);
     expect(header).toBeInTheDocument();
   });
 
   test("Continue button navigates to /stepEndClassic", () => {
-    render(RenderedLevelThree);
+    render(RenderedLevelFour);
     const continueButton = screen.getByTestId("continueButton");
     fireEvent.click(continueButton);
     expect(mockedUsedNavigate).toHaveBeenCalledWith("/stepEndClassic");

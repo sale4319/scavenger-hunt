@@ -4,7 +4,7 @@
   border: none;
   max-width: 300px;
   max-height: 300px;
-  border-radius: 50%;
+  border-radius: 6px;
   cursor: pointer;
   padding: 48px;
   transition: 0.5s;
@@ -21,21 +21,21 @@
 }
 
 .gift-button--primary {
-  color: #61dafb;
-  background: transparent;
-}
-
-.gift-button--primary:hover {
-  box-shadow: 0 0 0 0px #61dafb;
-}
-
-.gift-button--secondary {
   color: #ff0055;
   background: transparent;
 }
 
+.gift-button--primary:hover {
+  box-shadow: 0 0 0 0px #ff0055;
+}
+
+.gift-button--secondary {
+  color: #61dafb;
+  background: transparent;
+}
+
 .gift-button--secondary:hover {
-  box-shadow: 0 0 0 0px #e91e63;
+  box-shadow: 0 0 0 0px #61dafb;
 }
 
 .gift-button--small {

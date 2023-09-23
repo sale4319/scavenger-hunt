@@ -1,10 +1,10 @@
-import React, { useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { RoutingContext } from "../../../providers/RoutingContext";
-import { Title } from "../../../stories/headers";
+import { Title, PlaceHolder } from "../../../stories/headers";
 import { UnlockToolTip } from "../../../stories/tool-tips";
 import { PrimaryButton, SkipButton } from "../../../stories/buttons";
-import { PlaceHolder } from "../../../stories/headers";
+
 import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import {
   LevelTwoMessages,

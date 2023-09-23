@@ -1,0 +1,62 @@
+.circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  box-sizing: border-box;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.red {
+  border: 5px solid #e91e40;
+  background-color: #e91e40;
+  box-shadow: 0 0 30px 10px #e91e63;
+}
+
+.green {
+  border: 5px solid #fffc60;
+  background-color: #fffc60;
+  box-shadow: 0 0 30px 10px #ffa260;
+}
+
+.blue {
+  border: 5px solid #75d3f8;
+  background-color: #75d3f8;
+  box-shadow: 0 0 30px 10px #75f8e2;
+}
+
+.circle:hover {
+  transform: scale(1.1);
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  z-index: 1;
+}
+
+.attempts {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  font-size: 18px;
+}
+
+.attemptsDark {
+  color: white;
+}
+
+.attemptsLight {
+  color: #282c34;
+}

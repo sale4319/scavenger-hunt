@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment, useContext } from "react";
+import { useState, useEffect, Fragment, useContext } from "react";
 import { QuizFormMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { PrimaryButton } from "../../buttons";
@@ -16,7 +16,9 @@ type QuestionProps = {
 }[];
 
 const Question = ({ question, setAnswerStatus }) => {
-  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
+    null
+  );
 
   useEffect(() => {
     if (selectedAnswerIndex != null) {
@@ -28,8 +30,8 @@ const Question = ({ question, setAnswerStatus }) => {
     setSelectedAnswerIndex(null);
   }, [question]);
 
-  const getClasses = (index) => {
-    let classes: any = [];
+  const getClasses = (index: number) => {
+    let classes: string[] = [];
     if (selectedAnswerIndex != null) {
       if (selectedAnswerIndex === index) {
         classes.push("selected");
@@ -50,7 +52,7 @@ const Question = ({ question, setAnswerStatus }) => {
     <div className="question">
       <div className="questionText">{question.question}</div>
       <div className="answers">
-        {question.answers.map((answer: string, index) => {
+        {question.answers.map((answer: string, index: number) => {
           return (
             <div
               key={index}
@@ -83,10 +85,10 @@ const ProgressBar = ({ currentQuestionIndex, totalQuestionsCount }) => {
 };
 
 export const Quiz = ({ questions, handleUnlock }: QuizProps) => {
-  const [questionIndex, setQuestionIndex] = useState<any>(null);
-  const [answerStatus, setAnswerStatus] = useState(null);
-  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
-  const [quizComplete, setQuizComplete] = useState(false);
+  const [questionIndex, setQuestionIndex] = useState<number | null>(null);
+  const [answerStatus, setAnswerStatus] = useState<string | null>(null);
+  const [correctAnswerCount, setCorrectAnswerCount] = useState<number>(0);
+  const [quizComplete, setQuizComplete] = useState<boolean>(false);
   const { darkMode } = useContext(GameSettingsContext);
 
   useEffect(() => {

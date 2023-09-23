@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
+  background: transparent;
   min-height: 200px;
   height: min-content;
   padding: 20px;
@@ -13,13 +14,11 @@
 }
 
 .quiz--light {
-  background: white;
   color: black;
   border-color: #282c34;
 }
 
 .quiz--dark {
-  background: #282c34;
   color: white;
   border-color: white;
 }

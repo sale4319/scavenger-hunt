@@ -1,16 +1,7 @@
 .container {
   padding-top: 90px;
   text-align: center;
-}
-
-.container-dark {
-  background-color: #282c34;
-  color: white;
-}
-
-.container-light {
-  background-color: white;
-  color: #282c34;
+  background: transparent;
 }
 
 .section-container {

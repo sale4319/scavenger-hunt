@@ -1,19 +1,19 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { RoutingContext } from "../../../providers/RoutingContext";
-import { Title } from "../../../stories/headers";
+import { Title, PlaceHolder } from "../../../stories/headers";
 import {
   PrimaryButton,
   SkipButton,
   UnlockButton,
 } from "../../../stories/buttons";
-import { useLockNoPrompt } from "../../../utils/lockNavigation";
-import { PlaceHolder } from "../../../stories/headers";
-import { DefaultMessages, LevelOneMessages } from "../../../Messages";
 import { TestList } from "../../../shared/services/api/types";
-import testPurposesFixture from "../../../shared/services/api/mocks/fixtures/testPurposesFixture.json";
 import ApiService from "../../../shared/services/api/apiService";
+import testPurposesFixture from "../../../shared/services/api/mocks/fixtures/testPurposesFixture.json";
+
+import { useLockNoPrompt } from "../../../utils/lockNavigation";
 import { isFeatureFlagEnabled } from "../../../utils/featureFlag";
+import { DefaultMessages, LevelOneMessages } from "../../../Messages";
 
 export const LevelOne = () => {
   const [unLockNavigation, setUnlockNavigation] = useState(true);
