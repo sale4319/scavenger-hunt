@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { useLocalStorage } from "../../../utils/useLocalStorage";
 import "./DarkModeButton.css";

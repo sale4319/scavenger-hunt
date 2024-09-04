@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
-import App from "./App";
 import { GameSettingsProvider } from "./providers/GameSettingsContext";
 import { RoutingProvider } from "./providers/RoutingContext";
+import App from "./App";
 import "./index.css";
 import {
   IS_DEVELOPMENT,

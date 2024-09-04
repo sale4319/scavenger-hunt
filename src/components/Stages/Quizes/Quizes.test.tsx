@@ -1,11 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { MemoryRouter } from "react-router-dom";
-import { QuizOne } from "../../Start/QuizOne";
-import { QuizTwo } from "./QuizTwo";
-import { QuizThree } from "./QuizThree";
-import { QuizFour } from "./QuizFour";
+import { GameSettingsProvider } from "../../../providers/GameSettingsContext";
 import { RoutingProvider } from "../../../providers/RoutingContext";
+import { QuizOne, QuizTwo, QuizThree, QuizFour } from "./";
 
 const mockedUsedNavigate = jest.fn();
 

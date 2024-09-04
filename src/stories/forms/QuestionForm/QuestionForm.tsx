@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { QuestionIconToolTip } from "../../tool-tips";
 import { PrimaryButton } from "../../buttons";
 import { QuestionFormMessages, DefaultMessages } from "../../../Messages";
@@ -106,12 +106,7 @@ export const QuestionForm = ({
   }, [formErrors]);
 
   return (
-    <div
-      className={[
-        "form-container",
-        `form-container--${darkMode ? "dark" : "light"}`,
-      ].join(" ")}
-    >
+    <div className="form-container">
       {Object.keys(formErrors).length === 0 && isSubmitting && (
         <span className="success-message">{successMessage}</span>
       )}

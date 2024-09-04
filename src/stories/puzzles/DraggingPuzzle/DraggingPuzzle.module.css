@@ -24,7 +24,7 @@
   }
 }
 
-#draggable-button {
+#draggableButton {
   color: #fff;
   transition: 0.25s;
   user-select: none;
@@ -39,20 +39,20 @@
   z-index: 6;
 }
 
-#draggable-button.clickable {
+#draggableButton.clickable {
   border-color: var(--hover);
   color: #fff;
 }
 
-#draggable-button.clickable.light {
+#draggableButton.clickable.light {
   color: #fff;
 }
 
-#draggable-button.clickable.dark {
+#draggableButton.clickable.dark {
   color: #282c34;
 }
 
-.corner-shine {
+.cornerShine {
   width: 183px;
   height: 40px;
   position: absolute;

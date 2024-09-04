@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
-import "./Container.css";
 import { SettingsModal } from "../../modals/SettingsModal/SettingsModal";
+import "./Container.css";
+import { GalaxyBackground } from "../GalaxyBackground/GalaxyBackground";
 
 interface ContainerProps {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ export const Container = ({ children, ...props }: ContainerProps) => {
 
   return (
     <div className="container">
+      <GalaxyBackground />
       <article className={darkMode ? " container-dark" : " container-light"}>
         <section
           className={

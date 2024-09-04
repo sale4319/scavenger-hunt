@@ -1,8 +1,8 @@
-import React, { createContext, useContext } from "react";
+import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { GameSettingsContext } from "./GameSettingsContext";
 
 import { PrivateRoutes } from "../PrivateRoutes";
-import { GameSettingsContext } from "./GameSettingsContext";
 
 const defaultValues = {
   routeStart: () => {},
@@ -10,6 +10,8 @@ const defaultValues = {
   routeLevelTwo: () => {},
   routeLevelThree: () => {},
   routeLevelFour: (condition: boolean) => {},
+  routeLevelFive: () => {},
+  routeLevelSix: () => {},
   routeFinish: () => {},
   routeQuizOne: () => {},
   routeQuizTwo: () => {},
@@ -42,8 +44,8 @@ export const RoutingProvider = ({ children }) => {
   };
   const routeLevelThree = () => {
     quizMode
-      ? navigate(`${PrivateRoutes.PARAM_LEVEL_FOUR}`)
-      : navigate(`${PrivateRoutes.PARAM_LEVEL_FOUR}`);
+      ? navigate(`${PrivateRoutes.PARAM_LEVEL_SIX}`)
+      : navigate(`${PrivateRoutes.PARAM_LEVEL_SIX}`);
   };
 
   const routeLevelFour = (condition: boolean) => {
@@ -54,6 +56,18 @@ export const RoutingProvider = ({ children }) => {
     } else if (!condition && !quizMode) {
       navigate(`${PrivateRoutes.PARAM_END_CLASSIC}`);
     }
+  };
+
+  const routeLevelFive = () => {
+    quizMode
+      ? navigate(`${PrivateRoutes.PARAM_LEVEL_FOUR}`)
+      : navigate(`${PrivateRoutes.PARAM_LEVEL_FOUR}`);
+  };
+
+  const routeLevelSix = () => {
+    quizMode
+      ? navigate(`${PrivateRoutes.PARAM_LEVEL_FIVE}`)
+      : navigate(`${PrivateRoutes.PARAM_LEVEL_FIVE}`);
   };
 
   const routeFinish = () => {
@@ -88,6 +102,8 @@ export const RoutingProvider = ({ children }) => {
         routeLevelTwo,
         routeLevelThree,
         routeLevelFour,
+        routeLevelFive,
+        routeLevelSix,
         routeFinish,
         routeQuizOne,
         routeQuizTwo,

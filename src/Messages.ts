@@ -23,6 +23,14 @@ export const LevelFourMessages = {
   HINT: "You must answer questions below correctly to pass. First question you will have to guess, second one you will have to find or decrypt...",
 };
 
+export const LevelFiveMessages = {
+  HINT: "If I gave you this key: ?LEVEL_FIVE_UNLOCK=0 how would you use it to unlock this page?",
+};
+
+export const LevelSixMessages = {
+  HINT: "When we have to come up with some combinations there is always logic to it, even when you do not notice it at first.",
+};
+
 export const EndClassicMessages = {
   CONGRATS: "CONGRATULATIONS!",
   END: "You have successfully completed the current version of the game, clicking on gift image will take you to the beginning.",

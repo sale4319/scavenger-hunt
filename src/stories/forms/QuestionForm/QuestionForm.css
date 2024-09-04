@@ -1,5 +1,6 @@
 .form-container {
   display: flex;
+  background: transparent;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -7,14 +8,6 @@
   font-size: 19px;
   font-weight: 600;
   margin-top: 2%;
-}
-
-.form-container--light {
-  background: white;
-}
-
-.form-container--dark {
-  background: #282c34;
 }
 
 .success-message {

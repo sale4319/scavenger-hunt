@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
-import { SettingsModalMessages } from "../../../Messages";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
-import { ToggleSwitch } from "../../buttons";
-import { PrimaryButton } from "../../buttons";
+import { ToggleSwitch, PrimaryButton } from "../../buttons";
 import { Title } from "../../headers";
+
+import { SettingsModalMessages } from "../../../Messages";
 
 import "./SettingsModal.css";
 

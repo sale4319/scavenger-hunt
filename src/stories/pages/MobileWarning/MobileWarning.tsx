@@ -1,8 +1,19 @@
+import { useContext } from "react";
 import { DefaultMessages } from "../../../Messages";
-import "./MobileWarning.css";
+import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { GalaxyBackground } from "../GalaxyBackground/GalaxyBackground";
+import styles from "./MobileWarning.module.css";
 
 export const MobileWarning = () => {
+  const { darkMode } = useContext(GameSettingsContext);
   return (
-    <div className="mobile-view-container">{DefaultMessages.MOBILE_VIEW}</div>
+    <div
+      className={[
+        styles.mobileViewContainer,
+        darkMode ? styles.containerDark : styles.containerLight,
+      ].join(" ")}
+    >
+      {DefaultMessages.MOBILE_VIEW} <GalaxyBackground />
+    </div>
   );
 };

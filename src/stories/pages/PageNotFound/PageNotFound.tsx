@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { GameSettingsContext } from "../../../providers/GameSettingsContext";
+import { PlaceHolder } from "../../headers";
 import { PrimaryButton } from "../../buttons";
+
 import { PrivateRoutes } from "../../../PrivateRoutes";
 import { DefaultMessages } from "../../../Messages";
 import "./PageNotFound.css";
-import { PlaceHolder } from "../../headers";
 
 export const PageNotFound = () => {
   const { darkMode } = useContext(GameSettingsContext);
