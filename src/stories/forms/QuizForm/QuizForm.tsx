@@ -1,30 +1,43 @@
-import { useState, useEffect, Fragment, useContext } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { QuizFormMessages } from "../../../Messages";
-import { GameSettingsContext } from "../../../providers/GameSettingsContext";
 import { PrimaryButton } from "../../buttons";
-import "./QuizForm.css";
+
+import styles from "./QuizForm.module.css";
 
 type QuizProps = {
-  questions?: QuestionProps;
+  questions?: {
+    question: string;
+    answers: string[];
+    correctAnswerIndex: number;
+  }[];
   handleUnlock?: () => void;
 };
 
 type QuestionProps = {
-  question: string;
-  answers: string[];
-  correctAnswerIndex: number;
-}[];
+  question: {
+    question: string;
+    answers: string[];
+    correctAnswerIndex: number;
+  };
+  setAnswerStatus: (isCorrect: boolean) => void;
+};
 
-const Question = ({ question, setAnswerStatus }) => {
+type ProgressBarProps = {
+  currentQuestionIndex: number;
+  totalQuestionsCount: number;
+};
+
+// Question Component
+const Question = ({ question, setAnswerStatus }: QuestionProps) => {
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
     null
   );
 
   useEffect(() => {
-    if (selectedAnswerIndex != null) {
+    if (selectedAnswerIndex !== null) {
       setAnswerStatus(selectedAnswerIndex === question.correctAnswerIndex);
     }
-  }, [selectedAnswerIndex]);
+  }, [selectedAnswerIndex, question.correctAnswerIndex, setAnswerStatus]);
 
   useEffect(() => {
     setSelectedAnswerIndex(null);
@@ -32,64 +45,68 @@ const Question = ({ question, setAnswerStatus }) => {
 
   const getClasses = (index: number) => {
     let classes: string[] = [];
-    if (selectedAnswerIndex != null) {
+    if (selectedAnswerIndex !== null) {
       if (selectedAnswerIndex === index) {
-        classes.push("selected");
+        classes.push(styles.selected);
       }
       if (index === question.correctAnswerIndex) {
         if (selectedAnswerIndex === index) {
-          classes.push("correct");
+          classes.push(styles.correct);
         } else {
-          classes.push("incorrect");
+          classes.push(styles.incorrect);
         }
       }
     }
-
     return classes.join(" ");
   };
 
   return (
-    <div className="question">
-      <div className="questionText">{question.question}</div>
-      <div className="answers">
-        {question.answers.map((answer: string, index: number) => {
-          return (
-            <div
-              key={index}
-              className={` answer ${getClasses(index)}`}
-              onClick={() =>
-                selectedAnswerIndex == null && setSelectedAnswerIndex(index)
-              }
-            >
-              <span className="answer-text"> {answer}</span>
-            </div>
-          );
-        })}
+    <div className={styles.question}>
+      <div className={styles.questionText}>{question.question}</div>
+      <div className={styles.answers}>
+        {question.answers.map((answer, index) => (
+          <div
+            key={index}
+            className={`${styles.answer} ${getClasses(index)}`}
+            onClick={() =>
+              selectedAnswerIndex === null && setSelectedAnswerIndex(index)
+            }
+          >
+            <span className={styles.answerText}>{answer}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-const ProgressBar = ({ currentQuestionIndex, totalQuestionsCount }) => {
+// ProgressBar Component
+const ProgressBar: React.FC<ProgressBarProps> = ({
+  currentQuestionIndex,
+  totalQuestionsCount,
+}) => {
   const progressPercentage = (currentQuestionIndex / totalQuestionsCount) * 100;
 
   return (
-    <div className="progressBar">
-      <div className="text">
+    <div className={styles.progressBar}>
+      <div className={styles.text}>
         {currentQuestionIndex} answered (
         {totalQuestionsCount - currentQuestionIndex} remaining)
       </div>
-      <div className="inner" style={{ width: `${progressPercentage}%` }} />
+      <div
+        className={styles.inner}
+        style={{ width: `${progressPercentage}%` }}
+      />
     </div>
   );
 };
 
+// Quiz Component
 export const Quiz = ({ questions, handleUnlock }: QuizProps) => {
   const [questionIndex, setQuestionIndex] = useState<number | null>(null);
-  const [answerStatus, setAnswerStatus] = useState<string | null>(null);
+  const [answerStatus, setAnswerStatus] = useState<boolean | null>(null);
   const [correctAnswerCount, setCorrectAnswerCount] = useState<number>(0);
   const [quizComplete, setQuizComplete] = useState<boolean>(false);
-  const { darkMode } = useContext(GameSettingsContext);
 
   useEffect(() => {
     setAnswerStatus(null);
@@ -105,7 +122,7 @@ export const Quiz = ({ questions, handleUnlock }: QuizProps) => {
     if (questions && questionIndex === questions.length - 1) {
       setQuizComplete(true);
     } else {
-      setQuestionIndex(questionIndex == null ? 0 : questionIndex + 1);
+      setQuestionIndex(questionIndex === null ? 0 : questionIndex + 1);
     }
   };
 
@@ -115,11 +132,9 @@ export const Quiz = ({ questions, handleUnlock }: QuizProps) => {
     setCorrectAnswerCount(0);
   };
 
-  if (questionIndex == null) {
+  if (questionIndex === null) {
     return (
-      <div
-        className={["quiz", `quiz--${darkMode ? "dark" : "light"}`].join(" ")}
-      >
+      <div className={[styles.quiz, styles["light"]].join(" ")}>
         <h1>{QuizFormMessages.TITLE}</h1>
         <p>{QuizFormMessages.DESCRIPTION}</p>
         <p>
@@ -135,16 +150,15 @@ export const Quiz = ({ questions, handleUnlock }: QuizProps) => {
   }
 
   return (
-    <div className={["quiz", `quiz--${darkMode ? "dark" : "light"}`].join(" ")}>
+    <div className={[styles.quiz, styles["light"]].join(" ")}>
       {quizComplete ? (
         <Fragment>
           <h1>{QuizFormMessages.TITLE_COMPLETE}</h1>
           <p>
-            {QuizFormMessages.CORRECT_ANSWERS}
-            {correctAnswerCount}
+            {QuizFormMessages.CORRECT_ANSWERS} {correctAnswerCount}{" "}
             {QuizFormMessages.TOTAL_QUESTIONS} {questions && questions.length}
           </p>
-          {questionIndex != null && correctAnswerCount === 6 ? (
+          {questionIndex !== null && correctAnswerCount === 6 ? (
             <p>
               <PrimaryButton
                 mode="slide"
@@ -167,14 +181,14 @@ export const Quiz = ({ questions, handleUnlock }: QuizProps) => {
       ) : (
         <Fragment>
           <ProgressBar
-            currentQuestionIndex={questionIndex}
-            totalQuestionsCount={questions && questions.length}
+            currentQuestionIndex={questionIndex + 1}
+            totalQuestionsCount={questions?.length || 0}
           />
           <Question
-            question={questions && questions[questionIndex]}
-            setAnswerStatus={setAnswerStatus}
+            question={questions![questionIndex]}
+            setAnswerStatus={(isCorrect: boolean) => setAnswerStatus(isCorrect)}
           />
-          {answerStatus != null && (
+          {answerStatus !== null && (
             <div>
               <PrimaryButton
                 mode="slide"
@@ -182,8 +196,8 @@ export const Quiz = ({ questions, handleUnlock }: QuizProps) => {
                 size="medium"
                 label={
                   questions && questionIndex === questions.length - 1
-                    ? `${QuizFormMessages.RESULTS_BUTTON}`
-                    : `${QuizFormMessages.NEXT_BUTTON}`
+                    ? QuizFormMessages.RESULTS_BUTTON
+                    : QuizFormMessages.NEXT_BUTTON
                 }
               />
             </div>

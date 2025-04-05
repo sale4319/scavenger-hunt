@@ -1,7 +1,7 @@
-import React, { useCallback, useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { GameSettingsContext } from "../../providers/GameSettingsContext";
 import { RoutingContext } from "../../providers/RoutingContext";
-import { Quiz } from "../../stories/forms/QuizForm/QuizForm";
+import { QuizForm } from "distributed-ui";
 import { useLockNoPrompt } from "../../utils/lockNavigation";
 import { DefaultMessages } from "../../Messages";
 import { PrimaryButton, SkipButton } from "../../stories/buttons";
@@ -31,7 +31,10 @@ export const QuizOne = () => {
         isLocked={unLockNavigation}
         data-testid="continueButton"
       />
-      <Quiz questions={questionSetOne} handleUnlock={handleUnlockNavigation} />
+      <QuizForm
+        questions={questionSetOne}
+        handleUnlock={handleUnlockNavigation}
+      />
       {skipMode && (
         <SkipButton
           onClick={handleUnlockNavigation}

@@ -13,12 +13,12 @@
   border: 2px solid;
 }
 
-.quiz--light {
+.light {
   color: black;
   border-color: #282c34;
 }
 
-.quiz--dark {
+.dark {
   color: white;
   border-color: white;
 }
@@ -69,7 +69,7 @@
   font-weight: bold;
 }
 
-.answer-text {
+.answerText {
   position: relative;
   z-index: 2;
 }
